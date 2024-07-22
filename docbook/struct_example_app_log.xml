@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_example_app_log" xml:lang="en-US">
+<title>ExampleAppLog Struct Reference</title>
+<indexterm><primary>ExampleAppLog</primary></indexterm>
+Collaboration diagram for ExampleAppLog:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_example_app_log__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_example_app_log_1adadd24050d22189a1dc43e4a694b7ab3">ExampleAppLog</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_example_app_log_1ab9c298defddbb106fdfe4ab16c5eebac">Clear</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_example_app_log_1afd296fb3b2559acd341fd92883f8f571">AddLog</link> (const char *fmt,...) <link linkend="_imgui_8h_1a1251c2f9ddac0873dbad8181bd82c9f1">IM_FMTARGS</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_example_app_log_1a5ad3a4bdb89171b84aeaff96948a1f77">Draw</link> (const char *title, bool *p_open=NULL)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> <link linkend="_struct_example_app_log_1a74fb7cd7bd8c2507b41331ebb7d0e56d">Buf</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_text_filter">ImGuiTextFilter</link> <link linkend="_struct_example_app_log_1a4571947a6000e984ec8da9b7166e1e2b">Filter</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; int &gt; <link linkend="_struct_example_app_log_1af197fca7116f9033a5a5e831ee764ee2">LineOffsets</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_example_app_log_1a6b32bf0242b10d45376a7b43a4bde2f5">AutoScroll</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_example_app_log_1adadd24050d22189a1dc43e4a694b7ab3"/><section>
+    <title>ExampleAppLog()</title>
+<indexterm><primary>ExampleAppLog</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>ExampleAppLog</secondary></indexterm>
+<para><computeroutput>ExampleAppLog::ExampleAppLog ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_example_app_log_1afd296fb3b2559acd341fd92883f8f571"/><section>
+    <title>AddLog()</title>
+<indexterm><primary>AddLog</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>AddLog</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ExampleAppLog::AddLog (const char * fmt,  ...)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_example_app_log_1ab9c298defddbb106fdfe4ab16c5eebac"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ExampleAppLog::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_example_app_log_1a5ad3a4bdb89171b84aeaff96948a1f77"/><section>
+    <title>Draw()</title>
+<indexterm><primary>Draw</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>Draw</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ExampleAppLog::Draw (const char * title, bool * p_open = <computeroutput>NULL</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_example_app_log_1a6b32bf0242b10d45376a7b43a4bde2f5"/><section>
+    <title>AutoScroll</title>
+<indexterm><primary>AutoScroll</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>AutoScroll</secondary></indexterm>
+<para><computeroutput>bool ExampleAppLog::AutoScroll</computeroutput></para></section>
+<anchor xml:id="_struct_example_app_log_1a74fb7cd7bd8c2507b41331ebb7d0e56d"/><section>
+    <title>Buf</title>
+<indexterm><primary>Buf</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>Buf</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> ExampleAppLog::Buf</computeroutput></para></section>
+<anchor xml:id="_struct_example_app_log_1a4571947a6000e984ec8da9b7166e1e2b"/><section>
+    <title>Filter</title>
+<indexterm><primary>Filter</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>Filter</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_text_filter">ImGuiTextFilter</link> ExampleAppLog::Filter</computeroutput></para></section>
+<anchor xml:id="_struct_example_app_log_1af197fca7116f9033a5a5e831ee764ee2"/><section>
+    <title>LineOffsets</title>
+<indexterm><primary>LineOffsets</primary><secondary>ExampleAppLog</secondary></indexterm>
+<indexterm><primary>ExampleAppLog</primary><secondary>LineOffsets</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;int&gt; ExampleAppLog::LineOffsets</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__demo_8cpp">imgui_demo.cpp</link></section>
+</section>

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_payload" xml:lang="en-US">
+<title>ImGuiPayload Struct Reference</title>
+<indexterm><primary>ImGuiPayload</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_payload_1a341c0039af838af0308a7449f8c1308b">ImGuiPayload</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_payload_1a88c2293d356eb05e7a30d7693de186f2">Clear</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_payload_1a7864aeb80bc28683748d015562eead4d">IsDataType</link> (const char *<link linkend="_imgui__impl__opengl3__loader_8h_1a63267399cd2a2ee217572c11d2e54f07">type</link>) const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_payload_1a4a7e17de25fd86c5ada447aaec412070">IsPreview</link> () const</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_payload_1adcc193e0d454bf394e76e5498eea808d">IsDelivery</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_payload_1af9f974dfb815e21a1ab925cab3769ab9">Data</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_payload_1a6730d3ace5353afe204273995994cd92">DataSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_payload_1aa574f7e237c6d2172977d142b25c0111">SourceId</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_payload_1a1757c714dd47f09b645a8eba2912849d">SourceParentId</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_payload_1ab9f21d2454197d14896d5812ba70fa33">DataFrameCount</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_im_gui_payload_1a72ecfe510eb35932e54f11ee56fe7140">DataType</link> [32+1]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_payload_1a1a5b6456247ef3c213f0706cc9da16e6">Preview</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_payload_1a4c0900e12c8d0bf6869c0ac6f8a66e31">Delivery</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_payload_1a341c0039af838af0308a7449f8c1308b"/><section>
+    <title>ImGuiPayload()</title>
+<indexterm><primary>ImGuiPayload</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>ImGuiPayload</secondary></indexterm>
+<para><computeroutput>ImGuiPayload::ImGuiPayload ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_payload_1a88c2293d356eb05e7a30d7693de186f2"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiPayload::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a7864aeb80bc28683748d015562eead4d"/><section>
+    <title>IsDataType()</title>
+<indexterm><primary>IsDataType</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>IsDataType</secondary></indexterm>
+<para><computeroutput>bool ImGuiPayload::IsDataType (const char * type) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1adcc193e0d454bf394e76e5498eea808d"/><section>
+    <title>IsDelivery()</title>
+<indexterm><primary>IsDelivery</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>IsDelivery</secondary></indexterm>
+<para><computeroutput>bool ImGuiPayload::IsDelivery ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a4a7e17de25fd86c5ada447aaec412070"/><section>
+    <title>IsPreview()</title>
+<indexterm><primary>IsPreview</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>IsPreview</secondary></indexterm>
+<para><computeroutput>bool ImGuiPayload::IsPreview ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_payload_1af9f974dfb815e21a1ab925cab3769ab9"/><section>
+    <title>Data</title>
+<indexterm><primary>Data</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>Data</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiPayload::Data</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1ab9f21d2454197d14896d5812ba70fa33"/><section>
+    <title>DataFrameCount</title>
+<indexterm><primary>DataFrameCount</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>DataFrameCount</secondary></indexterm>
+<para><computeroutput>int ImGuiPayload::DataFrameCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a6730d3ace5353afe204273995994cd92"/><section>
+    <title>DataSize</title>
+<indexterm><primary>DataSize</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>DataSize</secondary></indexterm>
+<para><computeroutput>int ImGuiPayload::DataSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a72ecfe510eb35932e54f11ee56fe7140"/><section>
+    <title>DataType</title>
+<indexterm><primary>DataType</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>DataType</secondary></indexterm>
+<para><computeroutput>char ImGuiPayload::DataType[32+1]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a4c0900e12c8d0bf6869c0ac6f8a66e31"/><section>
+    <title>Delivery</title>
+<indexterm><primary>Delivery</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>Delivery</secondary></indexterm>
+<para><computeroutput>bool ImGuiPayload::Delivery</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a1a5b6456247ef3c213f0706cc9da16e6"/><section>
+    <title>Preview</title>
+<indexterm><primary>Preview</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>Preview</secondary></indexterm>
+<para><computeroutput>bool ImGuiPayload::Preview</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1aa574f7e237c6d2172977d142b25c0111"/><section>
+    <title>SourceId</title>
+<indexterm><primary>SourceId</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>SourceId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiPayload::SourceId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_payload_1a1757c714dd47f09b645a8eba2912849d"/><section>
+    <title>SourceParentId</title>
+<indexterm><primary>SourceParentId</primary><secondary>ImGuiPayload</secondary></indexterm>
+<indexterm><primary>ImGuiPayload</primary><secondary>SourceParentId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiPayload::SourceParentId</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

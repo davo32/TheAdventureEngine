@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_loc_entry" xml:lang="en-US">
+<title>ImGuiLocEntry Struct Reference</title>
+<indexterm><primary>ImGuiLocEntry</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui__internal_8h_1a406a60adaf5a5b3938cb0d755b76502c">ImGuiLocKey</link> <link linkend="_struct_im_gui_loc_entry_1aa2b09f545209e39a8487ab135c1d8af6">Key</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_loc_entry_1a95c97c84b714ad6f9a72a949be01d374">Text</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_loc_entry_1aa2b09f545209e39a8487ab135c1d8af6"/><section>
+    <title>Key</title>
+<indexterm><primary>Key</primary><secondary>ImGuiLocEntry</secondary></indexterm>
+<indexterm><primary>ImGuiLocEntry</primary><secondary>Key</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a406a60adaf5a5b3938cb0d755b76502c">ImGuiLocKey</link> ImGuiLocEntry::Key</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_loc_entry_1a95c97c84b714ad6f9a72a949be01d374"/><section>
+    <title>Text</title>
+<indexterm><primary>Text</primary><secondary>ImGuiLocEntry</secondary></indexterm>
+<indexterm><primary>ImGuiLocEntry</primary><secondary>Text</secondary></indexterm>
+<para><computeroutput>const char* ImGuiLocEntry::Text</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

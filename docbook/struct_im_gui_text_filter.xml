@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_text_filter" xml:lang="en-US">
+<title>ImGuiTextFilter Struct Reference</title>
+<indexterm><primary>ImGuiTextFilter</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiTextFilter:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_text_filter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_im_gui_text_filter_1_1_im_gui_text_range">ImGuiTextRange</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_gui_text_filter_1a0a61ee76f0b4f3c354791734b06e3140">ImGuiTextFilter</link> (const char *default_filter=&quot;&quot;)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool <link linkend="_struct_im_gui_text_filter_1ab93ad5985019ff9d3781606551fc26cc">Draw</link> (const char *label=&quot;Filter (inc,-exc)&quot;, float <link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>=0.0f)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool <link linkend="_struct_im_gui_text_filter_1a88d73ff8b81fbbd0a129b1bf3498d8aa">PassFilter</link> (const char *text, const char *text_end=NULL) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_text_filter_1aef362baafaa9dfa62d11bc6101c0f4c1">Build</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_text_filter_1a9043c1f0c33d29e6fc9b75ae81f9705a">Clear</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_text_filter_1a493158f2ab8f45fcf303c3f953be9b88">IsActive</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char <link linkend="_struct_im_gui_text_filter_1ad070acb1038199dd4e8f5d010c5cb5ba">InputBuf</link> [256]</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_text_filter_1_1_im_gui_text_range">ImGuiTextRange</link> &gt; <link linkend="_struct_im_gui_text_filter_1a39ed87cfdf3cb0cdb8389b017bb00067">Filters</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_text_filter_1ac31839c319fe4211c21fc143b7249f86">CountGrep</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_text_filter_1a0a61ee76f0b4f3c354791734b06e3140"/><section>
+    <title>ImGuiTextFilter()</title>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<para><computeroutput>ImGuiTextFilter::ImGuiTextFilter (const char * default_filter = <computeroutput>&quot;&quot;</computeroutput>
+)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_text_filter_1aef362baafaa9dfa62d11bc6101c0f4c1"/><section>
+    <title>Build()</title>
+<indexterm><primary>Build</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>Build</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiTextFilter::Build ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1a9043c1f0c33d29e6fc9b75ae81f9705a"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiTextFilter::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1ab93ad5985019ff9d3781606551fc26cc"/><section>
+    <title>Draw()</title>
+<indexterm><primary>Draw</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>Draw</secondary></indexterm>
+<para><computeroutput>bool ImGuiTextFilter::Draw (const char * label = <computeroutput>&quot;Filter&#160;(inc,-exc)&quot;</computeroutput>
+, float width = <computeroutput>0.0f</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1a493158f2ab8f45fcf303c3f953be9b88"/><section>
+    <title>IsActive()</title>
+<indexterm><primary>IsActive</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>IsActive</secondary></indexterm>
+<para><computeroutput>bool ImGuiTextFilter::IsActive ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1a88d73ff8b81fbbd0a129b1bf3498d8aa"/><section>
+    <title>PassFilter()</title>
+<indexterm><primary>PassFilter</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>PassFilter</secondary></indexterm>
+<para><computeroutput>bool ImGuiTextFilter::PassFilter (const char * text, const char * text_end = <computeroutput>NULL</computeroutput>
+) const</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_text_filter_1ac31839c319fe4211c21fc143b7249f86"/><section>
+    <title>CountGrep</title>
+<indexterm><primary>CountGrep</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>CountGrep</secondary></indexterm>
+<para><computeroutput>int ImGuiTextFilter::CountGrep</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1a39ed87cfdf3cb0cdb8389b017bb00067"/><section>
+    <title>Filters</title>
+<indexterm><primary>Filters</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>Filters</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_text_filter_1_1_im_gui_text_range">ImGuiTextRange</link>&gt; ImGuiTextFilter::Filters</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_filter_1ad070acb1038199dd4e8f5d010c5cb5ba"/><section>
+    <title>InputBuf</title>
+<indexterm><primary>InputBuf</primary><secondary>ImGuiTextFilter</secondary></indexterm>
+<indexterm><primary>ImGuiTextFilter</primary><secondary>InputBuf</secondary></indexterm>
+<para><computeroutput>char ImGuiTextFilter::InputBuf[256]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

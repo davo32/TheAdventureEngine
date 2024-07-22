@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_font_atlas" xml:lang="en-US">
+<title>ImFontAtlas Struct Reference</title>
+<indexterm><primary>ImFontAtlas</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImFontAtlas:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_font_atlas__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font_atlas_1aa34e7909d30440d5c35aaef990ac741e">ImFontAtlas</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font_atlas_1a950b4f7586ad7786ae251b957d67a268">~ImFontAtlas</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1ad01c0f19a95d37a9e5ebab1e54525625">AddFont</link> (const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1a9d2b4a94579bf603a0d2662cd8348cbd">AddFontDefault</link> (const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1a26d0333bae95222ca2c2fd2886eae562">AddFontFromFileTTF</link> (const char *filename, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg=NULL, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *glyph_ranges=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1a95eec9b791e9c509180030f8176406ff">AddFontFromMemoryTTF</link> (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *font_data, int font_data_size, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg=NULL, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *glyph_ranges=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1a478ffa07777bf990ade02889e15a21ab">AddFontFromMemoryCompressedTTF</link> (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *compressed_font_data, int compressed_font_data_size, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg=NULL, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *glyph_ranges=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_font_atlas_1ab43b930beb57c0b998f42f4586677956">AddFontFromMemoryCompressedBase85TTF</link> (const char *compressed_font_data_base85, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> *font_cfg=NULL, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *glyph_ranges=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a3f5bcbb7a2683b1af106fcf4e1217662">ClearInputData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a3ede4bd513bec044c77ac392ad9c6e86">ClearTexData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1ad5c2560d708bd0c389e9bd9da2d9b055">ClearFonts</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a8f6d01c671d8670f991ba651bbaf7e77">Clear</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool <link linkend="_struct_im_font_atlas_1a81e39e30dffa4dd7e458a53297451e27">Build</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1aeff1a1044a1ab68d8f27bb2819cd9f44">GetTexDataAsAlpha8</link> (unsigned char **out_pixels, int *out_width, int *out_height, int *out_bytes_per_pixel=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a8abb0c4e67ebb38249d4df71218c4eec">GetTexDataAsRGBA32</link> (unsigned char **out_pixels, int *out_width, int *out_height, int *out_bytes_per_pixel=NULL)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_font_atlas_1a142ba1470099bbd4b67bdb47be92d475">IsBuilt</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a96ffd1956c11dac4f79b43c095828445">SetTexID</link> (<link linkend="_imgui_8h_1a364f4447ecbc4ca176145ccff9db6286">ImTextureID</link> id)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1adec0df140eb1dc01c2a22a5253d62820">GetGlyphRangesDefault</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1a46d65b05462b548396d3a8ee6644f3ee">GetGlyphRangesGreek</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1ac70e07bd35913661c8fc50413b3bf969">GetGlyphRangesKorean</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1a2654afbbf73835bf08278cdc6c181a96">GetGlyphRangesJapanese</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1ab32e8e79cc4f3b36ef447f70034e7c57">GetGlyphRangesChineseFull</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1a3a6b1a8afb01ba5e7c4d86957d6d2625">GetGlyphRangesChineseSimplifiedCommon</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1a5aaff3357d9ed401ce451c39942e869e">GetGlyphRangesCyrillic</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1a4985c51d8a5270ff027f13fa44a14371">GetGlyphRangesThai</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_struct_im_font_atlas_1acc0e66fd4637600ad344c2f415a0ef60">GetGlyphRangesVietnamese</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> int <link linkend="_struct_im_font_atlas_1af048760e2d58ec93446e345deb887259">AddCustomRectRegular</link> (int <link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>, int <link linkend="_imgui__impl__opengl3__loader_8h_1a60075de22f90a1223dc0bea98d2ee4d5">height</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> int <link linkend="_struct_im_font_atlas_1a5643182be4e3f1a442cfa6cdc0321c7c">AddCustomRectFontGlyph</link> (<link linkend="_struct_im_font">ImFont</link> *font, <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> id, int <link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>, int <link linkend="_imgui__impl__opengl3__loader_8h_1a60075de22f90a1223dc0bea98d2ee4d5">height</link>, float advance_x, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;<link linkend="_imgui__impl__opengl3__loader_8h_1ae1b92ae085ddef4b1cdca7d749339fb0">offset</link>=<link linkend="_struct_im_vec2">ImVec2</link>(0, 0))</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link> * <link linkend="_struct_im_font_atlas_1a6a4c5f59c12c88a5c0429d6a6ec06481">GetCustomRectByIndex</link> (int <link linkend="_imgui__impl__opengl3__loader_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_font_atlas_1a66bb70a3c3dab00bd714fc52e2195882">CalcCustomRectUV</link> (const <link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link> *rect, <link linkend="_struct_im_vec2">ImVec2</link> *out_uv_min, <link linkend="_struct_im_vec2">ImVec2</link> *out_uv_max) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool <link linkend="_struct_im_font_atlas_1a6d27a36fe034851310dd00d7dc5253c3">GetMouseCursorTexData</link> (<link linkend="_imgui_8h_1a9223d6c82bb5d12c2eab5f829ca520ef">ImGuiMouseCursor</link> cursor, <link linkend="_struct_im_vec2">ImVec2</link> *out_offset, <link linkend="_struct_im_vec2">ImVec2</link> *out_size, <link linkend="_struct_im_vec2">ImVec2</link> out_uv_border[2], <link linkend="_struct_im_vec2">ImVec2</link> out_uv_fill[2])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a6ac370f8e39385273ab2d0fcc644db6f">ImFontAtlasFlags</link> <link linkend="_struct_im_font_atlas_1adf2f2d04b46911ad01cfbef0f59e1f11">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a364f4447ecbc4ca176145ccff9db6286">ImTextureID</link> <link linkend="_struct_im_font_atlas_1a1d7be9a6190c75706f80bda16c87f28e">TexID</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1aa1d62d7da5633f894dbe881547e9de7c">TexDesiredWidth</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1a32034b2aac4616d8c27ee666a1fd1b62">TexGlyphPadding</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_font_atlas_1a2222ff64ba974a8ee7a286617f879f9b">Locked</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_font_atlas_1ac848a29825d36edf8629b31b419dc21e">UserData</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_font_atlas_1a9d28236e71f9a21a21d8f4f7eac39299">TexReady</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_font_atlas_1a4bc426a6a9c2fd3ab1ad3893142613ff">TexPixelsUseColors</link></para>
+</listitem>
+            <listitem><para>unsigned char * <link linkend="_struct_im_font_atlas_1a443ea9e7c4cf85ee791ffe891280eff3">TexPixelsAlpha8</link></para>
+</listitem>
+            <listitem><para>unsigned int * <link linkend="_struct_im_font_atlas_1a41163489a5b8060f405c56e22590cba5">TexPixelsRGBA32</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1a2d0662502433e7a87b3aa4681ba17aa3">TexWidth</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1a5ef74d37ec01d9e8aac5c57433296ce3">TexHeight</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_font_atlas_1adbe3a6b1fd501108649fe04f882b8664">TexUvScale</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_font_atlas_1af1d05221e9a1607d7f625df92a4f9b7e">TexUvWhitePixel</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_font">ImFont</link> * &gt; <link linkend="_struct_im_font_atlas_1a0198aeb17ef8bb810ccc8db103b93b1f">Fonts</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link> &gt; <link linkend="_struct_im_font_atlas_1ae3752e66f7454a42e5ae5ec052af537c">CustomRects</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_font_config">ImFontConfig</link> &gt; <link linkend="_struct_im_font_atlas_1afa4f7459807763d032fe2d0022fc0823">ConfigData</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec4">ImVec4</link> <link linkend="_struct_im_font_atlas_1abf794895d5fb9597bf2a96ab68eb7048">TexUvLines</link> [<link linkend="_imgui_8h_1a2e0fd3c4182b90dfde08210254eaeccf">IM_DRAWLIST_TEX_LINES_WIDTH_MAX</link>+1]</para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_im_font_builder_i_o">ImFontBuilderIO</link> * <link linkend="_struct_im_font_atlas_1a43337693a61cd40ec0110c83da628f09">FontBuilderIO</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_struct_im_font_atlas_1ad149b9a00b3dd033c0568abaf45256c3">FontBuilderFlags</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1afc92fd54d52cab4fe787e364e7e4f652">PackIdMouseCursors</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_font_atlas_1a0964aa42e665dbd423066309b3c7461b">PackIdLines</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_font_atlas_1aa34e7909d30440d5c35aaef990ac741e"/><section>
+    <title>ImFontAtlas()</title>
+<indexterm><primary>ImFontAtlas</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>ImFontAtlas</secondary></indexterm>
+<para><computeroutput>ImFontAtlas::ImFontAtlas ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a950b4f7586ad7786ae251b957d67a268"/><section>
+    <title>~ImFontAtlas()</title>
+<indexterm><primary>~ImFontAtlas</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>~ImFontAtlas</secondary></indexterm>
+<para><computeroutput>ImFontAtlas::~ImFontAtlas ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_font_atlas_1a5643182be4e3f1a442cfa6cdc0321c7c"/><section>
+    <title>AddCustomRectFontGlyph()</title>
+<indexterm><primary>AddCustomRectFontGlyph</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddCustomRectFontGlyph</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::AddCustomRectFontGlyph (<link linkend="_struct_im_font">ImFont</link> * font, <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> id, int width, int height, float advance_x, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; offset = <computeroutput><link linkend="_struct_im_vec2">ImVec2</link>(0,&#160;0)</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1af048760e2d58ec93446e345deb887259"/><section>
+    <title>AddCustomRectRegular()</title>
+<indexterm><primary>AddCustomRectRegular</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddCustomRectRegular</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::AddCustomRectRegular (int width, int height)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ad01c0f19a95d37a9e5ebab1e54525625"/><section>
+    <title>AddFont()</title>
+<indexterm><primary>AddFont</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFont</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFont (const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a9d2b4a94579bf603a0d2662cd8348cbd"/><section>
+    <title>AddFontDefault()</title>
+<indexterm><primary>AddFontDefault</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFontDefault</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFontDefault (const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a26d0333bae95222ca2c2fd2886eae562"/><section>
+    <title>AddFontFromFileTTF()</title>
+<indexterm><primary>AddFontFromFileTTF</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFontFromFileTTF</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFontFromFileTTF (const char * filename, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg = <computeroutput>NULL</computeroutput>
+, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * glyph_ranges = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ab43b930beb57c0b998f42f4586677956"/><section>
+    <title>AddFontFromMemoryCompressedBase85TTF()</title>
+<indexterm><primary>AddFontFromMemoryCompressedBase85TTF</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFontFromMemoryCompressedBase85TTF</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFontFromMemoryCompressedBase85TTF (const char * compressed_font_data_base85, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg = <computeroutput>NULL</computeroutput>
+, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * glyph_ranges = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a478ffa07777bf990ade02889e15a21ab"/><section>
+    <title>AddFontFromMemoryCompressedTTF()</title>
+<indexterm><primary>AddFontFromMemoryCompressedTTF</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFontFromMemoryCompressedTTF</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFontFromMemoryCompressedTTF (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * compressed_font_data, int compressed_font_data_size, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg = <computeroutput>NULL</computeroutput>
+, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * glyph_ranges = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a95eec9b791e9c509180030f8176406ff"/><section>
+    <title>AddFontFromMemoryTTF()</title>
+<indexterm><primary>AddFontFromMemoryTTF</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>AddFontFromMemoryTTF</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link> * ImFontAtlas::AddFontFromMemoryTTF (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * font_data, int font_data_size, float size_pixels, const <link linkend="_struct_im_font_config">ImFontConfig</link> * font_cfg = <computeroutput>NULL</computeroutput>
+, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * glyph_ranges = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a81e39e30dffa4dd7e458a53297451e27"/><section>
+    <title>Build()</title>
+<indexterm><primary>Build</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>Build</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::Build ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a66bb70a3c3dab00bd714fc52e2195882"/><section>
+    <title>CalcCustomRectUV()</title>
+<indexterm><primary>CalcCustomRectUV</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>CalcCustomRectUV</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::CalcCustomRectUV (const <link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link> * rect, <link linkend="_struct_im_vec2">ImVec2</link> * out_uv_min, <link linkend="_struct_im_vec2">ImVec2</link> * out_uv_max) const</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a8f6d01c671d8670f991ba651bbaf7e77"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::Clear ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ad5c2560d708bd0c389e9bd9da2d9b055"/><section>
+    <title>ClearFonts()</title>
+<indexterm><primary>ClearFonts</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>ClearFonts</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::ClearFonts ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a3f5bcbb7a2683b1af106fcf4e1217662"/><section>
+    <title>ClearInputData()</title>
+<indexterm><primary>ClearInputData</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>ClearInputData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::ClearInputData ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a3ede4bd513bec044c77ac392ad9c6e86"/><section>
+    <title>ClearTexData()</title>
+<indexterm><primary>ClearTexData</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>ClearTexData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::ClearTexData ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a6a4c5f59c12c88a5c0429d6a6ec06481"/><section>
+    <title>GetCustomRectByIndex()</title>
+<indexterm><primary>GetCustomRectByIndex</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetCustomRectByIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link> * ImFontAtlas::GetCustomRectByIndex (int index)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ab32e8e79cc4f3b36ef447f70034e7c57"/><section>
+    <title>GetGlyphRangesChineseFull()</title>
+<indexterm><primary>GetGlyphRangesChineseFull</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesChineseFull</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesChineseFull ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a3a6b1a8afb01ba5e7c4d86957d6d2625"/><section>
+    <title>GetGlyphRangesChineseSimplifiedCommon()</title>
+<indexterm><primary>GetGlyphRangesChineseSimplifiedCommon</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesChineseSimplifiedCommon</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesChineseSimplifiedCommon ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a5aaff3357d9ed401ce451c39942e869e"/><section>
+    <title>GetGlyphRangesCyrillic()</title>
+<indexterm><primary>GetGlyphRangesCyrillic</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesCyrillic</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesCyrillic ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1adec0df140eb1dc01c2a22a5253d62820"/><section>
+    <title>GetGlyphRangesDefault()</title>
+<indexterm><primary>GetGlyphRangesDefault</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesDefault</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesDefault ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a46d65b05462b548396d3a8ee6644f3ee"/><section>
+    <title>GetGlyphRangesGreek()</title>
+<indexterm><primary>GetGlyphRangesGreek</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesGreek</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesGreek ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a2654afbbf73835bf08278cdc6c181a96"/><section>
+    <title>GetGlyphRangesJapanese()</title>
+<indexterm><primary>GetGlyphRangesJapanese</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesJapanese</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesJapanese ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ac70e07bd35913661c8fc50413b3bf969"/><section>
+    <title>GetGlyphRangesKorean()</title>
+<indexterm><primary>GetGlyphRangesKorean</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesKorean</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesKorean ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a4985c51d8a5270ff027f13fa44a14371"/><section>
+    <title>GetGlyphRangesThai()</title>
+<indexterm><primary>GetGlyphRangesThai</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesThai</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesThai ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1acc0e66fd4637600ad344c2f415a0ef60"/><section>
+    <title>GetGlyphRangesVietnamese()</title>
+<indexterm><primary>GetGlyphRangesVietnamese</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetGlyphRangesVietnamese</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImFontAtlas::GetGlyphRangesVietnamese ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a6d27a36fe034851310dd00d7dc5253c3"/><section>
+    <title>GetMouseCursorTexData()</title>
+<indexterm><primary>GetMouseCursorTexData</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetMouseCursorTexData</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::GetMouseCursorTexData (<link linkend="_imgui_8h_1a9223d6c82bb5d12c2eab5f829ca520ef">ImGuiMouseCursor</link> cursor, <link linkend="_struct_im_vec2">ImVec2</link> * out_offset, <link linkend="_struct_im_vec2">ImVec2</link> * out_size, <link linkend="_struct_im_vec2">ImVec2</link> out_uv_border[2], <link linkend="_struct_im_vec2">ImVec2</link> out_uv_fill[2])</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1aeff1a1044a1ab68d8f27bb2819cd9f44"/><section>
+    <title>GetTexDataAsAlpha8()</title>
+<indexterm><primary>GetTexDataAsAlpha8</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetTexDataAsAlpha8</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::GetTexDataAsAlpha8 (unsigned char ** out_pixels, int * out_width, int * out_height, int * out_bytes_per_pixel = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a8abb0c4e67ebb38249d4df71218c4eec"/><section>
+    <title>GetTexDataAsRGBA32()</title>
+<indexterm><primary>GetTexDataAsRGBA32</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>GetTexDataAsRGBA32</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::GetTexDataAsRGBA32 (unsigned char ** out_pixels, int * out_width, int * out_height, int * out_bytes_per_pixel = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a142ba1470099bbd4b67bdb47be92d475"/><section>
+    <title>IsBuilt()</title>
+<indexterm><primary>IsBuilt</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>IsBuilt</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::IsBuilt ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a96ffd1956c11dac4f79b43c095828445"/><section>
+    <title>SetTexID()</title>
+<indexterm><primary>SetTexID</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>SetTexID</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFontAtlas::SetTexID (<link linkend="_imgui_8h_1a364f4447ecbc4ca176145ccff9db6286">ImTextureID</link> id)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_font_atlas_1afa4f7459807763d032fe2d0022fc0823"/><section>
+    <title>ConfigData</title>
+<indexterm><primary>ConfigData</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>ConfigData</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_font_config">ImFontConfig</link>&gt; ImFontAtlas::ConfigData</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ae3752e66f7454a42e5ae5ec052af537c"/><section>
+    <title>CustomRects</title>
+<indexterm><primary>CustomRects</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>CustomRects</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_font_atlas_custom_rect">ImFontAtlasCustomRect</link>&gt; ImFontAtlas::CustomRects</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1adf2f2d04b46911ad01cfbef0f59e1f11"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a6ac370f8e39385273ab2d0fcc644db6f">ImFontAtlasFlags</link> ImFontAtlas::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ad149b9a00b3dd033c0568abaf45256c3"/><section>
+    <title>FontBuilderFlags</title>
+<indexterm><primary>FontBuilderFlags</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>FontBuilderFlags</secondary></indexterm>
+<para><computeroutput>unsigned int ImFontAtlas::FontBuilderFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a43337693a61cd40ec0110c83da628f09"/><section>
+    <title>FontBuilderIO</title>
+<indexterm><primary>FontBuilderIO</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>FontBuilderIO</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_im_font_builder_i_o">ImFontBuilderIO</link>* ImFontAtlas::FontBuilderIO</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a0198aeb17ef8bb810ccc8db103b93b1f"/><section>
+    <title>Fonts</title>
+<indexterm><primary>Fonts</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>Fonts</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_font">ImFont</link>*&gt; ImFontAtlas::Fonts</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a2222ff64ba974a8ee7a286617f879f9b"/><section>
+    <title>Locked</title>
+<indexterm><primary>Locked</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>Locked</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::Locked</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a0964aa42e665dbd423066309b3c7461b"/><section>
+    <title>PackIdLines</title>
+<indexterm><primary>PackIdLines</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>PackIdLines</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::PackIdLines</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1afc92fd54d52cab4fe787e364e7e4f652"/><section>
+    <title>PackIdMouseCursors</title>
+<indexterm><primary>PackIdMouseCursors</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>PackIdMouseCursors</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::PackIdMouseCursors</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1aa1d62d7da5633f894dbe881547e9de7c"/><section>
+    <title>TexDesiredWidth</title>
+<indexterm><primary>TexDesiredWidth</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexDesiredWidth</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::TexDesiredWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a32034b2aac4616d8c27ee666a1fd1b62"/><section>
+    <title>TexGlyphPadding</title>
+<indexterm><primary>TexGlyphPadding</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexGlyphPadding</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::TexGlyphPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a5ef74d37ec01d9e8aac5c57433296ce3"/><section>
+    <title>TexHeight</title>
+<indexterm><primary>TexHeight</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexHeight</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::TexHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a1d7be9a6190c75706f80bda16c87f28e"/><section>
+    <title>TexID</title>
+<indexterm><primary>TexID</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a364f4447ecbc4ca176145ccff9db6286">ImTextureID</link> ImFontAtlas::TexID</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a443ea9e7c4cf85ee791ffe891280eff3"/><section>
+    <title>TexPixelsAlpha8</title>
+<indexterm><primary>TexPixelsAlpha8</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexPixelsAlpha8</secondary></indexterm>
+<para><computeroutput>unsigned char* ImFontAtlas::TexPixelsAlpha8</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a41163489a5b8060f405c56e22590cba5"/><section>
+    <title>TexPixelsRGBA32</title>
+<indexterm><primary>TexPixelsRGBA32</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexPixelsRGBA32</secondary></indexterm>
+<para><computeroutput>unsigned int* ImFontAtlas::TexPixelsRGBA32</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a4bc426a6a9c2fd3ab1ad3893142613ff"/><section>
+    <title>TexPixelsUseColors</title>
+<indexterm><primary>TexPixelsUseColors</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexPixelsUseColors</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::TexPixelsUseColors</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a9d28236e71f9a21a21d8f4f7eac39299"/><section>
+    <title>TexReady</title>
+<indexterm><primary>TexReady</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexReady</secondary></indexterm>
+<para><computeroutput>bool ImFontAtlas::TexReady</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1abf794895d5fb9597bf2a96ab68eb7048"/><section>
+    <title>TexUvLines</title>
+<indexterm><primary>TexUvLines</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexUvLines</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec4">ImVec4</link> ImFontAtlas::TexUvLines[<link linkend="_imgui_8h_1a2e0fd3c4182b90dfde08210254eaeccf">IM_DRAWLIST_TEX_LINES_WIDTH_MAX</link>+1]</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1adbe3a6b1fd501108649fe04f882b8664"/><section>
+    <title>TexUvScale</title>
+<indexterm><primary>TexUvScale</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexUvScale</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImFontAtlas::TexUvScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1af1d05221e9a1607d7f625df92a4f9b7e"/><section>
+    <title>TexUvWhitePixel</title>
+<indexterm><primary>TexUvWhitePixel</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexUvWhitePixel</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImFontAtlas::TexUvWhitePixel</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1a2d0662502433e7a87b3aa4681ba17aa3"/><section>
+    <title>TexWidth</title>
+<indexterm><primary>TexWidth</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>TexWidth</secondary></indexterm>
+<para><computeroutput>int ImFontAtlas::TexWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_atlas_1ac848a29825d36edf8629b31b419dc21e"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImFontAtlas</secondary></indexterm>
+<indexterm><primary>ImFontAtlas</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImFontAtlas::UserData</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui__draw_8cpp">imgui_draw.cpp</link></section>
+</section>

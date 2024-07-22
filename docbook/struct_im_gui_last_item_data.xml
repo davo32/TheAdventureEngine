@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_last_item_data" xml:lang="en-US">
+<title>ImGuiLastItemData Struct Reference</title>
+<indexterm><primary>ImGuiLastItemData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiLastItemData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_last_item_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_last_item_data_1aa613ef14a952dd56b5056c5f7087cc7f">ImGuiLastItemData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_last_item_data_1a0d2baf2d2e0933f1006bb47c105c356a">ID</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1abcf9eafab4557e911b2c0d8fe2feeb38">ImGuiItemFlags</link> <link linkend="_struct_im_gui_last_item_data_1a3aa559c1c783c295b48cacdf22a56d1e">InFlags</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a86b8f9e2fd4084fb2112f003070b53fa">ImGuiItemStatusFlags</link> <link linkend="_struct_im_gui_last_item_data_1a31712c73aac65b9ecd049308c511ed3b">StatusFlags</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_last_item_data_1ad6ff8db4173ff40874ef015e58d726ae">Rect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_last_item_data_1a3cc19e619fb0f0ac5f410e32a0ff34ca">NavRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_last_item_data_1ae4b3a4f52ea710910ef8c2365fdab79e">DisplayRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_last_item_data_1a21ed10f8c8945aeb72c760981460c07b">ClipRect</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_last_item_data_1aa613ef14a952dd56b5056c5f7087cc7f"/><section>
+    <title>ImGuiLastItemData()</title>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<para><computeroutput>ImGuiLastItemData::ImGuiLastItemData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_last_item_data_1a21ed10f8c8945aeb72c760981460c07b"/><section>
+    <title>ClipRect</title>
+<indexterm><primary>ClipRect</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>ClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiLastItemData::ClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1ae4b3a4f52ea710910ef8c2365fdab79e"/><section>
+    <title>DisplayRect</title>
+<indexterm><primary>DisplayRect</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>DisplayRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiLastItemData::DisplayRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1a0d2baf2d2e0933f1006bb47c105c356a"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiLastItemData::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1a3aa559c1c783c295b48cacdf22a56d1e"/><section>
+    <title>InFlags</title>
+<indexterm><primary>InFlags</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>InFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1abcf9eafab4557e911b2c0d8fe2feeb38">ImGuiItemFlags</link> ImGuiLastItemData::InFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1a3cc19e619fb0f0ac5f410e32a0ff34ca"/><section>
+    <title>NavRect</title>
+<indexterm><primary>NavRect</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>NavRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiLastItemData::NavRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1ad6ff8db4173ff40874ef015e58d726ae"/><section>
+    <title>Rect</title>
+<indexterm><primary>Rect</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>Rect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiLastItemData::Rect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_last_item_data_1a31712c73aac65b9ecd049308c511ed3b"/><section>
+    <title>StatusFlags</title>
+<indexterm><primary>StatusFlags</primary><secondary>ImGuiLastItemData</secondary></indexterm>
+<indexterm><primary>ImGuiLastItemData</primary><secondary>StatusFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a86b8f9e2fd4084fb2112f003070b53fa">ImGuiItemStatusFlags</link> ImGuiLastItemData::StatusFlags</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

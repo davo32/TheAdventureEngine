@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui___impl_glfw___viewport_data" xml:lang="en-US">
+<title>ImGui_ImplGlfw_ViewportData Struct Reference</title>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui___impl_glfw___viewport_data_1aa3198992f87424fd418ed65b67e1e14f">ImGui_ImplGlfw_ViewportData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui___impl_glfw___viewport_data_1a13c0861322a7472a4521e8e48d409876">~ImGui_ImplGlfw_ViewportData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>GLFWwindow * <link linkend="_struct_im_gui___impl_glfw___viewport_data_1a8367ed2974259d199d1d3cefe15114c0">Window</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui___impl_glfw___viewport_data_1a469c448f9e88dec080bd328007a3e1aa">WindowOwned</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui___impl_glfw___viewport_data_1a85946842a0cb7b48e9efa8db290c0ccd">IgnoreWindowPosEventFrame</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui___impl_glfw___viewport_data_1a3bce4eff6af52380ad5f0b3c552908fd">IgnoreWindowSizeEventFrame</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1aa3198992f87424fd418ed65b67e1e14f"/><section>
+    <title>ImGui_ImplGlfw_ViewportData()</title>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<para><computeroutput>ImGui_ImplGlfw_ViewportData::ImGui_ImplGlfw_ViewportData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1a13c0861322a7472a4521e8e48d409876"/><section>
+    <title>~ImGui_ImplGlfw_ViewportData()</title>
+<indexterm><primary>~ImGui_ImplGlfw_ViewportData</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>~ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<para><computeroutput>ImGui_ImplGlfw_ViewportData::~ImGui_ImplGlfw_ViewportData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1a85946842a0cb7b48e9efa8db290c0ccd"/><section>
+    <title>IgnoreWindowPosEventFrame</title>
+<indexterm><primary>IgnoreWindowPosEventFrame</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>IgnoreWindowPosEventFrame</secondary></indexterm>
+<para><computeroutput>int ImGui_ImplGlfw_ViewportData::IgnoreWindowPosEventFrame</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1a3bce4eff6af52380ad5f0b3c552908fd"/><section>
+    <title>IgnoreWindowSizeEventFrame</title>
+<indexterm><primary>IgnoreWindowSizeEventFrame</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>IgnoreWindowSizeEventFrame</secondary></indexterm>
+<para><computeroutput>int ImGui_ImplGlfw_ViewportData::IgnoreWindowSizeEventFrame</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1a8367ed2974259d199d1d3cefe15114c0"/><section>
+    <title>Window</title>
+<indexterm><primary>Window</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>Window</secondary></indexterm>
+<para><computeroutput>GLFWwindow* ImGui_ImplGlfw_ViewportData::Window</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui___impl_glfw___viewport_data_1a469c448f9e88dec080bd328007a3e1aa"/><section>
+    <title>WindowOwned</title>
+<indexterm><primary>WindowOwned</primary><secondary>ImGui_ImplGlfw_ViewportData</secondary></indexterm>
+<indexterm><primary>ImGui_ImplGlfw_ViewportData</primary><secondary>WindowOwned</secondary></indexterm>
+<para><computeroutput>bool ImGui_ImplGlfw_ViewportData::WindowOwned</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__impl__glfw_8cpp">imgui_impl_glfw.cpp</link></section>
+</section>

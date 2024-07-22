@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__user_interface_8h_source" xml:lang="en-US">
+<title>UserInterface.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&quot;glfw/glfw3.h&quot;</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui_8h">imgui.h</link>&quot;</emphasis>
+4 
+5 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_user_interface">UserInterface</link>
+6 {
+7 <emphasis role="keyword">public</emphasis>:
+8 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_user_interface_1a0211ea8e4544035f7ce291976c312f4c">DrawUI</link>()&#32;=&#32;0;
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_user_interface_1a7149ff7ca95c96b6e4f230a067ed7cc5">~UserInterface</link>()&#32;=&#32;<emphasis role="keywordflow">default</emphasis>;
+10 };
+</programlisting></section>

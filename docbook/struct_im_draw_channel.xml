@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_draw_channel" xml:lang="en-US">
+<title>ImDrawChannel Struct Reference</title>
+<indexterm><primary>ImDrawChannel</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImDrawChannel:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_draw_channel__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_draw_cmd">ImDrawCmd</link> &gt; <link linkend="_struct_im_draw_channel_1a8bb018bc09e2a1f4389c78390a437f78">_CmdBuffer</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_imgui_8h_1afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</link> &gt; <link linkend="_struct_im_draw_channel_1abf48aaacbb4908d4b1ff8b54ee85a45f">_IdxBuffer</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_draw_channel_1a8bb018bc09e2a1f4389c78390a437f78"/><section>
+    <title>_CmdBuffer</title>
+<indexterm><primary>_CmdBuffer</primary><secondary>ImDrawChannel</secondary></indexterm>
+<indexterm><primary>ImDrawChannel</primary><secondary>_CmdBuffer</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_draw_cmd">ImDrawCmd</link>&gt; ImDrawChannel::_CmdBuffer</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_channel_1abf48aaacbb4908d4b1ff8b54ee85a45f"/><section>
+    <title>_IdxBuffer</title>
+<indexterm><primary>_IdxBuffer</primary><secondary>ImDrawChannel</secondary></indexterm>
+<indexterm><primary>ImDrawChannel</primary><secondary>_IdxBuffer</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_imgui_8h_1afdc8744a5ac1a968b1ddfa47e13b2fa1">ImDrawIdx</link>&gt; ImDrawChannel::_IdxBuffer</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

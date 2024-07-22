@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_stack_sizes" xml:lang="en-US">
+<title>ImGuiStackSizes Struct Reference</title>
+<indexterm><primary>ImGuiStackSizes</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_stack_sizes_1ac8d9f1bb427e2480bbae8acc55ee58a2">ImGuiStackSizes</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_stack_sizes_1a7dd94b563bf4547685bc93fc00f58543">SetToContextState</link> (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_stack_sizes_1a800d27777904276582b3a6d8c2cab961">CompareWithContextState</link> (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1ace27d02b760e0224c041d44bea926ae6">SizeOfIDStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1ada3c64baaac1256f04d5f1a99dfb6ed2">SizeOfColorStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a038e2705132e5561bb187148a8395be0">SizeOfStyleVarStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a5430682ade553552a42a7012b83c212d">SizeOfFontStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a99fa2a45397945e6f0209ab556ca19d9">SizeOfFocusScopeStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a1fd94592cd82ddac79aab6cc01cb8703">SizeOfGroupStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1afa2af2775b3925e0dfd9fac22e097e30">SizeOfItemFlagsStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a6851e33fafec9be3c27412de81ba6e68">SizeOfBeginPopupStack</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_stack_sizes_1a955ce6bbb9e231d67d087bd886848dc5">SizeOfDisabledStack</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_stack_sizes_1ac8d9f1bb427e2480bbae8acc55ee58a2"/><section>
+    <title>ImGuiStackSizes()</title>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<para><computeroutput>ImGuiStackSizes::ImGuiStackSizes ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a800d27777904276582b3a6d8c2cab961"/><section>
+    <title>CompareWithContextState()</title>
+<indexterm><primary>CompareWithContextState</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>CompareWithContextState</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStackSizes::CompareWithContextState (<link linkend="_struct_im_gui_context">ImGuiContext</link> * ctx)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a7dd94b563bf4547685bc93fc00f58543"/><section>
+    <title>SetToContextState()</title>
+<indexterm><primary>SetToContextState</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SetToContextState</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStackSizes::SetToContextState (<link linkend="_struct_im_gui_context">ImGuiContext</link> * ctx)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a6851e33fafec9be3c27412de81ba6e68"/><section>
+    <title>SizeOfBeginPopupStack</title>
+<indexterm><primary>SizeOfBeginPopupStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfBeginPopupStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfBeginPopupStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1ada3c64baaac1256f04d5f1a99dfb6ed2"/><section>
+    <title>SizeOfColorStack</title>
+<indexterm><primary>SizeOfColorStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfColorStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfColorStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a955ce6bbb9e231d67d087bd886848dc5"/><section>
+    <title>SizeOfDisabledStack</title>
+<indexterm><primary>SizeOfDisabledStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfDisabledStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfDisabledStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a99fa2a45397945e6f0209ab556ca19d9"/><section>
+    <title>SizeOfFocusScopeStack</title>
+<indexterm><primary>SizeOfFocusScopeStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfFocusScopeStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfFocusScopeStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a5430682ade553552a42a7012b83c212d"/><section>
+    <title>SizeOfFontStack</title>
+<indexterm><primary>SizeOfFontStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfFontStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfFontStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a1fd94592cd82ddac79aab6cc01cb8703"/><section>
+    <title>SizeOfGroupStack</title>
+<indexterm><primary>SizeOfGroupStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfGroupStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfGroupStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1ace27d02b760e0224c041d44bea926ae6"/><section>
+    <title>SizeOfIDStack</title>
+<indexterm><primary>SizeOfIDStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfIDStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfIDStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1afa2af2775b3925e0dfd9fac22e097e30"/><section>
+    <title>SizeOfItemFlagsStack</title>
+<indexterm><primary>SizeOfItemFlagsStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfItemFlagsStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfItemFlagsStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_stack_sizes_1a038e2705132e5561bb187148a8395be0"/><section>
+    <title>SizeOfStyleVarStack</title>
+<indexterm><primary>SizeOfStyleVarStack</primary><secondary>ImGuiStackSizes</secondary></indexterm>
+<indexterm><primary>ImGuiStackSizes</primary><secondary>SizeOfStyleVarStack</secondary></indexterm>
+<para><computeroutput>short ImGuiStackSizes::SizeOfStyleVarStack</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

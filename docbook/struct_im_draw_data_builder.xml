@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_draw_data_builder" xml:lang="en-US">
+<title>ImDrawDataBuilder Struct Reference</title>
+<indexterm><primary>ImDrawDataBuilder</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImDrawDataBuilder:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_draw_data_builder__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_draw_data_builder_1a9baf2bcd835e04fb5614c3193002d321">ImDrawDataBuilder</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_draw_list">ImDrawList</link> * &gt; * <link linkend="_struct_im_draw_data_builder_1a635ca1e2e9b8e918a1fa56cd65a4c775">Layers</link> [2]</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_draw_list">ImDrawList</link> * &gt; <link linkend="_struct_im_draw_data_builder_1a7f48c257b34f92235d41982d94b558a9">LayerData1</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_draw_data_builder_1a9baf2bcd835e04fb5614c3193002d321"/><section>
+    <title>ImDrawDataBuilder()</title>
+<indexterm><primary>ImDrawDataBuilder</primary><secondary>ImDrawDataBuilder</secondary></indexterm>
+<indexterm><primary>ImDrawDataBuilder</primary><secondary>ImDrawDataBuilder</secondary></indexterm>
+<para><computeroutput>ImDrawDataBuilder::ImDrawDataBuilder ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_draw_data_builder_1a7f48c257b34f92235d41982d94b558a9"/><section>
+    <title>LayerData1</title>
+<indexterm><primary>LayerData1</primary><secondary>ImDrawDataBuilder</secondary></indexterm>
+<indexterm><primary>ImDrawDataBuilder</primary><secondary>LayerData1</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_draw_list">ImDrawList</link>*&gt; ImDrawDataBuilder::LayerData1</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_builder_1a635ca1e2e9b8e918a1fa56cd65a4c775"/><section>
+    <title>Layers</title>
+<indexterm><primary>Layers</primary><secondary>ImDrawDataBuilder</secondary></indexterm>
+<indexterm><primary>ImDrawDataBuilder</primary><secondary>Layers</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_draw_list">ImDrawList</link>*&gt;* ImDrawDataBuilder::Layers[2]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

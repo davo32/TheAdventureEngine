@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_pool" xml:lang="en-US">
+<title>ImPool&lt; T &gt; Struct Template Reference</title>
+<indexterm><primary>ImPool&lt; T &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImPool&lt; T &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_pool__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_pool_1a8377750adcef3c1b858b6271bc6ecff8">ImPool</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_pool_1aa0b55e4483e95d6723d51b5106de4bc2">~ImPool</link> ()</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_pool_1ae53033af46a5df28084f1d946c9face3">GetByKey</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key)</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_pool_1a0129c0e467c287a5a7441f2abe0baf35">GetByIndex</link> (<link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> n)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool_1a3e683876ebd44c7f6f098851ee522870">GetIndex</link> (const T *p) const</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_pool_1a47973a2eac8e4c06ef369ac02d23f4e5">GetOrAddByKey</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_pool_1a2434a4efa2eab4aeca8e15ac208c18d8">Contains</link> (const T *p) const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool_1a613b0fa43ad7457ebde2988d4ea5f0be">Clear</link> ()</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_pool_1a39f9b742304d164c4298031537c1b09c">Add</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool_1a7b2c095ea540dc8afb670e705a37a912">Remove</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, const T *p)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool_1a967f556412946a33bca3950f9be7a6ae">Remove</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> idx)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool_1a62a34bcb3efcaaa3f4402c0c3cc1d600">Reserve</link> (int capacity)</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_pool_1a3073eefd71bfd53dede8a5d62ad5e019">GetAliveCount</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_pool_1a4ec15d734fead5c872ee5e309b2294af">GetBufSize</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_pool_1a519f3e31d5750c6fef15642720f68a6c">GetMapSize</link> () const</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_pool_1a36a6b758775e849f3ccc20727376476a">TryGetMapData</link> (<link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> n)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; T &gt; <link linkend="_struct_im_pool_1ab9368393a8b95f903d77bd49beb84a18">Buf</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_storage">ImGuiStorage</link> <link linkend="_struct_im_pool_1a6d3b4c9267ef5f496abb97871f9820eb">Map</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool_1afe057c62cef34c6425dd56a8a396c118">FreeIdx</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool_1aa4a1075102fbc90875cc6144b3961e49">AliveCount</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_pool_1a8377750adcef3c1b858b6271bc6ecff8"/><section>
+    <title>ImPool()</title>
+<indexterm><primary>ImPool</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>ImPool</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;<link linkend="_struct_im_pool">::ImPool</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1aa0b55e4483e95d6723d51b5106de4bc2"/><section>
+    <title>~ImPool()</title>
+<indexterm><primary>~ImPool</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>~ImPool</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::~<link linkend="_struct_im_pool">ImPool</link> ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_pool_1a39f9b742304d164c4298031537c1b09c"/><section>
+    <title>Add()</title>
+<indexterm><primary>Add</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Add</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Add ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a613b0fa43ad7457ebde2988d4ea5f0be"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Clear</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a2434a4efa2eab4aeca8e15ac208c18d8"/><section>
+    <title>Contains()</title>
+<indexterm><primary>Contains</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Contains</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Contains (const T * p) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a3073eefd71bfd53dede8a5d62ad5e019"/><section>
+    <title>GetAliveCount()</title>
+<indexterm><primary>GetAliveCount</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetAliveCount</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetAliveCount ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a4ec15d734fead5c872ee5e309b2294af"/><section>
+    <title>GetBufSize()</title>
+<indexterm><primary>GetBufSize</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetBufSize</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetBufSize ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a0129c0e467c287a5a7441f2abe0baf35"/><section>
+    <title>GetByIndex()</title>
+<indexterm><primary>GetByIndex</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetByIndex</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetByIndex (<link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> n)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1ae53033af46a5df28084f1d946c9face3"/><section>
+    <title>GetByKey()</title>
+<indexterm><primary>GetByKey</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetByKey</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetByKey (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a3e683876ebd44c7f6f098851ee522870"/><section>
+    <title>GetIndex()</title>
+<indexterm><primary>GetIndex</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetIndex</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetIndex (const T * p) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a519f3e31d5750c6fef15642720f68a6c"/><section>
+    <title>GetMapSize()</title>
+<indexterm><primary>GetMapSize</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetMapSize</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetMapSize ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a47973a2eac8e4c06ef369ac02d23f4e5"/><section>
+    <title>GetOrAddByKey()</title>
+<indexterm><primary>GetOrAddByKey</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>GetOrAddByKey</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::GetOrAddByKey (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a7b2c095ea540dc8afb670e705a37a912"/><section>
+    <title>Remove()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Remove</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Remove</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Remove (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, const T * p)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a967f556412946a33bca3950f9be7a6ae"/><section>
+    <title>Remove()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Remove</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Remove</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Remove (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> idx)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a62a34bcb3efcaaa3f4402c0c3cc1d600"/><section>
+    <title>Reserve()</title>
+<indexterm><primary>Reserve</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Reserve</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Reserve (int capacity)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a36a6b758775e849f3ccc20727376476a"/><section>
+    <title>TryGetMapData()</title>
+<indexterm><primary>TryGetMapData</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>TryGetMapData</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::TryGetMapData (<link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> n)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_pool_1aa4a1075102fbc90875cc6144b3961e49"/><section>
+    <title>AliveCount</title>
+<indexterm><primary>AliveCount</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>AliveCount</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::AliveCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1ab9368393a8b95f903d77bd49beb84a18"/><section>
+    <title>Buf</title>
+<indexterm><primary>Buf</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Buf</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;T&gt; <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Buf</computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1afe057c62cef34c6425dd56a8a396c118"/><section>
+    <title>FreeIdx</title>
+<indexterm><primary>FreeIdx</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>FreeIdx</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_imgui__internal_8h_1a2bcd38f7be434db57a9757ebf7aa56d0">ImPoolIdx</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::FreeIdx</computeroutput></para></section>
+<anchor xml:id="_struct_im_pool_1a6d3b4c9267ef5f496abb97871f9820eb"/><section>
+    <title>Map</title>
+<indexterm><primary>Map</primary><secondary>ImPool&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImPool&lt; T &gt;</primary><secondary>Map</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_struct_im_gui_storage">ImGuiStorage</link> <link linkend="_struct_im_pool">ImPool</link>&lt; T &gt;::Map</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

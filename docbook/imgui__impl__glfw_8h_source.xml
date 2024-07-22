@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__impl__glfw_8h_source" xml:lang="en-US">
+<title>imgui_impl_glfw.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;dear&#32;imgui:&#32;Platform&#32;Backend&#32;for&#32;GLFW</emphasis>
+2 <emphasis role="comment">//&#32;This&#32;needs&#32;to&#32;be&#32;used&#32;along&#32;with&#32;a&#32;Renderer&#32;(e.g.&#32;OpenGL3,&#32;Vulkan,&#32;WebGPU..)</emphasis>
+3 <emphasis role="comment">//&#32;(Info:&#32;GLFW&#32;is&#32;a&#32;cross-platform&#32;general&#32;purpose&#32;library&#32;for&#32;handling&#32;windows,&#32;inputs,&#32;OpenGL/Vulkan&#32;graphics&#32;context&#32;creation,&#32;etc.)</emphasis>
+4 <emphasis role="comment">//&#32;(Requires:&#32;GLFW&#32;3.1+.&#32;Prefer&#32;GLFW&#32;3.3+&#32;for&#32;full&#32;feature&#32;support.)</emphasis>
+5 
+6 <emphasis role="comment">//&#32;Implemented&#32;features:</emphasis>
+7 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Clipboard&#32;support.</emphasis>
+8 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Mouse&#32;support.&#32;Can&#32;discriminate&#32;Mouse/TouchScreen/Pen&#32;(Windows&#32;only).</emphasis>
+9 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Keyboard&#32;support.&#32;Since&#32;1.87&#32;we&#32;are&#32;using&#32;the&#32;io.AddKeyEvent()&#32;function.&#32;Pass&#32;ImGuiKey&#32;values&#32;to&#32;all&#32;key&#32;functions&#32;e.g.&#32;ImGui::IsKeyPressed(ImGuiKey_Space).&#32;[Legacy&#32;GLFW_KEY_*&#32;values&#32;will&#32;also&#32;be&#32;supported&#32;unless&#32;IMGUI_DISABLE_OBSOLETE_KEYIO&#32;is&#32;set]</emphasis>
+10 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Gamepad&#32;support.&#32;Enable&#32;with&#32;&apos;io.ConfigFlags&#32;|=&#32;ImGuiConfigFlags_NavEnableGamepad&apos;.</emphasis>
+11 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Mouse&#32;cursor&#32;shape&#32;and&#32;visibility.&#32;Disable&#32;with&#32;&apos;io.ConfigFlags&#32;|=&#32;ImGuiConfigFlags_NoMouseCursorChange&apos;&#32;(note:&#32;the&#32;resizing&#32;cursors&#32;requires&#32;GLFW&#32;3.4+).</emphasis>
+12 <emphasis role="comment">//&#32;&#32;[X]&#32;Platform:&#32;Multi-viewport&#32;support&#32;(multiple&#32;windows).&#32;Enable&#32;with&#32;&apos;io.ConfigFlags&#32;|=&#32;ImGuiConfigFlags_ViewportsEnable&apos;.</emphasis>
+13 <emphasis role="comment">//&#32;Issues:</emphasis>
+14 <emphasis role="comment">//&#32;&#32;[&#32;]&#32;Platform:&#32;Multi-viewport:&#32;ParentViewportID&#32;not&#32;honored,&#32;and&#32;so&#32;io.ConfigViewportsNoDefaultParent&#32;has&#32;no&#32;effect&#32;(minor).</emphasis>
+15 
+16 <emphasis role="comment">//&#32;You&#32;can&#32;use&#32;unmodified&#32;imgui_impl_*&#32;files&#32;in&#32;your&#32;project.&#32;See&#32;examples/&#32;folder&#32;for&#32;examples&#32;of&#32;using&#32;this.</emphasis>
+17 <emphasis role="comment">//&#32;Prefer&#32;including&#32;the&#32;entire&#32;imgui/&#32;repository&#32;into&#32;your&#32;project&#32;(either&#32;as&#32;a&#32;copy&#32;or&#32;as&#32;a&#32;submodule),&#32;and&#32;only&#32;build&#32;the&#32;backends&#32;you&#32;need.</emphasis>
+18 <emphasis role="comment">//&#32;Learn&#32;about&#32;Dear&#32;ImGui:</emphasis>
+19 <emphasis role="comment">//&#32;-&#32;FAQ&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/faq</emphasis>
+20 <emphasis role="comment">//&#32;-&#32;Getting&#32;Started&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/getting-started</emphasis>
+21 <emphasis role="comment">//&#32;-&#32;Documentation&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/docs&#32;(same&#32;as&#32;your&#32;local&#32;docs/&#32;folder).</emphasis>
+22 <emphasis role="comment">//&#32;-&#32;Introduction,&#32;links&#32;and&#32;more&#32;at&#32;the&#32;top&#32;of&#32;imgui.cpp</emphasis>
+23 
+24 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+25 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui_8h">imgui.h</link>&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;IMGUI_IMPL_API</emphasis>
+26 <emphasis role="preprocessor">#ifndef&#32;IMGUI_DISABLE</emphasis>
+27 
+28 <emphasis role="keyword">struct&#32;</emphasis>GLFWwindow;
+29 <emphasis role="keyword">struct&#32;</emphasis>GLFWmonitor;
+30 
+31 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a35b4b8d25ee79fe93f872b8c16c4abd6">ImGui_ImplGlfw_InitForOpenGL</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;install_callbacks);
+32 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a010473d444c477776d0088175bcc8ecc">ImGui_ImplGlfw_InitForVulkan</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;install_callbacks);
+33 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a6526c717df4b747fcc46cb06cc205741">ImGui_ImplGlfw_InitForOther</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;install_callbacks);
+34 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a51d9e4e0761a6dabf94b0520687c49ba">ImGui_ImplGlfw_Shutdown</link>();
+35 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1aba96215db16a58ef37163257b4c9c93a">ImGui_ImplGlfw_NewFrame</link>();
+36 
+37 <emphasis role="comment">//&#32;Emscripten&#32;related&#32;initialization&#32;phase&#32;methods</emphasis>
+38 <emphasis role="preprocessor">#ifdef&#32;__EMSCRIPTEN__</emphasis>
+39 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;ImGui_ImplGlfw_InstallEmscriptenCanvasResizeCallback(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;canvas_selector);
+40 <emphasis role="preprocessor">#endif</emphasis>
+41 
+42 <emphasis role="comment">//&#32;GLFW&#32;callbacks&#32;install</emphasis>
+43 <emphasis role="comment">//&#32;-&#32;When&#32;calling&#32;Init&#32;with&#32;&apos;install_callbacks=true&apos;:&#32;ImGui_ImplGlfw_InstallCallbacks()&#32;is&#32;called.&#32;GLFW&#32;callbacks&#32;will&#32;be&#32;installed&#32;for&#32;you.&#32;They&#32;will&#32;chain-call&#32;user&apos;s&#32;previously&#32;installed&#32;callbacks,&#32;if&#32;any.</emphasis>
+44 <emphasis role="comment">//&#32;-&#32;When&#32;calling&#32;Init&#32;with&#32;&apos;install_callbacks=false&apos;:&#32;GLFW&#32;callbacks&#32;won&apos;t&#32;be&#32;installed.&#32;You&#32;will&#32;need&#32;to&#32;call&#32;individual&#32;function&#32;yourself&#32;from&#32;your&#32;own&#32;GLFW&#32;callbacks.</emphasis>
+45 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a4115bf90df2f5a3d12e3310a32b59d09">ImGui_ImplGlfw_InstallCallbacks</link>(GLFWwindow*&#32;window);
+46 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1abc979487cff32bb330b0eb5e0b6d67f6">ImGui_ImplGlfw_RestoreCallbacks</link>(GLFWwindow*&#32;window);
+47 
+48 <emphasis role="comment">//&#32;GFLW&#32;callbacks&#32;options:</emphasis>
+49 <emphasis role="comment">//&#32;-&#32;Set&#32;&apos;chain_for_all_windows=true&apos;&#32;to&#32;enable&#32;chaining&#32;callbacks&#32;for&#32;all&#32;windows&#32;(including&#32;secondary&#32;viewports&#32;created&#32;by&#32;backends&#32;or&#32;by&#32;user)</emphasis>
+50 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1acdeffa8c19e82a6ee0b8bed069bada4e">ImGui_ImplGlfw_SetCallbacksChainForAllWindows</link>(<emphasis role="keywordtype">bool</emphasis>&#32;chain_for_all_windows);
+51 
+52 <emphasis role="comment">//&#32;GLFW&#32;callbacks&#32;(individual&#32;callbacks&#32;to&#32;call&#32;yourself&#32;if&#32;you&#32;didn&apos;t&#32;install&#32;callbacks)</emphasis>
+53 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1ae978bdae1301b188c5fd24df92394eb3">ImGui_ImplGlfw_WindowFocusCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;focused);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Since&#32;1.84</emphasis>
+54 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a7e65cb0bd5120e5c5e9a3e204ffa428d">ImGui_ImplGlfw_CursorEnterCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;entered);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Since&#32;1.84</emphasis>
+55 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1aa14f221e92cee5173ab58d7462264d2d">ImGui_ImplGlfw_CursorPosCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">double</emphasis>&#32;x,&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_imgui__impl__opengl3__loader_8h_1a5e247fc24ceb70d83f6ad59149b8910a">y</link>);&#32;&#32;&#32;<emphasis role="comment">//&#32;Since&#32;1.87</emphasis>
+56 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1ab72d9035883720a797bc3cb7e3e8a482">ImGui_ImplGlfw_MouseButtonCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;button,&#32;<emphasis role="keywordtype">int</emphasis>&#32;action,&#32;<emphasis role="keywordtype">int</emphasis>&#32;mods);
+57 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a17f333ee230afe8a9fc86b7fad359458">ImGui_ImplGlfw_ScrollCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">double</emphasis>&#32;xoffset,&#32;<emphasis role="keywordtype">double</emphasis>&#32;yoffset);
+58 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a5843860bf982587ba132faf1471f095d">ImGui_ImplGlfw_KeyCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;key,&#32;<emphasis role="keywordtype">int</emphasis>&#32;scancode,&#32;<emphasis role="keywordtype">int</emphasis>&#32;action,&#32;<emphasis role="keywordtype">int</emphasis>&#32;mods);
+59 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1aa44de756329ce5447b6b15f0362617a0">ImGui_ImplGlfw_CharCallback</link>(GLFWwindow*&#32;window,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;c);
+60 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__glfw_8h_1a601d00ad9f4bd80e1f9d0b0ae13fa6af">ImGui_ImplGlfw_MonitorCallback</link>(GLFWmonitor*&#32;monitor,&#32;<emphasis role="keywordtype">int</emphasis>&#32;event);
+61 
+62 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;#ifndef&#32;IMGUI_DISABLE</emphasis>
+</programlisting></section>

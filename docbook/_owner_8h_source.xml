@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__owner_8h_source" xml:lang="en-US">
+<title>Owner.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="keyword">enum</emphasis>&#32;<link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507">Owner</link>
+3 {
+4 &#32;&#32;&#32;&#32;<link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507ade5dc3e0dbd007d995ed3e37bde5ce7e">PLAYER</link>,
+5 &#32;&#32;&#32;&#32;<link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a5ce368bdfc444a87fef6c208b4101571">ENEMY</link>,
+6 &#32;&#32;&#32;&#32;<link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a357719dc7a3d164341f129a11aa9ff3b">WORLD</link>
+7 };
+</programlisting></section>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__impl__opengl3_8h_source" xml:lang="en-US">
+<title>imgui_impl_opengl3.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;dear&#32;imgui:&#32;Renderer&#32;Backend&#32;for&#32;modern&#32;OpenGL&#32;with&#32;shaders&#32;/&#32;programmatic&#32;pipeline</emphasis>
+2 <emphasis role="comment">//&#32;-&#32;Desktop&#32;GL:&#32;2.x&#32;3.x&#32;4.x</emphasis>
+3 <emphasis role="comment">//&#32;-&#32;Embedded&#32;GL:&#32;ES&#32;2.0&#32;(WebGL&#32;1.0),&#32;ES&#32;3.0&#32;(WebGL&#32;2.0)</emphasis>
+4 <emphasis role="comment">//&#32;This&#32;needs&#32;to&#32;be&#32;used&#32;along&#32;with&#32;a&#32;Platform&#32;Backend&#32;(e.g.&#32;GLFW,&#32;SDL,&#32;Win32,&#32;custom..)</emphasis>
+5 
+6 <emphasis role="comment">//&#32;Implemented&#32;features:</emphasis>
+7 <emphasis role="comment">//&#32;&#32;[X]&#32;Renderer:&#32;User&#32;texture&#32;binding.&#32;Use&#32;&apos;GLuint&apos;&#32;OpenGL&#32;texture&#32;identifier&#32;as&#32;void*/ImTextureID.&#32;Read&#32;the&#32;FAQ&#32;about&#32;ImTextureID!</emphasis>
+8 <emphasis role="comment">//&#32;&#32;[X]&#32;Renderer:&#32;Large&#32;meshes&#32;support&#32;(64k+&#32;vertices)&#32;with&#32;16-bit&#32;indices&#32;(Desktop&#32;OpenGL&#32;only).</emphasis>
+9 <emphasis role="comment">//&#32;&#32;[X]&#32;Renderer:&#32;Multi-viewport&#32;support&#32;(multiple&#32;windows).&#32;Enable&#32;with&#32;&apos;io.ConfigFlags&#32;|=&#32;ImGuiConfigFlags_ViewportsEnable&apos;.</emphasis>
+10 
+11 <emphasis role="comment">//&#32;About&#32;WebGL/ES:</emphasis>
+12 <emphasis role="comment">//&#32;-&#32;You&#32;need&#32;to&#32;&apos;#define&#32;IMGUI_IMPL_OPENGL_ES2&apos;&#32;or&#32;&apos;#define&#32;IMGUI_IMPL_OPENGL_ES3&apos;&#32;to&#32;use&#32;WebGL&#32;or&#32;OpenGL&#32;ES.</emphasis>
+13 <emphasis role="comment">//&#32;-&#32;This&#32;is&#32;done&#32;automatically&#32;on&#32;iOS,&#32;Android&#32;and&#32;Emscripten&#32;targets.</emphasis>
+14 <emphasis role="comment">//&#32;-&#32;For&#32;other&#32;targets,&#32;the&#32;define&#32;needs&#32;to&#32;be&#32;visible&#32;from&#32;the&#32;imgui_impl_opengl3.cpp&#32;compilation&#32;unit.&#32;If&#32;unsure,&#32;define&#32;globally&#32;or&#32;in&#32;imconfig.h.</emphasis>
+15 
+16 <emphasis role="comment">//&#32;You&#32;can&#32;use&#32;unmodified&#32;imgui_impl_*&#32;files&#32;in&#32;your&#32;project.&#32;See&#32;examples/&#32;folder&#32;for&#32;examples&#32;of&#32;using&#32;this.</emphasis>
+17 <emphasis role="comment">//&#32;Prefer&#32;including&#32;the&#32;entire&#32;imgui/&#32;repository&#32;into&#32;your&#32;project&#32;(either&#32;as&#32;a&#32;copy&#32;or&#32;as&#32;a&#32;submodule),&#32;and&#32;only&#32;build&#32;the&#32;backends&#32;you&#32;need.</emphasis>
+18 <emphasis role="comment">//&#32;Learn&#32;about&#32;Dear&#32;ImGui:</emphasis>
+19 <emphasis role="comment">//&#32;-&#32;FAQ&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/faq</emphasis>
+20 <emphasis role="comment">//&#32;-&#32;Getting&#32;Started&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/getting-started</emphasis>
+21 <emphasis role="comment">//&#32;-&#32;Documentation&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;https://dearimgui.com/docs&#32;(same&#32;as&#32;your&#32;local&#32;docs/&#32;folder).</emphasis>
+22 <emphasis role="comment">//&#32;-&#32;Introduction,&#32;links&#32;and&#32;more&#32;at&#32;the&#32;top&#32;of&#32;imgui.cpp</emphasis>
+23 
+24 <emphasis role="comment">//&#32;About&#32;GLSL&#32;version:</emphasis>
+25 <emphasis role="comment">//&#32;&#32;The&#32;&apos;glsl_version&apos;&#32;initialization&#32;parameter&#32;should&#32;be&#32;nullptr&#32;(default)&#32;or&#32;a&#32;&quot;#version&#32;XXX&quot;&#32;string.</emphasis>
+26 <emphasis role="comment">//&#32;&#32;On&#32;computer&#32;platform&#32;the&#32;GLSL&#32;version&#32;default&#32;to&#32;&quot;#version&#32;130&quot;.&#32;On&#32;OpenGL&#32;ES&#32;3&#32;platform&#32;it&#32;defaults&#32;to&#32;&quot;#version&#32;300&#32;es&quot;</emphasis>
+27 <emphasis role="comment">//&#32;&#32;Only&#32;override&#32;if&#32;your&#32;GL&#32;version&#32;doesn&apos;t&#32;handle&#32;this&#32;GLSL&#32;version.&#32;See&#32;GLSL&#32;version&#32;table&#32;at&#32;the&#32;top&#32;of&#32;imgui_impl_opengl3.cpp.</emphasis>
+28 
+29 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+30 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui_8h">imgui.h</link>&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;IMGUI_IMPL_API</emphasis>
+31 <emphasis role="preprocessor">#ifndef&#32;IMGUI_DISABLE</emphasis>
+32 
+33 <emphasis role="comment">//&#32;Backend&#32;API</emphasis>
+34 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a305c13d8d366d5eb3ff10f481c1357ff">ImGui_ImplOpenGL3_Init</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;glsl_version&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>);
+35 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a931f17bcb9a656ebf0ae3207ff6802cd">ImGui_ImplOpenGL3_Shutdown</link>();
+36 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a3bf17e1235c290ba19933f8ef23889bf">ImGui_ImplOpenGL3_NewFrame</link>();
+37 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a0c2b59f0157154902aa47f8f1f8dfcf5">ImGui_ImplOpenGL3_RenderDrawData</link>(<link linkend="_struct_im_draw_data">ImDrawData</link>*&#32;draw_data);
+38 
+39 <emphasis role="comment">//&#32;(Optional)&#32;Called&#32;by&#32;Init/NewFrame/Shutdown</emphasis>
+40 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a263f7a01cdc7b273e2a3cdf852dcafae">ImGui_ImplOpenGL3_CreateFontsTexture</link>();
+41 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a71e7bdfaf14b7a86e6af475219574216">ImGui_ImplOpenGL3_DestroyFontsTexture</link>();
+42 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1abb227ee1988e1f08a58b28989c21606e">ImGui_ImplOpenGL3_CreateDeviceObjects</link>();
+43 <link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;&#32;&#32;&#32;&#32;<link linkend="_imgui__impl__opengl3_8h_1a2d09c3502809e95462ccd1e604c50a68">ImGui_ImplOpenGL3_DestroyDeviceObjects</link>();
+44 
+45 <emphasis role="comment">//&#32;Specific&#32;OpenGL&#32;ES&#32;versions</emphasis>
+46 <emphasis role="comment">//#define&#32;IMGUI_IMPL_OPENGL_ES2&#32;&#32;&#32;&#32;&#32;//&#32;Auto-detected&#32;on&#32;Emscripten</emphasis>
+47 <emphasis role="comment">//#define&#32;IMGUI_IMPL_OPENGL_ES3&#32;&#32;&#32;&#32;&#32;//&#32;Auto-detected&#32;on&#32;iOS/Android</emphasis>
+48 
+49 <emphasis role="comment">//&#32;You&#32;can&#32;explicitly&#32;select&#32;GLES2&#32;or&#32;GLES3&#32;API&#32;by&#32;using&#32;one&#32;of&#32;the&#32;&apos;#define&#32;IMGUI_IMPL_OPENGL_LOADER_XXX&apos;&#32;in&#32;imconfig.h&#32;or&#32;compiler&#32;command-line.</emphasis>
+50 <emphasis role="preprocessor">#if&#32;!defined(IMGUI_IMPL_OPENGL_ES2)&#32;\</emphasis>
+51 <emphasis role="preprocessor">&#32;&amp;&amp;&#32;!defined(IMGUI_IMPL_OPENGL_ES3)</emphasis>
+52 
+53 <emphasis role="comment">//&#32;Try&#32;to&#32;detect&#32;GLES&#32;on&#32;matching&#32;platforms</emphasis>
+54 <emphasis role="preprocessor">#if&#32;defined(__APPLE__)</emphasis>
+55 <emphasis role="preprocessor">#include&#32;&lt;TargetConditionals.h&gt;</emphasis>
+56 <emphasis role="preprocessor">#endif</emphasis>
+57 <emphasis role="preprocessor">#if&#32;(defined(__APPLE__)&#32;&amp;&amp;&#32;(TARGET_OS_IOS&#32;||&#32;TARGET_OS_TV))&#32;||&#32;(defined(__ANDROID__))</emphasis>
+58 <emphasis role="preprocessor">#define&#32;IMGUI_IMPL_OPENGL_ES3&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis><emphasis role="comment">//&#32;iOS,&#32;Android&#32;&#32;-&gt;&#32;GL&#32;ES&#32;3,&#32;&quot;#version&#32;300&#32;es&quot;</emphasis>
+59 <emphasis role="preprocessor">#elif&#32;defined(__EMSCRIPTEN__)&#32;||&#32;defined(__amigaos4__)</emphasis>
+60 <emphasis role="preprocessor">#define&#32;IMGUI_IMPL_OPENGL_ES2&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis><emphasis role="comment">//&#32;Emscripten&#32;&#32;&#32;&#32;-&gt;&#32;GL&#32;ES&#32;2,&#32;&quot;#version&#32;100&quot;</emphasis>
+61 <emphasis role="preprocessor">#else</emphasis>
+62 <emphasis role="comment">//&#32;Otherwise&#32;imgui_impl_opengl3_loader.h&#32;will&#32;be&#32;used.</emphasis>
+63 <emphasis role="preprocessor">#endif</emphasis>
+64 
+65 <emphasis role="preprocessor">#endif</emphasis>
+66 
+67 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;#ifndef&#32;IMGUI_DISABLE</emphasis>
+</programlisting></section>

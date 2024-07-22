@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__event_8h_source" xml:lang="en-US">
+<title>Event.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&lt;unordered_map&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;initializer_list&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__item_8h">Item.h</link>&quot;</emphasis>
+6 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_event">Event</link>
+7 {
+8 &#32;&#32;&#32;&#32;<emphasis role="comment">//An&#32;event&#32;contains&#32;The&#32;Event&#32;Text&#32;Example:&#32;&quot;You&#32;Discover&#32;a&#32;cave,&#32;do&#32;you&#32;go&#32;in?&quot;&#32;Answers&#32;&quot;YES&quot;,&quot;NO&quot;</emphasis>
+9 &#32;&#32;&#32;&#32;<emphasis role="comment">//An&#32;Event&#32;also&#32;contains&#32;a&#32;list&#32;of&#32;branching&#32;events</emphasis>
+10 &#32;&#32;&#32;&#32;<emphasis role="comment">//Events&#32;can&#32;allow&#32;the&#32;player&#32;to&#32;recieve&#32;items,status&#32;effects,etc...</emphasis>
+11 <emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;<link linkend="_class_event">Event</link>(std::string&#32;_EventName,std::string&#32;_EventText);
+13 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_class_event_1a6e76ba2de6b5244c7c34cffa3a20744c">GetEventName</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;EventName;&#32;}
+14 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_class_event_1a74f6664627a8240a470dccd4c315c6a6">GetEventText</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;EventText;&#32;}
+15 &#32;&#32;&#32;&#32;<link linkend="_class_event">Event</link>*&#32;<link linkend="_class_event_1ae22a7e379ed5caff274d3792795cda41">GetEventBranch</link>(std::string&#32;Action)&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;BranchingEvents[Action];&#32;}
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_event_1add0df8c3701db0d73c216598e119022d">AddBranchingEvents</link>(std::initializer_list&lt;std::pair&lt;std::string,Event*&gt;&gt;&amp;&#32;events);
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_event_1aaf3ca2eec66edf24ae49317012d0cd49">AddRewardItems</link>(<emphasis role="keyword">const</emphasis>&#32;std::initializer_list&lt;Item*&gt;&amp;&#32;items);
+18 <emphasis role="keyword">private</emphasis>:
+19 &#32;&#32;&#32;&#32;std::string&#32;EventName;
+20 &#32;&#32;&#32;&#32;<emphasis role="comment">//Text&#32;Describing&#32;the&#32;Event&#32;that&#32;is&#32;taking&#32;place</emphasis>
+21 &#32;&#32;&#32;&#32;std::string&#32;EventText;
+22 &#32;&#32;&#32;&#32;<emphasis role="comment">//Branching&#32;Events&#32;is&#32;a&#32;MAP&#32;where&#32;the&#32;Keys&#32;are&#32;actions</emphasis>
+23 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;Event*&gt;&#32;BranchingEvents;
+24 &#32;&#32;&#32;&#32;std::vector&lt;Item*&gt;&#32;RewardItems;
+25 };
+26 
+</programlisting></section>

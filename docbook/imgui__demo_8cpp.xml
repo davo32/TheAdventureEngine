@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__demo_8cpp" xml:lang="en-US">
+<title>imgui_demo.cpp File Reference</title>
+<indexterm><primary>imgui_demo.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;imgui.h&quot;<?linebreak?>#include &lt;ctype.h&gt;<?linebreak?>#include &lt;limits.h&gt;<?linebreak?>#include &lt;math.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &lt;inttypes.h&gt;<?linebreak?></programlisting>Include dependency graph for imgui_demo.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui__demo_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_example_app_console">ExampleAppConsole</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_example_app_log">ExampleAppLog</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_my_document">MyDocument</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_example_app_documents">ExampleAppDocuments</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_im_gui">ImGui</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1a1bfa04d9a2431433f9668c814fd4c3d5">IM_NEWLINE</link>&#160;&#160;&#160;&quot;\n&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1ae372e90b62c1e8b51dc5d95bf7f5ba48">PRId64</link>&#160;&#160;&#160;&quot;lld&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1ac582131d7a7c8ee57e73180d1714f9d5">PRIu64</link>&#160;&#160;&#160;&quot;llu&quot;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1af25a13a96600f1a018104f6c2d3da645">IM_MIN</link>(A,  B)&#160;&#160;&#160;(((A) &lt; (B)) ? (A) : (B))</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1a9d0693fad89638629beea97300c8f8f6">IM_MAX</link>(A,  B)&#160;&#160;&#160;(((A) &gt;= (B)) ? (A) : (B))</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1a25d1e4d29150e7587f99e0723493a004">IM_CLAMP</link>(V,  MN,  MX)&#160;&#160;&#160;((V) &lt; (MN) ? (MN) : (V) &gt; (MX) ? (MX) : (V))</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1a3a504542c4837c193bd5e54911123fe1">IMGUI_CDECL</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__demo_8cpp_1af2fd5c4683ae4fa9c9369f68c5960d77">IMGUI_DEMO_MARKER</link>(section)&#160;&#160;&#160;do { if (<link linkend="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd">GImGuiDemoMarkerCallback</link> != NULL) <link linkend="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd">GImGuiDemoMarkerCallback</link>(__FILE__, __LINE__, section, <link linkend="_imgui__demo_8cpp_1a6c822116e9dcb5956c25b1103a8a208d">GImGuiDemoMarkerCallbackUserData</link>); } while (0)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_imgui__demo_8cpp_1ad8ff37b5c6b9fcc2500750326e40724f">ImGuiDemoMarkerCallback</link>) (const char *file, int line, const char *section, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_namespace_im_gui_1acab51ec2b39577845309f24535381038">ImGui::ShowFontAtlas</link> (<link linkend="_struct_im_font_atlas">ImFontAtlas</link> *atlas)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui__demo_8cpp_1ad8ff37b5c6b9fcc2500750326e40724f">ImGuiDemoMarkerCallback</link> <link linkend="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd">GImGuiDemoMarkerCallback</link> = NULL</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_imgui__demo_8cpp_1a6c822116e9dcb5956c25b1103a8a208d">GImGuiDemoMarkerCallbackUserData</link> = NULL</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_imgui__demo_8cpp_1a25d1e4d29150e7587f99e0723493a004"/><section>
+    <title>IM_CLAMP</title>
+<indexterm><primary>IM_CLAMP</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IM_CLAMP</secondary></indexterm>
+<para><computeroutput>#define IM_CLAMP( V,  MN,  MX)&#160;&#160;&#160;((V) &lt; (MN) ? (MN) : (V) &gt; (MX) ? (MX) : (V))</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1a9d0693fad89638629beea97300c8f8f6"/><section>
+    <title>IM_MAX</title>
+<indexterm><primary>IM_MAX</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IM_MAX</secondary></indexterm>
+<para><computeroutput>#define IM_MAX( A,  B)&#160;&#160;&#160;(((A) &gt;= (B)) ? (A) : (B))</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1af25a13a96600f1a018104f6c2d3da645"/><section>
+    <title>IM_MIN</title>
+<indexterm><primary>IM_MIN</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IM_MIN</secondary></indexterm>
+<para><computeroutput>#define IM_MIN( A,  B)&#160;&#160;&#160;(((A) &lt; (B)) ? (A) : (B))</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1a1bfa04d9a2431433f9668c814fd4c3d5"/><section>
+    <title>IM_NEWLINE</title>
+<indexterm><primary>IM_NEWLINE</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IM_NEWLINE</secondary></indexterm>
+<para><computeroutput>#define IM_NEWLINE&#160;&#160;&#160;&quot;\n&quot;</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1a3a504542c4837c193bd5e54911123fe1"/><section>
+    <title>IMGUI_CDECL</title>
+<indexterm><primary>IMGUI_CDECL</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IMGUI_CDECL</secondary></indexterm>
+<para><computeroutput>#define IMGUI_CDECL</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1af2fd5c4683ae4fa9c9369f68c5960d77"/><section>
+    <title>IMGUI_DEMO_MARKER</title>
+<indexterm><primary>IMGUI_DEMO_MARKER</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>IMGUI_DEMO_MARKER</secondary></indexterm>
+<para><computeroutput>#define IMGUI_DEMO_MARKER( section)&#160;&#160;&#160;do { if (<link linkend="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd">GImGuiDemoMarkerCallback</link> != NULL) <link linkend="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd">GImGuiDemoMarkerCallback</link>(__FILE__, __LINE__, section, <link linkend="_imgui__demo_8cpp_1a6c822116e9dcb5956c25b1103a8a208d">GImGuiDemoMarkerCallbackUserData</link>); } while (0)</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1ae372e90b62c1e8b51dc5d95bf7f5ba48"/><section>
+    <title>PRId64</title>
+<indexterm><primary>PRId64</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>PRId64</secondary></indexterm>
+<para><computeroutput>#define PRId64&#160;&#160;&#160;&quot;lld&quot;</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1ac582131d7a7c8ee57e73180d1714f9d5"/><section>
+    <title>PRIu64</title>
+<indexterm><primary>PRIu64</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>PRIu64</secondary></indexterm>
+<para><computeroutput>#define PRIu64&#160;&#160;&#160;&quot;llu&quot;</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_imgui__demo_8cpp_1ad8ff37b5c6b9fcc2500750326e40724f"/><section>
+    <title>ImGuiDemoMarkerCallback</title>
+<indexterm><primary>ImGuiDemoMarkerCallback</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>ImGuiDemoMarkerCallback</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiDemoMarkerCallback) (const char *file, int line, const char *section, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_imgui__demo_8cpp_1aa97e0d91afa07d38476b50a20dc22bcd"/><section>
+    <title>GImGuiDemoMarkerCallback</title>
+<indexterm><primary>GImGuiDemoMarkerCallback</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>GImGuiDemoMarkerCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__demo_8cpp_1ad8ff37b5c6b9fcc2500750326e40724f">ImGuiDemoMarkerCallback</link> GImGuiDemoMarkerCallback = NULL</computeroutput></para></section>
+<anchor xml:id="_imgui__demo_8cpp_1a6c822116e9dcb5956c25b1103a8a208d"/><section>
+    <title>GImGuiDemoMarkerCallbackUserData</title>
+<indexterm><primary>GImGuiDemoMarkerCallbackUserData</primary><secondary>imgui_demo.cpp</secondary></indexterm>
+<indexterm><primary>imgui_demo.cpp</primary><secondary>GImGuiDemoMarkerCallbackUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * GImGuiDemoMarkerCallbackUserData = NULL</computeroutput></para></section>
+</section>
+</section>

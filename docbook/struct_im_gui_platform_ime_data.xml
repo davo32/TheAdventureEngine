@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_platform_ime_data" xml:lang="en-US">
+<title>ImGuiPlatformImeData Struct Reference</title>
+<indexterm><primary>ImGuiPlatformImeData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiPlatformImeData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_platform_ime_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_platform_ime_data_1a4c632c55f33d8a6c069a8da5dc31a81c">ImGuiPlatformImeData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_im_gui_platform_ime_data_1a92dc237c81108817980aa332bd967d48">WantVisible</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_platform_ime_data_1a6e3d0f257f1dd4f8cc07eb20dfaddd6b">InputPos</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_platform_ime_data_1a632e782797251337e8373f2ca6562bc4">InputLineHeight</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_platform_ime_data_1a4c632c55f33d8a6c069a8da5dc31a81c"/><section>
+    <title>ImGuiPlatformImeData()</title>
+<indexterm><primary>ImGuiPlatformImeData</primary><secondary>ImGuiPlatformImeData</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformImeData</primary><secondary>ImGuiPlatformImeData</secondary></indexterm>
+<para><computeroutput>ImGuiPlatformImeData::ImGuiPlatformImeData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_platform_ime_data_1a632e782797251337e8373f2ca6562bc4"/><section>
+    <title>InputLineHeight</title>
+<indexterm><primary>InputLineHeight</primary><secondary>ImGuiPlatformImeData</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformImeData</primary><secondary>InputLineHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiPlatformImeData::InputLineHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_ime_data_1a6e3d0f257f1dd4f8cc07eb20dfaddd6b"/><section>
+    <title>InputPos</title>
+<indexterm><primary>InputPos</primary><secondary>ImGuiPlatformImeData</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformImeData</primary><secondary>InputPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiPlatformImeData::InputPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_ime_data_1a92dc237c81108817980aa332bd967d48"/><section>
+    <title>WantVisible</title>
+<indexterm><primary>WantVisible</primary><secondary>ImGuiPlatformImeData</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformImeData</primary><secondary>WantVisible</secondary></indexterm>
+<para><computeroutput>bool ImGuiPlatformImeData::WantVisible</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

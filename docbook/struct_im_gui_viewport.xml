@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_viewport" xml:lang="en-US">
+<title>ImGuiViewport Struct Reference</title>
+<indexterm><primary>ImGuiViewport</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Inheritance diagram for ImGuiViewport:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_viewport__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for ImGuiViewport:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_viewport__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_viewport_1aa195d9a5b7ba8905c5064195a059868c">ImGuiViewport</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_viewport_1a9b9c3bf346b0384cb6a56a6e9bd96b88">~ImGuiViewport</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1aecb8b050853aae709f64b82319699bf8">GetCenter</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1a64a278e84f98efbf67fe0d46b29f686a">GetWorkCenter</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_viewport_1a426c45b1cb97238caf5bded6f1312ecd">ID</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a061453babf70cd864059856178eb8e50">ImGuiViewportFlags</link> <link linkend="_struct_im_gui_viewport_1a126b1ea962a2f400031aa67a20208350">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1a271ff4e595757a809f237616dd07d525">Pos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1ab44a78f37dd56cc7581f715485485787">Size</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1a9171354583726d867938e93023334d6b">WorkPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_viewport_1ac4c1ce7d912b72b42a14f00c8cefd8d0">WorkSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_viewport_1a87f38c323ba5a71a37c0e806e08b4aed">DpiScale</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_viewport_1a3c4f9820d4ee60a690cd7781f6168293">ParentViewportId</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_draw_data">ImDrawData</link> * <link linkend="_struct_im_gui_viewport_1adf6926d2cbbf2223b141109c83685ff2">DrawData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_viewport_1aad757bd8e139bc115edc08dde8c5cad3">RendererUserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_viewport_1a11c62120800d3e7ed83a8c2db23ba2dd">PlatformUserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_viewport_1a98387edab3bce16a9aacd7b0a36a1d3c">PlatformHandle</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_viewport_1ab0c79a0acf985c75f5cadd56ebab8eb5">PlatformHandleRaw</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_viewport_1a6d0812e8278fa58620a3acc58235bda7">PlatformWindowCreated</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_viewport_1a671421d5c58ce154dde5080c93c6d709">PlatformRequestMove</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_viewport_1aec397a2b24e238533fd9a89348eddced">PlatformRequestResize</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_viewport_1acb503f9cb9cb53277c4801a1d7a6f185">PlatformRequestClose</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_viewport_1aa195d9a5b7ba8905c5064195a059868c"/><section>
+    <title>ImGuiViewport()</title>
+<indexterm><primary>ImGuiViewport</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>ImGuiViewport</secondary></indexterm>
+<para><computeroutput>ImGuiViewport::ImGuiViewport ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a9b9c3bf346b0384cb6a56a6e9bd96b88"/><section>
+    <title>~ImGuiViewport()</title>
+<indexterm><primary>~ImGuiViewport</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>~ImGuiViewport</secondary></indexterm>
+<para><computeroutput>ImGuiViewport::~ImGuiViewport ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_viewport_1aecb8b050853aae709f64b82319699bf8"/><section>
+    <title>GetCenter()</title>
+<indexterm><primary>GetCenter</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>GetCenter</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::GetCenter ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a64a278e84f98efbf67fe0d46b29f686a"/><section>
+    <title>GetWorkCenter()</title>
+<indexterm><primary>GetWorkCenter</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>GetWorkCenter</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::GetWorkCenter ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_viewport_1a87f38c323ba5a71a37c0e806e08b4aed"/><section>
+    <title>DpiScale</title>
+<indexterm><primary>DpiScale</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>DpiScale</secondary></indexterm>
+<para><computeroutput>float ImGuiViewport::DpiScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1adf6926d2cbbf2223b141109c83685ff2"/><section>
+    <title>DrawData</title>
+<indexterm><primary>DrawData</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>DrawData</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_draw_data">ImDrawData</link>* ImGuiViewport::DrawData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a126b1ea962a2f400031aa67a20208350"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a061453babf70cd864059856178eb8e50">ImGuiViewportFlags</link> ImGuiViewport::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a426c45b1cb97238caf5bded6f1312ecd"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiViewport::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a3c4f9820d4ee60a690cd7781f6168293"/><section>
+    <title>ParentViewportId</title>
+<indexterm><primary>ParentViewportId</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>ParentViewportId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiViewport::ParentViewportId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a98387edab3bce16a9aacd7b0a36a1d3c"/><section>
+    <title>PlatformHandle</title>
+<indexterm><primary>PlatformHandle</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformHandle</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiViewport::PlatformHandle</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1ab0c79a0acf985c75f5cadd56ebab8eb5"/><section>
+    <title>PlatformHandleRaw</title>
+<indexterm><primary>PlatformHandleRaw</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformHandleRaw</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiViewport::PlatformHandleRaw</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1acb503f9cb9cb53277c4801a1d7a6f185"/><section>
+    <title>PlatformRequestClose</title>
+<indexterm><primary>PlatformRequestClose</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformRequestClose</secondary></indexterm>
+<para><computeroutput>bool ImGuiViewport::PlatformRequestClose</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a671421d5c58ce154dde5080c93c6d709"/><section>
+    <title>PlatformRequestMove</title>
+<indexterm><primary>PlatformRequestMove</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformRequestMove</secondary></indexterm>
+<para><computeroutput>bool ImGuiViewport::PlatformRequestMove</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1aec397a2b24e238533fd9a89348eddced"/><section>
+    <title>PlatformRequestResize</title>
+<indexterm><primary>PlatformRequestResize</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformRequestResize</secondary></indexterm>
+<para><computeroutput>bool ImGuiViewport::PlatformRequestResize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a11c62120800d3e7ed83a8c2db23ba2dd"/><section>
+    <title>PlatformUserData</title>
+<indexterm><primary>PlatformUserData</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiViewport::PlatformUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a6d0812e8278fa58620a3acc58235bda7"/><section>
+    <title>PlatformWindowCreated</title>
+<indexterm><primary>PlatformWindowCreated</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>PlatformWindowCreated</secondary></indexterm>
+<para><computeroutput>bool ImGuiViewport::PlatformWindowCreated</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a271ff4e595757a809f237616dd07d525"/><section>
+    <title>Pos</title>
+<indexterm><primary>Pos</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>Pos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::Pos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1aad757bd8e139bc115edc08dde8c5cad3"/><section>
+    <title>RendererUserData</title>
+<indexterm><primary>RendererUserData</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>RendererUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiViewport::RendererUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1ab44a78f37dd56cc7581f715485485787"/><section>
+    <title>Size</title>
+<indexterm><primary>Size</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>Size</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::Size</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1a9171354583726d867938e93023334d6b"/><section>
+    <title>WorkPos</title>
+<indexterm><primary>WorkPos</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>WorkPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::WorkPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_viewport_1ac4c1ce7d912b72b42a14f00c8cefd8d0"/><section>
+    <title>WorkSize</title>
+<indexterm><primary>WorkSize</primary><secondary>ImGuiViewport</secondary></indexterm>
+<indexterm><primary>ImGuiViewport</primary><secondary>WorkSize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiViewport::WorkSize</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

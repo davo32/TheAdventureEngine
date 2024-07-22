@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classaie_1_1_texture" xml:lang="en-US">
+<title>aie::Texture Class Reference</title>
+<indexterm><primary>aie::Texture</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Texture.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">Format</link> : unsigned int { <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a916a8e739f575b3ddb14f4ea6a399d32">RED</link> = 1
+, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a3e7a40db400b002f283d9689418ddfb2">RG</link>
+, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4ad3caeb51f0131a201095c89c6a6cb86b">RGB</link>
+, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a549bac8c9e0575c7a9103fdd3c9eb7df">RGBA</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classaie_1_1_texture_1a2155c5f426b40760b714229b9c2e3f95">Texture</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classaie_1_1_texture_1a611775bd4566a984eb828dc46f68a8bc">Texture</link> (const char *filename)</para>
+</listitem>
+            <listitem><para><link linkend="_classaie_1_1_texture_1ae2ee3282e396b18bcfc6eeb62efa79d7">Texture</link> (unsigned int <link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>, unsigned int <link linkend="_imgui__impl__opengl3__loader_8h_1a60075de22f90a1223dc0bea98d2ee4d5">height</link>, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">Format</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a1e3b09934060e9d373139c3557730d37">format</link>, unsigned char *<link linkend="_imgui__impl__opengl3__loader_8h_1aa6f05cf9167efe04d7c20e5d34561086">pixels</link>=nullptr)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classaie_1_1_texture_1a371ff0eb8f583ca83b80446cbdce7bd3">~Texture</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classaie_1_1_texture_1a3044d4c91f9174ffe4bc247edad11d41">load</link> (const char *filename)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_classaie_1_1_texture_1aafc8d30e78d201fba33c0abadc75713f">create</link> (unsigned int <link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>, unsigned int <link linkend="_imgui__impl__opengl3__loader_8h_1a60075de22f90a1223dc0bea98d2ee4d5">height</link>, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">Format</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a1e3b09934060e9d373139c3557730d37">format</link>, unsigned char *<link linkend="_imgui__impl__opengl3__loader_8h_1aa6f05cf9167efe04d7c20e5d34561086">pixels</link>=nullptr)</para>
+</listitem>
+            <listitem><para>const std::string &amp; <link linkend="_classaie_1_1_texture_1a8ca82a9167b5a14b2633c3698fcb91f2">getFilename</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_classaie_1_1_texture_1ad5fdaa1ab6b969721a03b8af1e94c5f6">bind</link> (unsigned int slot) const</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1a9763a1f7fc4170ec39fb72ace2573838">getHandle</link> () const</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1a08b8b09e30ceedf6b94268a84ef26514">getWidth</link> () const</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1aa7ef15061c003435ace8244ca9c3a887">getHeight</link> () const</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1a70d7457dac864f95850dc864a36dbf2f">getFormat</link> () const</para>
+</listitem>
+            <listitem><para>const unsigned char * <link linkend="_classaie_1_1_texture_1a0b06bd49ec1acf102d9f66649618d701">getPixels</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_classaie_1_1_texture_1ae3473f0569d0152ed640b333b3597121">m_filename</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1ac3ab129060df74b2447453c061567fea">m_width</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1ad692f28db1689498ddc1f7d23e993c14">m_height</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1a99e86e19329961ce735bedc9e9e9eda3">m_glHandle</link></para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_texture_1a846b97d2e7c1e93494165bcb58142ae1">m_format</link></para>
+</listitem>
+            <listitem><para>unsigned char * <link linkend="_classaie_1_1_texture_1a85ce0b9ece21e9910314e3bb72ac84b5">m_loadedPixels</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4"/><section>
+    <title>Format</title>
+<indexterm><primary>Format</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>Format</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">aie::Texture::Format</link> : unsigned int</computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>RED</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>RED</secondary></indexterm>
+<anchor xml:id="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a916a8e739f575b3ddb14f4ea6a399d32"/>RED</entry><entry></entry></row><row><entry><indexterm><primary>RG</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>RG</secondary></indexterm>
+<anchor xml:id="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a3e7a40db400b002f283d9689418ddfb2"/>RG</entry><entry></entry></row><row><entry><indexterm><primary>RGB</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>RGB</secondary></indexterm>
+<anchor xml:id="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4ad3caeb51f0131a201095c89c6a6cb86b"/>RGB</entry><entry></entry></row><row><entry><indexterm><primary>RGBA</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>RGBA</secondary></indexterm>
+<anchor xml:id="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4a549bac8c9e0575c7a9103fdd3c9eb7df"/>RGBA</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classaie_1_1_texture_1a2155c5f426b40760b714229b9c2e3f95"/><section>
+    <title>Texture()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Texture</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>Texture</secondary></indexterm>
+<para><computeroutput>aie::Texture::Texture ( )</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a611775bd4566a984eb828dc46f68a8bc"/><section>
+    <title>Texture()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Texture</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>Texture</secondary></indexterm>
+<para><computeroutput>aie::Texture::Texture (const char * filename)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1ae2ee3282e396b18bcfc6eeb62efa79d7"/><section>
+    <title>Texture()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Texture</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>Texture</secondary></indexterm>
+<para><computeroutput>aie::Texture::Texture (unsigned int width, unsigned int height, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">Format</link> format, unsigned char * pixels = <computeroutput>nullptr</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a371ff0eb8f583ca83b80446cbdce7bd3"/><section>
+    <title>~Texture()</title>
+<indexterm><primary>~Texture</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>~Texture</secondary></indexterm>
+<para><computeroutput>aie::Texture::~Texture ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classaie_1_1_texture_1ad5fdaa1ab6b969721a03b8af1e94c5f6"/><section>
+    <title>bind()</title>
+<indexterm><primary>bind</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>bind</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> aie::Texture::bind (unsigned int slot) const</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1aafc8d30e78d201fba33c0abadc75713f"/><section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>create</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> aie::Texture::create (unsigned int width, unsigned int height, <link linkend="_classaie_1_1_texture_1a0081b37630001e86bcad710c7ab40ca4">Format</link> format, unsigned char * pixels = <computeroutput>nullptr</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a8ca82a9167b5a14b2633c3698fcb91f2"/><section>
+    <title>getFilename()</title>
+<indexterm><primary>getFilename</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getFilename</secondary></indexterm>
+<para><computeroutput>const std::string &amp; aie::Texture::getFilename ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a70d7457dac864f95850dc864a36dbf2f"/><section>
+    <title>getFormat()</title>
+<indexterm><primary>getFormat</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getFormat</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::getFormat ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a9763a1f7fc4170ec39fb72ace2573838"/><section>
+    <title>getHandle()</title>
+<indexterm><primary>getHandle</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getHandle</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::getHandle ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1aa7ef15061c003435ace8244ca9c3a887"/><section>
+    <title>getHeight()</title>
+<indexterm><primary>getHeight</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getHeight</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::getHeight ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a0b06bd49ec1acf102d9f66649618d701"/><section>
+    <title>getPixels()</title>
+<indexterm><primary>getPixels</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getPixels</secondary></indexterm>
+<para><computeroutput>const unsigned char * aie::Texture::getPixels ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a08b8b09e30ceedf6b94268a84ef26514"/><section>
+    <title>getWidth()</title>
+<indexterm><primary>getWidth</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>getWidth</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::getWidth ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a3044d4c91f9174ffe4bc247edad11d41"/><section>
+    <title>load()</title>
+<indexterm><primary>load</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>load</secondary></indexterm>
+<para><computeroutput>bool aie::Texture::load (const char * filename)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classaie_1_1_texture_1ae3473f0569d0152ed640b333b3597121"/><section>
+    <title>m_filename</title>
+<indexterm><primary>m_filename</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_filename</secondary></indexterm>
+<para><computeroutput>std::string aie::Texture::m_filename<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a846b97d2e7c1e93494165bcb58142ae1"/><section>
+    <title>m_format</title>
+<indexterm><primary>m_format</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_format</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::m_format<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a99e86e19329961ce735bedc9e9e9eda3"/><section>
+    <title>m_glHandle</title>
+<indexterm><primary>m_glHandle</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_glHandle</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::m_glHandle<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1ad692f28db1689498ddc1f7d23e993c14"/><section>
+    <title>m_height</title>
+<indexterm><primary>m_height</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_height</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::m_height<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1a85ce0b9ece21e9910314e3bb72ac84b5"/><section>
+    <title>m_loadedPixels</title>
+<indexterm><primary>m_loadedPixels</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_loadedPixels</secondary></indexterm>
+<para><computeroutput>unsigned char* aie::Texture::m_loadedPixels<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_texture_1ac3ab129060df74b2447453c061567fea"/><section>
+    <title>m_width</title>
+<indexterm><primary>m_width</primary><secondary>aie::Texture</secondary></indexterm>
+<indexterm><primary>aie::Texture</primary><secondary>m_width</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Texture::m_width<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+<link linkend="__texture_8h">Texture.h</link><link linkend="__texture_8cpp">Texture.cpp</link></section>
+</section>

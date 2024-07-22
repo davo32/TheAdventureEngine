@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_input_event_mouse_button" xml:lang="en-US">
+<title>ImGuiInputEventMouseButton Struct Reference</title>
+<indexterm><primary>ImGuiInputEventMouseButton</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_im_gui_input_event_mouse_button_1a6ecd75641eda3da1c42f977cd705ff03">Button</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_event_mouse_button_1a9a669f2168a719da17c26dc3ad154d65">Down</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> <link linkend="_struct_im_gui_input_event_mouse_button_1accf7f8b2b5e686537cbc1959a36631a6">MouseSource</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_input_event_mouse_button_1a6ecd75641eda3da1c42f977cd705ff03"/><section>
+    <title>Button</title>
+<indexterm><primary>Button</primary><secondary>ImGuiInputEventMouseButton</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseButton</primary><secondary>Button</secondary></indexterm>
+<para><computeroutput>int ImGuiInputEventMouseButton::Button</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_event_mouse_button_1a9a669f2168a719da17c26dc3ad154d65"/><section>
+    <title>Down</title>
+<indexterm><primary>Down</primary><secondary>ImGuiInputEventMouseButton</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseButton</primary><secondary>Down</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputEventMouseButton::Down</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_event_mouse_button_1accf7f8b2b5e686537cbc1959a36631a6"/><section>
+    <title>MouseSource</title>
+<indexterm><primary>MouseSource</primary><secondary>ImGuiInputEventMouseButton</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseButton</primary><secondary>MouseSource</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> ImGuiInputEventMouseButton::MouseSource</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

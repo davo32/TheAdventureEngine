@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_color" xml:lang="en-US">
+<title>ImColor Struct Reference</title>
+<indexterm><primary>ImColor</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImColor:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_color__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>constexpr <link linkend="_struct_im_color_1afcac85caf0653c8c73048b79f98a1933">ImColor</link> ()</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_im_color_1af43ef7c778b4eb6cd43285379026929b">ImColor</link> (float r, float g, float b, float a=1.0f)</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_im_color_1ab013c0baa756972b6ad5c01b8f3159ab">ImColor</link> (const <link linkend="_struct_im_vec4">ImVec4</link> &amp;col)</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_im_color_1a4134d15305bf349209ddd6571d727848">ImColor</link> (int r, int g, int b, int a=255)</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_im_color_1a6edcd5171dea150d74d3c1d2e3d99bfc">ImColor</link> (<link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> rgba)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_color_1a4f4fc53e0676d50404d6d5ffcf16637f">operator ImU32</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_color_1a10f1de242f13c93f8be64545e4cbcb0a">operator ImVec4</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_color_1afcff20160db703b956d56e5a9fa88e24">SetHSV</link> (float h, float s, float v, float a=1.0f)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_struct_im_color">ImColor</link> <link linkend="_struct_im_color_1ac8cb52119648523038818a613becf010">HSV</link> (float h, float s, float v, float a=1.0f)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vec4">ImVec4</link> <link linkend="_struct_im_color_1a4cf43bd58e30decaa0248f839fc85e95">Value</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_color_1afcac85caf0653c8c73048b79f98a1933"/><section>
+    <title>ImColor()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<para><computeroutput>constexpr ImColor::ImColor ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1af43ef7c778b4eb6cd43285379026929b"/><section>
+    <title>ImColor()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<para><computeroutput>constexpr ImColor::ImColor (float r, float g, float b, float a = <computeroutput>1.0f</computeroutput>
+)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1ab013c0baa756972b6ad5c01b8f3159ab"/><section>
+    <title>ImColor()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<para><computeroutput>constexpr ImColor::ImColor (const <link linkend="_struct_im_vec4">ImVec4</link> &amp; col)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1a4134d15305bf349209ddd6571d727848"/><section>
+    <title>ImColor()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<para><computeroutput>constexpr ImColor::ImColor (int r, int g, int b, int a = <computeroutput>255</computeroutput>
+)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1a6edcd5171dea150d74d3c1d2e3d99bfc"/><section>
+    <title>ImColor()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>ImColor</secondary></indexterm>
+<para><computeroutput>constexpr ImColor::ImColor (<link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> rgba)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_color_1ac8cb52119648523038818a613becf010"/><section>
+    <title>HSV()</title>
+<indexterm><primary>HSV</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>HSV</secondary></indexterm>
+<para><computeroutput>static <link linkend="_struct_im_color">ImColor</link> ImColor::HSV (float h, float s, float v, float a = <computeroutput>1.0f</computeroutput>
+)<computeroutput>[inline]</computeroutput>, <computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1a4f4fc53e0676d50404d6d5ffcf16637f"/><section>
+    <title>operator ImU32()</title>
+<indexterm><primary>operator ImU32</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>operator ImU32</secondary></indexterm>
+<para><computeroutput>ImColor::operator <link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1a10f1de242f13c93f8be64545e4cbcb0a"/><section>
+    <title>operator ImVec4()</title>
+<indexterm><primary>operator ImVec4</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>operator ImVec4</secondary></indexterm>
+<para><computeroutput>ImColor::operator <link linkend="_struct_im_vec4">ImVec4</link> ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_color_1afcff20160db703b956d56e5a9fa88e24"/><section>
+    <title>SetHSV()</title>
+<indexterm><primary>SetHSV</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>SetHSV</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImColor::SetHSV (float h, float s, float v, float a = <computeroutput>1.0f</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_color_1a4cf43bd58e30decaa0248f839fc85e95"/><section>
+    <title>Value</title>
+<indexterm><primary>Value</primary><secondary>ImColor</secondary></indexterm>
+<indexterm><primary>ImColor</primary><secondary>Value</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec4">ImVec4</link> ImColor::Value</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

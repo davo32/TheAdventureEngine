@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_table_sort_specs" xml:lang="en-US">
+<title>ImGuiTableSortSpecs Struct Reference</title>
+<indexterm><primary>ImGuiTableSortSpecs</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiTableSortSpecs:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_table_sort_specs__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_table_sort_specs_1a656480bca4b2c19d3502e4fc6ce28c65">ImGuiTableSortSpecs</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link> * <link linkend="_struct_im_gui_table_sort_specs_1ac4699dc1e604ad5be5d8d62f70776847">Specs</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_sort_specs_1a479ec858bd7f252a91675487f4e7c202">SpecsCount</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_sort_specs_1a9ecfbcaee92c37003bbb723777358ca3">SpecsDirty</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_table_sort_specs_1a656480bca4b2c19d3502e4fc6ce28c65"/><section>
+    <title>ImGuiTableSortSpecs()</title>
+<indexterm><primary>ImGuiTableSortSpecs</primary><secondary>ImGuiTableSortSpecs</secondary></indexterm>
+<indexterm><primary>ImGuiTableSortSpecs</primary><secondary>ImGuiTableSortSpecs</secondary></indexterm>
+<para><computeroutput>ImGuiTableSortSpecs::ImGuiTableSortSpecs ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_table_sort_specs_1ac4699dc1e604ad5be5d8d62f70776847"/><section>
+    <title>Specs</title>
+<indexterm><primary>Specs</primary><secondary>ImGuiTableSortSpecs</secondary></indexterm>
+<indexterm><primary>ImGuiTableSortSpecs</primary><secondary>Specs</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link>* ImGuiTableSortSpecs::Specs</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_sort_specs_1a479ec858bd7f252a91675487f4e7c202"/><section>
+    <title>SpecsCount</title>
+<indexterm><primary>SpecsCount</primary><secondary>ImGuiTableSortSpecs</secondary></indexterm>
+<indexterm><primary>ImGuiTableSortSpecs</primary><secondary>SpecsCount</secondary></indexterm>
+<para><computeroutput>int ImGuiTableSortSpecs::SpecsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_sort_specs_1a9ecfbcaee92c37003bbb723777358ca3"/><section>
+    <title>SpecsDirty</title>
+<indexterm><primary>SpecsDirty</primary><secondary>ImGuiTableSortSpecs</secondary></indexterm>
+<indexterm><primary>ImGuiTableSortSpecs</primary><secondary>SpecsDirty</secondary></indexterm>
+<para><computeroutput>bool ImGuiTableSortSpecs::SpecsDirty</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

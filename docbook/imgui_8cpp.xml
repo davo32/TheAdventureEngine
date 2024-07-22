@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui_8cpp" xml:lang="en-US">
+<title>imgui.cpp File Reference</title>
+<indexterm><primary>imgui.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;imgui.h&quot;<?linebreak?>#include &quot;imgui_internal.h&quot;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?></programlisting>Include dependency graph for imgui.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_im_gui_resize_grip_def">ImGuiResizeGripDef</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_resize_border_def">ImGuiResizeBorderDef</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_dock_request">ImGuiDockRequest</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_dock_preview_data">ImGuiDockPreviewData</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_dock_node_settings">ImGuiDockNodeSettings</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_dock_context_prune_node_data">ImGuiDockContextPruneNodeData</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_im_gui_dock_node_tree_info">ImGuiDockNodeTreeInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_im_gui">ImGui</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1adf4d73301961430d50d7edd96f92ce38">IMGUI_DEFINE_MATH_OPERATORS</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1aaedc8fff290d4893a84c62411b0ddeed">IMGUI_DEBUG_NAV_SCORING</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1aee6443348cf59f4769b271e36febc80c">IMGUI_DEBUG_NAV_RECTS</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1a19fd5658c088617859d4a89c657ec5cc">va_copy</link>(dest,  src)&#160;&#160;&#160;(dest = src)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1ab9e91dc90678a94b1115add63495e83e">MAP_LEGACY_NAV_INPUT_TO_KEY1</link>(_KEY,  _NAV1)&#160;&#160;&#160;do { io.KeysData[_KEY].Down = (io.NavInputs[_NAV1] &gt; 0.0f); io.KeysData[_KEY].AnalogValue = io.NavInputs[_NAV1]; } while (0)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui_8cpp_1a83b8cb33c0680201c0756c6c210af71c">MAP_LEGACY_NAV_INPUT_TO_KEY2</link>(_KEY,  _NAV1,  _NAV2)&#160;&#160;&#160;do { io.KeysData[_KEY].Down = (io.NavInputs[_NAV1] &gt; 0.0f) || (io.NavInputs[_NAV2] &gt; 0.0f); io.KeysData[_KEY].AnalogValue = ImMax(io.NavInputs[_NAV1], io.NavInputs[_NAV2]); } while (0)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aae">ImGuiDockRequestType</link> { <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea9987caa5cc01b53ded979cfe54d85da4">ImGuiDockRequestType_None</link> = 0
+, <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea4a85752dcb48d85096c88b1255550743">ImGuiDockRequestType_Dock</link>
+, <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaeaafb9014e1b55652597746910ac462b3a">ImGuiDockRequestType_Undock</link>
+, <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea428a9d787290854ebc61bf7340c242ac">ImGuiDockRequestType_Split</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui_8cpp_1adadf8b6e42972da0a823c2168be33bf6">ImBezierCubicClosestPoint</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p1, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p2, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p3, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p4, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p, int num_segments)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui_8cpp_1a3524f74d632033bb8b35fce1f0ac3cef">ImBezierCubicClosestPointCasteljau</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p1, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p2, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p3, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p4, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p, float tess_tol)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui_8cpp_1a78740b7be00764a8c15b60295edc9f51">ImLineClosestPoint</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_imgui_8cpp_1aa53a4a0b963d2d35b8e58442247e1239">ImTriangleContainsPoint</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui_8cpp_1a42ba83efd4d19e4a61898dc8f8632ff1">ImTriangleBarycentricCoords</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p, float &amp;out_u, float &amp;out_v, float &amp;out_w)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui_8cpp_1af48be8bc196ebaf2129062bd67007387">ImTriangleClosestPoint</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp;p)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1adff1a1bf60752cd3395dae990cc2e34f">ImStricmp</link> (const char *str1, const char *str2)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1a603026e750e955098e8c1e99428ca8b2">ImStrnicmp</link> (const char *str1, const char *str2, size_t <link linkend="_imgui__impl__opengl3__loader_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui_8cpp_1aebf0117d9d0fb0f2731a94d64173b41a">ImStrncpy</link> (char *dst, const char *src, size_t <link linkend="_imgui__impl__opengl3__loader_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>)</para>
+</listitem>
+            <listitem><para>char * <link linkend="_imgui_8cpp_1a23a8e1005c1db0b1a9ea2f613ed7b2e0">ImStrdup</link> (const char *str)</para>
+</listitem>
+            <listitem><para>char * <link linkend="_imgui_8cpp_1a06300f2f0f0cd710841ac9e7ef771354">ImStrdupcpy</link> (char *dst, size_t *p_dst_size, const char *src)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1a6b9f6424362cc6b8dbf531635626e8d0">ImStrchrRange</link> (const char *str, const char *str_end, char c)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1a66b44f8391ea7cba388700e4991a4859">ImStrlenW</link> (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *str)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1a03518d9439506b890f4568f682835dba">ImStreolRange</link> (const char *str, const char *str_end)</para>
+</listitem>
+            <listitem><para>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * <link linkend="_imgui_8cpp_1a3888bc9d38a15ef8e06b6cceb2a187f5">ImStrbolW</link> (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *buf_mid_line, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *buf_begin)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1ad64e94d097f802bbb8049007604785ee">ImStristr</link> (const char *haystack, const char *haystack_end, const char *needle, const char *needle_end)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui_8cpp_1a7d087fd93eb10b876979598caae02c64">ImStrTrimBlanks</link> (char *buf)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1a8f93b897914903f6e1fe3ec400dfd271">ImStrSkipBlank</link> (const char *str)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1a75ccaf7d676b1f567ba888ae42ac3809">ImFormatString</link> (char *buf, size_t buf_size, const char *fmt,...)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1a2e0022a073d369645a0daab17f823779">ImFormatStringV</link> (char *buf, size_t buf_size, const char *fmt, va_list args)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui_8cpp_1a4f6d9c1be5c114ebb7b9400d2747bd37">ImFormatStringToTempBuffer</link> (const char **out_buf, const char **out_buf_end, const char *fmt,...)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui_8cpp_1a7d2a77b9735185891f885970b1e54626">ImFormatStringToTempBufferV</link> (const char **out_buf, const char **out_buf_end, const char *fmt, va_list args)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_imgui_8cpp_1adcff81c770c78d6427764e29369dd254">ImHashData</link> (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *data_p, size_t data_size, <link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> seed)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_imgui_8cpp_1ab6659b5d67f7a3369e099ce890e12223">ImHashStr</link> (const char *data_p, size_t data_size, <link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> seed)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> <link linkend="_imgui_8cpp_1ae6a61623537c5a5de071fade1f0e8acd">ImFileOpen</link> (const char *filename, const char *<link linkend="_imgui__impl__opengl3__loader_8h_1a1e71d9c196e4683cc06c4b54d53f7ef5">mode</link>)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_imgui_8cpp_1ac4a6194720e9d693bc9d34e97d9465aa">ImFileClose</link> (<link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> <link linkend="_imgui_8cpp_1addef8c2a01c9daaa3546469f01682c98">ImFileGetSize</link> (<link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> <link linkend="_imgui_8cpp_1ab3b6f7a9c730b3701e7e3bbc4158c43f">ImFileRead</link> (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *<link linkend="_imgui__impl__opengl3__loader_8h_1abd87654504355b4c1bb002dcb1d4d16a">data</link>, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> sz, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>, <link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> <link linkend="_imgui_8cpp_1aab6460bf5ebaa4975159cf0cd4324820">ImFileWrite</link> (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *<link linkend="_imgui__impl__opengl3__loader_8h_1abd87654504355b4c1bb002dcb1d4d16a">data</link>, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> sz, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>, <link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_imgui_8cpp_1acdc4b377b19c5dbd32e76bd0066c8476">ImFileLoadToMemory</link> (const char *filename, const char *<link linkend="_imgui__impl__opengl3__loader_8h_1a1e71d9c196e4683cc06c4b54d53f7ef5">mode</link>, size_t *out_file_size, int padding_bytes)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a78ef28aaeac1f421e6dea354c687e03d">IM_MSVC_RUNTIME_CHECKS_OFF</link> int <link linkend="_imgui_8cpp_1abee86973b9888938f748a7850c2c0ff3">ImTextCharFromUtf8</link> (unsigned int *out_char, const char *in_text, const char *in_text_end)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1aeb054c43ad8aae45de24efc759a0ff7a">ImTextStrFromUtf8</link> (<link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *buf, int buf_size, const char *in_text, const char *in_text_end, const char **in_text_remaining)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1ac2561e31f0de066ef0bb5bfbb541c8ae">ImTextCountCharsFromUtf8</link> (const char *in_text, const char *in_text_end)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1a95ebc047720485ca52f00e593e70aa0e">ImTextCharToUtf8</link> (char out_buf[5], unsigned int c)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1ae1d5a0a2772f1e426f4bedbf4148235d">ImTextCountUtf8BytesFromChar</link> (const char *in_text, const char *in_text_end)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1a4f97c4270222b00800114124be112d26">ImTextStrToUtf8</link> (char *out_buf, int out_buf_size, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *in_text, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *in_text_end)</para>
+</listitem>
+            <listitem><para>int <link linkend="_imgui_8cpp_1ab0c1cae5ca2331c54681553722d0f72c">ImTextCountUtf8BytesFromStr</link> (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *in_text, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> *in_text_end)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_imgui_8cpp_1ab969e1ebe01b7c2f6e0126c532a534d5">ImTextFindPreviousUtf8Codepoint</link> (const char *in_text_start, const char *in_text_curr)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1acf027918eb6b13ca59634b6630cd3450">IM_MSVC_RUNTIME_CHECKS_RESTORE</link> <link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_imgui_8cpp_1a8443a92b89839183c25f2b6a21599039">ImAlphaBlendColors</link> (<link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> col_a, <link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> col_b)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8cpp_1ae818cca71132df1f2a5bf86824ecb025">IM_STATIC_ASSERT</link> (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4acd1f890055ed55406f82f1f756c1cad0">ImGuiKey_NamedKey_COUNT</link>==<link linkend="_imgui_8h_1aeabe36f60fe45cf64cbc9641bcd58cca">IM_ARRAYSIZE</link>(GKeyNames))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_namespace_im_gui_1aa7a318e32bff29010e015a15ab6b6067">ImGui::IMGUI_VIEWPORT_DEFAULT_ID</link> = 0x11111111</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_context">ImGuiContext</link> * <link linkend="_imgui_8cpp_1a26aa67b834c0453a50c5e3970a8eba07">GImGui</link> = NULL</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_imgui_8cpp_1aee6443348cf59f4769b271e36febc80c"/><section>
+    <title>IMGUI_DEBUG_NAV_RECTS</title>
+<indexterm><primary>IMGUI_DEBUG_NAV_RECTS</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>IMGUI_DEBUG_NAV_RECTS</secondary></indexterm>
+<para><computeroutput>#define IMGUI_DEBUG_NAV_RECTS&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1aaedc8fff290d4893a84c62411b0ddeed"/><section>
+    <title>IMGUI_DEBUG_NAV_SCORING</title>
+<indexterm><primary>IMGUI_DEBUG_NAV_SCORING</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>IMGUI_DEBUG_NAV_SCORING</secondary></indexterm>
+<para><computeroutput>#define IMGUI_DEBUG_NAV_SCORING&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1adf4d73301961430d50d7edd96f92ce38"/><section>
+    <title>IMGUI_DEFINE_MATH_OPERATORS</title>
+<indexterm><primary>IMGUI_DEFINE_MATH_OPERATORS</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>IMGUI_DEFINE_MATH_OPERATORS</secondary></indexterm>
+<para><computeroutput>#define IMGUI_DEFINE_MATH_OPERATORS</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ab9e91dc90678a94b1115add63495e83e"/><section>
+    <title>MAP_LEGACY_NAV_INPUT_TO_KEY1</title>
+<indexterm><primary>MAP_LEGACY_NAV_INPUT_TO_KEY1</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>MAP_LEGACY_NAV_INPUT_TO_KEY1</secondary></indexterm>
+<para><computeroutput>#define MAP_LEGACY_NAV_INPUT_TO_KEY1( _KEY,  _NAV1)&#160;&#160;&#160;do { io.KeysData[_KEY].Down = (io.NavInputs[_NAV1] &gt; 0.0f); io.KeysData[_KEY].AnalogValue = io.NavInputs[_NAV1]; } while (0)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a83b8cb33c0680201c0756c6c210af71c"/><section>
+    <title>MAP_LEGACY_NAV_INPUT_TO_KEY2</title>
+<indexterm><primary>MAP_LEGACY_NAV_INPUT_TO_KEY2</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>MAP_LEGACY_NAV_INPUT_TO_KEY2</secondary></indexterm>
+<para><computeroutput>#define MAP_LEGACY_NAV_INPUT_TO_KEY2( _KEY,  _NAV1,  _NAV2)&#160;&#160;&#160;do { io.KeysData[_KEY].Down = (io.NavInputs[_NAV1] &gt; 0.0f) || (io.NavInputs[_NAV2] &gt; 0.0f); io.KeysData[_KEY].AnalogValue = ImMax(io.NavInputs[_NAV1], io.NavInputs[_NAV2]); } while (0)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a19fd5658c088617859d4a89c657ec5cc"/><section>
+    <title>va_copy</title>
+<indexterm><primary>va_copy</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>va_copy</secondary></indexterm>
+<para><computeroutput>#define va_copy( dest,  src)&#160;&#160;&#160;(dest = src)</computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_imgui_8cpp_1ac3906477a208e979c9527f439c498aae"/><section>
+    <title>ImGuiDockRequestType</title>
+<indexterm><primary>ImGuiDockRequestType</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImGuiDockRequestType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aae">ImGuiDockRequestType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>ImGuiDockRequestType_None</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImGuiDockRequestType_None</secondary></indexterm>
+<anchor xml:id="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea9987caa5cc01b53ded979cfe54d85da4"/>ImGuiDockRequestType_None</entry><entry></entry></row><row><entry><indexterm><primary>ImGuiDockRequestType_Dock</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImGuiDockRequestType_Dock</secondary></indexterm>
+<anchor xml:id="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea4a85752dcb48d85096c88b1255550743"/>ImGuiDockRequestType_Dock</entry><entry></entry></row><row><entry><indexterm><primary>ImGuiDockRequestType_Undock</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImGuiDockRequestType_Undock</secondary></indexterm>
+<anchor xml:id="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaeaafb9014e1b55652597746910ac462b3a"/>ImGuiDockRequestType_Undock</entry><entry></entry></row><row><entry><indexterm><primary>ImGuiDockRequestType_Split</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImGuiDockRequestType_Split</secondary></indexterm>
+<anchor xml:id="_imgui_8cpp_1ac3906477a208e979c9527f439c498aaea428a9d787290854ebc61bf7340c242ac"/>ImGuiDockRequestType_Split</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_imgui_8cpp_1ae818cca71132df1f2a5bf86824ecb025"/><section>
+    <title>IM_STATIC_ASSERT()</title>
+<indexterm><primary>IM_STATIC_ASSERT</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>IM_STATIC_ASSERT</secondary></indexterm>
+<para><computeroutput>IM_STATIC_ASSERT (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4acd1f890055ed55406f82f1f756c1cad0">ImGuiKey_NamedKey_COUNT</link>  = <computeroutput>=<link linkend="_imgui_8h_1aeabe36f60fe45cf64cbc9641bcd58cca">IM_ARRAYSIZE</link>(GKeyNames)</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a8443a92b89839183c25f2b6a21599039"/><section>
+    <title>ImAlphaBlendColors()</title>
+<indexterm><primary>ImAlphaBlendColors</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImAlphaBlendColors</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1acf027918eb6b13ca59634b6630cd3450">IM_MSVC_RUNTIME_CHECKS_RESTORE</link> <link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImAlphaBlendColors (<link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> col_a, <link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> col_b)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1adadf8b6e42972da0a823c2168be33bf6"/><section>
+    <title>ImBezierCubicClosestPoint()</title>
+<indexterm><primary>ImBezierCubicClosestPoint</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImBezierCubicClosestPoint</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImBezierCubicClosestPoint (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p1, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p2, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p3, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p4, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p, int num_segments)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a3524f74d632033bb8b35fce1f0ac3cef"/><section>
+    <title>ImBezierCubicClosestPointCasteljau()</title>
+<indexterm><primary>ImBezierCubicClosestPointCasteljau</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImBezierCubicClosestPointCasteljau</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImBezierCubicClosestPointCasteljau (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p1, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p2, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p3, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p4, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p, float tess_tol)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ac4a6194720e9d693bc9d34e97d9465aa"/><section>
+    <title>ImFileClose()</title>
+<indexterm><primary>ImFileClose</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileClose</secondary></indexterm>
+<para><computeroutput>bool ImFileClose (<link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1addef8c2a01c9daaa3546469f01682c98"/><section>
+    <title>ImFileGetSize()</title>
+<indexterm><primary>ImFileGetSize</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileGetSize</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> ImFileGetSize (<link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1acdc4b377b19c5dbd32e76bd0066c8476"/><section>
+    <title>ImFileLoadToMemory()</title>
+<indexterm><primary>ImFileLoadToMemory</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileLoadToMemory</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * ImFileLoadToMemory (const char * filename, const char * mode, size_t * out_file_size, int padding_bytes)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ae6a61623537c5a5de071fade1f0e8acd"/><section>
+    <title>ImFileOpen()</title>
+<indexterm><primary>ImFileOpen</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileOpen</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> ImFileOpen (const char * filename, const char * mode)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ab3b6f7a9c730b3701e7e3bbc4158c43f"/><section>
+    <title>ImFileRead()</title>
+<indexterm><primary>ImFileRead</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileRead</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> ImFileRead (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * data, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> sz, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> count, <link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1aab6460bf5ebaa4975159cf0cd4324820"/><section>
+    <title>ImFileWrite()</title>
+<indexterm><primary>ImFileWrite</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFileWrite</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> ImFileWrite (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * data, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> sz, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> count, <link linkend="_imgui__internal_8h_1a5c58fe70d0547f85609b2b99ab451efe">ImFileHandle</link> f)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a75ccaf7d676b1f567ba888ae42ac3809"/><section>
+    <title>ImFormatString()</title>
+<indexterm><primary>ImFormatString</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFormatString</secondary></indexterm>
+<para><computeroutput>int ImFormatString (char * buf, size_t buf_size, const char * fmt,  ...)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a4f6d9c1be5c114ebb7b9400d2747bd37"/><section>
+    <title>ImFormatStringToTempBuffer()</title>
+<indexterm><primary>ImFormatStringToTempBuffer</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFormatStringToTempBuffer</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFormatStringToTempBuffer (const char ** out_buf, const char ** out_buf_end, const char * fmt,  ...)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a7d2a77b9735185891f885970b1e54626"/><section>
+    <title>ImFormatStringToTempBufferV()</title>
+<indexterm><primary>ImFormatStringToTempBufferV</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFormatStringToTempBufferV</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImFormatStringToTempBufferV (const char ** out_buf, const char ** out_buf_end, const char * fmt, va_list args)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a2e0022a073d369645a0daab17f823779"/><section>
+    <title>ImFormatStringV()</title>
+<indexterm><primary>ImFormatStringV</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImFormatStringV</secondary></indexterm>
+<para><computeroutput>int ImFormatStringV (char * buf, size_t buf_size, const char * fmt, va_list args)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1adcff81c770c78d6427764e29369dd254"/><section>
+    <title>ImHashData()</title>
+<indexterm><primary>ImHashData</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImHashData</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImHashData (const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * data_p, size_t data_size, <link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> seed)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ab6659b5d67f7a3369e099ce890e12223"/><section>
+    <title>ImHashStr()</title>
+<indexterm><primary>ImHashStr</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImHashStr</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImHashStr (const char * data_p, size_t data_size, <link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> seed)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a78740b7be00764a8c15b60295edc9f51"/><section>
+    <title>ImLineClosestPoint()</title>
+<indexterm><primary>ImLineClosestPoint</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImLineClosestPoint</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImLineClosestPoint (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a3888bc9d38a15ef8e06b6cceb2a187f5"/><section>
+    <title>ImStrbolW()</title>
+<indexterm><primary>ImStrbolW</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrbolW</secondary></indexterm>
+<para><computeroutput>const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * ImStrbolW (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * buf_mid_line, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * buf_begin)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a6b9f6424362cc6b8dbf531635626e8d0"/><section>
+    <title>ImStrchrRange()</title>
+<indexterm><primary>ImStrchrRange</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrchrRange</secondary></indexterm>
+<para><computeroutput>const char * ImStrchrRange (const char * str, const char * str_end, char c)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a23a8e1005c1db0b1a9ea2f613ed7b2e0"/><section>
+    <title>ImStrdup()</title>
+<indexterm><primary>ImStrdup</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrdup</secondary></indexterm>
+<para><computeroutput>char * ImStrdup (const char * str)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a06300f2f0f0cd710841ac9e7ef771354"/><section>
+    <title>ImStrdupcpy()</title>
+<indexterm><primary>ImStrdupcpy</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrdupcpy</secondary></indexterm>
+<para><computeroutput>char * ImStrdupcpy (char * dst, size_t * p_dst_size, const char * src)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a03518d9439506b890f4568f682835dba"/><section>
+    <title>ImStreolRange()</title>
+<indexterm><primary>ImStreolRange</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStreolRange</secondary></indexterm>
+<para><computeroutput>const char * ImStreolRange (const char * str, const char * str_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1adff1a1bf60752cd3395dae990cc2e34f"/><section>
+    <title>ImStricmp()</title>
+<indexterm><primary>ImStricmp</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStricmp</secondary></indexterm>
+<para><computeroutput>int ImStricmp (const char * str1, const char * str2)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ad64e94d097f802bbb8049007604785ee"/><section>
+    <title>ImStristr()</title>
+<indexterm><primary>ImStristr</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStristr</secondary></indexterm>
+<para><computeroutput>const char * ImStristr (const char * haystack, const char * haystack_end, const char * needle, const char * needle_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a66b44f8391ea7cba388700e4991a4859"/><section>
+    <title>ImStrlenW()</title>
+<indexterm><primary>ImStrlenW</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrlenW</secondary></indexterm>
+<para><computeroutput>int ImStrlenW (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * str)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1aebf0117d9d0fb0f2731a94d64173b41a"/><section>
+    <title>ImStrncpy()</title>
+<indexterm><primary>ImStrncpy</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrncpy</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImStrncpy (char * dst, const char * src, size_t count)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a603026e750e955098e8c1e99428ca8b2"/><section>
+    <title>ImStrnicmp()</title>
+<indexterm><primary>ImStrnicmp</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrnicmp</secondary></indexterm>
+<para><computeroutput>int ImStrnicmp (const char * str1, const char * str2, size_t count)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a8f93b897914903f6e1fe3ec400dfd271"/><section>
+    <title>ImStrSkipBlank()</title>
+<indexterm><primary>ImStrSkipBlank</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrSkipBlank</secondary></indexterm>
+<para><computeroutput>const char * ImStrSkipBlank (const char * str)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a7d087fd93eb10b876979598caae02c64"/><section>
+    <title>ImStrTrimBlanks()</title>
+<indexterm><primary>ImStrTrimBlanks</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImStrTrimBlanks</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImStrTrimBlanks (char * buf)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1abee86973b9888938f748a7850c2c0ff3"/><section>
+    <title>ImTextCharFromUtf8()</title>
+<indexterm><primary>ImTextCharFromUtf8</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextCharFromUtf8</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a78ef28aaeac1f421e6dea354c687e03d">IM_MSVC_RUNTIME_CHECKS_OFF</link> int ImTextCharFromUtf8 (unsigned int * out_char, const char * in_text, const char * in_text_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a95ebc047720485ca52f00e593e70aa0e"/><section>
+    <title>ImTextCharToUtf8()</title>
+<indexterm><primary>ImTextCharToUtf8</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextCharToUtf8</secondary></indexterm>
+<para><computeroutput>const char * ImTextCharToUtf8 (char out_buf[5], unsigned int c)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ac2561e31f0de066ef0bb5bfbb541c8ae"/><section>
+    <title>ImTextCountCharsFromUtf8()</title>
+<indexterm><primary>ImTextCountCharsFromUtf8</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextCountCharsFromUtf8</secondary></indexterm>
+<para><computeroutput>int ImTextCountCharsFromUtf8 (const char * in_text, const char * in_text_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ae1d5a0a2772f1e426f4bedbf4148235d"/><section>
+    <title>ImTextCountUtf8BytesFromChar()</title>
+<indexterm><primary>ImTextCountUtf8BytesFromChar</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextCountUtf8BytesFromChar</secondary></indexterm>
+<para><computeroutput>int ImTextCountUtf8BytesFromChar (const char * in_text, const char * in_text_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ab0c1cae5ca2331c54681553722d0f72c"/><section>
+    <title>ImTextCountUtf8BytesFromStr()</title>
+<indexterm><primary>ImTextCountUtf8BytesFromStr</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextCountUtf8BytesFromStr</secondary></indexterm>
+<para><computeroutput>int ImTextCountUtf8BytesFromStr (const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * in_text, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * in_text_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1ab969e1ebe01b7c2f6e0126c532a534d5"/><section>
+    <title>ImTextFindPreviousUtf8Codepoint()</title>
+<indexterm><primary>ImTextFindPreviousUtf8Codepoint</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextFindPreviousUtf8Codepoint</secondary></indexterm>
+<para><computeroutput>const char * ImTextFindPreviousUtf8Codepoint (const char * in_text_start, const char * in_text_curr)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1aeb054c43ad8aae45de24efc759a0ff7a"/><section>
+    <title>ImTextStrFromUtf8()</title>
+<indexterm><primary>ImTextStrFromUtf8</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextStrFromUtf8</secondary></indexterm>
+<para><computeroutput>int ImTextStrFromUtf8 (<link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * buf, int buf_size, const char * in_text, const char * in_text_end, const char ** in_text_remaining)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a4f97c4270222b00800114124be112d26"/><section>
+    <title>ImTextStrToUtf8()</title>
+<indexterm><primary>ImTextStrToUtf8</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTextStrToUtf8</secondary></indexterm>
+<para><computeroutput>int ImTextStrToUtf8 (char * out_buf, int out_buf_size, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * in_text, const <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> * in_text_end)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1a42ba83efd4d19e4a61898dc8f8632ff1"/><section>
+    <title>ImTriangleBarycentricCoords()</title>
+<indexterm><primary>ImTriangleBarycentricCoords</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTriangleBarycentricCoords</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImTriangleBarycentricCoords (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p, float &amp; out_u, float &amp; out_v, float &amp; out_w)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1af48be8bc196ebaf2129062bd67007387"/><section>
+    <title>ImTriangleClosestPoint()</title>
+<indexterm><primary>ImTriangleClosestPoint</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTriangleClosestPoint</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImTriangleClosestPoint (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p)</computeroutput></para></section>
+<anchor xml:id="_imgui_8cpp_1aa53a4a0b963d2d35b8e58442247e1239"/><section>
+    <title>ImTriangleContainsPoint()</title>
+<indexterm><primary>ImTriangleContainsPoint</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>ImTriangleContainsPoint</secondary></indexterm>
+<para><computeroutput>bool ImTriangleContainsPoint (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; a, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; b, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; c, const <link linkend="_struct_im_vec2">ImVec2</link> &amp; p)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_imgui_8cpp_1a26aa67b834c0453a50c5e3970a8eba07"/><section>
+    <title>GImGui</title>
+<indexterm><primary>GImGui</primary><secondary>imgui.cpp</secondary></indexterm>
+<indexterm><primary>imgui.cpp</primary><secondary>GImGui</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_context">ImGuiContext</link>* GImGui = NULL</computeroutput></para></section>
+</section>
+</section>

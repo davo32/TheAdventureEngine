@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_once_upon_a_frame" xml:lang="en-US">
+<title>ImGuiOnceUponAFrame Struct Reference</title>
+<indexterm><primary>ImGuiOnceUponAFrame</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_once_upon_a_frame_1ac9513f72a884f6fe844869b157b23f1f">ImGuiOnceUponAFrame</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_once_upon_a_frame_1a3c912b79bc333ce746356001431c2504">operator bool</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_im_gui_once_upon_a_frame_1a2d44776b8e7bdeec217f88be9f832e08">RefFrame</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_once_upon_a_frame_1ac9513f72a884f6fe844869b157b23f1f"/><section>
+    <title>ImGuiOnceUponAFrame()</title>
+<indexterm><primary>ImGuiOnceUponAFrame</primary><secondary>ImGuiOnceUponAFrame</secondary></indexterm>
+<indexterm><primary>ImGuiOnceUponAFrame</primary><secondary>ImGuiOnceUponAFrame</secondary></indexterm>
+<para><computeroutput>ImGuiOnceUponAFrame::ImGuiOnceUponAFrame ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_once_upon_a_frame_1a3c912b79bc333ce746356001431c2504"/><section>
+    <title>operator bool()</title>
+<indexterm><primary>operator bool</primary><secondary>ImGuiOnceUponAFrame</secondary></indexterm>
+<indexterm><primary>ImGuiOnceUponAFrame</primary><secondary>operator bool</secondary></indexterm>
+<para><computeroutput>ImGuiOnceUponAFrame::operator bool ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_once_upon_a_frame_1a2d44776b8e7bdeec217f88be9f832e08"/><section>
+    <title>RefFrame</title>
+<indexterm><primary>RefFrame</primary><secondary>ImGuiOnceUponAFrame</secondary></indexterm>
+<indexterm><primary>ImGuiOnceUponAFrame</primary><secondary>RefFrame</secondary></indexterm>
+<para><computeroutput>int ImGuiOnceUponAFrame::RefFrame<computeroutput>[mutable]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

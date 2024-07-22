@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__impl__glfw_8h" xml:lang="en-US">
+<title>imgui_impl_glfw.h File Reference</title>
+<indexterm><primary>imgui_impl_glfw.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;imgui.h&quot;<?linebreak?></programlisting>Include dependency graph for imgui_impl_glfw.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui__impl__glfw_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui__impl__glfw_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool <link linkend="_imgui__impl__glfw_8h_1a35b4b8d25ee79fe93f872b8c16c4abd6">ImGui_ImplGlfw_InitForOpenGL</link> (GLFWwindow *window, bool install_callbacks)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool <link linkend="_imgui__impl__glfw_8h_1a010473d444c477776d0088175bcc8ecc">ImGui_ImplGlfw_InitForVulkan</link> (GLFWwindow *window, bool install_callbacks)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool <link linkend="_imgui__impl__glfw_8h_1a6526c717df4b747fcc46cb06cc205741">ImGui_ImplGlfw_InitForOther</link> (GLFWwindow *window, bool install_callbacks)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a51d9e4e0761a6dabf94b0520687c49ba">ImGui_ImplGlfw_Shutdown</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1aba96215db16a58ef37163257b4c9c93a">ImGui_ImplGlfw_NewFrame</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a4115bf90df2f5a3d12e3310a32b59d09">ImGui_ImplGlfw_InstallCallbacks</link> (GLFWwindow *window)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1abc979487cff32bb330b0eb5e0b6d67f6">ImGui_ImplGlfw_RestoreCallbacks</link> (GLFWwindow *window)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1acdeffa8c19e82a6ee0b8bed069bada4e">ImGui_ImplGlfw_SetCallbacksChainForAllWindows</link> (bool chain_for_all_windows)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1ae978bdae1301b188c5fd24df92394eb3">ImGui_ImplGlfw_WindowFocusCallback</link> (GLFWwindow *window, int focused)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a7e65cb0bd5120e5c5e9a3e204ffa428d">ImGui_ImplGlfw_CursorEnterCallback</link> (GLFWwindow *window, int entered)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1aa14f221e92cee5173ab58d7462264d2d">ImGui_ImplGlfw_CursorPosCallback</link> (GLFWwindow *window, double x, double <link linkend="_imgui__impl__opengl3__loader_8h_1a5e247fc24ceb70d83f6ad59149b8910a">y</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1ab72d9035883720a797bc3cb7e3e8a482">ImGui_ImplGlfw_MouseButtonCallback</link> (GLFWwindow *window, int button, int action, int mods)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a17f333ee230afe8a9fc86b7fad359458">ImGui_ImplGlfw_ScrollCallback</link> (GLFWwindow *window, double xoffset, double yoffset)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a5843860bf982587ba132faf1471f095d">ImGui_ImplGlfw_KeyCallback</link> (GLFWwindow *window, int key, int scancode, int action, int mods)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1aa44de756329ce5447b6b15f0362617a0">ImGui_ImplGlfw_CharCallback</link> (GLFWwindow *window, unsigned int c)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__glfw_8h_1a601d00ad9f4bd80e1f9d0b0ae13fa6af">ImGui_ImplGlfw_MonitorCallback</link> (GLFWmonitor *monitor, int event)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_imgui__impl__glfw_8h_1aa44de756329ce5447b6b15f0362617a0"/><section>
+    <title>ImGui_ImplGlfw_CharCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_CharCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_CharCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_CharCallback (GLFWwindow * window, unsigned int c)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a7e65cb0bd5120e5c5e9a3e204ffa428d"/><section>
+    <title>ImGui_ImplGlfw_CursorEnterCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_CursorEnterCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_CursorEnterCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_CursorEnterCallback (GLFWwindow * window, int entered)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1aa14f221e92cee5173ab58d7462264d2d"/><section>
+    <title>ImGui_ImplGlfw_CursorPosCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_CursorPosCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_CursorPosCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_CursorPosCallback (GLFWwindow * window, double x, double y)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a35b4b8d25ee79fe93f872b8c16c4abd6"/><section>
+    <title>ImGui_ImplGlfw_InitForOpenGL()</title>
+<indexterm><primary>ImGui_ImplGlfw_InitForOpenGL</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_InitForOpenGL</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool ImGui_ImplGlfw_InitForOpenGL (GLFWwindow * window, bool install_callbacks)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a6526c717df4b747fcc46cb06cc205741"/><section>
+    <title>ImGui_ImplGlfw_InitForOther()</title>
+<indexterm><primary>ImGui_ImplGlfw_InitForOther</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_InitForOther</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool ImGui_ImplGlfw_InitForOther (GLFWwindow * window, bool install_callbacks)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a010473d444c477776d0088175bcc8ecc"/><section>
+    <title>ImGui_ImplGlfw_InitForVulkan()</title>
+<indexterm><primary>ImGui_ImplGlfw_InitForVulkan</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_InitForVulkan</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> bool ImGui_ImplGlfw_InitForVulkan (GLFWwindow * window, bool install_callbacks)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a4115bf90df2f5a3d12e3310a32b59d09"/><section>
+    <title>ImGui_ImplGlfw_InstallCallbacks()</title>
+<indexterm><primary>ImGui_ImplGlfw_InstallCallbacks</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_InstallCallbacks</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_InstallCallbacks (GLFWwindow * window)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a5843860bf982587ba132faf1471f095d"/><section>
+    <title>ImGui_ImplGlfw_KeyCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_KeyCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_KeyCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_KeyCallback (GLFWwindow * window, int key, int scancode, int action, int mods)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a601d00ad9f4bd80e1f9d0b0ae13fa6af"/><section>
+    <title>ImGui_ImplGlfw_MonitorCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_MonitorCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_MonitorCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_MonitorCallback (GLFWmonitor * monitor, int event)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1ab72d9035883720a797bc3cb7e3e8a482"/><section>
+    <title>ImGui_ImplGlfw_MouseButtonCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_MouseButtonCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_MouseButtonCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_MouseButtonCallback (GLFWwindow * window, int button, int action, int mods)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1aba96215db16a58ef37163257b4c9c93a"/><section>
+    <title>ImGui_ImplGlfw_NewFrame()</title>
+<indexterm><primary>ImGui_ImplGlfw_NewFrame</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_NewFrame</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_NewFrame ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1abc979487cff32bb330b0eb5e0b6d67f6"/><section>
+    <title>ImGui_ImplGlfw_RestoreCallbacks()</title>
+<indexterm><primary>ImGui_ImplGlfw_RestoreCallbacks</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_RestoreCallbacks</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_RestoreCallbacks (GLFWwindow * window)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a17f333ee230afe8a9fc86b7fad359458"/><section>
+    <title>ImGui_ImplGlfw_ScrollCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_ScrollCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_ScrollCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_ScrollCallback (GLFWwindow * window, double xoffset, double yoffset)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1acdeffa8c19e82a6ee0b8bed069bada4e"/><section>
+    <title>ImGui_ImplGlfw_SetCallbacksChainForAllWindows()</title>
+<indexterm><primary>ImGui_ImplGlfw_SetCallbacksChainForAllWindows</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_SetCallbacksChainForAllWindows</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_SetCallbacksChainForAllWindows (bool chain_for_all_windows)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1a51d9e4e0761a6dabf94b0520687c49ba"/><section>
+    <title>ImGui_ImplGlfw_Shutdown()</title>
+<indexterm><primary>ImGui_ImplGlfw_Shutdown</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_Shutdown</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_Shutdown ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__glfw_8h_1ae978bdae1301b188c5fd24df92394eb3"/><section>
+    <title>ImGui_ImplGlfw_WindowFocusCallback()</title>
+<indexterm><primary>ImGui_ImplGlfw_WindowFocusCallback</primary><secondary>imgui_impl_glfw.h</secondary></indexterm>
+<indexterm><primary>imgui_impl_glfw.h</primary><secondary>ImGui_ImplGlfw_WindowFocusCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplGlfw_WindowFocusCallback (GLFWwindow * window, int focused)</computeroutput></para></section>
+</section>
+</section>

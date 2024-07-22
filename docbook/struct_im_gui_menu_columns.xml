@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_menu_columns" xml:lang="en-US">
+<title>ImGuiMenuColumns Struct Reference</title>
+<indexterm><primary>ImGuiMenuColumns</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_menu_columns_1ac476e04a9d907280b3ccdfc429845803">ImGuiMenuColumns</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_menu_columns_1aae99240b9c8e9380f829921da5e337f2">Update</link> (float spacing, bool window_reappearing)</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_menu_columns_1a85fedb03fec0c73555220b74ceaa2bb8">DeclColumns</link> (float w_icon, float w_label, float w_shortcut, float w_mark)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_menu_columns_1a76bf28ca1ad728afce787f48e1645138">CalcNextTotalWidth</link> (bool update_offsets)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_menu_columns_1a4384d90f9c7974425ad9165eed996297">TotalWidth</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_menu_columns_1ab6c94ddd6147a8ef1fc37a20ca0990dd">NextTotalWidth</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1ad3ff6a7b69d0e73dbe80b949d871fbec">Spacing</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1a9f591cacefd793c3f3bbfcee7ccedaf7">OffsetIcon</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1aad3c73c88286f0f65abdc9ec56e7f84f">OffsetLabel</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1ab33e02f4291fec8296ebc2bebc86f1a5">OffsetShortcut</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1adc12e8f6950487652995fc705459f7fc">OffsetMark</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_menu_columns_1a1b977a8fbffb965ba5db5066ff6a7eef">Widths</link> [4]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_menu_columns_1ac476e04a9d907280b3ccdfc429845803"/><section>
+    <title>ImGuiMenuColumns()</title>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<para><computeroutput>ImGuiMenuColumns::ImGuiMenuColumns ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_menu_columns_1a76bf28ca1ad728afce787f48e1645138"/><section>
+    <title>CalcNextTotalWidth()</title>
+<indexterm><primary>CalcNextTotalWidth</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>CalcNextTotalWidth</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiMenuColumns::CalcNextTotalWidth (bool update_offsets)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1a85fedb03fec0c73555220b74ceaa2bb8"/><section>
+    <title>DeclColumns()</title>
+<indexterm><primary>DeclColumns</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>DeclColumns</secondary></indexterm>
+<para><computeroutput>float ImGuiMenuColumns::DeclColumns (float w_icon, float w_label, float w_shortcut, float w_mark)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1aae99240b9c8e9380f829921da5e337f2"/><section>
+    <title>Update()</title>
+<indexterm><primary>Update</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>Update</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiMenuColumns::Update (float spacing, bool window_reappearing)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_menu_columns_1ab6c94ddd6147a8ef1fc37a20ca0990dd"/><section>
+    <title>NextTotalWidth</title>
+<indexterm><primary>NextTotalWidth</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>NextTotalWidth</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiMenuColumns::NextTotalWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1a9f591cacefd793c3f3bbfcee7ccedaf7"/><section>
+    <title>OffsetIcon</title>
+<indexterm><primary>OffsetIcon</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>OffsetIcon</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::OffsetIcon</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1aad3c73c88286f0f65abdc9ec56e7f84f"/><section>
+    <title>OffsetLabel</title>
+<indexterm><primary>OffsetLabel</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>OffsetLabel</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::OffsetLabel</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1adc12e8f6950487652995fc705459f7fc"/><section>
+    <title>OffsetMark</title>
+<indexterm><primary>OffsetMark</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>OffsetMark</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::OffsetMark</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1ab33e02f4291fec8296ebc2bebc86f1a5"/><section>
+    <title>OffsetShortcut</title>
+<indexterm><primary>OffsetShortcut</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>OffsetShortcut</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::OffsetShortcut</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1ad3ff6a7b69d0e73dbe80b949d871fbec"/><section>
+    <title>Spacing</title>
+<indexterm><primary>Spacing</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>Spacing</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::Spacing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1a4384d90f9c7974425ad9165eed996297"/><section>
+    <title>TotalWidth</title>
+<indexterm><primary>TotalWidth</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>TotalWidth</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiMenuColumns::TotalWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_menu_columns_1a1b977a8fbffb965ba5db5066ff6a7eef"/><section>
+    <title>Widths</title>
+<indexterm><primary>Widths</primary><secondary>ImGuiMenuColumns</secondary></indexterm>
+<indexterm><primary>ImGuiMenuColumns</primary><secondary>Widths</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiMenuColumns::Widths[4]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link><link linkend="_imgui__widgets_8cpp">imgui_widgets.cpp</link></section>
+</section>

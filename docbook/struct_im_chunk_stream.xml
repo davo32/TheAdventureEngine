@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_chunk_stream" xml:lang="en-US">
+<title>ImChunkStream&lt; T &gt; Struct Template Reference</title>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImChunkStream&lt; T &gt;:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_chunk_stream__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_chunk_stream_1a3bf3babbba7a8edafce99be0589379a3">clear</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_chunk_stream_1aef1d3eeb4c1aa2980da6a14ae96d2499">empty</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_chunk_stream_1a0454c7345104dad27a52828584765edb">size</link> () const</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_chunk_stream_1a29ced7ee3e9a2ae8123a92b110b4b0bd">alloc_chunk</link> (size_t sz)</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_chunk_stream_1a10a9b29c856b3f84ce8811ebfaf2cfe8">begin</link> ()</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_chunk_stream_1a3a99f21ce1867d694104d740ac7ab133">next_chunk</link> (T *p)</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_chunk_stream_1a1a83609aaee47cf8b59a8ae09a04a06b">chunk_size</link> (const T *p)</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_chunk_stream_1a5c7faa90ac7fa02140a3298dbfdd5cad">end</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_chunk_stream_1ab3dccb857d0b35ae295d14ff7f9dd0ac">offset_from_ptr</link> (const T *p)</para>
+</listitem>
+            <listitem><para>T * <link linkend="_struct_im_chunk_stream_1a385c84c0a5eca2d402f3550530af587e">ptr_from_offset</link> (int off)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_chunk_stream_1adbd734ea08939c0bce519e90b26c9d28">swap</link> (<link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt; &amp;rhs)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; char &gt; <link linkend="_struct_im_chunk_stream_1ac6036044bd7eae552342b430527cc620">Buf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_chunk_stream_1a29ced7ee3e9a2ae8123a92b110b4b0bd"/><section>
+    <title>alloc_chunk()</title>
+<indexterm><primary>alloc_chunk</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>alloc_chunk</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::alloc_chunk (size_t sz)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a10a9b29c856b3f84ce8811ebfaf2cfe8"/><section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>begin</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::begin ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a1a83609aaee47cf8b59a8ae09a04a06b"/><section>
+    <title>chunk_size()</title>
+<indexterm><primary>chunk_size</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>chunk_size</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::chunk_size (const T * p)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a3bf3babbba7a8edafce99be0589379a3"/><section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>clear</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1aef1d3eeb4c1aa2980da6a14ae96d2499"/><section>
+    <title>empty()</title>
+<indexterm><primary>empty</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>empty</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>bool <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::empty ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a5c7faa90ac7fa02140a3298dbfdd5cad"/><section>
+    <title>end()</title>
+<indexterm><primary>end</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>end</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::end ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a3a99f21ce1867d694104d740ac7ab133"/><section>
+    <title>next_chunk()</title>
+<indexterm><primary>next_chunk</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>next_chunk</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::next_chunk (T * p)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1ab3dccb857d0b35ae295d14ff7f9dd0ac"/><section>
+    <title>offset_from_ptr()</title>
+<indexterm><primary>offset_from_ptr</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>offset_from_ptr</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::offset_from_ptr (const T * p)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a385c84c0a5eca2d402f3550530af587e"/><section>
+    <title>ptr_from_offset()</title>
+<indexterm><primary>ptr_from_offset</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>ptr_from_offset</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>T * <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::ptr_from_offset (int off)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1a0454c7345104dad27a52828584765edb"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>size</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;<link linkend="_imgui__impl__opengl3__loader_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">::size</link> ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_chunk_stream_1adbd734ea08939c0bce519e90b26c9d28"/><section>
+    <title>swap()</title>
+<indexterm><primary>swap</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>swap</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::swap (<link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt; &amp; rhs)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_chunk_stream_1ac6036044bd7eae552342b430527cc620"/><section>
+    <title>Buf</title>
+<indexterm><primary>Buf</primary><secondary>ImChunkStream&lt; T &gt;</secondary></indexterm>
+<indexterm><primary>ImChunkStream&lt; T &gt;</primary><secondary>Buf</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;char&gt; <link linkend="_struct_im_chunk_stream">ImChunkStream</link>&lt; T &gt;::Buf</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

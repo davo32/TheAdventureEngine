@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_old_columns" xml:lang="en-US">
+<title>ImGuiOldColumns Struct Reference</title>
+<indexterm><primary>ImGuiOldColumns</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiOldColumns:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_old_columns__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_old_columns_1ab8cae447d704e5d9ca332af63301fbf9">ImGuiOldColumns</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_old_columns_1ae8e14ed159e758560d196a9012ea617d">ID</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a930931ec4c54582a278a461676df4dda">ImGuiOldColumnFlags</link> <link linkend="_struct_im_gui_old_columns_1aaf37a990d000be9d6d16181edbe1072c">Flags</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_old_columns_1a8597134957b8c1f01b97256978f4b7a1">IsFirstFrame</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_old_columns_1a32cc845e4100c21a9cd197d7627a3dd5">IsBeingResized</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_old_columns_1acb97d32d656cf8e96f707e998a107689">Current</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_old_columns_1abdbf31a5bf080613d279e149b3c372b6">Count</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1a7cbfefcc82a7ca3271c8c0c05cfe9ed4">OffMinX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1a19f636d31c2c93d1afe01d9484936b28">OffMaxX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1a3b9c843a034e82543a7936e30442704c">LineMinY</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1a7ba6bbc0231a94ba8c2edcc5029f0d53">LineMaxY</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1acc41fca916c812950aeb6d479ad4f5f1">HostCursorPosY</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_columns_1a82502dcabe70b52e0e89cbb0b55e7087">HostCursorMaxPosX</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_old_columns_1aaaaa00e20d7b72ac75c9deea4f09ce15">HostInitialClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_old_columns_1aa4554860fcb988d5c667d6d7d70d5484">HostBackupClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_old_columns_1af2350babd38168dc2a605474b6b8aae4">HostBackupParentWorkRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_old_column_data">ImGuiOldColumnData</link> &gt; <link linkend="_struct_im_gui_old_columns_1ab4f542da960ccad64557fe388a8f82eb">Columns</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_draw_list_splitter">ImDrawListSplitter</link> <link linkend="_struct_im_gui_old_columns_1a0bbefb48400e92ca8245dd62bdea7de3">Splitter</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_old_columns_1ab8cae447d704e5d9ca332af63301fbf9"/><section>
+    <title>ImGuiOldColumns()</title>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<para><computeroutput>ImGuiOldColumns::ImGuiOldColumns ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_old_columns_1ab4f542da960ccad64557fe388a8f82eb"/><section>
+    <title>Columns</title>
+<indexterm><primary>Columns</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>Columns</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_old_column_data">ImGuiOldColumnData</link>&gt; ImGuiOldColumns::Columns</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1abdbf31a5bf080613d279e149b3c372b6"/><section>
+    <title>Count</title>
+<indexterm><primary>Count</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>Count</secondary></indexterm>
+<para><computeroutput>int ImGuiOldColumns::Count</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1acb97d32d656cf8e96f707e998a107689"/><section>
+    <title>Current</title>
+<indexterm><primary>Current</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>Current</secondary></indexterm>
+<para><computeroutput>int ImGuiOldColumns::Current</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1aaf37a990d000be9d6d16181edbe1072c"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a930931ec4c54582a278a461676df4dda">ImGuiOldColumnFlags</link> ImGuiOldColumns::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1aa4554860fcb988d5c667d6d7d70d5484"/><section>
+    <title>HostBackupClipRect</title>
+<indexterm><primary>HostBackupClipRect</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>HostBackupClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiOldColumns::HostBackupClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1af2350babd38168dc2a605474b6b8aae4"/><section>
+    <title>HostBackupParentWorkRect</title>
+<indexterm><primary>HostBackupParentWorkRect</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>HostBackupParentWorkRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiOldColumns::HostBackupParentWorkRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a82502dcabe70b52e0e89cbb0b55e7087"/><section>
+    <title>HostCursorMaxPosX</title>
+<indexterm><primary>HostCursorMaxPosX</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>HostCursorMaxPosX</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::HostCursorMaxPosX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1acc41fca916c812950aeb6d479ad4f5f1"/><section>
+    <title>HostCursorPosY</title>
+<indexterm><primary>HostCursorPosY</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>HostCursorPosY</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::HostCursorPosY</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1aaaaa00e20d7b72ac75c9deea4f09ce15"/><section>
+    <title>HostInitialClipRect</title>
+<indexterm><primary>HostInitialClipRect</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>HostInitialClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiOldColumns::HostInitialClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1ae8e14ed159e758560d196a9012ea617d"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiOldColumns::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a32cc845e4100c21a9cd197d7627a3dd5"/><section>
+    <title>IsBeingResized</title>
+<indexterm><primary>IsBeingResized</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>IsBeingResized</secondary></indexterm>
+<para><computeroutput>bool ImGuiOldColumns::IsBeingResized</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a8597134957b8c1f01b97256978f4b7a1"/><section>
+    <title>IsFirstFrame</title>
+<indexterm><primary>IsFirstFrame</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>IsFirstFrame</secondary></indexterm>
+<para><computeroutput>bool ImGuiOldColumns::IsFirstFrame</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a7ba6bbc0231a94ba8c2edcc5029f0d53"/><section>
+    <title>LineMaxY</title>
+<indexterm><primary>LineMaxY</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>LineMaxY</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::LineMaxY</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a3b9c843a034e82543a7936e30442704c"/><section>
+    <title>LineMinY</title>
+<indexterm><primary>LineMinY</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>LineMinY</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::LineMinY</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a19f636d31c2c93d1afe01d9484936b28"/><section>
+    <title>OffMaxX</title>
+<indexterm><primary>OffMaxX</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>OffMaxX</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::OffMaxX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a7cbfefcc82a7ca3271c8c0c05cfe9ed4"/><section>
+    <title>OffMinX</title>
+<indexterm><primary>OffMinX</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>OffMinX</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumns::OffMinX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_columns_1a0bbefb48400e92ca8245dd62bdea7de3"/><section>
+    <title>Splitter</title>
+<indexterm><primary>Splitter</primary><secondary>ImGuiOldColumns</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumns</primary><secondary>Splitter</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_draw_list_splitter">ImDrawListSplitter</link> ImGuiOldColumns::Splitter</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

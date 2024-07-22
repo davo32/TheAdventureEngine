@@ -1,0 +1,872 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_i_o" xml:lang="en-US">
+<title>ImGuiIO Struct Reference</title>
+<indexterm><primary>ImGuiIO</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiIO:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_i_o__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a50c3ab6883647aacdf5153a4dbe2cdbe">AddKeyEvent</link> (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, bool down)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1ac88dcffd1c6785d00eedd5616315e48c">AddKeyAnalogEvent</link> (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, bool down, float v)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1ab6423058bbb3503c3cf66e0e45ee606d">AddMousePosEvent</link> (float x, float <link linkend="_imgui__impl__opengl3__loader_8h_1a5e247fc24ceb70d83f6ad59149b8910a">y</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a9fa5df74047424bb03d7cb29c6fb6ea1">AddMouseButtonEvent</link> (int button, bool down)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a3c5ad00141194e3a01c9efbcb53cd5a1">AddMouseWheelEvent</link> (float wheel_x, float wheel_y)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1adc3cac2515e40a80c6dc961800ed221f">AddMouseSourceEvent</link> (<link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> source)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a635370412c063b2ac8f66fdd4abf9709">AddMouseViewportEvent</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> id)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a051243815ff6305cdcd3db8f84c2dfef">AddFocusEvent</link> (bool focused)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a0ded7ab1043ea14b65e1d81819878ccc">AddInputCharacter</link> (unsigned int c)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a09ce496becb406f0fbe94dc35915af64">AddInputCharacterUTF16</link> (<link linkend="_imgui_8h_1a019c3b51f12e45e6686271bcd107e082">ImWchar16</link> c)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1abf60d6dc365fab19136059f64680bdcc">AddInputCharactersUTF8</link> (const char *str)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a6b2fa57fb6af5aa1c99f58115542e1dc">SetKeyEventNativeData</link> (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, int native_keycode, int native_scancode, int native_legacy_index=-1)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a8ec563cbffee4818a89840654b8c4404">SetAppAcceptingEvents</link> (bool accepting_events)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1af335eab4d2bcb88ea3f225c48cfcbb51">ClearEventsQueue</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a5d87fb4f10e366ef8a4603ac57e39da1">ClearInputKeys</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_i_o_1a82d8794e14e628efbb026af4202c70ca">ClearInputCharacters</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_gui_i_o_1a0ad8d993e50108b81b0d279d2d43f69d">ImGuiIO</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a91442880bed105ca5fe1be683b91d9a0">ImGuiConfigFlags</link> <link linkend="_struct_im_gui_i_o_1a6267b8a1ffa964035e6540f5e4296e39">ConfigFlags</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a6f5b9be7d9e718571c52a785a9f35ea0">ImGuiBackendFlags</link> <link linkend="_struct_im_gui_i_o_1a92288d3e802788c8c408eac2c12e709c">BackendFlags</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a042cfb90bdc9ccfe37f86b92ade759fd">DisplaySize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a5068d5414a19c2a1bf58029bd732a7c7">DeltaTime</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a9b37eea17baa240a93b1288673a6eeb9">IniSavingRate</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_i_o_1a89e8efe8f82b539c961dc22cc2499402">IniFilename</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_i_o_1ae77a1beed11820366800645232a6ad1c">LogFilename</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_i_o_1a8c5e74fd39c2655455329e09529da7d3">UserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_font_atlas">ImFontAtlas</link> * <link linkend="_struct_im_gui_i_o_1a24e4f5201fe8780267abc2acfc24254c">Fonts</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a74a64a74dcbe2a6ef0c1ef56ba328094">FontGlobalScale</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1af5fc6eae7ce68cce8473f006431f530e">FontAllowUserScaling</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_font">ImFont</link> * <link linkend="_struct_im_gui_i_o_1a11016e4aefa603523bce61315b66bf00">FontDefault</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a703cad6bd4c9e8972d056116104d27e8">DisplayFramebufferScale</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ace7a9422c9889dc041fa546bd723223e">ConfigDockingNoSplit</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ac5008955addd009b7ef19ee87ca88577">ConfigDockingWithShift</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a17d566410828420e31cc27ecacedebdd">ConfigDockingAlwaysTabBar</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a7ff3afc8f9bad04675997212eacb798c">ConfigDockingTransparentPayload</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1abd96c624dbd2fde5b121b3a8fc83c5fa">ConfigViewportsNoAutoMerge</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1afbe3b46d452851eb5addc39a8cf1ce5d">ConfigViewportsNoTaskBarIcon</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a7da990e245f2fbed0e5faa61132d063f">ConfigViewportsNoDecoration</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ae2e44e382ad13807136fdde24d64c460">ConfigViewportsNoDefaultParent</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a9b240460966bf2bd35c30f27b8db4028">MouseDrawCursor</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ab2b62c3ee538d4037e7467bf934fd7a2">ConfigMacOSXBehaviors</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1af38a4c1ec57a1721dc1bbf81ccc16dc7">ConfigInputTrickleEventQueue</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ad17e398044a43d0020f692af8a72a9ac">ConfigInputTextCursorBlink</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1abdd7e183fe87d70c779c2d28ee63eb4d">ConfigInputTextEnterKeepActive</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a8ecd103855fbd0bb9090d5998bc994bc">ConfigDragClickToInputText</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1aaa627c27ae9e957f738e74a67629bed6">ConfigWindowsResizeFromEdges</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a17f4703e015c69263170396441b321d9">ConfigWindowsMoveFromTitleBarOnly</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1aedd3ba8bfc9c682e5a7a66ffdd480df2">ConfigMemoryCompactTimer</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1aee056f6ed15363e0bcd8d879b312da7c">MouseDoubleClickTime</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a13334c1522aadc12af0ce3b31b0eb3a1">MouseDoubleClickMaxDist</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1ad8b9a9924b0d6bde6a0fa35c17aa54ae">MouseDragThreshold</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a390537e7cba21b98a8f89df857ea59fb">KeyRepeatDelay</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1accd71987c895c4aec6d1a8c368cc9e0e">KeyRepeatRate</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a7333e8741883f6ef83dd40b86e240591">ConfigDebugIsDebuggerPresent</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a0bb96382080ca9fdd071a5a0aeff6301">ConfigDebugBeginReturnValueOnce</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a66892ea6cb0f64c681be2ca2e33830f8">ConfigDebugBeginReturnValueLoop</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a646735ef40b25f677d99a5e51a7cc455">ConfigDebugIgnoreFocusLoss</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ab34c141d562fc6b76203e2097de66eb3">ConfigDebugIniSettings</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_i_o_1a58510e764707bf979d086f6bc4c8b670">BackendPlatformName</link></para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_i_o_1ad0902d7c892cff675fc0a685e8f1481d">BackendRendererName</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_i_o_1a6c0c878d0d5ca6ef90f0968bd59309d3">BackendPlatformUserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_i_o_1a9d1b2553e914286e9f92ab62f3d38265">BackendRendererUserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_i_o_1ad5dc2e55e630b44208ef07bbbef161ea">BackendLanguageUserData</link></para>
+</listitem>
+            <listitem><para>const char *(* <link linkend="_struct_im_gui_i_o_1a974c08e33e5f2abcdd23981c9b9350ae">GetClipboardTextFn</link> )(<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_i_o_1a1ee9c0763df33f7f3a9819235ce85078">SetClipboardTextFn</link> )(<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data, const char *text)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_i_o_1a162d9da988e8985df05d262640f2f91c">ClipboardUserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_i_o_1a000283dfba912e6af1b607ea19677fd2">SetPlatformImeDataFn</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *viewport, <link linkend="_struct_im_gui_platform_ime_data">ImGuiPlatformImeData</link> *<link linkend="_imgui__impl__opengl3__loader_8h_1abd87654504355b4c1bb002dcb1d4d16a">data</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> <link linkend="_struct_im_gui_i_o_1a974d83f8be4775ab346fafa056150017">PlatformLocaleDecimalPoint</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1af5b8add76c5d833a65df19b5456acd7e">WantCaptureMouse</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a458e4ca98d896adb16e3a41ec6d2b811">WantCaptureKeyboard</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a0e53197e96187a57b2d86720bf163f4d">WantTextInput</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a877f6adba2c961f361df7697f908649a">WantSetMousePos</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a68d3fb726b3f243fa974107fae291d8e">WantSaveIniSettings</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1aa63cf74a15e9dd0ad469ff09ca840ddf">NavActive</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a904bb563ee00c92cc6b6b072df2c7405">NavVisible</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a8c6c2be54ddeda3cfb4a73cf95701a54">Framerate</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_i_o_1a8ec9d203f4543047a8820366c5734529">MetricsRenderVertices</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_i_o_1a19daed6a7fa22819fe187dfc2a2f5683">MetricsRenderIndices</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_i_o_1aec04d38a9b3799d12259a672c42e7c7e">MetricsRenderWindows</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_i_o_1ae47a71018cc9b0c7b55912a4bfa9149c">MetricsActiveWindows</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a5b5cc0c171104337e3e7e13a8f7b0938">MouseDelta</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_i_o_1aa1cd0083960f8e5361eb6d49973c8823">KeyMap</link> [<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4aec3107a9dcdc5632cdcd57d4f8bbed18">ImGuiKey_COUNT</link>]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a59f88f4933f391741450f8548cb46eab">KeysDown</link> [<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4aec3107a9dcdc5632cdcd57d4f8bbed18">ImGuiKey_COUNT</link>]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a1e6e8142c2c2e09a715fa5efaa0db9fa">NavInputs</link> [<link linkend="_imgui_8h_1ac127e1a0a29c7abca4922e206d0c2991a649aced582f4c80f70b83814051ffcb3">ImGuiNavInput_COUNT</link>]</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_context">ImGuiContext</link> * <link linkend="_struct_im_gui_i_o_1a8fdf06720bff6066ebc17aa2f3d249ce">Ctx</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1ad2e9e547cb4d2abe8e7d27407efffeb8">MousePos</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a8f4613baafc93026175d9cdaf4e82d21">MouseDown</link> [5]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a21d3ca4928989a2c838b7b4ea95e5824">MouseWheel</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a25bed9de908b086e583854438ca7927d">MouseWheelH</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> <link linkend="_struct_im_gui_i_o_1ae1d8f50f11941cfaa968cfba98e751fd">MouseSource</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_i_o_1ae7dfb76aa8edbfa96c0df56ce07e4e92">MouseHoveredViewport</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a51de8f65dcabb80ef4e0d3c759ffcd7f">KeyCtrl</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a3c7642214f88862af5b8467f98ac35c9">KeyShift</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a1e64ef08a4448a2cac874496130992cb">KeyAlt</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1afda9e11e21b7ba21573671c38d9f4a81">KeySuper</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a0720c04fed27e0f01b3722a13c8a8762">ImGuiKeyChord</link> <link linkend="_struct_im_gui_i_o_1a77133a351ecaf34ea5df82866690dcaa">KeyMods</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_key_data">ImGuiKeyData</link> <link linkend="_struct_im_gui_i_o_1a6efeb8f2a11a463a0c7b1f8401532e88">KeysData</link> [<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4ae037761d4aeb8d78ce9e4684151c825b">ImGuiKey_KeysData_SIZE</link>]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a088bdc608b0c695eb3a8fac4a06e859b">WantCaptureMouseUnlessPopupClose</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a0fa6601a709eb9e34460e6abc7e77ad7">MousePosPrev</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a23c9c6c48a51774fee36b7f0bb75d331">MouseClickedPos</link> [5]</para>
+</listitem>
+            <listitem><para>double <link linkend="_struct_im_gui_i_o_1afc5a5a5250fdee3c558f45c4f0268308">MouseClickedTime</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a8655587202ff9001e5b0ccc6ade42d93">MouseClicked</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a8bc01048733dc554de3d03f40f57b9ca">MouseDoubleClicked</link> [5]</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_i_o_1ac3e700b171e730f8e527b4fa08cf6fad">MouseClickedCount</link> [5]</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_i_o_1aef8407268836888e9954c86afcc0b42a">MouseClickedLastCount</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a3a2e7d52289eecfdbe8571e034e41b53">MouseReleased</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a682f98d817f99058136cb47cf8a9bcc3">MouseDownOwned</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a5ed7eb38ec2cb214981671f1bc48fb38">MouseDownOwnedUnlessPopupClose</link> [5]</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1ac93fd310a6e0a3c1062bb4d0b0ee0190">MouseWheelRequestAxisSwap</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1ab464bf317051bbdf1c93ab36802fe3b7">MouseDownDuration</link> [5]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a59d19cf7ad831e57ce15f90295871881">MouseDownDurationPrev</link> [5]</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_i_o_1a402bca8838011fc4518c0895f24ffc92">MouseDragMaxDistanceAbs</link> [5]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1a86c7fe77349fd82a60ab7a279aa27f01">MouseDragMaxDistanceSqr</link> [5]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_i_o_1adb663a185ac88f81cad4ece4d67beea5">PenPressure</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1a6f907c3044fe77b706f48ee6d7eaa1b2">AppFocusLost</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1aadb8a762b7a874e9d1f47230a5d62239">AppAcceptingEvents</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a33644f626f44716357624c2755a9b9d1">ImS8</link> <link linkend="_struct_im_gui_i_o_1a71d9fa7f004072892216d3504163cd12">BackendUsingLegacyKeyArrays</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_i_o_1aa9a50114735531c89671b9c591bf1f3b">BackendUsingLegacyNavInputArray</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a019c3b51f12e45e6686271bcd107e082">ImWchar16</link> <link linkend="_struct_im_gui_i_o_1a4740dc94f803920e809747d2c602d571">InputQueueSurrogate</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> &gt; <link linkend="_struct_im_gui_i_o_1a4d9fb1151f10f1f6f7597bb3a21e1447">InputQueueCharacters</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_i_o_1a0ad8d993e50108b81b0d279d2d43f69d"/><section>
+    <title>ImGuiIO()</title>
+<indexterm><primary>ImGuiIO</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ImGuiIO</secondary></indexterm>
+<para><computeroutput>ImGuiIO::ImGuiIO ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_i_o_1a051243815ff6305cdcd3db8f84c2dfef"/><section>
+    <title>AddFocusEvent()</title>
+<indexterm><primary>AddFocusEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddFocusEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddFocusEvent (bool focused)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a0ded7ab1043ea14b65e1d81819878ccc"/><section>
+    <title>AddInputCharacter()</title>
+<indexterm><primary>AddInputCharacter</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddInputCharacter</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddInputCharacter (unsigned int c)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1abf60d6dc365fab19136059f64680bdcc"/><section>
+    <title>AddInputCharactersUTF8()</title>
+<indexterm><primary>AddInputCharactersUTF8</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddInputCharactersUTF8</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddInputCharactersUTF8 (const char * str)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a09ce496becb406f0fbe94dc35915af64"/><section>
+    <title>AddInputCharacterUTF16()</title>
+<indexterm><primary>AddInputCharacterUTF16</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddInputCharacterUTF16</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddInputCharacterUTF16 (<link linkend="_imgui_8h_1a019c3b51f12e45e6686271bcd107e082">ImWchar16</link> c)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ac88dcffd1c6785d00eedd5616315e48c"/><section>
+    <title>AddKeyAnalogEvent()</title>
+<indexterm><primary>AddKeyAnalogEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddKeyAnalogEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddKeyAnalogEvent (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, bool down, float v)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a50c3ab6883647aacdf5153a4dbe2cdbe"/><section>
+    <title>AddKeyEvent()</title>
+<indexterm><primary>AddKeyEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddKeyEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddKeyEvent (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, bool down)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a9fa5df74047424bb03d7cb29c6fb6ea1"/><section>
+    <title>AddMouseButtonEvent()</title>
+<indexterm><primary>AddMouseButtonEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddMouseButtonEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddMouseButtonEvent (int button, bool down)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ab6423058bbb3503c3cf66e0e45ee606d"/><section>
+    <title>AddMousePosEvent()</title>
+<indexterm><primary>AddMousePosEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddMousePosEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddMousePosEvent (float x, float y)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1adc3cac2515e40a80c6dc961800ed221f"/><section>
+    <title>AddMouseSourceEvent()</title>
+<indexterm><primary>AddMouseSourceEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddMouseSourceEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddMouseSourceEvent (<link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> source)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a635370412c063b2ac8f66fdd4abf9709"/><section>
+    <title>AddMouseViewportEvent()</title>
+<indexterm><primary>AddMouseViewportEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddMouseViewportEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddMouseViewportEvent (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> id)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a3c5ad00141194e3a01c9efbcb53cd5a1"/><section>
+    <title>AddMouseWheelEvent()</title>
+<indexterm><primary>AddMouseWheelEvent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AddMouseWheelEvent</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::AddMouseWheelEvent (float wheel_x, float wheel_y)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1af335eab4d2bcb88ea3f225c48cfcbb51"/><section>
+    <title>ClearEventsQueue()</title>
+<indexterm><primary>ClearEventsQueue</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ClearEventsQueue</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::ClearEventsQueue ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a82d8794e14e628efbb026af4202c70ca"/><section>
+    <title>ClearInputCharacters()</title>
+<indexterm><primary>ClearInputCharacters</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ClearInputCharacters</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::ClearInputCharacters ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a5d87fb4f10e366ef8a4603ac57e39da1"/><section>
+    <title>ClearInputKeys()</title>
+<indexterm><primary>ClearInputKeys</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ClearInputKeys</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::ClearInputKeys ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8ec563cbffee4818a89840654b8c4404"/><section>
+    <title>SetAppAcceptingEvents()</title>
+<indexterm><primary>SetAppAcceptingEvents</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>SetAppAcceptingEvents</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::SetAppAcceptingEvents (bool accepting_events)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a6b2fa57fb6af5aa1c99f58115542e1dc"/><section>
+    <title>SetKeyEventNativeData()</title>
+<indexterm><primary>SetKeyEventNativeData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>SetKeyEventNativeData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiIO::SetKeyEventNativeData (<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> key, int native_keycode, int native_scancode, int native_legacy_index = <computeroutput>-1</computeroutput>
+)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_i_o_1aadb8a762b7a874e9d1f47230a5d62239"/><section>
+    <title>AppAcceptingEvents</title>
+<indexterm><primary>AppAcceptingEvents</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AppAcceptingEvents</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::AppAcceptingEvents</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a6f907c3044fe77b706f48ee6d7eaa1b2"/><section>
+    <title>AppFocusLost</title>
+<indexterm><primary>AppFocusLost</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>AppFocusLost</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::AppFocusLost</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a92288d3e802788c8c408eac2c12e709c"/><section>
+    <title>BackendFlags</title>
+<indexterm><primary>BackendFlags</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a6f5b9be7d9e718571c52a785a9f35ea0">ImGuiBackendFlags</link> ImGuiIO::BackendFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ad5dc2e55e630b44208ef07bbbef161ea"/><section>
+    <title>BackendLanguageUserData</title>
+<indexterm><primary>BackendLanguageUserData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendLanguageUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiIO::BackendLanguageUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a58510e764707bf979d086f6bc4c8b670"/><section>
+    <title>BackendPlatformName</title>
+<indexterm><primary>BackendPlatformName</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendPlatformName</secondary></indexterm>
+<para><computeroutput>const char* ImGuiIO::BackendPlatformName</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a6c0c878d0d5ca6ef90f0968bd59309d3"/><section>
+    <title>BackendPlatformUserData</title>
+<indexterm><primary>BackendPlatformUserData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendPlatformUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiIO::BackendPlatformUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ad0902d7c892cff675fc0a685e8f1481d"/><section>
+    <title>BackendRendererName</title>
+<indexterm><primary>BackendRendererName</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendRendererName</secondary></indexterm>
+<para><computeroutput>const char* ImGuiIO::BackendRendererName</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a9d1b2553e914286e9f92ab62f3d38265"/><section>
+    <title>BackendRendererUserData</title>
+<indexterm><primary>BackendRendererUserData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendRendererUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiIO::BackendRendererUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a71d9fa7f004072892216d3504163cd12"/><section>
+    <title>BackendUsingLegacyKeyArrays</title>
+<indexterm><primary>BackendUsingLegacyKeyArrays</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendUsingLegacyKeyArrays</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a33644f626f44716357624c2755a9b9d1">ImS8</link> ImGuiIO::BackendUsingLegacyKeyArrays</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aa9a50114735531c89671b9c591bf1f3b"/><section>
+    <title>BackendUsingLegacyNavInputArray</title>
+<indexterm><primary>BackendUsingLegacyNavInputArray</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>BackendUsingLegacyNavInputArray</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::BackendUsingLegacyNavInputArray</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a162d9da988e8985df05d262640f2f91c"/><section>
+    <title>ClipboardUserData</title>
+<indexterm><primary>ClipboardUserData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ClipboardUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiIO::ClipboardUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a66892ea6cb0f64c681be2ca2e33830f8"/><section>
+    <title>ConfigDebugBeginReturnValueLoop</title>
+<indexterm><primary>ConfigDebugBeginReturnValueLoop</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDebugBeginReturnValueLoop</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDebugBeginReturnValueLoop</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a0bb96382080ca9fdd071a5a0aeff6301"/><section>
+    <title>ConfigDebugBeginReturnValueOnce</title>
+<indexterm><primary>ConfigDebugBeginReturnValueOnce</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDebugBeginReturnValueOnce</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDebugBeginReturnValueOnce</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a646735ef40b25f677d99a5e51a7cc455"/><section>
+    <title>ConfigDebugIgnoreFocusLoss</title>
+<indexterm><primary>ConfigDebugIgnoreFocusLoss</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDebugIgnoreFocusLoss</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDebugIgnoreFocusLoss</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ab34c141d562fc6b76203e2097de66eb3"/><section>
+    <title>ConfigDebugIniSettings</title>
+<indexterm><primary>ConfigDebugIniSettings</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDebugIniSettings</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDebugIniSettings</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a7333e8741883f6ef83dd40b86e240591"/><section>
+    <title>ConfigDebugIsDebuggerPresent</title>
+<indexterm><primary>ConfigDebugIsDebuggerPresent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDebugIsDebuggerPresent</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDebugIsDebuggerPresent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a17d566410828420e31cc27ecacedebdd"/><section>
+    <title>ConfigDockingAlwaysTabBar</title>
+<indexterm><primary>ConfigDockingAlwaysTabBar</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDockingAlwaysTabBar</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDockingAlwaysTabBar</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ace7a9422c9889dc041fa546bd723223e"/><section>
+    <title>ConfigDockingNoSplit</title>
+<indexterm><primary>ConfigDockingNoSplit</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDockingNoSplit</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDockingNoSplit</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a7ff3afc8f9bad04675997212eacb798c"/><section>
+    <title>ConfigDockingTransparentPayload</title>
+<indexterm><primary>ConfigDockingTransparentPayload</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDockingTransparentPayload</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDockingTransparentPayload</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ac5008955addd009b7ef19ee87ca88577"/><section>
+    <title>ConfigDockingWithShift</title>
+<indexterm><primary>ConfigDockingWithShift</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDockingWithShift</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDockingWithShift</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8ecd103855fbd0bb9090d5998bc994bc"/><section>
+    <title>ConfigDragClickToInputText</title>
+<indexterm><primary>ConfigDragClickToInputText</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigDragClickToInputText</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigDragClickToInputText</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a6267b8a1ffa964035e6540f5e4296e39"/><section>
+    <title>ConfigFlags</title>
+<indexterm><primary>ConfigFlags</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a91442880bed105ca5fe1be683b91d9a0">ImGuiConfigFlags</link> ImGuiIO::ConfigFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ad17e398044a43d0020f692af8a72a9ac"/><section>
+    <title>ConfigInputTextCursorBlink</title>
+<indexterm><primary>ConfigInputTextCursorBlink</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigInputTextCursorBlink</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigInputTextCursorBlink</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1abdd7e183fe87d70c779c2d28ee63eb4d"/><section>
+    <title>ConfigInputTextEnterKeepActive</title>
+<indexterm><primary>ConfigInputTextEnterKeepActive</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigInputTextEnterKeepActive</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigInputTextEnterKeepActive</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1af38a4c1ec57a1721dc1bbf81ccc16dc7"/><section>
+    <title>ConfigInputTrickleEventQueue</title>
+<indexterm><primary>ConfigInputTrickleEventQueue</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigInputTrickleEventQueue</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigInputTrickleEventQueue</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ab2b62c3ee538d4037e7467bf934fd7a2"/><section>
+    <title>ConfigMacOSXBehaviors</title>
+<indexterm><primary>ConfigMacOSXBehaviors</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigMacOSXBehaviors</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigMacOSXBehaviors</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aedd3ba8bfc9c682e5a7a66ffdd480df2"/><section>
+    <title>ConfigMemoryCompactTimer</title>
+<indexterm><primary>ConfigMemoryCompactTimer</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigMemoryCompactTimer</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::ConfigMemoryCompactTimer</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1abd96c624dbd2fde5b121b3a8fc83c5fa"/><section>
+    <title>ConfigViewportsNoAutoMerge</title>
+<indexterm><primary>ConfigViewportsNoAutoMerge</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigViewportsNoAutoMerge</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigViewportsNoAutoMerge</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a7da990e245f2fbed0e5faa61132d063f"/><section>
+    <title>ConfigViewportsNoDecoration</title>
+<indexterm><primary>ConfigViewportsNoDecoration</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigViewportsNoDecoration</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigViewportsNoDecoration</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ae2e44e382ad13807136fdde24d64c460"/><section>
+    <title>ConfigViewportsNoDefaultParent</title>
+<indexterm><primary>ConfigViewportsNoDefaultParent</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigViewportsNoDefaultParent</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigViewportsNoDefaultParent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1afbe3b46d452851eb5addc39a8cf1ce5d"/><section>
+    <title>ConfigViewportsNoTaskBarIcon</title>
+<indexterm><primary>ConfigViewportsNoTaskBarIcon</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigViewportsNoTaskBarIcon</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigViewportsNoTaskBarIcon</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a17f4703e015c69263170396441b321d9"/><section>
+    <title>ConfigWindowsMoveFromTitleBarOnly</title>
+<indexterm><primary>ConfigWindowsMoveFromTitleBarOnly</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigWindowsMoveFromTitleBarOnly</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigWindowsMoveFromTitleBarOnly</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aaa627c27ae9e957f738e74a67629bed6"/><section>
+    <title>ConfigWindowsResizeFromEdges</title>
+<indexterm><primary>ConfigWindowsResizeFromEdges</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>ConfigWindowsResizeFromEdges</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::ConfigWindowsResizeFromEdges</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8fdf06720bff6066ebc17aa2f3d249ce"/><section>
+    <title>Ctx</title>
+<indexterm><primary>Ctx</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>Ctx</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_context">ImGuiContext</link>* ImGuiIO::Ctx</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a5068d5414a19c2a1bf58029bd732a7c7"/><section>
+    <title>DeltaTime</title>
+<indexterm><primary>DeltaTime</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>DeltaTime</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::DeltaTime</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a703cad6bd4c9e8972d056116104d27e8"/><section>
+    <title>DisplayFramebufferScale</title>
+<indexterm><primary>DisplayFramebufferScale</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>DisplayFramebufferScale</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::DisplayFramebufferScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a042cfb90bdc9ccfe37f86b92ade759fd"/><section>
+    <title>DisplaySize</title>
+<indexterm><primary>DisplaySize</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>DisplaySize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::DisplaySize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1af5fc6eae7ce68cce8473f006431f530e"/><section>
+    <title>FontAllowUserScaling</title>
+<indexterm><primary>FontAllowUserScaling</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>FontAllowUserScaling</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::FontAllowUserScaling</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a11016e4aefa603523bce61315b66bf00"/><section>
+    <title>FontDefault</title>
+<indexterm><primary>FontDefault</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>FontDefault</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font">ImFont</link>* ImGuiIO::FontDefault</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a74a64a74dcbe2a6ef0c1ef56ba328094"/><section>
+    <title>FontGlobalScale</title>
+<indexterm><primary>FontGlobalScale</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>FontGlobalScale</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::FontGlobalScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a24e4f5201fe8780267abc2acfc24254c"/><section>
+    <title>Fonts</title>
+<indexterm><primary>Fonts</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>Fonts</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_font_atlas">ImFontAtlas</link>* ImGuiIO::Fonts</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8c6c2be54ddeda3cfb4a73cf95701a54"/><section>
+    <title>Framerate</title>
+<indexterm><primary>Framerate</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>Framerate</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::Framerate</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a974c08e33e5f2abcdd23981c9b9350ae"/><section>
+    <title>GetClipboardTextFn</title>
+<indexterm><primary>GetClipboardTextFn</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>GetClipboardTextFn</secondary></indexterm>
+<para><computeroutput>const char *(* ImGuiIO::GetClipboardTextFn) (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a89e8efe8f82b539c961dc22cc2499402"/><section>
+    <title>IniFilename</title>
+<indexterm><primary>IniFilename</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>IniFilename</secondary></indexterm>
+<para><computeroutput>const char* ImGuiIO::IniFilename</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a9b37eea17baa240a93b1288673a6eeb9"/><section>
+    <title>IniSavingRate</title>
+<indexterm><primary>IniSavingRate</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>IniSavingRate</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::IniSavingRate</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a4d9fb1151f10f1f6f7597bb3a21e1447"/><section>
+    <title>InputQueueCharacters</title>
+<indexterm><primary>InputQueueCharacters</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>InputQueueCharacters</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link>&gt; ImGuiIO::InputQueueCharacters</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a4740dc94f803920e809747d2c602d571"/><section>
+    <title>InputQueueSurrogate</title>
+<indexterm><primary>InputQueueSurrogate</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>InputQueueSurrogate</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a019c3b51f12e45e6686271bcd107e082">ImWchar16</link> ImGuiIO::InputQueueSurrogate</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a1e64ef08a4448a2cac874496130992cb"/><section>
+    <title>KeyAlt</title>
+<indexterm><primary>KeyAlt</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyAlt</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::KeyAlt</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a51de8f65dcabb80ef4e0d3c759ffcd7f"/><section>
+    <title>KeyCtrl</title>
+<indexterm><primary>KeyCtrl</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyCtrl</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::KeyCtrl</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aa1cd0083960f8e5361eb6d49973c8823"/><section>
+    <title>KeyMap</title>
+<indexterm><primary>KeyMap</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyMap</secondary></indexterm>
+<para><computeroutput>int ImGuiIO::KeyMap[<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4aec3107a9dcdc5632cdcd57d4f8bbed18">ImGuiKey_COUNT</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a77133a351ecaf34ea5df82866690dcaa"/><section>
+    <title>KeyMods</title>
+<indexterm><primary>KeyMods</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyMods</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a0720c04fed27e0f01b3722a13c8a8762">ImGuiKeyChord</link> ImGuiIO::KeyMods</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a390537e7cba21b98a8f89df857ea59fb"/><section>
+    <title>KeyRepeatDelay</title>
+<indexterm><primary>KeyRepeatDelay</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyRepeatDelay</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::KeyRepeatDelay</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1accd71987c895c4aec6d1a8c368cc9e0e"/><section>
+    <title>KeyRepeatRate</title>
+<indexterm><primary>KeyRepeatRate</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyRepeatRate</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::KeyRepeatRate</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a6efeb8f2a11a463a0c7b1f8401532e88"/><section>
+    <title>KeysData</title>
+<indexterm><primary>KeysData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeysData</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_key_data">ImGuiKeyData</link> ImGuiIO::KeysData[<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4ae037761d4aeb8d78ce9e4684151c825b">ImGuiKey_KeysData_SIZE</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a59f88f4933f391741450f8548cb46eab"/><section>
+    <title>KeysDown</title>
+<indexterm><primary>KeysDown</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeysDown</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::KeysDown[<link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4aec3107a9dcdc5632cdcd57d4f8bbed18">ImGuiKey_COUNT</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a3c7642214f88862af5b8467f98ac35c9"/><section>
+    <title>KeyShift</title>
+<indexterm><primary>KeyShift</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeyShift</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::KeyShift</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1afda9e11e21b7ba21573671c38d9f4a81"/><section>
+    <title>KeySuper</title>
+<indexterm><primary>KeySuper</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>KeySuper</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::KeySuper</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ae77a1beed11820366800645232a6ad1c"/><section>
+    <title>LogFilename</title>
+<indexterm><primary>LogFilename</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>LogFilename</secondary></indexterm>
+<para><computeroutput>const char* ImGuiIO::LogFilename</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ae47a71018cc9b0c7b55912a4bfa9149c"/><section>
+    <title>MetricsActiveWindows</title>
+<indexterm><primary>MetricsActiveWindows</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MetricsActiveWindows</secondary></indexterm>
+<para><computeroutput>int ImGuiIO::MetricsActiveWindows</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a19daed6a7fa22819fe187dfc2a2f5683"/><section>
+    <title>MetricsRenderIndices</title>
+<indexterm><primary>MetricsRenderIndices</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MetricsRenderIndices</secondary></indexterm>
+<para><computeroutput>int ImGuiIO::MetricsRenderIndices</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8ec9d203f4543047a8820366c5734529"/><section>
+    <title>MetricsRenderVertices</title>
+<indexterm><primary>MetricsRenderVertices</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MetricsRenderVertices</secondary></indexterm>
+<para><computeroutput>int ImGuiIO::MetricsRenderVertices</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aec04d38a9b3799d12259a672c42e7c7e"/><section>
+    <title>MetricsRenderWindows</title>
+<indexterm><primary>MetricsRenderWindows</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MetricsRenderWindows</secondary></indexterm>
+<para><computeroutput>int ImGuiIO::MetricsRenderWindows</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8655587202ff9001e5b0ccc6ade42d93"/><section>
+    <title>MouseClicked</title>
+<indexterm><primary>MouseClicked</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseClicked</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseClicked[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ac3e700b171e730f8e527b4fa08cf6fad"/><section>
+    <title>MouseClickedCount</title>
+<indexterm><primary>MouseClickedCount</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseClickedCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiIO::MouseClickedCount[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aef8407268836888e9954c86afcc0b42a"/><section>
+    <title>MouseClickedLastCount</title>
+<indexterm><primary>MouseClickedLastCount</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseClickedLastCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiIO::MouseClickedLastCount[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a23c9c6c48a51774fee36b7f0bb75d331"/><section>
+    <title>MouseClickedPos</title>
+<indexterm><primary>MouseClickedPos</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseClickedPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::MouseClickedPos[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1afc5a5a5250fdee3c558f45c4f0268308"/><section>
+    <title>MouseClickedTime</title>
+<indexterm><primary>MouseClickedTime</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseClickedTime</secondary></indexterm>
+<para><computeroutput>double ImGuiIO::MouseClickedTime[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a5b5cc0c171104337e3e7e13a8f7b0938"/><section>
+    <title>MouseDelta</title>
+<indexterm><primary>MouseDelta</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDelta</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::MouseDelta</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8bc01048733dc554de3d03f40f57b9ca"/><section>
+    <title>MouseDoubleClicked</title>
+<indexterm><primary>MouseDoubleClicked</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDoubleClicked</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseDoubleClicked[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a13334c1522aadc12af0ce3b31b0eb3a1"/><section>
+    <title>MouseDoubleClickMaxDist</title>
+<indexterm><primary>MouseDoubleClickMaxDist</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDoubleClickMaxDist</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDoubleClickMaxDist</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aee056f6ed15363e0bcd8d879b312da7c"/><section>
+    <title>MouseDoubleClickTime</title>
+<indexterm><primary>MouseDoubleClickTime</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDoubleClickTime</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDoubleClickTime</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8f4613baafc93026175d9cdaf4e82d21"/><section>
+    <title>MouseDown</title>
+<indexterm><primary>MouseDown</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDown</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseDown[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ab464bf317051bbdf1c93ab36802fe3b7"/><section>
+    <title>MouseDownDuration</title>
+<indexterm><primary>MouseDownDuration</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDownDuration</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDownDuration[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a59d19cf7ad831e57ce15f90295871881"/><section>
+    <title>MouseDownDurationPrev</title>
+<indexterm><primary>MouseDownDurationPrev</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDownDurationPrev</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDownDurationPrev[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a682f98d817f99058136cb47cf8a9bcc3"/><section>
+    <title>MouseDownOwned</title>
+<indexterm><primary>MouseDownOwned</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDownOwned</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseDownOwned[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a5ed7eb38ec2cb214981671f1bc48fb38"/><section>
+    <title>MouseDownOwnedUnlessPopupClose</title>
+<indexterm><primary>MouseDownOwnedUnlessPopupClose</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDownOwnedUnlessPopupClose</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseDownOwnedUnlessPopupClose[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a402bca8838011fc4518c0895f24ffc92"/><section>
+    <title>MouseDragMaxDistanceAbs</title>
+<indexterm><primary>MouseDragMaxDistanceAbs</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDragMaxDistanceAbs</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::MouseDragMaxDistanceAbs[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a86c7fe77349fd82a60ab7a279aa27f01"/><section>
+    <title>MouseDragMaxDistanceSqr</title>
+<indexterm><primary>MouseDragMaxDistanceSqr</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDragMaxDistanceSqr</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDragMaxDistanceSqr[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ad8b9a9924b0d6bde6a0fa35c17aa54ae"/><section>
+    <title>MouseDragThreshold</title>
+<indexterm><primary>MouseDragThreshold</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDragThreshold</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseDragThreshold</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a9b240460966bf2bd35c30f27b8db4028"/><section>
+    <title>MouseDrawCursor</title>
+<indexterm><primary>MouseDrawCursor</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseDrawCursor</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseDrawCursor</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ae7dfb76aa8edbfa96c0df56ce07e4e92"/><section>
+    <title>MouseHoveredViewport</title>
+<indexterm><primary>MouseHoveredViewport</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseHoveredViewport</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiIO::MouseHoveredViewport</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ad2e9e547cb4d2abe8e7d27407efffeb8"/><section>
+    <title>MousePos</title>
+<indexterm><primary>MousePos</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MousePos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::MousePos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a0fa6601a709eb9e34460e6abc7e77ad7"/><section>
+    <title>MousePosPrev</title>
+<indexterm><primary>MousePosPrev</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MousePosPrev</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiIO::MousePosPrev</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a3a2e7d52289eecfdbe8571e034e41b53"/><section>
+    <title>MouseReleased</title>
+<indexterm><primary>MouseReleased</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseReleased</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseReleased[5]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ae1d8f50f11941cfaa968cfba98e751fd"/><section>
+    <title>MouseSource</title>
+<indexterm><primary>MouseSource</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseSource</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> ImGuiIO::MouseSource</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a21d3ca4928989a2c838b7b4ea95e5824"/><section>
+    <title>MouseWheel</title>
+<indexterm><primary>MouseWheel</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseWheel</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseWheel</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a25bed9de908b086e583854438ca7927d"/><section>
+    <title>MouseWheelH</title>
+<indexterm><primary>MouseWheelH</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseWheelH</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::MouseWheelH</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1ac93fd310a6e0a3c1062bb4d0b0ee0190"/><section>
+    <title>MouseWheelRequestAxisSwap</title>
+<indexterm><primary>MouseWheelRequestAxisSwap</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>MouseWheelRequestAxisSwap</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::MouseWheelRequestAxisSwap</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1aa63cf74a15e9dd0ad469ff09ca840ddf"/><section>
+    <title>NavActive</title>
+<indexterm><primary>NavActive</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>NavActive</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::NavActive</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a1e6e8142c2c2e09a715fa5efaa0db9fa"/><section>
+    <title>NavInputs</title>
+<indexterm><primary>NavInputs</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>NavInputs</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::NavInputs[<link linkend="_imgui_8h_1ac127e1a0a29c7abca4922e206d0c2991a649aced582f4c80f70b83814051ffcb3">ImGuiNavInput_COUNT</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a904bb563ee00c92cc6b6b072df2c7405"/><section>
+    <title>NavVisible</title>
+<indexterm><primary>NavVisible</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>NavVisible</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::NavVisible</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1adb663a185ac88f81cad4ece4d67beea5"/><section>
+    <title>PenPressure</title>
+<indexterm><primary>PenPressure</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>PenPressure</secondary></indexterm>
+<para><computeroutput>float ImGuiIO::PenPressure</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a974d83f8be4775ab346fafa056150017"/><section>
+    <title>PlatformLocaleDecimalPoint</title>
+<indexterm><primary>PlatformLocaleDecimalPoint</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>PlatformLocaleDecimalPoint</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> ImGuiIO::PlatformLocaleDecimalPoint</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a1ee9c0763df33f7f3a9819235ce85078"/><section>
+    <title>SetClipboardTextFn</title>
+<indexterm><primary>SetClipboardTextFn</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>SetClipboardTextFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiIO::SetClipboardTextFn) (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *user_data, const char *text)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a000283dfba912e6af1b607ea19677fd2"/><section>
+    <title>SetPlatformImeDataFn</title>
+<indexterm><primary>SetPlatformImeDataFn</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>SetPlatformImeDataFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiIO::SetPlatformImeDataFn) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *viewport, <link linkend="_struct_im_gui_platform_ime_data">ImGuiPlatformImeData</link> *<link linkend="_imgui__impl__opengl3__loader_8h_1abd87654504355b4c1bb002dcb1d4d16a">data</link>)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a8c5e74fd39c2655455329e09529da7d3"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiIO::UserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a458e4ca98d896adb16e3a41ec6d2b811"/><section>
+    <title>WantCaptureKeyboard</title>
+<indexterm><primary>WantCaptureKeyboard</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantCaptureKeyboard</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantCaptureKeyboard</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1af5b8add76c5d833a65df19b5456acd7e"/><section>
+    <title>WantCaptureMouse</title>
+<indexterm><primary>WantCaptureMouse</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantCaptureMouse</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantCaptureMouse</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a088bdc608b0c695eb3a8fac4a06e859b"/><section>
+    <title>WantCaptureMouseUnlessPopupClose</title>
+<indexterm><primary>WantCaptureMouseUnlessPopupClose</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantCaptureMouseUnlessPopupClose</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantCaptureMouseUnlessPopupClose</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a68d3fb726b3f243fa974107fae291d8e"/><section>
+    <title>WantSaveIniSettings</title>
+<indexterm><primary>WantSaveIniSettings</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantSaveIniSettings</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantSaveIniSettings</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a877f6adba2c961f361df7697f908649a"/><section>
+    <title>WantSetMousePos</title>
+<indexterm><primary>WantSetMousePos</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantSetMousePos</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantSetMousePos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_i_o_1a0e53197e96187a57b2d86720bf163f4d"/><section>
+    <title>WantTextInput</title>
+<indexterm><primary>WantTextInput</primary><secondary>ImGuiIO</secondary></indexterm>
+<indexterm><primary>ImGuiIO</primary><secondary>WantTextInput</secondary></indexterm>
+<para><computeroutput>bool ImGuiIO::WantTextInput</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

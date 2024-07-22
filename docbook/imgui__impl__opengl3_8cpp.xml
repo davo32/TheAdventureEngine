@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__impl__opengl3_8cpp" xml:lang="en-US">
+<title>imgui_impl_opengl3.cpp File Reference</title>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;imgui.h&quot;<?linebreak?>#include &quot;imgui_impl_opengl3.h&quot;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?>#include &quot;imgui_impl_opengl3_loader.h&quot;<?linebreak?></programlisting>Include dependency graph for imgui_impl_opengl3.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui__impl__opengl3_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_im_gui___impl_open_g_l3___data">ImGui_ImplOpenGL3_Data</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1a7dcfb597d9879faf16deecf3874e58d4">IMGL3W_IMPL</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1a7ae930dc349a186d20cfd7ec01cb1f1d">IMGUI_IMPL_OPENGL_USE_VERTEX_ARRAY</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1adbec2f9206e8462a71fc4a8b1f710c08">IMGUI_IMPL_OPENGL_HAS_EXTENSIONS</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1a0a0e7e62d1bfc3833d75ed3465b55842">IMGUI_IMPL_OPENGL_HAS_POLYGON_MODE</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1a551110c2b149cc6e2c67aca93305d2ec">IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_BUFFER_PIXEL_UNPACK</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1ac99ae99b9e3d14f7e0211285a5f0540c">IMGUI_IMPL_OPENGL_MAY_HAVE_PRIMITIVE_RESTART</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1a2d9c66e1dfb454fdb91f85037e0591e5">IMGUI_IMPL_OPENGL_MAY_HAVE_VTX_OFFSET</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1ac486fa8f4402470a60eeb8e6a39fb35f">IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_SAMPLER</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="_imgui__impl__opengl3_8cpp_1adefa3150bdf88f59f2b8daa899f0f80c">GL_CALL</link>(_CALL)&#160;&#160;&#160;_CALL</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_imgui__impl__opengl3_8cpp_1a0475f257dc97d1daceee89cb4b19744d">ImGui_ImplOpenGL3_Init</link> (const char *glsl_version)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__opengl3_8cpp_1acbd53376e6135ad71e7bcd9879278e37">ImGui_ImplOpenGL3_Shutdown</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__opengl3_8cpp_1a900e74add4e56e74f97a210eb329aa91">ImGui_ImplOpenGL3_NewFrame</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__opengl3_8cpp_1ad215190229f4f300593911aa7b3821de">ImGui_ImplOpenGL3_RenderDrawData</link> (<link linkend="_struct_im_draw_data">ImDrawData</link> *draw_data)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_imgui__impl__opengl3_8cpp_1a3dc4f80532d710de41d4075214eb363e">ImGui_ImplOpenGL3_CreateFontsTexture</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__opengl3_8cpp_1a539aaad4aa185838297fb13b2409c405">ImGui_ImplOpenGL3_DestroyFontsTexture</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_imgui__impl__opengl3_8cpp_1ab27f12289d6fe9fcd412f92af280b398">ImGui_ImplOpenGL3_CreateDeviceObjects</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_imgui__impl__opengl3_8cpp_1a605e340c346791d9c9e927add2392d0e">ImGui_ImplOpenGL3_DestroyDeviceObjects</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1adefa3150bdf88f59f2b8daa899f0f80c"/><section>
+    <title>GL_CALL</title>
+<indexterm><primary>GL_CALL</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>GL_CALL</secondary></indexterm>
+<para><computeroutput>#define GL_CALL( _CALL)&#160;&#160;&#160;_CALL</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a7dcfb597d9879faf16deecf3874e58d4"/><section>
+    <title>IMGL3W_IMPL</title>
+<indexterm><primary>IMGL3W_IMPL</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGL3W_IMPL</secondary></indexterm>
+<para><computeroutput>#define IMGL3W_IMPL</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1adbec2f9206e8462a71fc4a8b1f710c08"/><section>
+    <title>IMGUI_IMPL_OPENGL_HAS_EXTENSIONS</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_HAS_EXTENSIONS</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_HAS_EXTENSIONS</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_HAS_EXTENSIONS</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a0a0e7e62d1bfc3833d75ed3465b55842"/><section>
+    <title>IMGUI_IMPL_OPENGL_HAS_POLYGON_MODE</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_HAS_POLYGON_MODE</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_HAS_POLYGON_MODE</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_HAS_POLYGON_MODE</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a551110c2b149cc6e2c67aca93305d2ec"/><section>
+    <title>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_BUFFER_PIXEL_UNPACK</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_BUFFER_PIXEL_UNPACK</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_BUFFER_PIXEL_UNPACK</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_BUFFER_PIXEL_UNPACK</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1ac486fa8f4402470a60eeb8e6a39fb35f"/><section>
+    <title>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_SAMPLER</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_SAMPLER</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_SAMPLER</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_MAY_HAVE_BIND_SAMPLER</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1ac99ae99b9e3d14f7e0211285a5f0540c"/><section>
+    <title>IMGUI_IMPL_OPENGL_MAY_HAVE_PRIMITIVE_RESTART</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_MAY_HAVE_PRIMITIVE_RESTART</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_MAY_HAVE_PRIMITIVE_RESTART</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_MAY_HAVE_PRIMITIVE_RESTART</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a2d9c66e1dfb454fdb91f85037e0591e5"/><section>
+    <title>IMGUI_IMPL_OPENGL_MAY_HAVE_VTX_OFFSET</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_MAY_HAVE_VTX_OFFSET</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_MAY_HAVE_VTX_OFFSET</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_MAY_HAVE_VTX_OFFSET</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a7ae930dc349a186d20cfd7ec01cb1f1d"/><section>
+    <title>IMGUI_IMPL_OPENGL_USE_VERTEX_ARRAY</title>
+<indexterm><primary>IMGUI_IMPL_OPENGL_USE_VERTEX_ARRAY</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>IMGUI_IMPL_OPENGL_USE_VERTEX_ARRAY</secondary></indexterm>
+<para><computeroutput>#define IMGUI_IMPL_OPENGL_USE_VERTEX_ARRAY</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1ab27f12289d6fe9fcd412f92af280b398"/><section>
+    <title>ImGui_ImplOpenGL3_CreateDeviceObjects()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_CreateDeviceObjects</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_CreateDeviceObjects</secondary></indexterm>
+<para><computeroutput>bool ImGui_ImplOpenGL3_CreateDeviceObjects ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a3dc4f80532d710de41d4075214eb363e"/><section>
+    <title>ImGui_ImplOpenGL3_CreateFontsTexture()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_CreateFontsTexture</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_CreateFontsTexture</secondary></indexterm>
+<para><computeroutput>bool ImGui_ImplOpenGL3_CreateFontsTexture ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a605e340c346791d9c9e927add2392d0e"/><section>
+    <title>ImGui_ImplOpenGL3_DestroyDeviceObjects()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_DestroyDeviceObjects</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_DestroyDeviceObjects</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplOpenGL3_DestroyDeviceObjects ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a539aaad4aa185838297fb13b2409c405"/><section>
+    <title>ImGui_ImplOpenGL3_DestroyFontsTexture()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_DestroyFontsTexture</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_DestroyFontsTexture</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplOpenGL3_DestroyFontsTexture ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a0475f257dc97d1daceee89cb4b19744d"/><section>
+    <title>ImGui_ImplOpenGL3_Init()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_Init</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_Init</secondary></indexterm>
+<para><computeroutput>bool ImGui_ImplOpenGL3_Init (const char * glsl_version)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1a900e74add4e56e74f97a210eb329aa91"/><section>
+    <title>ImGui_ImplOpenGL3_NewFrame()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_NewFrame</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_NewFrame</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplOpenGL3_NewFrame ( )</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1ad215190229f4f300593911aa7b3821de"/><section>
+    <title>ImGui_ImplOpenGL3_RenderDrawData()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_RenderDrawData</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_RenderDrawData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplOpenGL3_RenderDrawData (<link linkend="_struct_im_draw_data">ImDrawData</link> * draw_data)</computeroutput></para></section>
+<anchor xml:id="_imgui__impl__opengl3_8cpp_1acbd53376e6135ad71e7bcd9879278e37"/><section>
+    <title>ImGui_ImplOpenGL3_Shutdown()</title>
+<indexterm><primary>ImGui_ImplOpenGL3_Shutdown</primary><secondary>imgui_impl_opengl3.cpp</secondary></indexterm>
+<indexterm><primary>imgui_impl_opengl3.cpp</primary><secondary>ImGui_ImplOpenGL3_Shutdown</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGui_ImplOpenGL3_Shutdown ( )</computeroutput></para></section>
+</section>
+</section>

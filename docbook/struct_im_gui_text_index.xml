@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_text_index" xml:lang="en-US">
+<title>ImGuiTextIndex Struct Reference</title>
+<indexterm><primary>ImGuiTextIndex</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiTextIndex:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_text_index__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_text_index_1a4c4f61227f86144ae9c054cc865eecb3">clear</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_text_index_1a016978541a00f3901b19327296fd4934">size</link> ()</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_text_index_1aca03811115c2399b24cb0051dac850b0">get_line_begin</link> (const char *base, int n)</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_im_gui_text_index_1a17115775633756615910747494e81a8c">get_line_end</link> (const char *base, int n)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_text_index_1aa1dd7404a8097a902f1dd83ba988bd95">append</link> (const char *base, int old_size, int new_size)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; int &gt; <link linkend="_struct_im_gui_text_index_1ad9683201522668ffd920299243de177b">LineOffsets</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_text_index_1a885f884d458a6309a1a524a20670c426">EndOffset</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_text_index_1aa1dd7404a8097a902f1dd83ba988bd95"/><section>
+    <title>append()</title>
+<indexterm><primary>append</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>append</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiTextIndex::append (const char * base, int old_size, int new_size)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_index_1a4c4f61227f86144ae9c054cc865eecb3"/><section>
+    <title>clear()</title>
+<indexterm><primary>clear</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiTextIndex::clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_index_1aca03811115c2399b24cb0051dac850b0"/><section>
+    <title>get_line_begin()</title>
+<indexterm><primary>get_line_begin</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>get_line_begin</secondary></indexterm>
+<para><computeroutput>const char * ImGuiTextIndex::get_line_begin (const char * base, int n)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_index_1a17115775633756615910747494e81a8c"/><section>
+    <title>get_line_end()</title>
+<indexterm><primary>get_line_end</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>get_line_end</secondary></indexterm>
+<para><computeroutput>const char * ImGuiTextIndex::get_line_end (const char * base, int n)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_index_1a016978541a00f3901b19327296fd4934"/><section>
+    <title>size()</title>
+<indexterm><primary>size</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>size</secondary></indexterm>
+<para><computeroutput>int ImGuiTextIndex::size ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_text_index_1a885f884d458a6309a1a524a20670c426"/><section>
+    <title>EndOffset</title>
+<indexterm><primary>EndOffset</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>EndOffset</secondary></indexterm>
+<para><computeroutput>int ImGuiTextIndex::EndOffset = 0</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_text_index_1ad9683201522668ffd920299243de177b"/><section>
+    <title>LineOffsets</title>
+<indexterm><primary>LineOffsets</primary><secondary>ImGuiTextIndex</secondary></indexterm>
+<indexterm><primary>ImGuiTextIndex</primary><secondary>LineOffsets</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;int&gt; ImGuiTextIndex::LineOffsets</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_draw_data" xml:lang="en-US">
+<title>ImDrawData Struct Reference</title>
+<indexterm><primary>ImDrawData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImDrawData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_draw_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_draw_data_1a96b50c40107c997e9eea7ac3ba1a6138">ImDrawData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_draw_data_1ab6a90612bd22eaff0d42539875e2e5c9">Clear</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_draw_data_1aa48f45dd7e1567f68cdf4b910e769302">AddDrawList</link> (<link linkend="_struct_im_draw_list">ImDrawList</link> *draw_list)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_draw_data_1a88ae746e958b79ee527fe94dee29d57c">DeIndexAllBuffers</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_draw_data_1a951fbe824674c7a5c2f6a478f3654ca8">ScaleClipRects</link> (const <link linkend="_struct_im_vec2">ImVec2</link> &amp;fb_scale)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_im_draw_data_1ad01ab9ce5e8843b7860ccbb3eb9a6554">Valid</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_draw_data_1adc0bbc2881c15f78bdabe51d82582f4e">CmdListsCount</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_draw_data_1a1ac8a5d441f464628295ef91a0602fc5">TotalIdxCount</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_draw_data_1af0035b52cdf91932b25eaf2da853965a">TotalVtxCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_draw_list">ImDrawList</link> * &gt; <link linkend="_struct_im_draw_data_1ad78ff9e65c4037c492ceade5d3ddd633">CmdLists</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_draw_data_1a1e7755e98f5e24b1f4d9152766e6346e">DisplayPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_draw_data_1a74d53447c8882a3ce6dc7aaa3e081f39">DisplaySize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_draw_data_1ad57d704d2e5aecd79454c98c8a8111ec">FramebufferScale</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_viewport">ImGuiViewport</link> * <link linkend="_struct_im_draw_data_1afe3a34d1f384c37e99627e6efbc91815">OwnerViewport</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_draw_data_1a96b50c40107c997e9eea7ac3ba1a6138"/><section>
+    <title>ImDrawData()</title>
+<indexterm><primary>ImDrawData</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>ImDrawData</secondary></indexterm>
+<para><computeroutput>ImDrawData::ImDrawData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_draw_data_1aa48f45dd7e1567f68cdf4b910e769302"/><section>
+    <title>AddDrawList()</title>
+<indexterm><primary>AddDrawList</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>AddDrawList</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImDrawData::AddDrawList (<link linkend="_struct_im_draw_list">ImDrawList</link> * draw_list)</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1ab6a90612bd22eaff0d42539875e2e5c9"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImDrawData::Clear ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1a88ae746e958b79ee527fe94dee29d57c"/><section>
+    <title>DeIndexAllBuffers()</title>
+<indexterm><primary>DeIndexAllBuffers</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>DeIndexAllBuffers</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImDrawData::DeIndexAllBuffers ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1a951fbe824674c7a5c2f6a478f3654ca8"/><section>
+    <title>ScaleClipRects()</title>
+<indexterm><primary>ScaleClipRects</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>ScaleClipRects</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImDrawData::ScaleClipRects (const <link linkend="_struct_im_vec2">ImVec2</link> &amp; fb_scale)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_draw_data_1ad78ff9e65c4037c492ceade5d3ddd633"/><section>
+    <title>CmdLists</title>
+<indexterm><primary>CmdLists</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>CmdLists</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_draw_list">ImDrawList</link>*&gt; ImDrawData::CmdLists</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1adc0bbc2881c15f78bdabe51d82582f4e"/><section>
+    <title>CmdListsCount</title>
+<indexterm><primary>CmdListsCount</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>CmdListsCount</secondary></indexterm>
+<para><computeroutput>int ImDrawData::CmdListsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1a1e7755e98f5e24b1f4d9152766e6346e"/><section>
+    <title>DisplayPos</title>
+<indexterm><primary>DisplayPos</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>DisplayPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImDrawData::DisplayPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1a74d53447c8882a3ce6dc7aaa3e081f39"/><section>
+    <title>DisplaySize</title>
+<indexterm><primary>DisplaySize</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>DisplaySize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImDrawData::DisplaySize</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1ad57d704d2e5aecd79454c98c8a8111ec"/><section>
+    <title>FramebufferScale</title>
+<indexterm><primary>FramebufferScale</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>FramebufferScale</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImDrawData::FramebufferScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1afe3a34d1f384c37e99627e6efbc91815"/><section>
+    <title>OwnerViewport</title>
+<indexterm><primary>OwnerViewport</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>OwnerViewport</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_viewport">ImGuiViewport</link>* ImDrawData::OwnerViewport</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1a1ac8a5d441f464628295ef91a0602fc5"/><section>
+    <title>TotalIdxCount</title>
+<indexterm><primary>TotalIdxCount</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>TotalIdxCount</secondary></indexterm>
+<para><computeroutput>int ImDrawData::TotalIdxCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1af0035b52cdf91932b25eaf2da853965a"/><section>
+    <title>TotalVtxCount</title>
+<indexterm><primary>TotalVtxCount</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>TotalVtxCount</secondary></indexterm>
+<para><computeroutput>int ImDrawData::TotalVtxCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_draw_data_1ad01ab9ce5e8843b7860ccbb3eb9a6554"/><section>
+    <title>Valid</title>
+<indexterm><primary>Valid</primary><secondary>ImDrawData</secondary></indexterm>
+<indexterm><primary>ImDrawData</primary><secondary>Valid</secondary></indexterm>
+<para><computeroutput>bool ImDrawData::Valid</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui__draw_8cpp">imgui_draw.cpp</link></section>
+</section>

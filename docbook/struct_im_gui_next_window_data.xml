@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_next_window_data" xml:lang="en-US">
+<title>ImGuiNextWindowData Struct Reference</title>
+<indexterm><primary>ImGuiNextWindowData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiNextWindowData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_next_window_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_next_window_data_1a0471ae42c04fce2e38c9cd8c37690b09">ImGuiNextWindowData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_next_window_data_1a9543431fafe3d0627fdecc5fa839487c">ClearFlags</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui__internal_8h_1a55b45c183ddf8a1b8a70fbce77fa5d26">ImGuiNextWindowDataFlags</link> <link linkend="_struct_im_gui_next_window_data_1a9c92b3e6b1c0c89a9d9ec8430c58af88">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> <link linkend="_struct_im_gui_next_window_data_1adb6dfd7cba17293b0610afa0d16d9491">PosCond</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> <link linkend="_struct_im_gui_next_window_data_1a2a34b7d39111d51f8309eb886575d47d">SizeCond</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> <link linkend="_struct_im_gui_next_window_data_1a864d3d1bf0dbf81ba4cf9cefd75fe06b">CollapsedCond</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> <link linkend="_struct_im_gui_next_window_data_1a15ce41b929016ba6b448203e1f3df97e">DockCond</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1aacc1478ee81850d0d6aff6569469911d">PosVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1a334b4a364e72d96277a1d7d9d3c5474c">PosPivotVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1af399c9c679b8f9c315af8583bf63aa68">SizeVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1a050058f58709d637bc6a0468ee48548f">ContentSizeVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1ae6b6651b219549de2844261363be5d75">ScrollVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aa08bedfb80be3701d8c8d7b218c5a5d0">ImGuiChildFlags</link> <link linkend="_struct_im_gui_next_window_data_1a707d9e7a1d21b6f133478d8e06a59906">ChildFlags</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_next_window_data_1a7452f2116f5e7eb320f24ac00a6675a5">PosUndock</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_next_window_data_1a0c4c81bf78a6ac094f794d2cf318037a">CollapsedVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_next_window_data_1a63e7f1aa93d6bf9eed7452d57d3930c9">SizeConstraintRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1cccf55557c2153a9d4af6db73dc3a91">ImGuiSizeCallback</link> <link linkend="_struct_im_gui_next_window_data_1acab3905da227922b52f03943b355b27a">SizeCallback</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_next_window_data_1a3b80639b573e9a009da8aa9f9ca1a250">SizeCallbackUserData</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_next_window_data_1a3597005fb1cdd4d3fa06296bbbb5a2c2">BgAlphaVal</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_next_window_data_1a39c9abe5cd84d20203ab577018e93342">ViewportId</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_next_window_data_1af1a646d2540a1aaac96466e3690768f2">DockId</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window_class">ImGuiWindowClass</link> <link linkend="_struct_im_gui_next_window_data_1aa35f8e3551f41298074f15633a298e69">WindowClass</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_next_window_data_1ab2b226f215bfdf2639f620e6d84157f6">MenuBarOffsetMinVal</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_next_window_data_1a0471ae42c04fce2e38c9cd8c37690b09"/><section>
+    <title>ImGuiNextWindowData()</title>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<para><computeroutput>ImGuiNextWindowData::ImGuiNextWindowData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_next_window_data_1a9543431fafe3d0627fdecc5fa839487c"/><section>
+    <title>ClearFlags()</title>
+<indexterm><primary>ClearFlags</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ClearFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiNextWindowData::ClearFlags ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_next_window_data_1a3597005fb1cdd4d3fa06296bbbb5a2c2"/><section>
+    <title>BgAlphaVal</title>
+<indexterm><primary>BgAlphaVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>BgAlphaVal</secondary></indexterm>
+<para><computeroutput>float ImGuiNextWindowData::BgAlphaVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a707d9e7a1d21b6f133478d8e06a59906"/><section>
+    <title>ChildFlags</title>
+<indexterm><primary>ChildFlags</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ChildFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aa08bedfb80be3701d8c8d7b218c5a5d0">ImGuiChildFlags</link> ImGuiNextWindowData::ChildFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a864d3d1bf0dbf81ba4cf9cefd75fe06b"/><section>
+    <title>CollapsedCond</title>
+<indexterm><primary>CollapsedCond</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>CollapsedCond</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> ImGuiNextWindowData::CollapsedCond</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a0c4c81bf78a6ac094f794d2cf318037a"/><section>
+    <title>CollapsedVal</title>
+<indexterm><primary>CollapsedVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>CollapsedVal</secondary></indexterm>
+<para><computeroutput>bool ImGuiNextWindowData::CollapsedVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a050058f58709d637bc6a0468ee48548f"/><section>
+    <title>ContentSizeVal</title>
+<indexterm><primary>ContentSizeVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ContentSizeVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::ContentSizeVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a15ce41b929016ba6b448203e1f3df97e"/><section>
+    <title>DockCond</title>
+<indexterm><primary>DockCond</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>DockCond</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> ImGuiNextWindowData::DockCond</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1af1a646d2540a1aaac96466e3690768f2"/><section>
+    <title>DockId</title>
+<indexterm><primary>DockId</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>DockId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiNextWindowData::DockId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a9c92b3e6b1c0c89a9d9ec8430c58af88"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a55b45c183ddf8a1b8a70fbce77fa5d26">ImGuiNextWindowDataFlags</link> ImGuiNextWindowData::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1ab2b226f215bfdf2639f620e6d84157f6"/><section>
+    <title>MenuBarOffsetMinVal</title>
+<indexterm><primary>MenuBarOffsetMinVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>MenuBarOffsetMinVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::MenuBarOffsetMinVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1adb6dfd7cba17293b0610afa0d16d9491"/><section>
+    <title>PosCond</title>
+<indexterm><primary>PosCond</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>PosCond</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> ImGuiNextWindowData::PosCond</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a334b4a364e72d96277a1d7d9d3c5474c"/><section>
+    <title>PosPivotVal</title>
+<indexterm><primary>PosPivotVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>PosPivotVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::PosPivotVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a7452f2116f5e7eb320f24ac00a6675a5"/><section>
+    <title>PosUndock</title>
+<indexterm><primary>PosUndock</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>PosUndock</secondary></indexterm>
+<para><computeroutput>bool ImGuiNextWindowData::PosUndock</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1aacc1478ee81850d0d6aff6569469911d"/><section>
+    <title>PosVal</title>
+<indexterm><primary>PosVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>PosVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::PosVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1ae6b6651b219549de2844261363be5d75"/><section>
+    <title>ScrollVal</title>
+<indexterm><primary>ScrollVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ScrollVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::ScrollVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1acab3905da227922b52f03943b355b27a"/><section>
+    <title>SizeCallback</title>
+<indexterm><primary>SizeCallback</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>SizeCallback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1cccf55557c2153a9d4af6db73dc3a91">ImGuiSizeCallback</link> ImGuiNextWindowData::SizeCallback</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a3b80639b573e9a009da8aa9f9ca1a250"/><section>
+    <title>SizeCallbackUserData</title>
+<indexterm><primary>SizeCallbackUserData</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>SizeCallbackUserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiNextWindowData::SizeCallbackUserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a2a34b7d39111d51f8309eb886575d47d"/><section>
+    <title>SizeCond</title>
+<indexterm><primary>SizeCond</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>SizeCond</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aef890d6ac872e12c5804d0b3e4f7f103">ImGuiCond</link> ImGuiNextWindowData::SizeCond</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a63e7f1aa93d6bf9eed7452d57d3930c9"/><section>
+    <title>SizeConstraintRect</title>
+<indexterm><primary>SizeConstraintRect</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>SizeConstraintRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiNextWindowData::SizeConstraintRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1af399c9c679b8f9c315af8583bf63aa68"/><section>
+    <title>SizeVal</title>
+<indexterm><primary>SizeVal</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>SizeVal</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiNextWindowData::SizeVal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1a39c9abe5cd84d20203ab577018e93342"/><section>
+    <title>ViewportId</title>
+<indexterm><primary>ViewportId</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>ViewportId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiNextWindowData::ViewportId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_next_window_data_1aa35f8e3551f41298074f15633a298e69"/><section>
+    <title>WindowClass</title>
+<indexterm><primary>WindowClass</primary><secondary>ImGuiNextWindowData</secondary></indexterm>
+<indexterm><primary>ImGuiNextWindowData</primary><secondary>WindowClass</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window_class">ImGuiWindowClass</link> ImGuiNextWindowData::WindowClass</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

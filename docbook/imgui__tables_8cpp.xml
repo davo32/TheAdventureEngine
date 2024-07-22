@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_imgui__tables_8cpp" xml:lang="en-US">
+<title>imgui_tables.cpp File Reference</title>
+<indexterm><primary>imgui_tables.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;imgui.h&quot;<?linebreak?>#include &quot;imgui_internal.h&quot;<?linebreak?>#include &lt;stdint.h&gt;<?linebreak?></programlisting>Include dependency graph for imgui_tables.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="imgui__tables_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_imgui__tables_8cpp_1adf4d73301961430d50d7edd96f92ce38">IMGUI_DEFINE_MATH_OPERATORS</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> <link linkend="_imgui__tables_8cpp_1af637396d73d2cb591c8f868648676d7e">TableFixFlags</link> (<link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> flags, <link linkend="_struct_im_gui_window">ImGuiWindow</link> *outer_window)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui__tables_8cpp_1a63d09bbccd87f5e0a938438e1d5d1b8f">IM_STATIC_ASSERT</link> (<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8acdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</link>==0 &amp;&amp;<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8a602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</link>==1 &amp;&amp;<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8a2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</link>==2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_imgui__tables_8cpp_1adf4d73301961430d50d7edd96f92ce38"/><section>
+    <title>IMGUI_DEFINE_MATH_OPERATORS</title>
+<indexterm><primary>IMGUI_DEFINE_MATH_OPERATORS</primary><secondary>imgui_tables.cpp</secondary></indexterm>
+<indexterm><primary>imgui_tables.cpp</primary><secondary>IMGUI_DEFINE_MATH_OPERATORS</secondary></indexterm>
+<para><computeroutput>#define IMGUI_DEFINE_MATH_OPERATORS</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_imgui__tables_8cpp_1a63d09bbccd87f5e0a938438e1d5d1b8f"/><section>
+    <title>IM_STATIC_ASSERT()</title>
+<indexterm><primary>IM_STATIC_ASSERT</primary><secondary>imgui_tables.cpp</secondary></indexterm>
+<indexterm><primary>imgui_tables.cpp</primary><secondary>IM_STATIC_ASSERT</secondary></indexterm>
+<para><computeroutput>IM_STATIC_ASSERT (<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8acdc60ed6ea075a0fe8b77b7e4b90bf42">ImGuiSortDirection_None</link>  = <computeroutput>=0&#160;&amp;&amp;<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8a602ee4769b5204075d97edb2d0b624b3">ImGuiSortDirection_Ascending</link>==1&#160;&amp;&amp;<link linkend="_imgui_8h_1a7b6c205c9124c6552ed5f333c01cc9e8a2d631683c09b2cba6efdc6cda391444d">ImGuiSortDirection_Descending</link>==2</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_imgui__tables_8cpp_1af637396d73d2cb591c8f868648676d7e"/><section>
+    <title>TableFixFlags()</title>
+<indexterm><primary>TableFixFlags</primary><secondary>imgui_tables.cpp</secondary></indexterm>
+<indexterm><primary>imgui_tables.cpp</primary><secondary>TableFixFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> TableFixFlags (<link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> flags, <link linkend="_struct_im_gui_window">ImGuiWindow</link> * outer_window)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__font_8cpp" xml:lang="en-US">
+<title>Font.cpp File Reference</title>
+<indexterm><primary>Font.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;gl_core_4_4.h&quot;<?linebreak?>#include &quot;Font.h&quot;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stb_truetype.h&gt;<?linebreak?></programlisting>Include dependency graph for Font.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_font_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceaie">aie</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__font_8cpp_1afaa2f2d0d9d6726cfae6da070e736347">STB_TRUETYPE_IMPLEMENTATION</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__font_8cpp_1afaa2f2d0d9d6726cfae6da070e736347"/><section>
+    <title>STB_TRUETYPE_IMPLEMENTATION</title>
+<indexterm><primary>STB_TRUETYPE_IMPLEMENTATION</primary><secondary>Font.cpp</secondary></indexterm>
+<indexterm><primary>Font.cpp</primary><secondary>STB_TRUETYPE_IMPLEMENTATION</secondary></indexterm>
+<para><computeroutput>#define STB_TRUETYPE_IMPLEMENTATION</computeroutput></para></section>
+</section>
+</section>

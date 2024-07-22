@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__player_8h_source" xml:lang="en-US">
+<title>Player.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__player_stats_8h">PlayerStats.h</link>&quot;</emphasis>
+3 
+4 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_player">Player</link>
+5 {
+6 <emphasis role="keyword">public</emphasis>:
+7 &#32;&#32;&#32;&#32;<link linkend="_struct_player_stats">PlayerStats</link>&#32;<link linkend="_class_player_1a98cb34c5bffd479a22786ef275387283">GetStatLimits</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;PlayerStatLimits;&#32;}
+8 &#32;&#32;&#32;&#32;<emphasis role="comment">//Getters</emphasis>
+9 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_1a8d962e02bc35d6181940a8aaf7a1a510">GetHealth</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;CurrentHealth;&#32;}
+10 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_1a1bf2db3f140e8ca302d4b05fa1b95573">GetMana</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;CurrentMana;&#32;}
+11 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_1ae1987c8dc09bf9606820f628fa434a90">GetExp</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;CurrentExp;&#32;}
+12 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_player_1ab87cb485cb357c2fb12c840d3abb25ff">GetLevel</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;CurrentLevel;&#32;}
+13 
+14 &#32;&#32;&#32;&#32;<emphasis role="comment">//Setters</emphasis>
+15 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_1a5502ca0bf9fb5caf9ddeaa6195a0aa8d">SetHealth</link>(<emphasis role="keywordtype">int</emphasis>&#32;newHealth);
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_1a6b473bae918ad551b6556db69bf49b5c">SetMana</link>(<emphasis role="keywordtype">int</emphasis>&#32;newMana);
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_1af4748df8fb9132f87e08a2a6fa512997">AddExp</link>(<emphasis role="keywordtype">int</emphasis>&#32;ExpToAdd);
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_player_1a696a334622561e3f64396e68ac5427cd">GainLevel</link>();
+19 
+20 <emphasis role="keyword">private</emphasis>:
+21 &#32;&#32;&#32;&#32;<link linkend="_struct_player_stats">PlayerStats</link>&#32;PlayerStatLimits;
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;CurrentHealth&#32;=&#32;100;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;CurrentMana&#32;=&#32;50;
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;TotalExpGained&#32;=&#32;0;
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;CurrentExp&#32;=&#32;0;
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;CurrentLevel&#32;=&#32;1;
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ExpToLevelModifier&#32;=&#32;2;
+28 };
+29 
+</programlisting></section>

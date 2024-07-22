@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_color_mod" xml:lang="en-US">
+<title>ImGuiColorMod Struct Reference</title>
+<indexterm><primary>ImGuiColorMod</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiColorMod:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_color_mod__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1b0467ec582e731ae6292fef726fb5fe">ImGuiCol</link> <link linkend="_struct_im_gui_color_mod_1a211171bd30d39348fc9b91289d253e1c">Col</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec4">ImVec4</link> <link linkend="_struct_im_gui_color_mod_1a99134f8cabbe0c2c45bf7d693bd6dae7">BackupValue</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_color_mod_1a99134f8cabbe0c2c45bf7d693bd6dae7"/><section>
+    <title>BackupValue</title>
+<indexterm><primary>BackupValue</primary><secondary>ImGuiColorMod</secondary></indexterm>
+<indexterm><primary>ImGuiColorMod</primary><secondary>BackupValue</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec4">ImVec4</link> ImGuiColorMod::BackupValue</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_color_mod_1a211171bd30d39348fc9b91289d253e1c"/><section>
+    <title>Col</title>
+<indexterm><primary>Col</primary><secondary>ImGuiColorMod</secondary></indexterm>
+<indexterm><primary>ImGuiColorMod</primary><secondary>Col</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1b0467ec582e731ae6292fef726fb5fe">ImGuiCol</link> ImGuiColorMod::Col</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

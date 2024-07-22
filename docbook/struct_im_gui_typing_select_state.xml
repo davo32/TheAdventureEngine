@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_typing_select_state" xml:lang="en-US">
+<title>ImGuiTypingSelectState Struct Reference</title>
+<indexterm><primary>ImGuiTypingSelectState</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiTypingSelectState:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_typing_select_state__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_typing_select_state_1aad6794105ed06b337c1a80aea92e85f4">ImGuiTypingSelectState</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_typing_select_state_1a6269af7bff0144accfbfb3f467fd3593">Clear</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_typing_select_request">ImGuiTypingSelectRequest</link> <link linkend="_struct_im_gui_typing_select_state_1a72805fdbcd1feb91afd485afddc27d11">Request</link></para>
+</listitem>
+            <listitem><para>char <link linkend="_struct_im_gui_typing_select_state_1a76a4febc71acee793aa0f2f10fc586b4">SearchBuffer</link> [64]</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_typing_select_state_1afd93993ec93bf03f081d538514eed48f">FocusScope</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_typing_select_state_1a391d4de1791a2f47c150724b960ccf97">LastRequestFrame</link> = 0</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_typing_select_state_1a7fde026be5ff298793d0dd7bceff2bfe">LastRequestTime</link> = 0.0f</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_typing_select_state_1a608a580f880e2838276373f4a95d2a1c">SingleCharModeLock</link> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_typing_select_state_1aad6794105ed06b337c1a80aea92e85f4"/><section>
+    <title>ImGuiTypingSelectState()</title>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<para><computeroutput>ImGuiTypingSelectState::ImGuiTypingSelectState ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a6269af7bff0144accfbfb3f467fd3593"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiTypingSelectState::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_typing_select_state_1afd93993ec93bf03f081d538514eed48f"/><section>
+    <title>FocusScope</title>
+<indexterm><primary>FocusScope</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>FocusScope</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiTypingSelectState::FocusScope</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a391d4de1791a2f47c150724b960ccf97"/><section>
+    <title>LastRequestFrame</title>
+<indexterm><primary>LastRequestFrame</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>LastRequestFrame</secondary></indexterm>
+<para><computeroutput>int ImGuiTypingSelectState::LastRequestFrame = 0</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a7fde026be5ff298793d0dd7bceff2bfe"/><section>
+    <title>LastRequestTime</title>
+<indexterm><primary>LastRequestTime</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>LastRequestTime</secondary></indexterm>
+<para><computeroutput>float ImGuiTypingSelectState::LastRequestTime = 0.0f</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a72805fdbcd1feb91afd485afddc27d11"/><section>
+    <title>Request</title>
+<indexterm><primary>Request</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>Request</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_typing_select_request">ImGuiTypingSelectRequest</link> ImGuiTypingSelectState::Request</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a76a4febc71acee793aa0f2f10fc586b4"/><section>
+    <title>SearchBuffer</title>
+<indexterm><primary>SearchBuffer</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>SearchBuffer</secondary></indexterm>
+<para><computeroutput>char ImGuiTypingSelectState::SearchBuffer[64]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_typing_select_state_1a608a580f880e2838276373f4a95d2a1c"/><section>
+    <title>SingleCharModeLock</title>
+<indexterm><primary>SingleCharModeLock</primary><secondary>ImGuiTypingSelectState</secondary></indexterm>
+<indexterm><primary>ImGuiTypingSelectState</primary><secondary>SingleCharModeLock</secondary></indexterm>
+<para><computeroutput>bool ImGuiTypingSelectState::SingleCharModeLock = false</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

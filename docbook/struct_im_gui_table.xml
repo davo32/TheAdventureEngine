@@ -1,0 +1,833 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_table" xml:lang="en-US">
+<title>ImGuiTable Struct Reference</title>
+<indexterm><primary>ImGuiTable</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiTable:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_table_1ad9cfd8be1defebf32b2b2d7fcd5fd152">ImGuiTable</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_table_1ac9e489ed577c125c930364a4c903132c">~ImGuiTable</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_table_1a1f7e5dd488328d3a78de80e7ccc64036">ID</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> <link linkend="_struct_im_gui_table_1ac232807fd66991e640579fb3b02ae051">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_table_1a7e661eeaca53f374216bf0f45dff29e4">RawData</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_table_temp_data">ImGuiTableTempData</link> * <link linkend="_struct_im_gui_table_1a89db69966920e938cdf67f23164c3a80">TempData</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_span">ImSpan</link>&lt; <link linkend="_struct_im_gui_table_column">ImGuiTableColumn</link> &gt; <link linkend="_struct_im_gui_table_1a6b39e1812dd524fe2dd4a04b613588cf">Columns</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_span">ImSpan</link>&lt; <link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> &gt; <link linkend="_struct_im_gui_table_1a4fca96eb35902fcfa166694087814edd">DisplayOrderToIndex</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_span">ImSpan</link>&lt; <link linkend="_struct_im_gui_table_cell_data">ImGuiTableCellData</link> &gt; <link linkend="_struct_im_gui_table_1a686734156d60378e2c792c93b554d327">RowCellData</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> <link linkend="_struct_im_gui_table_1a2bfcf66ae07b035488357acae6353d23">EnabledMaskByDisplayOrder</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> <link linkend="_struct_im_gui_table_1a36ec18d9c4c297098101580c255e94b7">EnabledMaskByIndex</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> <link linkend="_struct_im_gui_table_1a076c23b1ad25cb17474ae2a8926205b9">VisibleMaskByIndex</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> <link linkend="_struct_im_gui_table_1a099a9fc8ad83bf0338221463848315b2">SettingsLoadedFlags</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1af300d599c6b3ff9e43ee714da21aac1d">SettingsOffset</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1a6be35e3ea6e5ae9f63949f86aa2a6216">LastFrameActive</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1aff0ebae8e79edf5268133b644fb01ee9">ColumnsCount</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1a1e188a304ad3d2d30e7defe542bda5d6">CurrentRow</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1a944e033f46b7729d15b8946d06dbe682">CurrentColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aaeddc1534022a5078cb5ff793d404991">ImS16</link> <link linkend="_struct_im_gui_table_1a79fe77ae5bb4b1280fcfbbd2e98ad882">InstanceCurrent</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aaeddc1534022a5078cb5ff793d404991">ImS16</link> <link linkend="_struct_im_gui_table_1ac0ff33b9c82c9405189c4130a165cfdc">InstanceInteracted</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1af9b476f4a6582468c0ed0a019548d022">RowPosY1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a48403ef1b4c11fe3c7d4df835b2f7a82">RowPosY2</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1af23ea5ea747d5c2daffc7954cf4df66c">RowMinHeight</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1ab450ef6433de5aa446804b5809159995">RowCellPaddingY</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1af517dd5ce92ebaf84982083485507634">RowTextBaseline</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1abac804d6f3bd10e7920924eb3bf9067c">RowIndentOffsetX</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1acff5083d4dbfa7a898927046008598c1">ImGuiTableRowFlags</link> <link linkend="_struct_im_gui_table_1ae5b7b9728836e1928cc1b838f9aa74ef">RowFlags</link>: 16</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1acff5083d4dbfa7a898927046008598c1">ImGuiTableRowFlags</link> <link linkend="_struct_im_gui_table_1adccfcf7b8e9670d762f9df1df0c5d6b6">LastRowFlags</link>: 16</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_1a6e6aa2309557862d7da9d6970c0f2f0b">RowBgColorCounter</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_table_1a252e602ec807bf532edd501110bdc7b1">RowBgColor</link> [2]</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_table_1a936d4880c94acaaf59a1bdaafd4fb9cf">BorderColorStrong</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_table_1ac79c118ebe0c19a00fd0e6a83c7fcfd5">BorderColorLight</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a5e3562f22a0b19142111c8c5c297dc69">BorderX1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a01d72b316dbb8d9af031f0f139ce65f3">BorderX2</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1ad568622dbcfc53bef54e644a74a6abdc">HostIndentX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a4eb7492114618b5c15abdeec7d71ad2f">MinColumnWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a05c1d38368970a409eaaf83fb06292cc">OuterPaddingX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a66d3dd51b20c89305d736fdcd0e7a701">CellPaddingX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a3e07bf133695e0131dcf608aa9ec1143">CellSpacingX1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a5f6b9f6696fa8a32296ee6d859356fcc">CellSpacingX2</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1acc6781cae73928ba8dca19cae61dccb1">InnerWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1aefc860a8a1fdc36347d1d4224aae810f">ColumnsGivenWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a7c42c7caf5a05ac02305aa356f29a9a4">ColumnsAutoFitWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a3f24cf9f90a85c11dcfb742d157e31ea">ColumnsStretchSumWeights</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1ab1f45cc1c2eca4d78a2c8eaf202a651a">ResizedColumnNextWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a92324407723470ac6b102e2201b09ce2">ResizeLockMinContentsX2</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a21f1ccb2537abbf1fd8ba5f5ddcae612">RefScale</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1aea73b144a783c37607d1d0df228be60a">AngledHeadersHeight</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_1a6e35d7f538c9d2a2c78525917e5c358d">AngledHeadersSlope</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a6f98734a1abb8f866ffd9fc69d35b2a3">OuterRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a6d2deeb579e5caff1a9fce372003a68c">InnerRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a4e0fd51349a7bedc8321f3977ff9e48c">WorkRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a695a8cfb51a47bf557de0a2fd10744d2">InnerClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a07e838bd92bd6531121bfde156b23e7d">BgClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a15d1df65b26a440ffbb941f30b11b948">Bg0ClipRectForDrawCmd</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a166018c1f957586c14bc0ee081cc3125">Bg2ClipRectForDrawCmd</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a478781580df4716cfe31e8d639c6f2c5">HostClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_table_1a3a35f7340d466bac8239fd8f3c626ac2">HostBackupInnerClipRect</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_table_1ab5a28e3ba666fece11feb5cdee2e1104">OuterWindow</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_table_1ad4cac002e07c96d3df71e37e3e81485e">InnerWindow</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> <link linkend="_struct_im_gui_table_1afb12197bd1ad6ae7317b6b0843eb3a60">ColumnsNames</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_draw_list_splitter">ImDrawListSplitter</link> * <link linkend="_struct_im_gui_table_1afeda8864273e89f4094a763398652d2a">DrawSplitter</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_table_instance_data">ImGuiTableInstanceData</link> <link linkend="_struct_im_gui_table_1a0511f834ebfb52d3ace661fc1f6e82a6">InstanceDataFirst</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_table_instance_data">ImGuiTableInstanceData</link> &gt; <link linkend="_struct_im_gui_table_1ae68a68cd4308506c90b3eebf535f388a">InstanceDataExtra</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link> <link linkend="_struct_im_gui_table_1ad111a9b0073e5061f2a847e9ad99519f">SortSpecsSingle</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link> &gt; <link linkend="_struct_im_gui_table_1aba33a5c466948cb483b0b50c840dd422">SortSpecsMulti</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_table_sort_specs">ImGuiTableSortSpecs</link> <link linkend="_struct_im_gui_table_1a8770e95686f57cfc9b61a037e95cc5b1">SortSpecs</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a72d50758681cecf127e6c9a44883ccfd">SortSpecsCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a51e7f9180f9739e52406c2192aa627f9">ColumnsEnabledCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1aedc6edf409c9668781496fe16d19958b">ColumnsEnabledFixedCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a8f405d885f74a82872edd0dab5790789">DeclColumnsCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1ae8800f537d7078e54f0cdbc511af9e02">AngledHeadersCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a3a94c100bab9cb7a01a02360aaf3b323">HoveredColumnBody</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a1c47654491f288507621e4b2231b4f89">HoveredColumnBorder</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1aa7936fe7cd0374917ade9c0cabdf451c">HighlightColumnHeader</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a393160a00b60d647071b9f2925e5161e">AutoFitSingleColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1af1ef3df199510dd5210d6501ce6c3996">ResizedColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1ad5ceb30e1aef45ce269fc661c5e89281">LastResizedColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1af90fbb7f2d6eba59a140c7dc9e163615">HeldHeaderColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1afe40dc28725db705210bd3a920aea591">ReorderColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a39d9e079bb8f4073e5b02806d890b59b">ReorderColumnDir</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1aaf5f34705f41f958a897d211168f083f">LeftMostEnabledColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a8f297cc1ad1839a3039adf00e9f29047">RightMostEnabledColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a0e6b930bc9743fa9fe1067adf1d66830">LeftMostStretchedColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a40e26ce4a610b6688c956ffa374ad0dc">RightMostStretchedColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1aeda01405560dc7f5ba2a26081bf5499d">ContextPopupColumn</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1aa90d00342e8c46396854b44101c7355d">FreezeRowsRequest</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1ad982334f307fbe429c1de62ef9da8caf">FreezeRowsCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a75f70ed643a861d05a22c566664e0eaf">FreezeColumnsRequest</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1add0b2bf413de36eab591d5e376d2f0b4">FreezeColumnsCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> <link linkend="_struct_im_gui_table_1a3b2630067aff7df6e9111de94fcc5e3b">RowCellDataCurrent</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> <link linkend="_struct_im_gui_table_1a1daad01c8bb3bc4194401c658b61a667">DummyDrawChannel</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> <link linkend="_struct_im_gui_table_1a2963b4f92f924de8c1ef1fcb43a9e597">Bg2DrawChannelCurrent</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> <link linkend="_struct_im_gui_table_1aefc8289f98d409d303517159c521a4b0">Bg2DrawChannelUnfrozen</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a1596be40e96bb5faa7aad3fd50291e33">IsLayoutLocked</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a32f59376aae5cbe008c49605be3cd007">IsInsideRow</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a28cdc6e10e4295c6548660b2c31ad593">IsInitializing</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a066141fe3c9b74ec5492d4acd4f1a21a">IsSortSpecsDirty</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1aa24819d7de86a33a491b909cfb00251c">IsUsingHeaders</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a5345136b8044075f539c4fbe7cc4b53b">IsContextPopupOpen</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a6675686e4c58ae853db3f62d339d192e">DisableDefaultContextMenu</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1ab1f0c3a1a1c500cb5b3a3e1cd2761519">IsSettingsRequestLoad</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a4c0a3b840b7a5c111551e1e8a6ad6c3a">IsSettingsDirty</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1aa7f7e814cd813fd5de652ae315c8c135">IsDefaultDisplayOrder</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a2d066ad49460272713bd6c9beba4a1cc">IsResetAllRequest</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1ab1e0c549a7c1de0ffbd14c18ae7bb402">IsResetDisplayOrderRequest</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a011cb090506f53f6fed0a395b1ac1c22">IsUnfrozenRows</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a84bfdcc0efeb85cf6f103ddf166e4c65">IsDefaultSizingPolicy</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a9ef8fc61d71a09ff2550bae7cf9fa065">IsActiveIdAliveBeforeTable</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a0b1d1eaeac2d85cfcdd916ca7efd85b8">IsActiveIdInTable</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a7c1826bfb454ce6b72ca910570a0f319">HasScrollbarYCurr</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1ab3160cf8f571c580c7fa9e6c2e0115a1">HasScrollbarYPrev</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1aa6825c0891fe234c20d5f92e33725d0d">MemoryCompacted</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_table_1a202de697d7aabc75e0d06d4b700cacdd">HostSkipItems</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_table_1ad9cfd8be1defebf32b2b2d7fcd5fd152"/><section>
+    <title>ImGuiTable()</title>
+<indexterm><primary>ImGuiTable</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ImGuiTable</secondary></indexterm>
+<para><computeroutput>ImGuiTable::ImGuiTable ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ac9e489ed577c125c930364a4c903132c"/><section>
+    <title>~ImGuiTable()</title>
+<indexterm><primary>~ImGuiTable</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>~ImGuiTable</secondary></indexterm>
+<para><computeroutput>ImGuiTable::~ImGuiTable ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_table_1ae8800f537d7078e54f0cdbc511af9e02"/><section>
+    <title>AngledHeadersCount</title>
+<indexterm><primary>AngledHeadersCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>AngledHeadersCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::AngledHeadersCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aea73b144a783c37607d1d0df228be60a"/><section>
+    <title>AngledHeadersHeight</title>
+<indexterm><primary>AngledHeadersHeight</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>AngledHeadersHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::AngledHeadersHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6e35d7f538c9d2a2c78525917e5c358d"/><section>
+    <title>AngledHeadersSlope</title>
+<indexterm><primary>AngledHeadersSlope</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>AngledHeadersSlope</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::AngledHeadersSlope</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a393160a00b60d647071b9f2925e5161e"/><section>
+    <title>AutoFitSingleColumn</title>
+<indexterm><primary>AutoFitSingleColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>AutoFitSingleColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::AutoFitSingleColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a15d1df65b26a440ffbb941f30b11b948"/><section>
+    <title>Bg0ClipRectForDrawCmd</title>
+<indexterm><primary>Bg0ClipRectForDrawCmd</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Bg0ClipRectForDrawCmd</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::Bg0ClipRectForDrawCmd</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a166018c1f957586c14bc0ee081cc3125"/><section>
+    <title>Bg2ClipRectForDrawCmd</title>
+<indexterm><primary>Bg2ClipRectForDrawCmd</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Bg2ClipRectForDrawCmd</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::Bg2ClipRectForDrawCmd</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a2963b4f92f924de8c1ef1fcb43a9e597"/><section>
+    <title>Bg2DrawChannelCurrent</title>
+<indexterm><primary>Bg2DrawChannelCurrent</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Bg2DrawChannelCurrent</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> ImGuiTable::Bg2DrawChannelCurrent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aefc8289f98d409d303517159c521a4b0"/><section>
+    <title>Bg2DrawChannelUnfrozen</title>
+<indexterm><primary>Bg2DrawChannelUnfrozen</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Bg2DrawChannelUnfrozen</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> ImGuiTable::Bg2DrawChannelUnfrozen</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a07e838bd92bd6531121bfde156b23e7d"/><section>
+    <title>BgClipRect</title>
+<indexterm><primary>BgClipRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>BgClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::BgClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ac79c118ebe0c19a00fd0e6a83c7fcfd5"/><section>
+    <title>BorderColorLight</title>
+<indexterm><primary>BorderColorLight</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>BorderColorLight</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiTable::BorderColorLight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a936d4880c94acaaf59a1bdaafd4fb9cf"/><section>
+    <title>BorderColorStrong</title>
+<indexterm><primary>BorderColorStrong</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>BorderColorStrong</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiTable::BorderColorStrong</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a5e3562f22a0b19142111c8c5c297dc69"/><section>
+    <title>BorderX1</title>
+<indexterm><primary>BorderX1</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>BorderX1</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::BorderX1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a01d72b316dbb8d9af031f0f139ce65f3"/><section>
+    <title>BorderX2</title>
+<indexterm><primary>BorderX2</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>BorderX2</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::BorderX2</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a66d3dd51b20c89305d736fdcd0e7a701"/><section>
+    <title>CellPaddingX</title>
+<indexterm><primary>CellPaddingX</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>CellPaddingX</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::CellPaddingX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a3e07bf133695e0131dcf608aa9ec1143"/><section>
+    <title>CellSpacingX1</title>
+<indexterm><primary>CellSpacingX1</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>CellSpacingX1</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::CellSpacingX1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a5f6b9f6696fa8a32296ee6d859356fcc"/><section>
+    <title>CellSpacingX2</title>
+<indexterm><primary>CellSpacingX2</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>CellSpacingX2</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::CellSpacingX2</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6b39e1812dd524fe2dd4a04b613588cf"/><section>
+    <title>Columns</title>
+<indexterm><primary>Columns</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Columns</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_span">ImSpan</link>&lt;<link linkend="_struct_im_gui_table_column">ImGuiTableColumn</link>&gt; ImGuiTable::Columns</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a7c42c7caf5a05ac02305aa356f29a9a4"/><section>
+    <title>ColumnsAutoFitWidth</title>
+<indexterm><primary>ColumnsAutoFitWidth</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsAutoFitWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::ColumnsAutoFitWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aff0ebae8e79edf5268133b644fb01ee9"/><section>
+    <title>ColumnsCount</title>
+<indexterm><primary>ColumnsCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsCount</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::ColumnsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a51e7f9180f9739e52406c2192aa627f9"/><section>
+    <title>ColumnsEnabledCount</title>
+<indexterm><primary>ColumnsEnabledCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsEnabledCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ColumnsEnabledCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aedc6edf409c9668781496fe16d19958b"/><section>
+    <title>ColumnsEnabledFixedCount</title>
+<indexterm><primary>ColumnsEnabledFixedCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsEnabledFixedCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ColumnsEnabledFixedCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aefc860a8a1fdc36347d1d4224aae810f"/><section>
+    <title>ColumnsGivenWidth</title>
+<indexterm><primary>ColumnsGivenWidth</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsGivenWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::ColumnsGivenWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1afb12197bd1ad6ae7317b6b0843eb3a60"/><section>
+    <title>ColumnsNames</title>
+<indexterm><primary>ColumnsNames</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsNames</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> ImGuiTable::ColumnsNames</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a3f24cf9f90a85c11dcfb742d157e31ea"/><section>
+    <title>ColumnsStretchSumWeights</title>
+<indexterm><primary>ColumnsStretchSumWeights</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ColumnsStretchSumWeights</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::ColumnsStretchSumWeights</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aeda01405560dc7f5ba2a26081bf5499d"/><section>
+    <title>ContextPopupColumn</title>
+<indexterm><primary>ContextPopupColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ContextPopupColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ContextPopupColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a944e033f46b7729d15b8946d06dbe682"/><section>
+    <title>CurrentColumn</title>
+<indexterm><primary>CurrentColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>CurrentColumn</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::CurrentColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a1e188a304ad3d2d30e7defe542bda5d6"/><section>
+    <title>CurrentRow</title>
+<indexterm><primary>CurrentRow</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>CurrentRow</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::CurrentRow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a8f405d885f74a82872edd0dab5790789"/><section>
+    <title>DeclColumnsCount</title>
+<indexterm><primary>DeclColumnsCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>DeclColumnsCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::DeclColumnsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6675686e4c58ae853db3f62d339d192e"/><section>
+    <title>DisableDefaultContextMenu</title>
+<indexterm><primary>DisableDefaultContextMenu</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>DisableDefaultContextMenu</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::DisableDefaultContextMenu</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a4fca96eb35902fcfa166694087814edd"/><section>
+    <title>DisplayOrderToIndex</title>
+<indexterm><primary>DisplayOrderToIndex</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>DisplayOrderToIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_span">ImSpan</link>&lt;<link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link>&gt; ImGuiTable::DisplayOrderToIndex</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1afeda8864273e89f4094a763398652d2a"/><section>
+    <title>DrawSplitter</title>
+<indexterm><primary>DrawSplitter</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>DrawSplitter</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_draw_list_splitter">ImDrawListSplitter</link>* ImGuiTable::DrawSplitter</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a1daad01c8bb3bc4194401c658b61a667"/><section>
+    <title>DummyDrawChannel</title>
+<indexterm><primary>DummyDrawChannel</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>DummyDrawChannel</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a94a155e39a8421d368cc9c9d70d5c3b4">ImGuiTableDrawChannelIdx</link> ImGuiTable::DummyDrawChannel</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a2bfcf66ae07b035488357acae6353d23"/><section>
+    <title>EnabledMaskByDisplayOrder</title>
+<indexterm><primary>EnabledMaskByDisplayOrder</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>EnabledMaskByDisplayOrder</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> ImGuiTable::EnabledMaskByDisplayOrder</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a36ec18d9c4c297098101580c255e94b7"/><section>
+    <title>EnabledMaskByIndex</title>
+<indexterm><primary>EnabledMaskByIndex</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>EnabledMaskByIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> ImGuiTable::EnabledMaskByIndex</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ac232807fd66991e640579fb3b02ae051"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> ImGuiTable::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1add0b2bf413de36eab591d5e376d2f0b4"/><section>
+    <title>FreezeColumnsCount</title>
+<indexterm><primary>FreezeColumnsCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>FreezeColumnsCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::FreezeColumnsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a75f70ed643a861d05a22c566664e0eaf"/><section>
+    <title>FreezeColumnsRequest</title>
+<indexterm><primary>FreezeColumnsRequest</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>FreezeColumnsRequest</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::FreezeColumnsRequest</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ad982334f307fbe429c1de62ef9da8caf"/><section>
+    <title>FreezeRowsCount</title>
+<indexterm><primary>FreezeRowsCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>FreezeRowsCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::FreezeRowsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aa90d00342e8c46396854b44101c7355d"/><section>
+    <title>FreezeRowsRequest</title>
+<indexterm><primary>FreezeRowsRequest</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>FreezeRowsRequest</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::FreezeRowsRequest</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a7c1826bfb454ce6b72ca910570a0f319"/><section>
+    <title>HasScrollbarYCurr</title>
+<indexterm><primary>HasScrollbarYCurr</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HasScrollbarYCurr</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::HasScrollbarYCurr</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab3160cf8f571c580c7fa9e6c2e0115a1"/><section>
+    <title>HasScrollbarYPrev</title>
+<indexterm><primary>HasScrollbarYPrev</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HasScrollbarYPrev</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::HasScrollbarYPrev</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af90fbb7f2d6eba59a140c7dc9e163615"/><section>
+    <title>HeldHeaderColumn</title>
+<indexterm><primary>HeldHeaderColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HeldHeaderColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::HeldHeaderColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aa7936fe7cd0374917ade9c0cabdf451c"/><section>
+    <title>HighlightColumnHeader</title>
+<indexterm><primary>HighlightColumnHeader</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HighlightColumnHeader</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::HighlightColumnHeader</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a3a35f7340d466bac8239fd8f3c626ac2"/><section>
+    <title>HostBackupInnerClipRect</title>
+<indexterm><primary>HostBackupInnerClipRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HostBackupInnerClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::HostBackupInnerClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a478781580df4716cfe31e8d639c6f2c5"/><section>
+    <title>HostClipRect</title>
+<indexterm><primary>HostClipRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HostClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::HostClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ad568622dbcfc53bef54e644a74a6abdc"/><section>
+    <title>HostIndentX</title>
+<indexterm><primary>HostIndentX</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HostIndentX</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::HostIndentX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a202de697d7aabc75e0d06d4b700cacdd"/><section>
+    <title>HostSkipItems</title>
+<indexterm><primary>HostSkipItems</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HostSkipItems</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::HostSkipItems</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a3a94c100bab9cb7a01a02360aaf3b323"/><section>
+    <title>HoveredColumnBody</title>
+<indexterm><primary>HoveredColumnBody</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HoveredColumnBody</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::HoveredColumnBody</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a1c47654491f288507621e4b2231b4f89"/><section>
+    <title>HoveredColumnBorder</title>
+<indexterm><primary>HoveredColumnBorder</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>HoveredColumnBorder</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::HoveredColumnBorder</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a1f7e5dd488328d3a78de80e7ccc64036"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiTable::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a695a8cfb51a47bf557de0a2fd10744d2"/><section>
+    <title>InnerClipRect</title>
+<indexterm><primary>InnerClipRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InnerClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::InnerClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6d2deeb579e5caff1a9fce372003a68c"/><section>
+    <title>InnerRect</title>
+<indexterm><primary>InnerRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InnerRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::InnerRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1acc6781cae73928ba8dca19cae61dccb1"/><section>
+    <title>InnerWidth</title>
+<indexterm><primary>InnerWidth</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InnerWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::InnerWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ad4cac002e07c96d3df71e37e3e81485e"/><section>
+    <title>InnerWindow</title>
+<indexterm><primary>InnerWindow</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InnerWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiTable::InnerWindow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a79fe77ae5bb4b1280fcfbbd2e98ad882"/><section>
+    <title>InstanceCurrent</title>
+<indexterm><primary>InstanceCurrent</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InstanceCurrent</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aaeddc1534022a5078cb5ff793d404991">ImS16</link> ImGuiTable::InstanceCurrent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ae68a68cd4308506c90b3eebf535f388a"/><section>
+    <title>InstanceDataExtra</title>
+<indexterm><primary>InstanceDataExtra</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InstanceDataExtra</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_table_instance_data">ImGuiTableInstanceData</link>&gt; ImGuiTable::InstanceDataExtra</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a0511f834ebfb52d3ace661fc1f6e82a6"/><section>
+    <title>InstanceDataFirst</title>
+<indexterm><primary>InstanceDataFirst</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InstanceDataFirst</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_table_instance_data">ImGuiTableInstanceData</link> ImGuiTable::InstanceDataFirst</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ac0ff33b9c82c9405189c4130a165cfdc"/><section>
+    <title>InstanceInteracted</title>
+<indexterm><primary>InstanceInteracted</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>InstanceInteracted</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aaeddc1534022a5078cb5ff793d404991">ImS16</link> ImGuiTable::InstanceInteracted</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a9ef8fc61d71a09ff2550bae7cf9fa065"/><section>
+    <title>IsActiveIdAliveBeforeTable</title>
+<indexterm><primary>IsActiveIdAliveBeforeTable</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsActiveIdAliveBeforeTable</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsActiveIdAliveBeforeTable</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a0b1d1eaeac2d85cfcdd916ca7efd85b8"/><section>
+    <title>IsActiveIdInTable</title>
+<indexterm><primary>IsActiveIdInTable</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsActiveIdInTable</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsActiveIdInTable</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a5345136b8044075f539c4fbe7cc4b53b"/><section>
+    <title>IsContextPopupOpen</title>
+<indexterm><primary>IsContextPopupOpen</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsContextPopupOpen</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsContextPopupOpen</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aa7f7e814cd813fd5de652ae315c8c135"/><section>
+    <title>IsDefaultDisplayOrder</title>
+<indexterm><primary>IsDefaultDisplayOrder</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsDefaultDisplayOrder</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsDefaultDisplayOrder</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a84bfdcc0efeb85cf6f103ddf166e4c65"/><section>
+    <title>IsDefaultSizingPolicy</title>
+<indexterm><primary>IsDefaultSizingPolicy</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsDefaultSizingPolicy</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsDefaultSizingPolicy</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a28cdc6e10e4295c6548660b2c31ad593"/><section>
+    <title>IsInitializing</title>
+<indexterm><primary>IsInitializing</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsInitializing</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsInitializing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a32f59376aae5cbe008c49605be3cd007"/><section>
+    <title>IsInsideRow</title>
+<indexterm><primary>IsInsideRow</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsInsideRow</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsInsideRow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a1596be40e96bb5faa7aad3fd50291e33"/><section>
+    <title>IsLayoutLocked</title>
+<indexterm><primary>IsLayoutLocked</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsLayoutLocked</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsLayoutLocked</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a2d066ad49460272713bd6c9beba4a1cc"/><section>
+    <title>IsResetAllRequest</title>
+<indexterm><primary>IsResetAllRequest</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsResetAllRequest</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsResetAllRequest</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab1e0c549a7c1de0ffbd14c18ae7bb402"/><section>
+    <title>IsResetDisplayOrderRequest</title>
+<indexterm><primary>IsResetDisplayOrderRequest</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsResetDisplayOrderRequest</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsResetDisplayOrderRequest</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a4c0a3b840b7a5c111551e1e8a6ad6c3a"/><section>
+    <title>IsSettingsDirty</title>
+<indexterm><primary>IsSettingsDirty</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsSettingsDirty</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsSettingsDirty</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab1f0c3a1a1c500cb5b3a3e1cd2761519"/><section>
+    <title>IsSettingsRequestLoad</title>
+<indexterm><primary>IsSettingsRequestLoad</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsSettingsRequestLoad</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsSettingsRequestLoad</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a066141fe3c9b74ec5492d4acd4f1a21a"/><section>
+    <title>IsSortSpecsDirty</title>
+<indexterm><primary>IsSortSpecsDirty</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsSortSpecsDirty</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsSortSpecsDirty</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a011cb090506f53f6fed0a395b1ac1c22"/><section>
+    <title>IsUnfrozenRows</title>
+<indexterm><primary>IsUnfrozenRows</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsUnfrozenRows</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsUnfrozenRows</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aa24819d7de86a33a491b909cfb00251c"/><section>
+    <title>IsUsingHeaders</title>
+<indexterm><primary>IsUsingHeaders</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>IsUsingHeaders</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::IsUsingHeaders</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6be35e3ea6e5ae9f63949f86aa2a6216"/><section>
+    <title>LastFrameActive</title>
+<indexterm><primary>LastFrameActive</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>LastFrameActive</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::LastFrameActive</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ad5ceb30e1aef45ce269fc661c5e89281"/><section>
+    <title>LastResizedColumn</title>
+<indexterm><primary>LastResizedColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>LastResizedColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::LastResizedColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1adccfcf7b8e9670d762f9df1df0c5d6b6"/><section>
+    <title>LastRowFlags</title>
+<indexterm><primary>LastRowFlags</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>LastRowFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1acff5083d4dbfa7a898927046008598c1">ImGuiTableRowFlags</link> ImGuiTable::LastRowFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aaf5f34705f41f958a897d211168f083f"/><section>
+    <title>LeftMostEnabledColumn</title>
+<indexterm><primary>LeftMostEnabledColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>LeftMostEnabledColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::LeftMostEnabledColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a0e6b930bc9743fa9fe1067adf1d66830"/><section>
+    <title>LeftMostStretchedColumn</title>
+<indexterm><primary>LeftMostStretchedColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>LeftMostStretchedColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::LeftMostStretchedColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aa6825c0891fe234c20d5f92e33725d0d"/><section>
+    <title>MemoryCompacted</title>
+<indexterm><primary>MemoryCompacted</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>MemoryCompacted</secondary></indexterm>
+<para><computeroutput>bool ImGuiTable::MemoryCompacted</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a4eb7492114618b5c15abdeec7d71ad2f"/><section>
+    <title>MinColumnWidth</title>
+<indexterm><primary>MinColumnWidth</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>MinColumnWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::MinColumnWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a05c1d38368970a409eaaf83fb06292cc"/><section>
+    <title>OuterPaddingX</title>
+<indexterm><primary>OuterPaddingX</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>OuterPaddingX</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::OuterPaddingX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6f98734a1abb8f866ffd9fc69d35b2a3"/><section>
+    <title>OuterRect</title>
+<indexterm><primary>OuterRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>OuterRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::OuterRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab5a28e3ba666fece11feb5cdee2e1104"/><section>
+    <title>OuterWindow</title>
+<indexterm><primary>OuterWindow</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>OuterWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiTable::OuterWindow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a7e661eeaca53f374216bf0f45dff29e4"/><section>
+    <title>RawData</title>
+<indexterm><primary>RawData</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RawData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiTable::RawData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a21f1ccb2537abbf1fd8ba5f5ddcae612"/><section>
+    <title>RefScale</title>
+<indexterm><primary>RefScale</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RefScale</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RefScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1afe40dc28725db705210bd3a920aea591"/><section>
+    <title>ReorderColumn</title>
+<indexterm><primary>ReorderColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ReorderColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ReorderColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a39d9e079bb8f4073e5b02806d890b59b"/><section>
+    <title>ReorderColumnDir</title>
+<indexterm><primary>ReorderColumnDir</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ReorderColumnDir</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ReorderColumnDir</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af1ef3df199510dd5210d6501ce6c3996"/><section>
+    <title>ResizedColumn</title>
+<indexterm><primary>ResizedColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ResizedColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::ResizedColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab1f45cc1c2eca4d78a2c8eaf202a651a"/><section>
+    <title>ResizedColumnNextWidth</title>
+<indexterm><primary>ResizedColumnNextWidth</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ResizedColumnNextWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::ResizedColumnNextWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a92324407723470ac6b102e2201b09ce2"/><section>
+    <title>ResizeLockMinContentsX2</title>
+<indexterm><primary>ResizeLockMinContentsX2</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>ResizeLockMinContentsX2</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::ResizeLockMinContentsX2</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a8f297cc1ad1839a3039adf00e9f29047"/><section>
+    <title>RightMostEnabledColumn</title>
+<indexterm><primary>RightMostEnabledColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RightMostEnabledColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::RightMostEnabledColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a40e26ce4a610b6688c956ffa374ad0dc"/><section>
+    <title>RightMostStretchedColumn</title>
+<indexterm><primary>RightMostStretchedColumn</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RightMostStretchedColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::RightMostStretchedColumn</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a252e602ec807bf532edd501110bdc7b1"/><section>
+    <title>RowBgColor</title>
+<indexterm><primary>RowBgColor</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowBgColor</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiTable::RowBgColor[2]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a6e6aa2309557862d7da9d6970c0f2f0b"/><section>
+    <title>RowBgColorCounter</title>
+<indexterm><primary>RowBgColorCounter</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowBgColorCounter</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::RowBgColorCounter</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a686734156d60378e2c792c93b554d327"/><section>
+    <title>RowCellData</title>
+<indexterm><primary>RowCellData</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowCellData</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_span">ImSpan</link>&lt;<link linkend="_struct_im_gui_table_cell_data">ImGuiTableCellData</link>&gt; ImGuiTable::RowCellData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a3b2630067aff7df6e9111de94fcc5e3b"/><section>
+    <title>RowCellDataCurrent</title>
+<indexterm><primary>RowCellDataCurrent</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowCellDataCurrent</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::RowCellDataCurrent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ab450ef6433de5aa446804b5809159995"/><section>
+    <title>RowCellPaddingY</title>
+<indexterm><primary>RowCellPaddingY</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowCellPaddingY</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowCellPaddingY</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ae5b7b9728836e1928cc1b838f9aa74ef"/><section>
+    <title>RowFlags</title>
+<indexterm><primary>RowFlags</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1acff5083d4dbfa7a898927046008598c1">ImGuiTableRowFlags</link> ImGuiTable::RowFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1abac804d6f3bd10e7920924eb3bf9067c"/><section>
+    <title>RowIndentOffsetX</title>
+<indexterm><primary>RowIndentOffsetX</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowIndentOffsetX</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowIndentOffsetX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af23ea5ea747d5c2daffc7954cf4df66c"/><section>
+    <title>RowMinHeight</title>
+<indexterm><primary>RowMinHeight</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowMinHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowMinHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af9b476f4a6582468c0ed0a019548d022"/><section>
+    <title>RowPosY1</title>
+<indexterm><primary>RowPosY1</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowPosY1</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowPosY1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a48403ef1b4c11fe3c7d4df835b2f7a82"/><section>
+    <title>RowPosY2</title>
+<indexterm><primary>RowPosY2</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowPosY2</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowPosY2</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af517dd5ce92ebaf84982083485507634"/><section>
+    <title>RowTextBaseline</title>
+<indexterm><primary>RowTextBaseline</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>RowTextBaseline</secondary></indexterm>
+<para><computeroutput>float ImGuiTable::RowTextBaseline</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a099a9fc8ad83bf0338221463848315b2"/><section>
+    <title>SettingsLoadedFlags</title>
+<indexterm><primary>SettingsLoadedFlags</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SettingsLoadedFlags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1ad3032e379f8aba2cb5c31b05cd40858d">ImGuiTableFlags</link> ImGuiTable::SettingsLoadedFlags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1af300d599c6b3ff9e43ee714da21aac1d"/><section>
+    <title>SettingsOffset</title>
+<indexterm><primary>SettingsOffset</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SettingsOffset</secondary></indexterm>
+<para><computeroutput>int ImGuiTable::SettingsOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a8770e95686f57cfc9b61a037e95cc5b1"/><section>
+    <title>SortSpecs</title>
+<indexterm><primary>SortSpecs</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SortSpecs</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_table_sort_specs">ImGuiTableSortSpecs</link> ImGuiTable::SortSpecs</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a72d50758681cecf127e6c9a44883ccfd"/><section>
+    <title>SortSpecsCount</title>
+<indexterm><primary>SortSpecsCount</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SortSpecsCount</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1ae77491f08fc0762c8a390c9ea8e2a7e7">ImGuiTableColumnIdx</link> ImGuiTable::SortSpecsCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1aba33a5c466948cb483b0b50c840dd422"/><section>
+    <title>SortSpecsMulti</title>
+<indexterm><primary>SortSpecsMulti</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SortSpecsMulti</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link>&gt; ImGuiTable::SortSpecsMulti</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1ad111a9b0073e5061f2a847e9ad99519f"/><section>
+    <title>SortSpecsSingle</title>
+<indexterm><primary>SortSpecsSingle</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>SortSpecsSingle</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_table_column_sort_specs">ImGuiTableColumnSortSpecs</link> ImGuiTable::SortSpecsSingle</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a89db69966920e938cdf67f23164c3a80"/><section>
+    <title>TempData</title>
+<indexterm><primary>TempData</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>TempData</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_table_temp_data">ImGuiTableTempData</link>* ImGuiTable::TempData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a076c23b1ad25cb17474ae2a8926205b9"/><section>
+    <title>VisibleMaskByIndex</title>
+<indexterm><primary>VisibleMaskByIndex</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>VisibleMaskByIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a50698b5f0feef98c52898068b9a22293">ImBitArrayPtr</link> ImGuiTable::VisibleMaskByIndex</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_1a4e0fd51349a7bedc8321f3977ff9e48c"/><section>
+    <title>WorkRect</title>
+<indexterm><primary>WorkRect</primary><secondary>ImGuiTable</secondary></indexterm>
+<indexterm><primary>ImGuiTable</primary><secondary>WorkRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiTable::WorkRect</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

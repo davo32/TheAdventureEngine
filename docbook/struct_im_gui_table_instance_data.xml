@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_table_instance_data" xml:lang="en-US">
+<title>ImGuiTableInstanceData Struct Reference</title>
+<indexterm><primary>ImGuiTableInstanceData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_table_instance_data_1ace9c6bc325970e1d41321d55d06cc079">ImGuiTableInstanceData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_table_instance_data_1a7b8a756ecb576effee395b488019fa69">TableInstanceID</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_instance_data_1a1073630b1f76c3281c40bf9097784961">LastOuterHeight</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_instance_data_1a273064d5882ba6b74d4141b450c26176">LastTopHeadersRowHeight</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_table_instance_data_1a4716a634093ac8b56020f75f41354469">LastFrozenHeight</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_instance_data_1af78766cea190156b905ee41ec21c0acb">HoveredRowLast</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_table_instance_data_1ae3191a6dc89315055034cd2eb14efcea">HoveredRowNext</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_table_instance_data_1ace9c6bc325970e1d41321d55d06cc079"/><section>
+    <title>ImGuiTableInstanceData()</title>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<para><computeroutput>ImGuiTableInstanceData::ImGuiTableInstanceData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_table_instance_data_1af78766cea190156b905ee41ec21c0acb"/><section>
+    <title>HoveredRowLast</title>
+<indexterm><primary>HoveredRowLast</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>HoveredRowLast</secondary></indexterm>
+<para><computeroutput>int ImGuiTableInstanceData::HoveredRowLast</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_instance_data_1ae3191a6dc89315055034cd2eb14efcea"/><section>
+    <title>HoveredRowNext</title>
+<indexterm><primary>HoveredRowNext</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>HoveredRowNext</secondary></indexterm>
+<para><computeroutput>int ImGuiTableInstanceData::HoveredRowNext</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_instance_data_1a4716a634093ac8b56020f75f41354469"/><section>
+    <title>LastFrozenHeight</title>
+<indexterm><primary>LastFrozenHeight</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>LastFrozenHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiTableInstanceData::LastFrozenHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_instance_data_1a1073630b1f76c3281c40bf9097784961"/><section>
+    <title>LastOuterHeight</title>
+<indexterm><primary>LastOuterHeight</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>LastOuterHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiTableInstanceData::LastOuterHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_instance_data_1a273064d5882ba6b74d4141b450c26176"/><section>
+    <title>LastTopHeadersRowHeight</title>
+<indexterm><primary>LastTopHeadersRowHeight</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>LastTopHeadersRowHeight</secondary></indexterm>
+<para><computeroutput>float ImGuiTableInstanceData::LastTopHeadersRowHeight</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_table_instance_data_1a7b8a756ecb576effee395b488019fa69"/><section>
+    <title>TableInstanceID</title>
+<indexterm><primary>TableInstanceID</primary><secondary>ImGuiTableInstanceData</secondary></indexterm>
+<indexterm><primary>ImGuiTableInstanceData</primary><secondary>TableInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiTableInstanceData::TableInstanceID</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_input_text_callback_data" xml:lang="en-US">
+<title>ImGuiInputTextCallbackData Struct Reference</title>
+<indexterm><primary>ImGuiInputTextCallbackData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiInputTextCallbackData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_input_text_callback_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_gui_input_text_callback_data_1ae19641bad15c1a163928d121075ca09c">ImGuiInputTextCallbackData</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_callback_data_1ab5dc30d7edcf60efbd5bb8e677dab8bf">DeleteChars</link> (int pos, int bytes_count)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_callback_data_1a9963937f48aba00466c2af404dad1e25">InsertChars</link> (int pos, const char *text, const char *text_end=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_callback_data_1aabbc96c73ebcec89f06811dba531bc56">SelectAll</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_callback_data_1a14dacdd841c76dfd171ffca8a96d7c22">ClearSelection</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_callback_data_1aae1b69a904053961be171d7f47ef430e">HasSelection</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_context">ImGuiContext</link> * <link linkend="_struct_im_gui_input_text_callback_data_1aba08927f2b128153e5544ec662a32a5f">Ctx</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> <link linkend="_struct_im_gui_input_text_callback_data_1a6ad2f8e385c68e56e6682fc0c4e79949">EventFlag</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> <link linkend="_struct_im_gui_input_text_callback_data_1aac3133cf2c9d194142481e54192d8fa1">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_input_text_callback_data_1ae8358ea4135032204fcba6c9ada7c49f">UserData</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> <link linkend="_struct_im_gui_input_text_callback_data_1a7a6e9a43c5db8f236cde912b913fe707">EventChar</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> <link linkend="_struct_im_gui_input_text_callback_data_1a2db52e1da5e8109d4eeb5b0ab22200a9">EventKey</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_struct_im_gui_input_text_callback_data_1ac8cd46c3473851c2822aae8240289069">Buf</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_callback_data_1aa4db7629a772cfc3286a5a3fd1e5f1ab">BufTextLen</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_callback_data_1a0e391986e9359f6777ab27a3b08229a6">BufSize</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_callback_data_1aa2d91cca2b46de3f2b218573579f122b">BufDirty</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_callback_data_1a45b3cc4d7625b1bc38d5b995ca149b43">CursorPos</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_callback_data_1a72642ac2ce877eaade95386cad70ee8a">SelectionStart</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_callback_data_1a616bf3a1f0c2d73b9133931f22ab44a7">SelectionEnd</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1ae19641bad15c1a163928d121075ca09c"/><section>
+    <title>ImGuiInputTextCallbackData()</title>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<para><computeroutput>ImGuiInputTextCallbackData::ImGuiInputTextCallbackData ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a14dacdd841c76dfd171ffca8a96d7c22"/><section>
+    <title>ClearSelection()</title>
+<indexterm><primary>ClearSelection</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>ClearSelection</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextCallbackData::ClearSelection ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1ab5dc30d7edcf60efbd5bb8e677dab8bf"/><section>
+    <title>DeleteChars()</title>
+<indexterm><primary>DeleteChars</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>DeleteChars</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextCallbackData::DeleteChars (int pos, int bytes_count)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aae1b69a904053961be171d7f47ef430e"/><section>
+    <title>HasSelection()</title>
+<indexterm><primary>HasSelection</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>HasSelection</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextCallbackData::HasSelection ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a9963937f48aba00466c2af404dad1e25"/><section>
+    <title>InsertChars()</title>
+<indexterm><primary>InsertChars</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>InsertChars</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextCallbackData::InsertChars (int pos, const char * text, const char * text_end = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aabbc96c73ebcec89f06811dba531bc56"/><section>
+    <title>SelectAll()</title>
+<indexterm><primary>SelectAll</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>SelectAll</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextCallbackData::SelectAll ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1ac8cd46c3473851c2822aae8240289069"/><section>
+    <title>Buf</title>
+<indexterm><primary>Buf</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>Buf</secondary></indexterm>
+<para><computeroutput>char* ImGuiInputTextCallbackData::Buf</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aa2d91cca2b46de3f2b218573579f122b"/><section>
+    <title>BufDirty</title>
+<indexterm><primary>BufDirty</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>BufDirty</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextCallbackData::BufDirty</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a0e391986e9359f6777ab27a3b08229a6"/><section>
+    <title>BufSize</title>
+<indexterm><primary>BufSize</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>BufSize</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextCallbackData::BufSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aa4db7629a772cfc3286a5a3fd1e5f1ab"/><section>
+    <title>BufTextLen</title>
+<indexterm><primary>BufTextLen</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>BufTextLen</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextCallbackData::BufTextLen</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aba08927f2b128153e5544ec662a32a5f"/><section>
+    <title>Ctx</title>
+<indexterm><primary>Ctx</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>Ctx</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_context">ImGuiContext</link>* ImGuiInputTextCallbackData::Ctx</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a45b3cc4d7625b1bc38d5b995ca149b43"/><section>
+    <title>CursorPos</title>
+<indexterm><primary>CursorPos</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>CursorPos</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextCallbackData::CursorPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a7a6e9a43c5db8f236cde912b913fe707"/><section>
+    <title>EventChar</title>
+<indexterm><primary>EventChar</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>EventChar</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> ImGuiInputTextCallbackData::EventChar</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a6ad2f8e385c68e56e6682fc0c4e79949"/><section>
+    <title>EventFlag</title>
+<indexterm><primary>EventFlag</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>EventFlag</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> ImGuiInputTextCallbackData::EventFlag</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a2db52e1da5e8109d4eeb5b0ab22200a9"/><section>
+    <title>EventKey</title>
+<indexterm><primary>EventKey</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>EventKey</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1aa22ffe36b188427d712447ec465203d4">ImGuiKey</link> ImGuiInputTextCallbackData::EventKey</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1aac3133cf2c9d194142481e54192d8fa1"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> ImGuiInputTextCallbackData::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a616bf3a1f0c2d73b9133931f22ab44a7"/><section>
+    <title>SelectionEnd</title>
+<indexterm><primary>SelectionEnd</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>SelectionEnd</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextCallbackData::SelectionEnd</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1a72642ac2ce877eaade95386cad70ee8a"/><section>
+    <title>SelectionStart</title>
+<indexterm><primary>SelectionStart</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>SelectionStart</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextCallbackData::SelectionStart</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_callback_data_1ae8358ea4135032204fcba6c9ada7c49f"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImGuiInputTextCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextCallbackData</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiInputTextCallbackData::UserData</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui__widgets_8cpp">imgui_widgets.cpp</link></section>
+</section>

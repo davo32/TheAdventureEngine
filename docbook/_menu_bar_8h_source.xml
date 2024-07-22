@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__menu_bar_8h_source" xml:lang="en-US">
+<title>MenuBar.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__user_interface_8h">UserInterface.h</link>&quot;</emphasis>
+3 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_application">Application</link>;
+4 
+5 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_menu_bar">MenuBar</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_user_interface">UserInterface</link>
+6 {
+7 <emphasis role="keyword">public</emphasis>:
+8 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a91b71f3dffc220baa354b7288875d0c0">FileMenu</link>();
+9 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a90c4a90d0e8ccec775a591aa176735ab">PlayerMenu</link>();
+10 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a308518fa8bed86fbfb44bda804f80dda">InventoryMenu</link>();
+11 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a30112da8e0b59522e06aaa3ae2cd5d55">EventsMenu</link>();
+12 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a52d1e646088a7600963a116993a18b99">ItemMenu</link>();
+13 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_bar_1a0cf2d60db4e2f374993c3cf6c438feae">DrawUI</link>()&#32;<emphasis role="keyword">override</emphasis>;
+14 };
+15 
+</programlisting></section>

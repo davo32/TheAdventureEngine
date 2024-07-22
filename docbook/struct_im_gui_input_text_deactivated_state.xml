@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_input_text_deactivated_state" xml:lang="en-US">
+<title>ImGuiInputTextDeactivatedState Struct Reference</title>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiInputTextDeactivatedState:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_input_text_deactivated_state__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_input_text_deactivated_state_1abefa99fe24b6becb8a463e66120219a1">ImGuiInputTextDeactivatedState</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_deactivated_state_1ab25f0ed83856bf370fa78e9a6aaaa895">ClearFreeMemory</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_input_text_deactivated_state_1a43332a0e530aff3f308605119fb36b5b">ID</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; char &gt; <link linkend="_struct_im_gui_input_text_deactivated_state_1a19db36bc26be137f8b9c7a55f09dd1a3">TextA</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_deactivated_state_1abefa99fe24b6becb8a463e66120219a1"/><section>
+    <title>ImGuiInputTextDeactivatedState()</title>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary><secondary>ImGuiInputTextDeactivatedState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary><secondary>ImGuiInputTextDeactivatedState</secondary></indexterm>
+<para><computeroutput>ImGuiInputTextDeactivatedState::ImGuiInputTextDeactivatedState ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_deactivated_state_1ab25f0ed83856bf370fa78e9a6aaaa895"/><section>
+    <title>ClearFreeMemory()</title>
+<indexterm><primary>ClearFreeMemory</primary><secondary>ImGuiInputTextDeactivatedState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary><secondary>ClearFreeMemory</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextDeactivatedState::ClearFreeMemory ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_deactivated_state_1a43332a0e530aff3f308605119fb36b5b"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiInputTextDeactivatedState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiInputTextDeactivatedState::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_deactivated_state_1a19db36bc26be137f8b9c7a55f09dd1a3"/><section>
+    <title>TextA</title>
+<indexterm><primary>TextA</primary><secondary>ImGuiInputTextDeactivatedState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextDeactivatedState</primary><secondary>TextA</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;char&gt; ImGuiInputTextDeactivatedState::TextA</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

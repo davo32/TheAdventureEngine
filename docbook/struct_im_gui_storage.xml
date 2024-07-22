@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_storage" xml:lang="en-US">
+<title>ImGuiStorage Struct Reference</title>
+<indexterm><primary>ImGuiStorage</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiStorage:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_storage__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_im_gui_storage_1_1_im_gui_storage_pair">ImGuiStoragePair</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1a72ceecfbca3d08df8c2a232b77890c20">Clear</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> int <link linkend="_struct_im_gui_storage_1ac86b64f5c69a15de6c6c326963eca64a">GetInt</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int default_val=0) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1af83975ca841a9bd0e06a6ea0a41bf159">SetInt</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int val)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool <link linkend="_struct_im_gui_storage_1a22d34ae6278f86468a3e7df8fbd1b632">GetBool</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool default_val=false) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1ac5beee31a59b3f5294b41992717be7bf">SetBool</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool val)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> float <link linkend="_struct_im_gui_storage_1a0f51ef327f7e548d003b0e006967c1eb">GetFloat</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float default_val=0.0f) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1ab531d90a0e5a1a2453e351c499149756">SetFloat</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float val)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_storage_1aaf87a98ede89da09113b0189f6d878ca">GetVoidPtr</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key) const</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1a55f840086b3ec9cf63c67f02d159204a">SetVoidPtr</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *val)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> int * <link linkend="_struct_im_gui_storage_1a28673fa7839263f3066ccb8e93e748a9">GetIntRef</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int default_val=0)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> bool * <link linkend="_struct_im_gui_storage_1aeb0d62100453d710bac5f6ad0a6e6a2e">GetBoolRef</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool default_val=false)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> float * <link linkend="_struct_im_gui_storage_1a4b51cc8c92c65d4224af65a8ce7752ee">GetFloatRef</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float default_val=0.0f)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ** <link linkend="_struct_im_gui_storage_1a2b203317f3f488818e9b9f416fe35332">GetVoidPtrRef</link> (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *default_val=NULL)</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1a5eae75e98a65c146e99898e359225f99">BuildSortByKey</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_storage_1ae5ee60618c4ce8e2b4ce0e5543d52992">SetAllInt</link> (int val)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_storage_1_1_im_gui_storage_pair">ImGuiStoragePair</link> &gt; <link linkend="_struct_im_gui_storage_1a632c9d57791b68bfe671c748e9c54bc0">Data</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_storage_1a5eae75e98a65c146e99898e359225f99"/><section>
+    <title>BuildSortByKey()</title>
+<indexterm><primary>BuildSortByKey</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>BuildSortByKey</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::BuildSortByKey ( )</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a72ceecfbca3d08df8c2a232b77890c20"/><section>
+    <title>Clear()</title>
+<indexterm><primary>Clear</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>Clear</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::Clear ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a22d34ae6278f86468a3e7df8fbd1b632"/><section>
+    <title>GetBool()</title>
+<indexterm><primary>GetBool</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetBool</secondary></indexterm>
+<para><computeroutput>bool ImGuiStorage::GetBool (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool default_val = <computeroutput>false</computeroutput>
+) const</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1aeb0d62100453d710bac5f6ad0a6e6a2e"/><section>
+    <title>GetBoolRef()</title>
+<indexterm><primary>GetBoolRef</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetBoolRef</secondary></indexterm>
+<para><computeroutput>bool * ImGuiStorage::GetBoolRef (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool default_val = <computeroutput>false</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a0f51ef327f7e548d003b0e006967c1eb"/><section>
+    <title>GetFloat()</title>
+<indexterm><primary>GetFloat</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetFloat</secondary></indexterm>
+<para><computeroutput>float ImGuiStorage::GetFloat (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float default_val = <computeroutput>0.0f</computeroutput>
+) const</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a4b51cc8c92c65d4224af65a8ce7752ee"/><section>
+    <title>GetFloatRef()</title>
+<indexterm><primary>GetFloatRef</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetFloatRef</secondary></indexterm>
+<para><computeroutput>float * ImGuiStorage::GetFloatRef (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float default_val = <computeroutput>0.0f</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1ac86b64f5c69a15de6c6c326963eca64a"/><section>
+    <title>GetInt()</title>
+<indexterm><primary>GetInt</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetInt</secondary></indexterm>
+<para><computeroutput>int ImGuiStorage::GetInt (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int default_val = <computeroutput>0</computeroutput>
+) const</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a28673fa7839263f3066ccb8e93e748a9"/><section>
+    <title>GetIntRef()</title>
+<indexterm><primary>GetIntRef</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetIntRef</secondary></indexterm>
+<para><computeroutput>int * ImGuiStorage::GetIntRef (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int default_val = <computeroutput>0</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1aaf87a98ede89da09113b0189f6d878ca"/><section>
+    <title>GetVoidPtr()</title>
+<indexterm><primary>GetVoidPtr</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetVoidPtr</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * ImGuiStorage::GetVoidPtr (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key) const</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a2b203317f3f488818e9b9f416fe35332"/><section>
+    <title>GetVoidPtrRef()</title>
+<indexterm><primary>GetVoidPtrRef</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>GetVoidPtrRef</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ** ImGuiStorage::GetVoidPtrRef (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * default_val = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1ae5ee60618c4ce8e2b4ce0e5543d52992"/><section>
+    <title>SetAllInt()</title>
+<indexterm><primary>SetAllInt</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>SetAllInt</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::SetAllInt (int val)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1ac5beee31a59b3f5294b41992717be7bf"/><section>
+    <title>SetBool()</title>
+<indexterm><primary>SetBool</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>SetBool</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::SetBool (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, bool val)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1ab531d90a0e5a1a2453e351c499149756"/><section>
+    <title>SetFloat()</title>
+<indexterm><primary>SetFloat</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>SetFloat</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::SetFloat (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, float val)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1af83975ca841a9bd0e06a6ea0a41bf159"/><section>
+    <title>SetInt()</title>
+<indexterm><primary>SetInt</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>SetInt</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::SetInt (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, int val)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_storage_1a55f840086b3ec9cf63c67f02d159204a"/><section>
+    <title>SetVoidPtr()</title>
+<indexterm><primary>SetVoidPtr</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>SetVoidPtr</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStorage::SetVoidPtr (<link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> key, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * val)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_storage_1a632c9d57791b68bfe671c748e9c54bc0"/><section>
+    <title>Data</title>
+<indexterm><primary>Data</primary><secondary>ImGuiStorage</secondary></indexterm>
+<indexterm><primary>ImGuiStorage</primary><secondary>Data</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_storage_1_1_im_gui_storage_pair">ImGuiStoragePair</link>&gt; ImGuiStorage::Data</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

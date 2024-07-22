@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_get_name_from_index_old_to_new_callback_data" xml:lang="en-US">
+<title>ImGuiGetNameFromIndexOldToNewCallbackData Struct Reference</title>
+<indexterm><primary>ImGuiGetNameFromIndexOldToNewCallbackData</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_get_name_from_index_old_to_new_callback_data_1ab5145665995e4fd93266c2b14ae4d199">UserData</link></para>
+</listitem>
+            <listitem><para>bool(* <link linkend="_struct_im_gui_get_name_from_index_old_to_new_callback_data_1a0f4f47e5e5bd3423af79a2aed4487c76">OldCallback</link> )(<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *, int, const char **)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_get_name_from_index_old_to_new_callback_data_1a0f4f47e5e5bd3423af79a2aed4487c76"/><section>
+    <title>OldCallback</title>
+<indexterm><primary>OldCallback</primary><secondary>ImGuiGetNameFromIndexOldToNewCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiGetNameFromIndexOldToNewCallbackData</primary><secondary>OldCallback</secondary></indexterm>
+<para><computeroutput>bool(* ImGuiGetNameFromIndexOldToNewCallbackData::OldCallback) (<link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *, int, const char **)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_get_name_from_index_old_to_new_callback_data_1ab5145665995e4fd93266c2b14ae4d199"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImGuiGetNameFromIndexOldToNewCallbackData</secondary></indexterm>
+<indexterm><primary>ImGuiGetNameFromIndexOldToNewCallbackData</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiGetNameFromIndexOldToNewCallbackData::UserData</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__widgets_8cpp">imgui_widgets.cpp</link></section>
+</section>

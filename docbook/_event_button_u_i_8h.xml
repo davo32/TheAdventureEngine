@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__event_button_u_i_8h" xml:lang="en-US">
+<title>EventButtonUI.h File Reference</title>
+<indexterm><primary>EventButtonUI.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;UserInterface.h&quot;<?linebreak?></programlisting>Include dependency graph for EventButtonUI.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_event_button_u_i_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_event_button_u_i_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_event_button_u_i">EventButtonUI</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

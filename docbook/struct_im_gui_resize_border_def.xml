@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_resize_border_def" xml:lang="en-US">
+<title>ImGuiResizeBorderDef Struct Reference</title>
+<indexterm><primary>ImGuiResizeBorderDef</primary></indexterm>
+Collaboration diagram for ImGuiResizeBorderDef:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_resize_border_def__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_resize_border_def_1ac7561a6f748779d0318a80e6c91cfc10">InnerDir</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_resize_border_def_1a89ab538c595c476e055ba33dca3451b9">SegmentN1</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_resize_border_def_1a8f025428a884a2167a504858a79650a2">SegmentN2</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_resize_border_def_1a98a0fd1c91fa782c3c4d5093113b2fa9">OuterAngle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_resize_border_def_1ac7561a6f748779d0318a80e6c91cfc10"/><section>
+    <title>InnerDir</title>
+<indexterm><primary>InnerDir</primary><secondary>ImGuiResizeBorderDef</secondary></indexterm>
+<indexterm><primary>ImGuiResizeBorderDef</primary><secondary>InnerDir</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiResizeBorderDef::InnerDir</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_resize_border_def_1a98a0fd1c91fa782c3c4d5093113b2fa9"/><section>
+    <title>OuterAngle</title>
+<indexterm><primary>OuterAngle</primary><secondary>ImGuiResizeBorderDef</secondary></indexterm>
+<indexterm><primary>ImGuiResizeBorderDef</primary><secondary>OuterAngle</secondary></indexterm>
+<para><computeroutput>float ImGuiResizeBorderDef::OuterAngle</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_resize_border_def_1a89ab538c595c476e055ba33dca3451b9"/><section>
+    <title>SegmentN1</title>
+<indexterm><primary>SegmentN1</primary><secondary>ImGuiResizeBorderDef</secondary></indexterm>
+<indexterm><primary>ImGuiResizeBorderDef</primary><secondary>SegmentN1</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiResizeBorderDef::SegmentN1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_resize_border_def_1a8f025428a884a2167a504858a79650a2"/><section>
+    <title>SegmentN2</title>
+<indexterm><primary>SegmentN2</primary><secondary>ImGuiResizeBorderDef</secondary></indexterm>
+<indexterm><primary>ImGuiResizeBorderDef</primary><secondary>SegmentN2</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiResizeBorderDef::SegmentN2</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structaie_1_1_renderer2_d_1_1_s_b_vertex" xml:lang="en-US">
+<title>aie::Renderer2D::SBVertex Struct Reference</title>
+<indexterm><primary>aie::Renderer2D::SBVertex</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Renderer2D.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1af854eeb159b3037846d7a5d16a33f5a0">pos</link> [4]</para>
+</listitem>
+            <listitem><para>float <link linkend="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1a58ddf42b110c42e110ba7a05133be7a8">color</link> [4]</para>
+</listitem>
+            <listitem><para>float <link linkend="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1a18637beb77d7c7595365004d7d408960">texcoord</link> [2]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1a58ddf42b110c42e110ba7a05133be7a8"/><section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>aie::Renderer2D::SBVertex</secondary></indexterm>
+<indexterm><primary>aie::Renderer2D::SBVertex</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>float aie::Renderer2D::SBVertex::color[4]</computeroutput></para></section>
+<anchor xml:id="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1af854eeb159b3037846d7a5d16a33f5a0"/><section>
+    <title>pos</title>
+<indexterm><primary>pos</primary><secondary>aie::Renderer2D::SBVertex</secondary></indexterm>
+<indexterm><primary>aie::Renderer2D::SBVertex</primary><secondary>pos</secondary></indexterm>
+<para><computeroutput>float aie::Renderer2D::SBVertex::pos[4]</computeroutput></para></section>
+<anchor xml:id="_structaie_1_1_renderer2_d_1_1_s_b_vertex_1a18637beb77d7c7595365004d7d408960"/><section>
+    <title>texcoord</title>
+<indexterm><primary>texcoord</primary><secondary>aie::Renderer2D::SBVertex</secondary></indexterm>
+<indexterm><primary>aie::Renderer2D::SBVertex</primary><secondary>texcoord</secondary></indexterm>
+<para><computeroutput>float aie::Renderer2D::SBVertex::texcoord[2]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="__renderer2_d_8h">Renderer2D.h</link></section>
+</section>

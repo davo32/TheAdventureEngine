@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_font_glyph" xml:lang="en-US">
+<title>ImFontGlyph Struct Reference</title>
+<indexterm><primary>ImFontGlyph</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>unsigned int <link linkend="_struct_im_font_glyph_1a6dca72bfeb40ba1cf6ceae007894f665">Colored</link>: 1</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_struct_im_font_glyph_1a4e7d64945eeb9cf823c2ce7bb66a1e85">Visible</link>: 1</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_struct_im_font_glyph_1a2016b685049bf375f7c045ed8e24d6b7">Codepoint</link>: 30</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a11bfab7bcdb497fe2d649745c7d39b33">AdvanceX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a1e93bf7292c052549972fc46646ff104">X0</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1ac1deecd5b352949f30d396a58b68dd09">Y0</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a1d907170d807c5e5f2a43d74b99f0d89">X1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1aa6a0440694ae06c4cf03316498327bd2">Y1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a3c9d90fb39f6beaf9d69413fa4c8366f">U0</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a26b7b7b9ee43ab67e98af9ea1131ce20">V0</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1aaca9625f2d6972016e05fed583db85b0">U1</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_font_glyph_1a3d28904aad639835cdff3e4416663d7c">V1</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_font_glyph_1a11bfab7bcdb497fe2d649745c7d39b33"/><section>
+    <title>AdvanceX</title>
+<indexterm><primary>AdvanceX</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>AdvanceX</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::AdvanceX</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a2016b685049bf375f7c045ed8e24d6b7"/><section>
+    <title>Codepoint</title>
+<indexterm><primary>Codepoint</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>Codepoint</secondary></indexterm>
+<para><computeroutput>unsigned int ImFontGlyph::Codepoint</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a6dca72bfeb40ba1cf6ceae007894f665"/><section>
+    <title>Colored</title>
+<indexterm><primary>Colored</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>Colored</secondary></indexterm>
+<para><computeroutput>unsigned int ImFontGlyph::Colored</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a3c9d90fb39f6beaf9d69413fa4c8366f"/><section>
+    <title>U0</title>
+<indexterm><primary>U0</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>U0</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::U0</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1aaca9625f2d6972016e05fed583db85b0"/><section>
+    <title>U1</title>
+<indexterm><primary>U1</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>U1</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::U1</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a26b7b7b9ee43ab67e98af9ea1131ce20"/><section>
+    <title>V0</title>
+<indexterm><primary>V0</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>V0</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::V0</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a3d28904aad639835cdff3e4416663d7c"/><section>
+    <title>V1</title>
+<indexterm><primary>V1</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>V1</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::V1</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a4e7d64945eeb9cf823c2ce7bb66a1e85"/><section>
+    <title>Visible</title>
+<indexterm><primary>Visible</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>Visible</secondary></indexterm>
+<para><computeroutput>unsigned int ImFontGlyph::Visible</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a1e93bf7292c052549972fc46646ff104"/><section>
+    <title>X0</title>
+<indexterm><primary>X0</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>X0</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::X0</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1a1d907170d807c5e5f2a43d74b99f0d89"/><section>
+    <title>X1</title>
+<indexterm><primary>X1</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>X1</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::X1</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1ac1deecd5b352949f30d396a58b68dd09"/><section>
+    <title>Y0</title>
+<indexterm><primary>Y0</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>Y0</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::Y0</computeroutput></para></section>
+<anchor xml:id="_struct_im_font_glyph_1aa6a0440694ae06c4cf03316498327bd2"/><section>
+    <title>Y1</title>
+<indexterm><primary>Y1</primary><secondary>ImFontGlyph</secondary></indexterm>
+<indexterm><primary>ImFontGlyph</primary><secondary>Y1</secondary></indexterm>
+<para><computeroutput>float ImFontGlyph::Y1</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

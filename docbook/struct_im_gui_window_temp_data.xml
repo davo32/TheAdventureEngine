@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_window_temp_data" xml:lang="en-US">
+<title>ImGuiWindowTempData Struct Reference</title>
+<indexterm><primary>ImGuiWindowTempData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiWindowTempData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_window_temp_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1aa76e59bf36a6b212c667dbb2706cdc54">CursorPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1add9d6659678ffce16d2b1653a8c15c35">CursorPosPrevLine</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1a4e5c2b786d40849ce195f670e2e4e78e">CursorStartPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1a2b8a133355700fe72f9c06d67e252d26">CursorMaxPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1a100213bfaaee245df5c86539a2e7f538">IdealMaxPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1a122b8e79d681562436251472d8e15ff4">CurrLineSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1aa8959576942c6611ce792490c5adc830">PrevLineSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_window_temp_data_1a36f5668cdb35d0da1957c12a6258daa9">CurrLineTextBaseOffset</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_window_temp_data_1a56ea966c95f667c41f6ef2d6c0ad7aa2">PrevLineTextBaseOffset</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1adafbba60314dc97be8090332ac4eab21">IsSameLine</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1a334efa30434ebba87b0c37c2872149b2">IsSetPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec1">ImVec1</link> <link linkend="_struct_im_gui_window_temp_data_1a1ed2e037a987c8fc7ecdc4f5888657b5">Indent</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec1">ImVec1</link> <link linkend="_struct_im_gui_window_temp_data_1af86ba9662f7aeb95c49e785d941f4c69">ColumnsOffset</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec1">ImVec1</link> <link linkend="_struct_im_gui_window_temp_data_1a29dbe26f59a7a8b667cc21a3ea3332a9">GroupOffset</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1a390a86bb16c01045a8793e0d60b668d8">CursorStartPosLossyness</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1afb412215b8327dc2c6af2c19fdca64c6">ImGuiNavLayer</link> <link linkend="_struct_im_gui_window_temp_data_1a95e11283d6f15aff01b8370267edd61c">NavLayerCurrent</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_window_temp_data_1a4191d0684aa688e31c69a618490a3f32">NavLayersActiveMask</link></para>
+</listitem>
+            <listitem><para>short <link linkend="_struct_im_gui_window_temp_data_1a585804d9f68a5973a3e1f4d47b18103e">NavLayersActiveMaskNext</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1ae52e5f377ec2fc5219b9b7887d3008b2">NavIsScrollPushableX</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1a039070c94cf3dc0534257becd8d5bce8">NavHideHighlightOneFrame</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1a2cb34a0fe842be5dfd1320b0b4b07470">NavWindowHasScrollY</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_window_temp_data_1a9f0df1a4566ded9c6ec2629f29af20c6">MenuBarAppending</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_window_temp_data_1ad83c8b499933d7c765dc564e2d75c302">MenuBarOffset</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_menu_columns">ImGuiMenuColumns</link> <link linkend="_struct_im_gui_window_temp_data_1a7c8873ea116f452f145e17ce8275072f">MenuColumns</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_window_temp_data_1aaa472783238040464cce2984c1a3ed47">TreeDepth</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_window_temp_data_1a19b841532f2e8997bb6fadcdc9f39cfc">TreeJumpToParentOnPopMask</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_window">ImGuiWindow</link> * &gt; <link linkend="_struct_im_gui_window_temp_data_1ac5ffaaf397b8501b523aa55aa7d34d3d">ChildWindows</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_storage">ImGuiStorage</link> * <link linkend="_struct_im_gui_window_temp_data_1ae8dad2f03fe834cb6b24cb76efe62c59">StateStorage</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_old_columns">ImGuiOldColumns</link> * <link linkend="_struct_im_gui_window_temp_data_1ad00cc183f6adc8e1bce723de265bf9f6">CurrentColumns</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_window_temp_data_1a684f9cd8726dc846a633011d22367e90">CurrentTableIdx</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a86d7bb2ee8297d38b131d8ea7e6430c6">ImGuiLayoutType</link> <link linkend="_struct_im_gui_window_temp_data_1a56c2607a6965314ec05a351ac6b68c83">LayoutType</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a86d7bb2ee8297d38b131d8ea7e6430c6">ImGuiLayoutType</link> <link linkend="_struct_im_gui_window_temp_data_1af5f90b71ddcca637fdfd84827d096a9a">ParentLayoutType</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> <link linkend="_struct_im_gui_window_temp_data_1a51a9b4d8e56e0b30d8135d92a1341047">ModalDimBgColor</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_window_temp_data_1abc1312710a2091709415d425d2ffc971">ItemWidth</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_window_temp_data_1a4f9366e24dce97f0cc3ecc0e19436db5">TextWrapPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; float &gt; <link linkend="_struct_im_gui_window_temp_data_1ac3be9bc08a4ab80a67c6ebc48f4e578a">ItemWidthStack</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; float &gt; <link linkend="_struct_im_gui_window_temp_data_1aa65230cd1350ef584984919a7fa4c92b">TextWrapPosStack</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ac5ffaaf397b8501b523aa55aa7d34d3d"/><section>
+    <title>ChildWindows</title>
+<indexterm><primary>ChildWindows</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ChildWindows</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_window">ImGuiWindow</link>*&gt; ImGuiWindowTempData::ChildWindows</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1af86ba9662f7aeb95c49e785d941f4c69"/><section>
+    <title>ColumnsOffset</title>
+<indexterm><primary>ColumnsOffset</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ColumnsOffset</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec1">ImVec1</link> ImGuiWindowTempData::ColumnsOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ad00cc183f6adc8e1bce723de265bf9f6"/><section>
+    <title>CurrentColumns</title>
+<indexterm><primary>CurrentColumns</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CurrentColumns</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_old_columns">ImGuiOldColumns</link>* ImGuiWindowTempData::CurrentColumns</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a684f9cd8726dc846a633011d22367e90"/><section>
+    <title>CurrentTableIdx</title>
+<indexterm><primary>CurrentTableIdx</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CurrentTableIdx</secondary></indexterm>
+<para><computeroutput>int ImGuiWindowTempData::CurrentTableIdx</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a122b8e79d681562436251472d8e15ff4"/><section>
+    <title>CurrLineSize</title>
+<indexterm><primary>CurrLineSize</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CurrLineSize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CurrLineSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a36f5668cdb35d0da1957c12a6258daa9"/><section>
+    <title>CurrLineTextBaseOffset</title>
+<indexterm><primary>CurrLineTextBaseOffset</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CurrLineTextBaseOffset</secondary></indexterm>
+<para><computeroutput>float ImGuiWindowTempData::CurrLineTextBaseOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a2b8a133355700fe72f9c06d67e252d26"/><section>
+    <title>CursorMaxPos</title>
+<indexterm><primary>CursorMaxPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CursorMaxPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CursorMaxPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1aa76e59bf36a6b212c667dbb2706cdc54"/><section>
+    <title>CursorPos</title>
+<indexterm><primary>CursorPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CursorPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CursorPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1add9d6659678ffce16d2b1653a8c15c35"/><section>
+    <title>CursorPosPrevLine</title>
+<indexterm><primary>CursorPosPrevLine</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CursorPosPrevLine</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CursorPosPrevLine</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a4e5c2b786d40849ce195f670e2e4e78e"/><section>
+    <title>CursorStartPos</title>
+<indexterm><primary>CursorStartPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CursorStartPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CursorStartPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a390a86bb16c01045a8793e0d60b668d8"/><section>
+    <title>CursorStartPosLossyness</title>
+<indexterm><primary>CursorStartPosLossyness</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>CursorStartPosLossyness</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::CursorStartPosLossyness</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a29dbe26f59a7a8b667cc21a3ea3332a9"/><section>
+    <title>GroupOffset</title>
+<indexterm><primary>GroupOffset</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>GroupOffset</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec1">ImVec1</link> ImGuiWindowTempData::GroupOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a100213bfaaee245df5c86539a2e7f538"/><section>
+    <title>IdealMaxPos</title>
+<indexterm><primary>IdealMaxPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>IdealMaxPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::IdealMaxPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a1ed2e037a987c8fc7ecdc4f5888657b5"/><section>
+    <title>Indent</title>
+<indexterm><primary>Indent</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>Indent</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec1">ImVec1</link> ImGuiWindowTempData::Indent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1adafbba60314dc97be8090332ac4eab21"/><section>
+    <title>IsSameLine</title>
+<indexterm><primary>IsSameLine</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>IsSameLine</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::IsSameLine</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a334efa30434ebba87b0c37c2872149b2"/><section>
+    <title>IsSetPos</title>
+<indexterm><primary>IsSetPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>IsSetPos</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::IsSetPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1abc1312710a2091709415d425d2ffc971"/><section>
+    <title>ItemWidth</title>
+<indexterm><primary>ItemWidth</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ItemWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiWindowTempData::ItemWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ac3be9bc08a4ab80a67c6ebc48f4e578a"/><section>
+    <title>ItemWidthStack</title>
+<indexterm><primary>ItemWidthStack</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ItemWidthStack</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;float&gt; ImGuiWindowTempData::ItemWidthStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a56c2607a6965314ec05a351ac6b68c83"/><section>
+    <title>LayoutType</title>
+<indexterm><primary>LayoutType</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>LayoutType</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a86d7bb2ee8297d38b131d8ea7e6430c6">ImGuiLayoutType</link> ImGuiWindowTempData::LayoutType</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a9f0df1a4566ded9c6ec2629f29af20c6"/><section>
+    <title>MenuBarAppending</title>
+<indexterm><primary>MenuBarAppending</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>MenuBarAppending</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::MenuBarAppending</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ad83c8b499933d7c765dc564e2d75c302"/><section>
+    <title>MenuBarOffset</title>
+<indexterm><primary>MenuBarOffset</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>MenuBarOffset</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::MenuBarOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a7c8873ea116f452f145e17ce8275072f"/><section>
+    <title>MenuColumns</title>
+<indexterm><primary>MenuColumns</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>MenuColumns</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_menu_columns">ImGuiMenuColumns</link> ImGuiWindowTempData::MenuColumns</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a51a9b4d8e56e0b30d8135d92a1341047"/><section>
+    <title>ModalDimBgColor</title>
+<indexterm><primary>ModalDimBgColor</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ModalDimBgColor</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiWindowTempData::ModalDimBgColor</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a039070c94cf3dc0534257becd8d5bce8"/><section>
+    <title>NavHideHighlightOneFrame</title>
+<indexterm><primary>NavHideHighlightOneFrame</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavHideHighlightOneFrame</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::NavHideHighlightOneFrame</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ae52e5f377ec2fc5219b9b7887d3008b2"/><section>
+    <title>NavIsScrollPushableX</title>
+<indexterm><primary>NavIsScrollPushableX</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavIsScrollPushableX</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::NavIsScrollPushableX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a95e11283d6f15aff01b8370267edd61c"/><section>
+    <title>NavLayerCurrent</title>
+<indexterm><primary>NavLayerCurrent</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavLayerCurrent</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1afb412215b8327dc2c6af2c19fdca64c6">ImGuiNavLayer</link> ImGuiWindowTempData::NavLayerCurrent</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a4191d0684aa688e31c69a618490a3f32"/><section>
+    <title>NavLayersActiveMask</title>
+<indexterm><primary>NavLayersActiveMask</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavLayersActiveMask</secondary></indexterm>
+<para><computeroutput>short ImGuiWindowTempData::NavLayersActiveMask</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a585804d9f68a5973a3e1f4d47b18103e"/><section>
+    <title>NavLayersActiveMaskNext</title>
+<indexterm><primary>NavLayersActiveMaskNext</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavLayersActiveMaskNext</secondary></indexterm>
+<para><computeroutput>short ImGuiWindowTempData::NavLayersActiveMaskNext</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a2cb34a0fe842be5dfd1320b0b4b07470"/><section>
+    <title>NavWindowHasScrollY</title>
+<indexterm><primary>NavWindowHasScrollY</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>NavWindowHasScrollY</secondary></indexterm>
+<para><computeroutput>bool ImGuiWindowTempData::NavWindowHasScrollY</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1af5f90b71ddcca637fdfd84827d096a9a"/><section>
+    <title>ParentLayoutType</title>
+<indexterm><primary>ParentLayoutType</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>ParentLayoutType</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a86d7bb2ee8297d38b131d8ea7e6430c6">ImGuiLayoutType</link> ImGuiWindowTempData::ParentLayoutType</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1aa8959576942c6611ce792490c5adc830"/><section>
+    <title>PrevLineSize</title>
+<indexterm><primary>PrevLineSize</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>PrevLineSize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiWindowTempData::PrevLineSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a56ea966c95f667c41f6ef2d6c0ad7aa2"/><section>
+    <title>PrevLineTextBaseOffset</title>
+<indexterm><primary>PrevLineTextBaseOffset</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>PrevLineTextBaseOffset</secondary></indexterm>
+<para><computeroutput>float ImGuiWindowTempData::PrevLineTextBaseOffset</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1ae8dad2f03fe834cb6b24cb76efe62c59"/><section>
+    <title>StateStorage</title>
+<indexterm><primary>StateStorage</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>StateStorage</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_storage">ImGuiStorage</link>* ImGuiWindowTempData::StateStorage</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a4f9366e24dce97f0cc3ecc0e19436db5"/><section>
+    <title>TextWrapPos</title>
+<indexterm><primary>TextWrapPos</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>TextWrapPos</secondary></indexterm>
+<para><computeroutput>float ImGuiWindowTempData::TextWrapPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1aa65230cd1350ef584984919a7fa4c92b"/><section>
+    <title>TextWrapPosStack</title>
+<indexterm><primary>TextWrapPosStack</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>TextWrapPosStack</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;float&gt; ImGuiWindowTempData::TextWrapPosStack</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1aaa472783238040464cce2984c1a3ed47"/><section>
+    <title>TreeDepth</title>
+<indexterm><primary>TreeDepth</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>TreeDepth</secondary></indexterm>
+<para><computeroutput>int ImGuiWindowTempData::TreeDepth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_window_temp_data_1a19b841532f2e8997bb6fadcdc9f39cfc"/><section>
+    <title>TreeJumpToParentOnPopMask</title>
+<indexterm><primary>TreeJumpToParentOnPopMask</primary><secondary>ImGuiWindowTempData</secondary></indexterm>
+<indexterm><primary>ImGuiWindowTempData</primary><secondary>TreeJumpToParentOnPopMask</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a118cff4eeb8d00e7d07ce3d6460eed36">ImU32</link> ImGuiWindowTempData::TreeJumpToParentOnPopMask</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

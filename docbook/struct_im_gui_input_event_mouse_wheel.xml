@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_input_event_mouse_wheel" xml:lang="en-US">
+<title>ImGuiInputEventMouseWheel Struct Reference</title>
+<indexterm><primary>ImGuiInputEventMouseWheel</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_struct_im_gui_input_event_mouse_wheel_1a73befbdbdd99ebf390a7fb6aa803712b">WheelX</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_input_event_mouse_wheel_1a78146a6a771f9154fc1901d48e819fdb">WheelY</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> <link linkend="_struct_im_gui_input_event_mouse_wheel_1aac2685e14b8ba9eb5bdb5e321686da23">MouseSource</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_input_event_mouse_wheel_1aac2685e14b8ba9eb5bdb5e321686da23"/><section>
+    <title>MouseSource</title>
+<indexterm><primary>MouseSource</primary><secondary>ImGuiInputEventMouseWheel</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseWheel</primary><secondary>MouseSource</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3a993a8d676ceae7ca25c4957be9600b">ImGuiMouseSource</link> ImGuiInputEventMouseWheel::MouseSource</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_event_mouse_wheel_1a73befbdbdd99ebf390a7fb6aa803712b"/><section>
+    <title>WheelX</title>
+<indexterm><primary>WheelX</primary><secondary>ImGuiInputEventMouseWheel</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseWheel</primary><secondary>WheelX</secondary></indexterm>
+<para><computeroutput>float ImGuiInputEventMouseWheel::WheelX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_event_mouse_wheel_1a78146a6a771f9154fc1901d48e819fdb"/><section>
+    <title>WheelY</title>
+<indexterm><primary>WheelY</primary><secondary>ImGuiInputEventMouseWheel</secondary></indexterm>
+<indexterm><primary>ImGuiInputEventMouseWheel</primary><secondary>WheelY</secondary></indexterm>
+<para><computeroutput>float ImGuiInputEventMouseWheel::WheelY</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

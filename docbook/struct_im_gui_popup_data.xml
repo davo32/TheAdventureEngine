@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_popup_data" xml:lang="en-US">
+<title>ImGuiPopupData Struct Reference</title>
+<indexterm><primary>ImGuiPopupData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiPopupData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_popup_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_popup_data_1a6db95ae57fd86af23cb2f46451bc3b1b">ImGuiPopupData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_popup_data_1a3cd694871e2313afc9174de18fe76609">PopupId</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_popup_data_1ab614c60173f7af6d878122502bd8d87c">Window</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_popup_data_1aa366bae4cfd96e223fed97b4dabe03c9">RestoreNavWindow</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_popup_data_1ac219865e04d8501f53a6b49a993b7954">ParentNavLayer</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_popup_data_1a31a882f4cd1e73543010c43d056e5edb">OpenFrameCount</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_popup_data_1ace5fe62768d9020db88cbba81ca12ad5">OpenParentId</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_popup_data_1a78925fbd1498d3b92037665535a7a8fc">OpenPopupPos</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_popup_data_1a9d48ffe56872b2e87bc220d619594a55">OpenMousePos</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_popup_data_1a6db95ae57fd86af23cb2f46451bc3b1b"/><section>
+    <title>ImGuiPopupData()</title>
+<indexterm><primary>ImGuiPopupData</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<para><computeroutput>ImGuiPopupData::ImGuiPopupData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_popup_data_1a31a882f4cd1e73543010c43d056e5edb"/><section>
+    <title>OpenFrameCount</title>
+<indexterm><primary>OpenFrameCount</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>OpenFrameCount</secondary></indexterm>
+<para><computeroutput>int ImGuiPopupData::OpenFrameCount</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1a9d48ffe56872b2e87bc220d619594a55"/><section>
+    <title>OpenMousePos</title>
+<indexterm><primary>OpenMousePos</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>OpenMousePos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiPopupData::OpenMousePos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1ace5fe62768d9020db88cbba81ca12ad5"/><section>
+    <title>OpenParentId</title>
+<indexterm><primary>OpenParentId</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>OpenParentId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiPopupData::OpenParentId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1a78925fbd1498d3b92037665535a7a8fc"/><section>
+    <title>OpenPopupPos</title>
+<indexterm><primary>OpenPopupPos</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>OpenPopupPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiPopupData::OpenPopupPos</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1ac219865e04d8501f53a6b49a993b7954"/><section>
+    <title>ParentNavLayer</title>
+<indexterm><primary>ParentNavLayer</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>ParentNavLayer</secondary></indexterm>
+<para><computeroutput>int ImGuiPopupData::ParentNavLayer</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1a3cd694871e2313afc9174de18fe76609"/><section>
+    <title>PopupId</title>
+<indexterm><primary>PopupId</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>PopupId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiPopupData::PopupId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1aa366bae4cfd96e223fed97b4dabe03c9"/><section>
+    <title>RestoreNavWindow</title>
+<indexterm><primary>RestoreNavWindow</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>RestoreNavWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiPopupData::RestoreNavWindow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_popup_data_1ab614c60173f7af6d878122502bd8d87c"/><section>
+    <title>Window</title>
+<indexterm><primary>Window</primary><secondary>ImGuiPopupData</secondary></indexterm>
+<indexterm><primary>ImGuiPopupData</primary><secondary>Window</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiPopupData::Window</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

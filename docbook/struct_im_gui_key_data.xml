@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_key_data" xml:lang="en-US">
+<title>ImGuiKeyData Struct Reference</title>
+<indexterm><primary>ImGuiKeyData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_im_gui_key_data_1a19d68bb25ef2f7f384564ca155afb028">Down</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_key_data_1a54e78495804cdf28458762bad06dc0ac">DownDuration</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_key_data_1a3adf13e47cc5db980332aff9012975d8">DownDurationPrev</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_key_data_1adc039f599a1385e1572d741641731ee7">AnalogValue</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_key_data_1adc039f599a1385e1572d741641731ee7"/><section>
+    <title>AnalogValue</title>
+<indexterm><primary>AnalogValue</primary><secondary>ImGuiKeyData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyData</primary><secondary>AnalogValue</secondary></indexterm>
+<para><computeroutput>float ImGuiKeyData::AnalogValue</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_data_1a19d68bb25ef2f7f384564ca155afb028"/><section>
+    <title>Down</title>
+<indexterm><primary>Down</primary><secondary>ImGuiKeyData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyData</primary><secondary>Down</secondary></indexterm>
+<para><computeroutput>bool ImGuiKeyData::Down</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_data_1a54e78495804cdf28458762bad06dc0ac"/><section>
+    <title>DownDuration</title>
+<indexterm><primary>DownDuration</primary><secondary>ImGuiKeyData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyData</primary><secondary>DownDuration</secondary></indexterm>
+<para><computeroutput>float ImGuiKeyData::DownDuration</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_data_1a3adf13e47cc5db980332aff9012975d8"/><section>
+    <title>DownDurationPrev</title>
+<indexterm><primary>DownDurationPrev</primary><secondary>ImGuiKeyData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyData</primary><secondary>DownDurationPrev</secondary></indexterm>
+<para><computeroutput>float ImGuiKeyData::DownDurationPrev</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

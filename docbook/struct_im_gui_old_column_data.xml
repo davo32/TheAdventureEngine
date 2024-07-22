@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_old_column_data" xml:lang="en-US">
+<title>ImGuiOldColumnData Struct Reference</title>
+<indexterm><primary>ImGuiOldColumnData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiOldColumnData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_old_column_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_old_column_data_1a6fd70ab5181a2615ac83ffb7813b31e3">ImGuiOldColumnData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_struct_im_gui_old_column_data_1a87f711016d4006d7fb9fa21815fe6f8f">OffsetNorm</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_old_column_data_1aacf1574d1907c9afaadd5a702d6803ef">OffsetNormBeforeResize</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a930931ec4c54582a278a461676df4dda">ImGuiOldColumnFlags</link> <link linkend="_struct_im_gui_old_column_data_1ac31f2d6cf8d454163d2d5c46b7cb16ad">Flags</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_rect">ImRect</link> <link linkend="_struct_im_gui_old_column_data_1a2eef22c9f568b9020ee0f6ec682b1415">ClipRect</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_old_column_data_1a6fd70ab5181a2615ac83ffb7813b31e3"/><section>
+    <title>ImGuiOldColumnData()</title>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<para><computeroutput>ImGuiOldColumnData::ImGuiOldColumnData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_old_column_data_1a2eef22c9f568b9020ee0f6ec682b1415"/><section>
+    <title>ClipRect</title>
+<indexterm><primary>ClipRect</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>ClipRect</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_rect">ImRect</link> ImGuiOldColumnData::ClipRect</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_column_data_1ac31f2d6cf8d454163d2d5c46b7cb16ad"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a930931ec4c54582a278a461676df4dda">ImGuiOldColumnFlags</link> ImGuiOldColumnData::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_column_data_1a87f711016d4006d7fb9fa21815fe6f8f"/><section>
+    <title>OffsetNorm</title>
+<indexterm><primary>OffsetNorm</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>OffsetNorm</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumnData::OffsetNorm</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_old_column_data_1aacf1574d1907c9afaadd5a702d6803ef"/><section>
+    <title>OffsetNormBeforeResize</title>
+<indexterm><primary>OffsetNormBeforeResize</primary><secondary>ImGuiOldColumnData</secondary></indexterm>
+<indexterm><primary>ImGuiOldColumnData</primary><secondary>OffsetNormBeforeResize</secondary></indexterm>
+<para><computeroutput>float ImGuiOldColumnData::OffsetNormBeforeResize</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

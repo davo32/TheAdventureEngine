@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_input_text_state" xml:lang="en-US">
+<title>ImGuiInputTextState Struct Reference</title>
+<indexterm><primary>ImGuiInputTextState</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiInputTextState:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_input_text_state__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_input_text_state_1adc973b2e610237bdbede8e1fc01dcc5f">ImGuiInputTextState</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a451153353e47a2aee5ca6c4b362fe2c1">ClearText</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a8be5f345ea5de89842d5a6716cb19b27">ClearFreeMemory</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a466373ea612d3b3d2fe1449193850d5f">GetUndoAvailCount</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a96f6741c8556dbfe9c92f28faee063e3">GetRedoAvailCount</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a2cd5083f820d0012479bb706a45b04b0">OnKeyPressed</link> (int key)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a78a05f36dbfd38b9026a4980a15a6a3e">CursorAnimReset</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a0924f1eead76c7d58090aa603cea4301">CursorClamp</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1ab17832413ff121a5663319c06bbb989a">HasSelection</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1aa834c6b6c9f3d589b55eb22ca9a01c3e">ClearSelection</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a061d099bd9dad94fe86a435f48c7fe1e">GetCursorPos</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a408b8e34844be9aa85120589126e57d1">GetSelectionStart</link> () const</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a8b85a91b83de6605f251eb6d6f31a2e4">GetSelectionEnd</link> () const</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1ac9ceb16a3551dc82a1e8be716236b811">SelectAll</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a717c9cd094c4927b72e86f1381acd343">ReloadUserBufAndSelectAll</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a82578d7dd220bd467da37a196d84a7c0">ReloadUserBufAndKeepSelection</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_input_text_state_1a7e2df838dc0269cc5dca4786b25b2204">ReloadUserBufAndMoveToEnd</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_context">ImGuiContext</link> * <link linkend="_struct_im_gui_input_text_state_1a2841e4128e05556069bba2b76c651adc">Ctx</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_input_text_state_1a919642a77fb872cab950a011877c092b">ID</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a5e0304d69cd5fa3fab05a1fd7b991375">CurLenW</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1abdba2cb00ac67ee3464c469d7ada163b">CurLenA</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link> &gt; <link linkend="_struct_im_gui_input_text_state_1ad49ccde379925fb4238dcfa308aab418">TextW</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; char &gt; <link linkend="_struct_im_gui_input_text_state_1ac206ad70804e4ea3db983fe8a558c5dc">TextA</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; char &gt; <link linkend="_struct_im_gui_input_text_state_1ae0de344794e316aec169edfb3e76e552">InitialTextA</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1ac9fd681d8bb37d77b6b4ee9f58b779b5">TextAIsValid</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1a0dcf0134962cfb09d085f14538a59dac">BufCapacityA</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_input_text_state_1a730a350758ad428d845d895f85770b7f">ScrollX</link></para>
+</listitem>
+            <listitem><para>ImStb::STB_TexteditState <link linkend="_struct_im_gui_input_text_state_1a60c8aa1efca5c77f73aee5cdd27c68b9">Stb</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_input_text_state_1a95520b8289da18da2ca6480a64894516">CursorAnim</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1a8cfd858a20e7154e235cc6288fdae6f0">CursorFollow</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1a3ea23fdc7d6cc4983230055ba92bc422">SelectedAllMouseLock</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1af1fb8309908443c5d892a635d03a317e">Edited</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> <link linkend="_struct_im_gui_input_text_state_1a3753c19d56d0e7db97df938719594c38">Flags</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_input_text_state_1a1f425adfebdcd5fb11af50bcf11ae6e0">ReloadUserBuf</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1ae031017605142ea026fae1c9f3dab60c">ReloadSelectionStart</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_input_text_state_1af5232bb09dd94e13c57e26c97b52596c">ReloadSelectionEnd</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_state_1adc973b2e610237bdbede8e1fc01dcc5f"/><section>
+    <title>ImGuiInputTextState()</title>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<para><computeroutput>ImGuiInputTextState::ImGuiInputTextState ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_state_1a8be5f345ea5de89842d5a6716cb19b27"/><section>
+    <title>ClearFreeMemory()</title>
+<indexterm><primary>ClearFreeMemory</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ClearFreeMemory</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ClearFreeMemory ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1aa834c6b6c9f3d589b55eb22ca9a01c3e"/><section>
+    <title>ClearSelection()</title>
+<indexterm><primary>ClearSelection</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ClearSelection</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ClearSelection ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a451153353e47a2aee5ca6c4b362fe2c1"/><section>
+    <title>ClearText()</title>
+<indexterm><primary>ClearText</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ClearText</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ClearText ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a78a05f36dbfd38b9026a4980a15a6a3e"/><section>
+    <title>CursorAnimReset()</title>
+<indexterm><primary>CursorAnimReset</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CursorAnimReset</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::CursorAnimReset ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a0924f1eead76c7d58090aa603cea4301"/><section>
+    <title>CursorClamp()</title>
+<indexterm><primary>CursorClamp</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CursorClamp</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::CursorClamp ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a061d099bd9dad94fe86a435f48c7fe1e"/><section>
+    <title>GetCursorPos()</title>
+<indexterm><primary>GetCursorPos</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>GetCursorPos</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::GetCursorPos ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a96f6741c8556dbfe9c92f28faee063e3"/><section>
+    <title>GetRedoAvailCount()</title>
+<indexterm><primary>GetRedoAvailCount</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>GetRedoAvailCount</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::GetRedoAvailCount ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a8b85a91b83de6605f251eb6d6f31a2e4"/><section>
+    <title>GetSelectionEnd()</title>
+<indexterm><primary>GetSelectionEnd</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>GetSelectionEnd</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::GetSelectionEnd ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a408b8e34844be9aa85120589126e57d1"/><section>
+    <title>GetSelectionStart()</title>
+<indexterm><primary>GetSelectionStart</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>GetSelectionStart</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::GetSelectionStart ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a466373ea612d3b3d2fe1449193850d5f"/><section>
+    <title>GetUndoAvailCount()</title>
+<indexterm><primary>GetUndoAvailCount</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>GetUndoAvailCount</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::GetUndoAvailCount ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ab17832413ff121a5663319c06bbb989a"/><section>
+    <title>HasSelection()</title>
+<indexterm><primary>HasSelection</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>HasSelection</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::HasSelection ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a2cd5083f820d0012479bb706a45b04b0"/><section>
+    <title>OnKeyPressed()</title>
+<indexterm><primary>OnKeyPressed</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>OnKeyPressed</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::OnKeyPressed (int key)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a82578d7dd220bd467da37a196d84a7c0"/><section>
+    <title>ReloadUserBufAndKeepSelection()</title>
+<indexterm><primary>ReloadUserBufAndKeepSelection</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadUserBufAndKeepSelection</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ReloadUserBufAndKeepSelection ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a7e2df838dc0269cc5dca4786b25b2204"/><section>
+    <title>ReloadUserBufAndMoveToEnd()</title>
+<indexterm><primary>ReloadUserBufAndMoveToEnd</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadUserBufAndMoveToEnd</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ReloadUserBufAndMoveToEnd ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a717c9cd094c4927b72e86f1381acd343"/><section>
+    <title>ReloadUserBufAndSelectAll()</title>
+<indexterm><primary>ReloadUserBufAndSelectAll</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadUserBufAndSelectAll</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::ReloadUserBufAndSelectAll ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ac9ceb16a3551dc82a1e8be716236b811"/><section>
+    <title>SelectAll()</title>
+<indexterm><primary>SelectAll</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>SelectAll</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiInputTextState::SelectAll ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_input_text_state_1a0dcf0134962cfb09d085f14538a59dac"/><section>
+    <title>BufCapacityA</title>
+<indexterm><primary>BufCapacityA</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>BufCapacityA</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::BufCapacityA</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a2841e4128e05556069bba2b76c651adc"/><section>
+    <title>Ctx</title>
+<indexterm><primary>Ctx</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>Ctx</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_context">ImGuiContext</link>* ImGuiInputTextState::Ctx</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1abdba2cb00ac67ee3464c469d7ada163b"/><section>
+    <title>CurLenA</title>
+<indexterm><primary>CurLenA</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CurLenA</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::CurLenA</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a5e0304d69cd5fa3fab05a1fd7b991375"/><section>
+    <title>CurLenW</title>
+<indexterm><primary>CurLenW</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CurLenW</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::CurLenW</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a95520b8289da18da2ca6480a64894516"/><section>
+    <title>CursorAnim</title>
+<indexterm><primary>CursorAnim</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CursorAnim</secondary></indexterm>
+<para><computeroutput>float ImGuiInputTextState::CursorAnim</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a8cfd858a20e7154e235cc6288fdae6f0"/><section>
+    <title>CursorFollow</title>
+<indexterm><primary>CursorFollow</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>CursorFollow</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::CursorFollow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1af1fb8309908443c5d892a635d03a317e"/><section>
+    <title>Edited</title>
+<indexterm><primary>Edited</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>Edited</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::Edited</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a3753c19d56d0e7db97df938719594c38"/><section>
+    <title>Flags</title>
+<indexterm><primary>Flags</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>Flags</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a7d2c6153a6b9b5d3178ce82434ac9fb8">ImGuiInputTextFlags</link> ImGuiInputTextState::Flags</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a919642a77fb872cab950a011877c092b"/><section>
+    <title>ID</title>
+<indexterm><primary>ID</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiInputTextState::ID</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ae0de344794e316aec169edfb3e76e552"/><section>
+    <title>InitialTextA</title>
+<indexterm><primary>InitialTextA</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>InitialTextA</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;char&gt; ImGuiInputTextState::InitialTextA</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1af5232bb09dd94e13c57e26c97b52596c"/><section>
+    <title>ReloadSelectionEnd</title>
+<indexterm><primary>ReloadSelectionEnd</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadSelectionEnd</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::ReloadSelectionEnd</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ae031017605142ea026fae1c9f3dab60c"/><section>
+    <title>ReloadSelectionStart</title>
+<indexterm><primary>ReloadSelectionStart</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadSelectionStart</secondary></indexterm>
+<para><computeroutput>int ImGuiInputTextState::ReloadSelectionStart</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a1f425adfebdcd5fb11af50bcf11ae6e0"/><section>
+    <title>ReloadUserBuf</title>
+<indexterm><primary>ReloadUserBuf</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ReloadUserBuf</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::ReloadUserBuf</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a730a350758ad428d845d895f85770b7f"/><section>
+    <title>ScrollX</title>
+<indexterm><primary>ScrollX</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>ScrollX</secondary></indexterm>
+<para><computeroutput>float ImGuiInputTextState::ScrollX</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a3ea23fdc7d6cc4983230055ba92bc422"/><section>
+    <title>SelectedAllMouseLock</title>
+<indexterm><primary>SelectedAllMouseLock</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>SelectedAllMouseLock</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::SelectedAllMouseLock</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1a60c8aa1efca5c77f73aee5cdd27c68b9"/><section>
+    <title>Stb</title>
+<indexterm><primary>Stb</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>Stb</secondary></indexterm>
+<para><computeroutput>ImStb::STB_TexteditState ImGuiInputTextState::Stb</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ac206ad70804e4ea3db983fe8a558c5dc"/><section>
+    <title>TextA</title>
+<indexterm><primary>TextA</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>TextA</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;char&gt; ImGuiInputTextState::TextA</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ac9fd681d8bb37d77b6b4ee9f58b779b5"/><section>
+    <title>TextAIsValid</title>
+<indexterm><primary>TextAIsValid</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>TextAIsValid</secondary></indexterm>
+<para><computeroutput>bool ImGuiInputTextState::TextAIsValid</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_input_text_state_1ad49ccde379925fb4238dcfa308aab418"/><section>
+    <title>TextW</title>
+<indexterm><primary>TextW</primary><secondary>ImGuiInputTextState</secondary></indexterm>
+<indexterm><primary>ImGuiInputTextState</primary><secondary>TextW</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_imgui_8h_1a1ecb49ee827c39a982f1e1467910d020">ImWchar</link>&gt; ImGuiInputTextState::TextW</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link><link linkend="_imgui__widgets_8cpp">imgui_widgets.cpp</link></section>
+</section>

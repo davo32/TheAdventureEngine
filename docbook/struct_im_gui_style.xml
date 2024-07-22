@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_style" xml:lang="en-US">
+<title>ImGuiStyle Struct Reference</title>
+<indexterm><primary>ImGuiStyle</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiStyle:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_style__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_struct_im_gui_style_1ab0a3ffb3aeec3e6b09b9bde812b28369">ImGuiStyle</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a43829975e84e45d1149597467a14bbf5">IMGUI_API</link> <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_struct_im_gui_style_1a7c9d3e0974a239f65e433cc952be0627">ScaleAllSizes</link> (float scale_factor)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a993312606e9dcb7ca165245150a4da72">Alpha</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1ac497d4a539ff1daf63a8e6a23bd23b0e">DisabledAlpha</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a37f156b53e6dcc99ff57366ceafe8b50">WindowPadding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1acd902c2ab4b53d4bb0f64da608320894">WindowRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a4e2af4dd711f57ee841f9c843a18bec2">WindowBorderSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a060b2f743a086d0f0fee4cd5b3f372d4">WindowMinSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a3fc57a15ab8f206045f1e5dfccd8b2e7">WindowTitleAlign</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> <link linkend="_struct_im_gui_style_1ab67a3fe38a4c109fe9de03228fb2c172">WindowMenuButtonPosition</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1aba2b4c6be52366ce2ac06b7849cd5cb2">ChildRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a5dd4fc33733ac7171d88740eb777f2e3">ChildBorderSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a44b39e666946eea00001b6e38ab6bdc7">PopupRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1ac3bc5e785e360f72b580d419953c9db4">PopupBorderSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1af58dc4e954ac95fdb3b0df8efb2fa564">FramePadding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a15402cededdef985487e986ccce73ad2">FrameRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a21d8f1680e9f897998d726fdf0123bf2">FrameBorderSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a6bc07d81e049cd75e86e6b3753c0da4a">ItemSpacing</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a1a12021be99583fb491cff2df75d1ae1">ItemInnerSpacing</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1aada9069c237335c78e2efadca98c74ca">CellPadding</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1ab518a0a67df8f14765acc491d7b460f4">TouchExtraPadding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a32ea292dee2b4e178a227acacd061921">IndentSpacing</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a8fed04481e1d75bb95c97819f545e2ba">ColumnsMinSpacing</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a96623380e624d2f2ec207449e700a226">ScrollbarSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a00efbadb1ad7daa0ee7384864b147d71">ScrollbarRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a04db033d001b343815cdcd2491576ef7">GrabMinSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a42369d83032545066803a7db62936e8f">GrabRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a6c8674e8aa93236717b36110d7b1f1da">LogSliderDeadzone</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a22d2fd87b928e639b4d2d1dbbcf805f8">TabRounding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a25858b1cc9234cbb976c934586fc4d88">TabBorderSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1add208c22be44e1453575f5bce33fa24b">TabMinWidthForCloseButton</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1afa3c451ba8f0d27a0e167d23e161807e">TabBarBorderSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1ae96fdb074684bcff971f43070fe8f354">TableAngledHeadersAngle</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> <link linkend="_struct_im_gui_style_1a64b5fdd495573fa07a80dc0071e99802">ColorButtonPosition</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a17246b12f4e069229d21808a87f78514">ButtonTextAlign</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1af2dc57060ca88884846dadbf455785c9">SelectableTextAlign</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a7d32779113a08f74b5654f3069f8a430">SeparatorTextBorderSize</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1ab1d9f91937648409a59c27b1a2463408">SeparatorTextAlign</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1ade414a25409350f02262762eae68454e">SeparatorTextPadding</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1ab06d6f0c6c5f36ab0c14688448de66f6">DisplayWindowPadding</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_struct_im_gui_style_1a8dd02a6a031ec8667e76aab1e28755bd">DisplaySafeAreaPadding</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a3f17b3aaaabac6cff0b09ba22dd3e8ab">DockingSeparatorSize</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a6448eb2273c8868d7ecccf1152857f68">MouseCursorScale</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_style_1a0164b54454297971d40f3578b2c1ffeb">AntiAliasedLines</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_style_1acd4afaf40109ed79815b8bfe9ad6b4f2">AntiAliasedLinesUseTex</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_style_1a1fcc22c258a2a73bd61efd18e7ce7e5a">AntiAliasedFill</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1a41eb9377b63b8b85ab807c28e00198e9">CurveTessellationTol</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1acc8b73cb356dfad30703f851ec973c65">CircleTessellationMaxError</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec4">ImVec4</link> <link linkend="_struct_im_gui_style_1a2b4941240a38d1300c39a7fa4f03d0a3">Colors</link> [<link linkend="_imgui_8h_1a8e46ef7d0c76fbb1916171edfa4ae9e7ac911e17bec14cc3339cf3901a197628b">ImGuiCol_COUNT</link>]</para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1acc9238d7c4075d17f609ce6330a5cbe6">HoverStationaryDelay</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1af753d08ba372559efadcd919565d5122">HoverDelayShort</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_style_1aa4fce75908e229801cc51a8ee58de9ee">HoverDelayNormal</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3a8f688665e5ea0bd9700e1251580a2c">ImGuiHoveredFlags</link> <link linkend="_struct_im_gui_style_1a9b463b2145c1fc619e3fd6dab4786e5a">HoverFlagsForTooltipMouse</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3a8f688665e5ea0bd9700e1251580a2c">ImGuiHoveredFlags</link> <link linkend="_struct_im_gui_style_1a2b7317157e2432d6b091b9a4bfff506f">HoverFlagsForTooltipNav</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_style_1ab0a3ffb3aeec3e6b09b9bde812b28369"/><section>
+    <title>ImGuiStyle()</title>
+<indexterm><primary>ImGuiStyle</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ImGuiStyle</secondary></indexterm>
+<para><computeroutput>ImGuiStyle::ImGuiStyle ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_im_gui_style_1a7c9d3e0974a239f65e433cc952be0627"/><section>
+    <title>ScaleAllSizes()</title>
+<indexterm><primary>ScaleAllSizes</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ScaleAllSizes</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> ImGuiStyle::ScaleAllSizes (float scale_factor)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_style_1a993312606e9dcb7ca165245150a4da72"/><section>
+    <title>Alpha</title>
+<indexterm><primary>Alpha</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>Alpha</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::Alpha</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a1fcc22c258a2a73bd61efd18e7ce7e5a"/><section>
+    <title>AntiAliasedFill</title>
+<indexterm><primary>AntiAliasedFill</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>AntiAliasedFill</secondary></indexterm>
+<para><computeroutput>bool ImGuiStyle::AntiAliasedFill</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a0164b54454297971d40f3578b2c1ffeb"/><section>
+    <title>AntiAliasedLines</title>
+<indexterm><primary>AntiAliasedLines</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>AntiAliasedLines</secondary></indexterm>
+<para><computeroutput>bool ImGuiStyle::AntiAliasedLines</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1acd4afaf40109ed79815b8bfe9ad6b4f2"/><section>
+    <title>AntiAliasedLinesUseTex</title>
+<indexterm><primary>AntiAliasedLinesUseTex</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>AntiAliasedLinesUseTex</secondary></indexterm>
+<para><computeroutput>bool ImGuiStyle::AntiAliasedLinesUseTex</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a17246b12f4e069229d21808a87f78514"/><section>
+    <title>ButtonTextAlign</title>
+<indexterm><primary>ButtonTextAlign</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ButtonTextAlign</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::ButtonTextAlign</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1aada9069c237335c78e2efadca98c74ca"/><section>
+    <title>CellPadding</title>
+<indexterm><primary>CellPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>CellPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::CellPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a5dd4fc33733ac7171d88740eb777f2e3"/><section>
+    <title>ChildBorderSize</title>
+<indexterm><primary>ChildBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ChildBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::ChildBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1aba2b4c6be52366ce2ac06b7849cd5cb2"/><section>
+    <title>ChildRounding</title>
+<indexterm><primary>ChildRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ChildRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::ChildRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1acc8b73cb356dfad30703f851ec973c65"/><section>
+    <title>CircleTessellationMaxError</title>
+<indexterm><primary>CircleTessellationMaxError</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>CircleTessellationMaxError</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::CircleTessellationMaxError</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a64b5fdd495573fa07a80dc0071e99802"/><section>
+    <title>ColorButtonPosition</title>
+<indexterm><primary>ColorButtonPosition</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ColorButtonPosition</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> ImGuiStyle::ColorButtonPosition</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a2b4941240a38d1300c39a7fa4f03d0a3"/><section>
+    <title>Colors</title>
+<indexterm><primary>Colors</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>Colors</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec4">ImVec4</link> ImGuiStyle::Colors[<link linkend="_imgui_8h_1a8e46ef7d0c76fbb1916171edfa4ae9e7ac911e17bec14cc3339cf3901a197628b">ImGuiCol_COUNT</link>]</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a8fed04481e1d75bb95c97819f545e2ba"/><section>
+    <title>ColumnsMinSpacing</title>
+<indexterm><primary>ColumnsMinSpacing</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ColumnsMinSpacing</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::ColumnsMinSpacing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a41eb9377b63b8b85ab807c28e00198e9"/><section>
+    <title>CurveTessellationTol</title>
+<indexterm><primary>CurveTessellationTol</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>CurveTessellationTol</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::CurveTessellationTol</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ac497d4a539ff1daf63a8e6a23bd23b0e"/><section>
+    <title>DisabledAlpha</title>
+<indexterm><primary>DisabledAlpha</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>DisabledAlpha</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::DisabledAlpha</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a8dd02a6a031ec8667e76aab1e28755bd"/><section>
+    <title>DisplaySafeAreaPadding</title>
+<indexterm><primary>DisplaySafeAreaPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>DisplaySafeAreaPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::DisplaySafeAreaPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ab06d6f0c6c5f36ab0c14688448de66f6"/><section>
+    <title>DisplayWindowPadding</title>
+<indexterm><primary>DisplayWindowPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>DisplayWindowPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::DisplayWindowPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a3f17b3aaaabac6cff0b09ba22dd3e8ab"/><section>
+    <title>DockingSeparatorSize</title>
+<indexterm><primary>DockingSeparatorSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>DockingSeparatorSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::DockingSeparatorSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a21d8f1680e9f897998d726fdf0123bf2"/><section>
+    <title>FrameBorderSize</title>
+<indexterm><primary>FrameBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>FrameBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::FrameBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1af58dc4e954ac95fdb3b0df8efb2fa564"/><section>
+    <title>FramePadding</title>
+<indexterm><primary>FramePadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>FramePadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::FramePadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a15402cededdef985487e986ccce73ad2"/><section>
+    <title>FrameRounding</title>
+<indexterm><primary>FrameRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>FrameRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::FrameRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a04db033d001b343815cdcd2491576ef7"/><section>
+    <title>GrabMinSize</title>
+<indexterm><primary>GrabMinSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>GrabMinSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::GrabMinSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a42369d83032545066803a7db62936e8f"/><section>
+    <title>GrabRounding</title>
+<indexterm><primary>GrabRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>GrabRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::GrabRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1aa4fce75908e229801cc51a8ee58de9ee"/><section>
+    <title>HoverDelayNormal</title>
+<indexterm><primary>HoverDelayNormal</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>HoverDelayNormal</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::HoverDelayNormal</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1af753d08ba372559efadcd919565d5122"/><section>
+    <title>HoverDelayShort</title>
+<indexterm><primary>HoverDelayShort</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>HoverDelayShort</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::HoverDelayShort</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a9b463b2145c1fc619e3fd6dab4786e5a"/><section>
+    <title>HoverFlagsForTooltipMouse</title>
+<indexterm><primary>HoverFlagsForTooltipMouse</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>HoverFlagsForTooltipMouse</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3a8f688665e5ea0bd9700e1251580a2c">ImGuiHoveredFlags</link> ImGuiStyle::HoverFlagsForTooltipMouse</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a2b7317157e2432d6b091b9a4bfff506f"/><section>
+    <title>HoverFlagsForTooltipNav</title>
+<indexterm><primary>HoverFlagsForTooltipNav</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>HoverFlagsForTooltipNav</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3a8f688665e5ea0bd9700e1251580a2c">ImGuiHoveredFlags</link> ImGuiStyle::HoverFlagsForTooltipNav</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1acc9238d7c4075d17f609ce6330a5cbe6"/><section>
+    <title>HoverStationaryDelay</title>
+<indexterm><primary>HoverStationaryDelay</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>HoverStationaryDelay</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::HoverStationaryDelay</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a32ea292dee2b4e178a227acacd061921"/><section>
+    <title>IndentSpacing</title>
+<indexterm><primary>IndentSpacing</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>IndentSpacing</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::IndentSpacing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a1a12021be99583fb491cff2df75d1ae1"/><section>
+    <title>ItemInnerSpacing</title>
+<indexterm><primary>ItemInnerSpacing</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ItemInnerSpacing</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::ItemInnerSpacing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a6bc07d81e049cd75e86e6b3753c0da4a"/><section>
+    <title>ItemSpacing</title>
+<indexterm><primary>ItemSpacing</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ItemSpacing</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::ItemSpacing</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a6c8674e8aa93236717b36110d7b1f1da"/><section>
+    <title>LogSliderDeadzone</title>
+<indexterm><primary>LogSliderDeadzone</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>LogSliderDeadzone</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::LogSliderDeadzone</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a6448eb2273c8868d7ecccf1152857f68"/><section>
+    <title>MouseCursorScale</title>
+<indexterm><primary>MouseCursorScale</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>MouseCursorScale</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::MouseCursorScale</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ac3bc5e785e360f72b580d419953c9db4"/><section>
+    <title>PopupBorderSize</title>
+<indexterm><primary>PopupBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>PopupBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::PopupBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a44b39e666946eea00001b6e38ab6bdc7"/><section>
+    <title>PopupRounding</title>
+<indexterm><primary>PopupRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>PopupRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::PopupRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a00efbadb1ad7daa0ee7384864b147d71"/><section>
+    <title>ScrollbarRounding</title>
+<indexterm><primary>ScrollbarRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ScrollbarRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::ScrollbarRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a96623380e624d2f2ec207449e700a226"/><section>
+    <title>ScrollbarSize</title>
+<indexterm><primary>ScrollbarSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>ScrollbarSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::ScrollbarSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1af2dc57060ca88884846dadbf455785c9"/><section>
+    <title>SelectableTextAlign</title>
+<indexterm><primary>SelectableTextAlign</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>SelectableTextAlign</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::SelectableTextAlign</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ab1d9f91937648409a59c27b1a2463408"/><section>
+    <title>SeparatorTextAlign</title>
+<indexterm><primary>SeparatorTextAlign</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>SeparatorTextAlign</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::SeparatorTextAlign</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a7d32779113a08f74b5654f3069f8a430"/><section>
+    <title>SeparatorTextBorderSize</title>
+<indexterm><primary>SeparatorTextBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>SeparatorTextBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::SeparatorTextBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ade414a25409350f02262762eae68454e"/><section>
+    <title>SeparatorTextPadding</title>
+<indexterm><primary>SeparatorTextPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>SeparatorTextPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::SeparatorTextPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1afa3c451ba8f0d27a0e167d23e161807e"/><section>
+    <title>TabBarBorderSize</title>
+<indexterm><primary>TabBarBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TabBarBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::TabBarBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a25858b1cc9234cbb976c934586fc4d88"/><section>
+    <title>TabBorderSize</title>
+<indexterm><primary>TabBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TabBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::TabBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ae96fdb074684bcff971f43070fe8f354"/><section>
+    <title>TableAngledHeadersAngle</title>
+<indexterm><primary>TableAngledHeadersAngle</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TableAngledHeadersAngle</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::TableAngledHeadersAngle</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1add208c22be44e1453575f5bce33fa24b"/><section>
+    <title>TabMinWidthForCloseButton</title>
+<indexterm><primary>TabMinWidthForCloseButton</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TabMinWidthForCloseButton</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::TabMinWidthForCloseButton</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a22d2fd87b928e639b4d2d1dbbcf805f8"/><section>
+    <title>TabRounding</title>
+<indexterm><primary>TabRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TabRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::TabRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ab518a0a67df8f14765acc491d7b460f4"/><section>
+    <title>TouchExtraPadding</title>
+<indexterm><primary>TouchExtraPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>TouchExtraPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::TouchExtraPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a4e2af4dd711f57ee841f9c843a18bec2"/><section>
+    <title>WindowBorderSize</title>
+<indexterm><primary>WindowBorderSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowBorderSize</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::WindowBorderSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1ab67a3fe38a4c109fe9de03228fb2c172"/><section>
+    <title>WindowMenuButtonPosition</title>
+<indexterm><primary>WindowMenuButtonPosition</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowMenuButtonPosition</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> ImGuiStyle::WindowMenuButtonPosition</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a060b2f743a086d0f0fee4cd5b3f372d4"/><section>
+    <title>WindowMinSize</title>
+<indexterm><primary>WindowMinSize</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowMinSize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::WindowMinSize</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a37f156b53e6dcc99ff57366ceafe8b50"/><section>
+    <title>WindowPadding</title>
+<indexterm><primary>WindowPadding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowPadding</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::WindowPadding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1acd902c2ab4b53d4bb0f64da608320894"/><section>
+    <title>WindowRounding</title>
+<indexterm><primary>WindowRounding</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowRounding</secondary></indexterm>
+<para><computeroutput>float ImGuiStyle::WindowRounding</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_style_1a3fc57a15ab8f206045f1e5dfccd8b2e7"/><section>
+    <title>WindowTitleAlign</title>
+<indexterm><primary>WindowTitleAlign</primary><secondary>ImGuiStyle</secondary></indexterm>
+<indexterm><primary>ImGuiStyle</primary><secondary>WindowTitleAlign</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link> ImGuiStyle::WindowTitleAlign</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following files:</para>
+<link linkend="_imgui_8h">imgui.h</link><link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_key_routing_data" xml:lang="en-US">
+<title>ImGuiKeyRoutingData Struct Reference</title>
+<indexterm><primary>ImGuiKeyRoutingData</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_key_routing_data_1a272ce9a063c1bc4e4c0cd1618b7dc7c6">ImGuiKeyRoutingData</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui__internal_8h_1aa1c2b8cc2f7ea011254a98c733a0671c">ImGuiKeyRoutingIndex</link> <link linkend="_struct_im_gui_key_routing_data_1af068d2021d6a9c47d38b1e853409e3ae">NextEntryIndex</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> <link linkend="_struct_im_gui_key_routing_data_1a6d45209cf8eda2e1caac51b23cc951be">Mods</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3834dc55ff790956b09b4baf387e2fe5">ImU8</link> <link linkend="_struct_im_gui_key_routing_data_1aa4935bac5bb7be347d1d1035660a976a">RoutingCurrScore</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a3834dc55ff790956b09b4baf387e2fe5">ImU8</link> <link linkend="_struct_im_gui_key_routing_data_1ad73af534e5e9b565c28dae2ae357798b">RoutingNextScore</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_key_routing_data_1af26e491135468826805ea383c2883058">RoutingCurr</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_key_routing_data_1ad689882b5a866976c32ddcbda59c7d77">RoutingNext</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_key_routing_data_1a272ce9a063c1bc4e4c0cd1618b7dc7c6"/><section>
+    <title>ImGuiKeyRoutingData()</title>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<para><computeroutput>ImGuiKeyRoutingData::ImGuiKeyRoutingData ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_key_routing_data_1a6d45209cf8eda2e1caac51b23cc951be"/><section>
+    <title>Mods</title>
+<indexterm><primary>Mods</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>Mods</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a788d84b86cbaed7de12d6e58ab630e07">ImU16</link> ImGuiKeyRoutingData::Mods</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_routing_data_1af068d2021d6a9c47d38b1e853409e3ae"/><section>
+    <title>NextEntryIndex</title>
+<indexterm><primary>NextEntryIndex</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>NextEntryIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1aa1c2b8cc2f7ea011254a98c733a0671c">ImGuiKeyRoutingIndex</link> ImGuiKeyRoutingData::NextEntryIndex</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_routing_data_1af26e491135468826805ea383c2883058"/><section>
+    <title>RoutingCurr</title>
+<indexterm><primary>RoutingCurr</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>RoutingCurr</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiKeyRoutingData::RoutingCurr</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_routing_data_1aa4935bac5bb7be347d1d1035660a976a"/><section>
+    <title>RoutingCurrScore</title>
+<indexterm><primary>RoutingCurrScore</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>RoutingCurrScore</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3834dc55ff790956b09b4baf387e2fe5">ImU8</link> ImGuiKeyRoutingData::RoutingCurrScore</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_routing_data_1ad689882b5a866976c32ddcbda59c7d77"/><section>
+    <title>RoutingNext</title>
+<indexterm><primary>RoutingNext</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>RoutingNext</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiKeyRoutingData::RoutingNext</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_key_routing_data_1ad73af534e5e9b565c28dae2ae357798b"/><section>
+    <title>RoutingNextScore</title>
+<indexterm><primary>RoutingNextScore</primary><secondary>ImGuiKeyRoutingData</secondary></indexterm>
+<indexterm><primary>ImGuiKeyRoutingData</primary><secondary>RoutingNextScore</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a3834dc55ff790956b09b4baf387e2fe5">ImU8</link> ImGuiKeyRoutingData::RoutingNextScore</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

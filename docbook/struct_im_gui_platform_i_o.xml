@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_platform_i_o" xml:lang="en-US">
+<title>ImGuiPlatformIO Struct Reference</title>
+<indexterm><primary>ImGuiPlatformIO</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiPlatformIO:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_platform_i_o__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_platform_i_o_1aa29907ad114cd7750bb6132e9cf1baa6">ImGuiPlatformIO</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1ac40b422094f59a883048d7f056efc825">Platform_CreateWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1af3b79611c3b46393043aacf28c3aed3c">Platform_DestroyWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1aea509ce5af0e9114c41822f8e25f9541">Platform_ShowWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a32dba12ecbbb22e9d8b7b6cc97b7171e">Platform_SetWindowPos</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> pos)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link>(* <link linkend="_struct_im_gui_platform_i_o_1a48d7973193e386d5a0bed06d26ee88bc">Platform_GetWindowPos</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a3425ca55ed93af3475dabc7be21497fc">Platform_SetWindowSize</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vec2">ImVec2</link>(* <link linkend="_struct_im_gui_platform_i_o_1a1811677fee7aab9f8e161ddf762ee4cf">Platform_GetWindowSize</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1aa4c417eae6dae273c3538953e9409aeb">Platform_SetWindowFocus</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para>bool(* <link linkend="_struct_im_gui_platform_i_o_1aaac39ea73936bca9ad37e361abcdbd4f">Platform_GetWindowFocus</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para>bool(* <link linkend="_struct_im_gui_platform_i_o_1a7ebb84270bf8515a5f7a08e25826cbcc">Platform_GetWindowMinimized</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a99b0a0d95438f95f0e745e89b42fde6e">Platform_SetWindowTitle</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, const char *str)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a4894d7774e9b11116a8419fb0a373b24">Platform_SetWindowAlpha</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, float <link linkend="_imgui__impl__opengl3__loader_8h_1a090ebe65994a3ee4bb60ae3472abffc5">alpha</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a9fa9a51048663f064713201fe9e1dfde">Platform_UpdateWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a449e2f5f1965cd5d517e441393dd16b7">Platform_RenderWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a36e60e27f326b3184d123a54d615effb">Platform_SwapBuffers</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</para>
+</listitem>
+            <listitem><para>float(* <link linkend="_struct_im_gui_platform_i_o_1a963bf78bcccd5ad3de62599b5403dd93">Platform_GetWindowDpiScale</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a18dda40b1d06fcfa135968214fe82604">Platform_OnChangedViewport</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para>int(* <link linkend="_struct_im_gui_platform_i_o_1a0f60b1e6760960ba4e48c26685381166">Platform_CreateVkSurface</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> vk_inst, const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *vk_allocators, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> *out_vk_surface)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a660ea4c92034c4e70c7e801d6d808905">Renderer_CreateWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1afc577fcef6c7e1d86bdab098ee51b26c">Renderer_DestroyWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a5c0527587f1df8f5cf71fb36ea43b509">Renderer_SetWindowSize</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a9f670775f2410590fc08ec8199ad5e90">Renderer_RenderWindow</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_platform_i_o_1a05b223542fe5d38e258d1caadb4f9196">Renderer_SwapBuffers</link> )(<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_platform_monitor">ImGuiPlatformMonitor</link> &gt; <link linkend="_struct_im_gui_platform_i_o_1a99f183d78038b44eb5892996f6e2ea54">Monitors</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_vector">ImVector</link>&lt; <link linkend="_struct_im_gui_viewport">ImGuiViewport</link> * &gt; <link linkend="_struct_im_gui_platform_i_o_1a379e8070dd70728a521ef26a3f0c6530">Viewports</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_platform_i_o_1aa29907ad114cd7750bb6132e9cf1baa6"/><section>
+    <title>ImGuiPlatformIO()</title>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<para><computeroutput>ImGuiPlatformIO::ImGuiPlatformIO ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a99f183d78038b44eb5892996f6e2ea54"/><section>
+    <title>Monitors</title>
+<indexterm><primary>Monitors</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Monitors</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_platform_monitor">ImGuiPlatformMonitor</link>&gt; ImGuiPlatformIO::Monitors</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a0f60b1e6760960ba4e48c26685381166"/><section>
+    <title>Platform_CreateVkSurface</title>
+<indexterm><primary>Platform_CreateVkSurface</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_CreateVkSurface</secondary></indexterm>
+<para><computeroutput>int(* ImGuiPlatformIO::Platform_CreateVkSurface) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> vk_inst, const <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *vk_allocators, <link linkend="_imgui_8h_1a6875b9978368bbd5cf7e9b967e22eea4">ImU64</link> *out_vk_surface)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1ac40b422094f59a883048d7f056efc825"/><section>
+    <title>Platform_CreateWindow</title>
+<indexterm><primary>Platform_CreateWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_CreateWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_CreateWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1af3b79611c3b46393043aacf28c3aed3c"/><section>
+    <title>Platform_DestroyWindow</title>
+<indexterm><primary>Platform_DestroyWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_DestroyWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_DestroyWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a963bf78bcccd5ad3de62599b5403dd93"/><section>
+    <title>Platform_GetWindowDpiScale</title>
+<indexterm><primary>Platform_GetWindowDpiScale</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_GetWindowDpiScale</secondary></indexterm>
+<para><computeroutput>float(* ImGuiPlatformIO::Platform_GetWindowDpiScale) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1aaac39ea73936bca9ad37e361abcdbd4f"/><section>
+    <title>Platform_GetWindowFocus</title>
+<indexterm><primary>Platform_GetWindowFocus</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_GetWindowFocus</secondary></indexterm>
+<para><computeroutput>bool(* ImGuiPlatformIO::Platform_GetWindowFocus) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a7ebb84270bf8515a5f7a08e25826cbcc"/><section>
+    <title>Platform_GetWindowMinimized</title>
+<indexterm><primary>Platform_GetWindowMinimized</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_GetWindowMinimized</secondary></indexterm>
+<para><computeroutput>bool(* ImGuiPlatformIO::Platform_GetWindowMinimized) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a48d7973193e386d5a0bed06d26ee88bc"/><section>
+    <title>Platform_GetWindowPos</title>
+<indexterm><primary>Platform_GetWindowPos</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_GetWindowPos</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link>(* ImGuiPlatformIO::Platform_GetWindowPos) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a1811677fee7aab9f8e161ddf762ee4cf"/><section>
+    <title>Platform_GetWindowSize</title>
+<indexterm><primary>Platform_GetWindowSize</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_GetWindowSize</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vec2">ImVec2</link>(* ImGuiPlatformIO::Platform_GetWindowSize) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a18dda40b1d06fcfa135968214fe82604"/><section>
+    <title>Platform_OnChangedViewport</title>
+<indexterm><primary>Platform_OnChangedViewport</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_OnChangedViewport</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_OnChangedViewport) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a449e2f5f1965cd5d517e441393dd16b7"/><section>
+    <title>Platform_RenderWindow</title>
+<indexterm><primary>Platform_RenderWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_RenderWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_RenderWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a4894d7774e9b11116a8419fb0a373b24"/><section>
+    <title>Platform_SetWindowAlpha</title>
+<indexterm><primary>Platform_SetWindowAlpha</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SetWindowAlpha</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SetWindowAlpha) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, float <link linkend="_imgui__impl__opengl3__loader_8h_1a090ebe65994a3ee4bb60ae3472abffc5">alpha</link>)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1aa4c417eae6dae273c3538953e9409aeb"/><section>
+    <title>Platform_SetWindowFocus</title>
+<indexterm><primary>Platform_SetWindowFocus</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SetWindowFocus</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SetWindowFocus) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a32dba12ecbbb22e9d8b7b6cc97b7171e"/><section>
+    <title>Platform_SetWindowPos</title>
+<indexterm><primary>Platform_SetWindowPos</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SetWindowPos</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SetWindowPos) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> pos)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a3425ca55ed93af3475dabc7be21497fc"/><section>
+    <title>Platform_SetWindowSize</title>
+<indexterm><primary>Platform_SetWindowSize</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SetWindowSize</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SetWindowSize) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a99b0a0d95438f95f0e745e89b42fde6e"/><section>
+    <title>Platform_SetWindowTitle</title>
+<indexterm><primary>Platform_SetWindowTitle</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SetWindowTitle</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SetWindowTitle) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, const char *str)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1aea509ce5af0e9114c41822f8e25f9541"/><section>
+    <title>Platform_ShowWindow</title>
+<indexterm><primary>Platform_ShowWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_ShowWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_ShowWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a36e60e27f326b3184d123a54d615effb"/><section>
+    <title>Platform_SwapBuffers</title>
+<indexterm><primary>Platform_SwapBuffers</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_SwapBuffers</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_SwapBuffers) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a9fa9a51048663f064713201fe9e1dfde"/><section>
+    <title>Platform_UpdateWindow</title>
+<indexterm><primary>Platform_UpdateWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Platform_UpdateWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Platform_UpdateWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a660ea4c92034c4e70c7e801d6d808905"/><section>
+    <title>Renderer_CreateWindow</title>
+<indexterm><primary>Renderer_CreateWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Renderer_CreateWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Renderer_CreateWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1afc577fcef6c7e1d86bdab098ee51b26c"/><section>
+    <title>Renderer_DestroyWindow</title>
+<indexterm><primary>Renderer_DestroyWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Renderer_DestroyWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Renderer_DestroyWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a9f670775f2410590fc08ec8199ad5e90"/><section>
+    <title>Renderer_RenderWindow</title>
+<indexterm><primary>Renderer_RenderWindow</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Renderer_RenderWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Renderer_RenderWindow) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a5c0527587f1df8f5cf71fb36ea43b509"/><section>
+    <title>Renderer_SetWindowSize</title>
+<indexterm><primary>Renderer_SetWindowSize</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Renderer_SetWindowSize</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Renderer_SetWindowSize) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_struct_im_vec2">ImVec2</link> <link linkend="_imgui__impl__opengl3__loader_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a05b223542fe5d38e258d1caadb4f9196"/><section>
+    <title>Renderer_SwapBuffers</title>
+<indexterm><primary>Renderer_SwapBuffers</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Renderer_SwapBuffers</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiPlatformIO::Renderer_SwapBuffers) (<link linkend="_struct_im_gui_viewport">ImGuiViewport</link> *vp, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *render_arg)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_platform_i_o_1a379e8070dd70728a521ef26a3f0c6530"/><section>
+    <title>Viewports</title>
+<indexterm><primary>Viewports</primary><secondary>ImGuiPlatformIO</secondary></indexterm>
+<indexterm><primary>ImGuiPlatformIO</primary><secondary>Viewports</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_vector">ImVector</link>&lt;<link linkend="_struct_im_gui_viewport">ImGuiViewport</link>*&gt; ImGuiPlatformIO::Viewports</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8h">imgui.h</link></section>
+</section>

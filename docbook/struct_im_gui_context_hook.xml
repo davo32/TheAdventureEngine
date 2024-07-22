@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_context_hook" xml:lang="en-US">
+<title>ImGuiContextHook Struct Reference</title>
+<indexterm><primary>ImGuiContextHook</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+Collaboration diagram for ImGuiContextHook:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_context_hook__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_context_hook_1aa6179093519760cda23818d58d0b040f">ImGuiContextHook</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_context_hook_1ac97fa11f1ba8c8ff04c1ede25437ecdf">HookId</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1a00ee5484f4006a8b98ed323d1dc37944">ImGuiContextHookType</link> <link linkend="_struct_im_gui_context_hook_1a86f1cb04f4624448c9a508f6d299c2f9">Type</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_context_hook_1a7b6ce62215c093535dd36c4a1303befc">Owner</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui__internal_8h_1aa99029b7d107c7769178a5ca13ddfa6f">ImGuiContextHookCallback</link> <link linkend="_struct_im_gui_context_hook_1ac95bc416ed24b5ad3cfa7c2199adcaf9">Callback</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_context_hook_1a334cf9cae105a3636f13aa1f2bc25e60">UserData</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_context_hook_1aa6179093519760cda23818d58d0b040f"/><section>
+    <title>ImGuiContextHook()</title>
+<indexterm><primary>ImGuiContextHook</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<para><computeroutput>ImGuiContextHook::ImGuiContextHook ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_context_hook_1ac95bc416ed24b5ad3cfa7c2199adcaf9"/><section>
+    <title>Callback</title>
+<indexterm><primary>Callback</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>Callback</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1aa99029b7d107c7769178a5ca13ddfa6f">ImGuiContextHookCallback</link> ImGuiContextHook::Callback</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_context_hook_1ac97fa11f1ba8c8ff04c1ede25437ecdf"/><section>
+    <title>HookId</title>
+<indexterm><primary>HookId</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>HookId</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiContextHook::HookId</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_context_hook_1a7b6ce62215c093535dd36c4a1303befc"/><section>
+    <title>Owner</title>
+<indexterm><primary>Owner</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>Owner</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiContextHook::Owner</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_context_hook_1a86f1cb04f4624448c9a508f6d299c2f9"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>Type</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui__internal_8h_1a00ee5484f4006a8b98ed323d1dc37944">ImGuiContextHookType</link> ImGuiContextHook::Type</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_context_hook_1a334cf9cae105a3636f13aa1f2bc25e60"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImGuiContextHook</secondary></indexterm>
+<indexterm><primary>ImGuiContextHook</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiContextHook::UserData</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

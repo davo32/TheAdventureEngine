@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__widget_8h_source" xml:lang="en-US">
+<title>Widget.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui_8h">imgui.h</link>&quot;</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&#32;&lt;string&gt;</emphasis>
+4 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_widget">Widget</link>
+5 {
+6 <emphasis role="keyword">public</emphasis>:
+7 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_widget_1abb133c89cb0d3116311770f5ceacf6a7">DrawWidget</link>(std::string&#32;Text);
+8 };
+</programlisting></section>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classaie_1_1_font" xml:lang="en-US">
+<title>aie::Font Class Reference</title>
+<indexterm><primary>aie::Font</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Font.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classaie_1_1_font_1a40cb4456a7e1fd24aee0e3d521b40240">Font</link> (const char *trueTypeFontFile, unsigned short fontHeight)</para>
+</listitem>
+            <listitem><para><link linkend="_classaie_1_1_font_1ad2fe3b6995ccb9f4480d59744e3aadf0">~Font</link> ()</para>
+</listitem>
+            <listitem><para>unsigned int <link linkend="_classaie_1_1_font_1a5602757cf1d16bea8cc4a1a9963bd32d">getTextureHandle</link> () const</para>
+</listitem>
+            <listitem><para>float <link linkend="_classaie_1_1_font_1a77f5b917634412f484141d8465ae2a0d">getStringWidth</link> (const char *str)</para>
+</listitem>
+            <listitem><para>float <link linkend="_classaie_1_1_font_1aa1fda44bd881d57acefb69ca585fb30d">getStringHeight</link> (const char *str)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_classaie_1_1_font_1a7e143e218153e70e316459f6b5c1e3b3">getStringSize</link> (const char *str, float &amp;<link linkend="_imgui__impl__opengl3__loader_8h_1a6879d830f164725df67adeeabca3ea47">width</link>, float &amp;<link linkend="_imgui__impl__opengl3__loader_8h_1a60075de22f90a1223dc0bea98d2ee4d5">height</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> <link linkend="_classaie_1_1_font_1a35342dda37ad931fefb8f370bd9f69f1">getStringRectangle</link> (const char *str, float &amp;x0, float &amp;y0, float &amp;x1, float &amp;y1)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classaie_1_1_font_1a5222bc319f9a1a80f91167670e26e8db">Renderer2D</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classaie_1_1_font_1a40cb4456a7e1fd24aee0e3d521b40240"/><section>
+    <title>Font()</title>
+<indexterm><primary>Font</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>Font</secondary></indexterm>
+<para><computeroutput>aie::Font::Font (const char * trueTypeFontFile, unsigned short fontHeight)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_font_1ad2fe3b6995ccb9f4480d59744e3aadf0"/><section>
+    <title>~Font()</title>
+<indexterm><primary>~Font</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>~Font</secondary></indexterm>
+<para><computeroutput>aie::Font::~Font ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classaie_1_1_font_1aa1fda44bd881d57acefb69ca585fb30d"/><section>
+    <title>getStringHeight()</title>
+<indexterm><primary>getStringHeight</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>getStringHeight</secondary></indexterm>
+<para><computeroutput>float aie::Font::getStringHeight (const char * str)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_font_1a35342dda37ad931fefb8f370bd9f69f1"/><section>
+    <title>getStringRectangle()</title>
+<indexterm><primary>getStringRectangle</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>getStringRectangle</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> aie::Font::getStringRectangle (const char * str, float &amp; x0, float &amp; y0, float &amp; x1, float &amp; y1)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_font_1a7e143e218153e70e316459f6b5c1e3b3"/><section>
+    <title>getStringSize()</title>
+<indexterm><primary>getStringSize</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>getStringSize</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> aie::Font::getStringSize (const char * str, float &amp; width, float &amp; height)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_font_1a77f5b917634412f484141d8465ae2a0d"/><section>
+    <title>getStringWidth()</title>
+<indexterm><primary>getStringWidth</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>getStringWidth</secondary></indexterm>
+<para><computeroutput>float aie::Font::getStringWidth (const char * str)</computeroutput></para></section>
+<anchor xml:id="_classaie_1_1_font_1a5602757cf1d16bea8cc4a1a9963bd32d"/><section>
+    <title>getTextureHandle()</title>
+<indexterm><primary>getTextureHandle</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>getTextureHandle</secondary></indexterm>
+<para><computeroutput>unsigned int aie::Font::getTextureHandle ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Friends And Related Symbol Documentation</title>
+<anchor xml:id="_classaie_1_1_font_1a5222bc319f9a1a80f91167670e26e8db"/><section>
+    <title>Renderer2D</title>
+<indexterm><primary>Renderer2D</primary><secondary>aie::Font</secondary></indexterm>
+<indexterm><primary>aie::Font</primary><secondary>Renderer2D</secondary></indexterm>
+<para><computeroutput>friend class <link linkend="_classaie_1_1_renderer2_d">Renderer2D</link><computeroutput>[friend]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+<link linkend="__font_8h">Font.h</link><link linkend="__font_8cpp">Font.cpp</link></section>
+</section>

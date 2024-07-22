@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_metrics_config" xml:lang="en-US">
+<title>ImGuiMetricsConfig Struct Reference</title>
+<indexterm><primary>ImGuiMetricsConfig</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a5e637464de86ff6692dc730b220b7202">ShowDebugLog</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a850ca6b46d41ba6bfb7057fd1a2dc30b">ShowIDStackTool</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a8a87adc63e607b6e96a82ed60fbeb027">ShowWindowsRects</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1acebcecb922457f3cacee40fba2d249c9">ShowWindowsBeginOrder</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1ab26775b8699841443de659a2364116a7">ShowTablesRects</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a66b6a4e19bb9c307d379d3172154d6a2">ShowDrawCmdMesh</link> = true</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a47db2daf9b53e765a41e76bcc46a3e94">ShowDrawCmdBoundingBoxes</link> = true</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a49992ad18cdc783f3e83d394f20c96a7">ShowTextEncodingViewer</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1a4a1e3831a788d2c9930d450f822cfeb1">ShowAtlasTintedWithTextColor</link> = false</para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_metrics_config_1adfff4cb1de7893ba24f15cd5295f1f9c">ShowDockingNodes</link> = false</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_metrics_config_1a227d685106a6496fc3ddec60af5278e1">ShowWindowsRectsType</link> = -1</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_metrics_config_1a6cba724d2914e668a0d07e590e2bbac2">ShowTablesRectsType</link> = -1</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_im_gui_metrics_config_1a6cb6307afe6dd89671e0439d7cbd19f3">HighlightMonitorIdx</link> = -1</para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_metrics_config_1aebe978c4967142abdd80f83a07bee4cd">HighlightViewportID</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_metrics_config_1a6cb6307afe6dd89671e0439d7cbd19f3"/><section>
+    <title>HighlightMonitorIdx</title>
+<indexterm><primary>HighlightMonitorIdx</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>HighlightMonitorIdx</secondary></indexterm>
+<para><computeroutput>int ImGuiMetricsConfig::HighlightMonitorIdx = -1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1aebe978c4967142abdd80f83a07bee4cd"/><section>
+    <title>HighlightViewportID</title>
+<indexterm><primary>HighlightViewportID</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>HighlightViewportID</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiMetricsConfig::HighlightViewportID = 0</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a4a1e3831a788d2c9930d450f822cfeb1"/><section>
+    <title>ShowAtlasTintedWithTextColor</title>
+<indexterm><primary>ShowAtlasTintedWithTextColor</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowAtlasTintedWithTextColor</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowAtlasTintedWithTextColor = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a5e637464de86ff6692dc730b220b7202"/><section>
+    <title>ShowDebugLog</title>
+<indexterm><primary>ShowDebugLog</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowDebugLog</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowDebugLog = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1adfff4cb1de7893ba24f15cd5295f1f9c"/><section>
+    <title>ShowDockingNodes</title>
+<indexterm><primary>ShowDockingNodes</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowDockingNodes</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowDockingNodes = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a47db2daf9b53e765a41e76bcc46a3e94"/><section>
+    <title>ShowDrawCmdBoundingBoxes</title>
+<indexterm><primary>ShowDrawCmdBoundingBoxes</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowDrawCmdBoundingBoxes</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowDrawCmdBoundingBoxes = true</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a66b6a4e19bb9c307d379d3172154d6a2"/><section>
+    <title>ShowDrawCmdMesh</title>
+<indexterm><primary>ShowDrawCmdMesh</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowDrawCmdMesh</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowDrawCmdMesh = true</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a850ca6b46d41ba6bfb7057fd1a2dc30b"/><section>
+    <title>ShowIDStackTool</title>
+<indexterm><primary>ShowIDStackTool</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowIDStackTool</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowIDStackTool = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1ab26775b8699841443de659a2364116a7"/><section>
+    <title>ShowTablesRects</title>
+<indexterm><primary>ShowTablesRects</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowTablesRects</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowTablesRects = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a6cba724d2914e668a0d07e590e2bbac2"/><section>
+    <title>ShowTablesRectsType</title>
+<indexterm><primary>ShowTablesRectsType</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowTablesRectsType</secondary></indexterm>
+<para><computeroutput>int ImGuiMetricsConfig::ShowTablesRectsType = -1</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a49992ad18cdc783f3e83d394f20c96a7"/><section>
+    <title>ShowTextEncodingViewer</title>
+<indexterm><primary>ShowTextEncodingViewer</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowTextEncodingViewer</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowTextEncodingViewer = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1acebcecb922457f3cacee40fba2d249c9"/><section>
+    <title>ShowWindowsBeginOrder</title>
+<indexterm><primary>ShowWindowsBeginOrder</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowWindowsBeginOrder</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowWindowsBeginOrder = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a8a87adc63e607b6e96a82ed60fbeb027"/><section>
+    <title>ShowWindowsRects</title>
+<indexterm><primary>ShowWindowsRects</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowWindowsRects</secondary></indexterm>
+<para><computeroutput>bool ImGuiMetricsConfig::ShowWindowsRects = false</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_metrics_config_1a227d685106a6496fc3ddec60af5278e1"/><section>
+    <title>ShowWindowsRectsType</title>
+<indexterm><primary>ShowWindowsRectsType</primary><secondary>ImGuiMetricsConfig</secondary></indexterm>
+<indexterm><primary>ImGuiMetricsConfig</primary><secondary>ShowWindowsRectsType</secondary></indexterm>
+<para><computeroutput>int ImGuiMetricsConfig::ShowWindowsRectsType = -1</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

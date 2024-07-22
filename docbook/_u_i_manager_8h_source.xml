@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_manager_8h_source" xml:lang="en-US">
+<title>UIManager.h</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__user_interface_8h">UserInterface.h</link>&quot;</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__events_u_i_8h">EventsUI.h</link>&quot;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__u_i_scenes_8h">UIScenes.h</link>&quot;</emphasis>
+6 
+7 
+8 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_u_i_manager">UIManager</link>
+9 {
+10 <emphasis role="keyword">public</emphasis>:
+11 &#32;&#32;&#32;&#32;<link linkend="_class_u_i_manager_1a32b72c377f864f7cd197e6ffe738142f">UIManager</link>()&#32;
+12 &#32;&#32;&#32;&#32;{
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;UI.push_back(UIscenes.<link linkend="_class_u_i_scenes_1ae1c43cc3d7f5616a4a64d4cebfd24969">menuBar</link>);
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;UI.push_back(UIscenes.<link linkend="_class_u_i_scenes_1a16b4f783630074c0b708163e0b0241a3">eventsUI</link>);
+15 &#32;&#32;&#32;&#32;}
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_u_i_manager_1acd52b275b88bd6e0b3876ec5ea6d9705">DrawUIByIndex</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_imgui__impl__opengl3__loader_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)&#32;{&#32;UI[<link linkend="_imgui__impl__opengl3__loader_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>]-&gt;DrawUI();&#32;}
+17 &#32;&#32;&#32;&#32;<link linkend="_class_events_u_i">EventsUI</link>*&#32;<link linkend="_class_u_i_manager_1abca7e7dcde4c5396553f409748bc589e">GetEventUI</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;UIscenes.<link linkend="_class_u_i_scenes_1a16b4f783630074c0b708163e0b0241a3">eventsUI</link>;&#32;}
+18 
+19 &#32;&#32;&#32;&#32;
+20 <emphasis role="keyword">private</emphasis>:
+21 &#32;&#32;&#32;&#32;std::vector&lt;UserInterface*&gt;&#32;UI;
+22 &#32;&#32;&#32;&#32;<link linkend="_class_u_i_scenes">UIScenes</link>&#32;UIscenes;
+23 &#32;&#32;&#32;&#32;
+24 };
+25 
+</programlisting></section>

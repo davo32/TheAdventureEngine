@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_settings_handler" xml:lang="en-US">
+<title>ImGuiSettingsHandler Struct Reference</title>
+<indexterm><primary>ImGuiSettingsHandler</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_settings_handler_1ab84610a000c843d4e303e41e260fb1df">ImGuiSettingsHandler</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const char * <link linkend="_struct_im_gui_settings_handler_1a2b2821603e32a669c855dd97757c83c8">TypeName</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> <link linkend="_struct_im_gui_settings_handler_1ac2dd47bdb91ae6f50afb5ac14222b552">TypeHash</link></para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_settings_handler_1a36355b915f61f94d90ba3f819fa02df0">ClearAllFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_settings_handler_1a27706c3cad4a51af70dc2ebc5d3737d4">ReadInitFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *(* <link linkend="_struct_im_gui_settings_handler_1a461105eb071f511b480695f9915c821b">ReadOpenFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, const char *<link linkend="_imgui__impl__opengl3__loader_8h_1a5c4947d4516dd7cfa3505ce3a648a4ef">name</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_settings_handler_1a0a02bad8569c2d9f22e1a532d1e2de60">ReadLineFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *entry, const char *line)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_settings_handler_1a65f1fb45621d42fffcdec7dd09312c20">ApplyAllFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* <link linkend="_struct_im_gui_settings_handler_1a8f9d8923be4df1b5e6c17f9857b955f4">WriteAllFn</link> )(<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, <link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> *out_buf)</para>
+</listitem>
+            <listitem><para><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> * <link linkend="_struct_im_gui_settings_handler_1a4e8dc5a10948568680764a3cdaf9b102">UserData</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_settings_handler_1ab84610a000c843d4e303e41e260fb1df"/><section>
+    <title>ImGuiSettingsHandler()</title>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<para><computeroutput>ImGuiSettingsHandler::ImGuiSettingsHandler ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_settings_handler_1a65f1fb45621d42fffcdec7dd09312c20"/><section>
+    <title>ApplyAllFn</title>
+<indexterm><primary>ApplyAllFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ApplyAllFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiSettingsHandler::ApplyAllFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a36355b915f61f94d90ba3f819fa02df0"/><section>
+    <title>ClearAllFn</title>
+<indexterm><primary>ClearAllFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ClearAllFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiSettingsHandler::ClearAllFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a27706c3cad4a51af70dc2ebc5d3737d4"/><section>
+    <title>ReadInitFn</title>
+<indexterm><primary>ReadInitFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ReadInitFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiSettingsHandler::ReadInitFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a0a02bad8569c2d9f22e1a532d1e2de60"/><section>
+    <title>ReadLineFn</title>
+<indexterm><primary>ReadLineFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ReadLineFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiSettingsHandler::ReadLineFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, <link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *entry, const char *line)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a461105eb071f511b480695f9915c821b"/><section>
+    <title>ReadOpenFn</title>
+<indexterm><primary>ReadOpenFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>ReadOpenFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link> *(* ImGuiSettingsHandler::ReadOpenFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, const char *<link linkend="_imgui__impl__opengl3__loader_8h_1a5c4947d4516dd7cfa3505ce3a648a4ef">name</link>)</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1ac2dd47bdb91ae6f50afb5ac14222b552"/><section>
+    <title>TypeHash</title>
+<indexterm><primary>TypeHash</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>TypeHash</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a1785c9b6f4e16406764a85f32582236f">ImGuiID</link> ImGuiSettingsHandler::TypeHash</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a2b2821603e32a669c855dd97757c83c8"/><section>
+    <title>TypeName</title>
+<indexterm><primary>TypeName</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>TypeName</secondary></indexterm>
+<para><computeroutput>const char* ImGuiSettingsHandler::TypeName</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a4e8dc5a10948568680764a3cdaf9b102"/><section>
+    <title>UserData</title>
+<indexterm><primary>UserData</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>UserData</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>* ImGuiSettingsHandler::UserData</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_settings_handler_1a8f9d8923be4df1b5e6c17f9857b955f4"/><section>
+    <title>WriteAllFn</title>
+<indexterm><primary>WriteAllFn</primary><secondary>ImGuiSettingsHandler</secondary></indexterm>
+<indexterm><primary>ImGuiSettingsHandler</primary><secondary>WriteAllFn</secondary></indexterm>
+<para><computeroutput><link linkend="_gl__core__4__4_8c_1aba83f95e8ff4889aa9d4905633fca4da">void</link>(* ImGuiSettingsHandler::WriteAllFn) (<link linkend="_struct_im_gui_context">ImGuiContext</link> *ctx, <link linkend="_struct_im_gui_settings_handler">ImGuiSettingsHandler</link> *handler, <link linkend="_struct_im_gui_text_buffer">ImGuiTextBuffer</link> *out_buf)</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

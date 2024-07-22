@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_dock_request" xml:lang="en-US">
+<title>ImGuiDockRequest Struct Reference</title>
+<indexterm><primary>ImGuiDockRequest</primary></indexterm>
+Collaboration diagram for ImGuiDockRequest:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_im_gui_dock_request__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_im_gui_dock_request_1a3068f21a801d803620ddf6b216c13ace">ImGuiDockRequest</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aae">ImGuiDockRequestType</link> <link linkend="_struct_im_gui_dock_request_1a95fedb54a69ce000ba04b4df2494f350">Type</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_dock_request_1a998dc53a18b6afe8ae7bb89da51857b4">DockTargetWindow</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_dock_node">ImGuiDockNode</link> * <link linkend="_struct_im_gui_dock_request_1a929c9edb0162f29bc56df70e9a29a55f">DockTargetNode</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_dock_request_1a7c4790e3cbad216a0f5aabc620c3b7c2">DockPayload</link></para>
+</listitem>
+            <listitem><para><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> <link linkend="_struct_im_gui_dock_request_1a864c2136f7d877e30711c3bc32de3d57">DockSplitDir</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_dock_request_1ad54b96ebdf800db9d975e5245c213975">DockSplitRatio</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_struct_im_gui_dock_request_1a0a620345f20f19ece2ab5a55cd97dc86">DockSplitOuter</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_window">ImGuiWindow</link> * <link linkend="_struct_im_gui_dock_request_1a94cf3967c5383e8834f0e10f9de61d9e">UndockTargetWindow</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_im_gui_dock_node">ImGuiDockNode</link> * <link linkend="_struct_im_gui_dock_request_1a4036b3dfaef9d30e21c218fb6d059ddf">UndockTargetNode</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_im_gui_dock_request_1a3068f21a801d803620ddf6b216c13ace"/><section>
+    <title>ImGuiDockRequest()</title>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<para><computeroutput>ImGuiDockRequest::ImGuiDockRequest ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_dock_request_1a7c4790e3cbad216a0f5aabc620c3b7c2"/><section>
+    <title>DockPayload</title>
+<indexterm><primary>DockPayload</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockPayload</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiDockRequest::DockPayload</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a864c2136f7d877e30711c3bc32de3d57"/><section>
+    <title>DockSplitDir</title>
+<indexterm><primary>DockSplitDir</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockSplitDir</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8h_1a874086389bc27cc9647118d22a806403">ImGuiDir</link> ImGuiDockRequest::DockSplitDir</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a0a620345f20f19ece2ab5a55cd97dc86"/><section>
+    <title>DockSplitOuter</title>
+<indexterm><primary>DockSplitOuter</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockSplitOuter</secondary></indexterm>
+<para><computeroutput>bool ImGuiDockRequest::DockSplitOuter</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1ad54b96ebdf800db9d975e5245c213975"/><section>
+    <title>DockSplitRatio</title>
+<indexterm><primary>DockSplitRatio</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockSplitRatio</secondary></indexterm>
+<para><computeroutput>float ImGuiDockRequest::DockSplitRatio</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a929c9edb0162f29bc56df70e9a29a55f"/><section>
+    <title>DockTargetNode</title>
+<indexterm><primary>DockTargetNode</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockTargetNode</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_dock_node">ImGuiDockNode</link>* ImGuiDockRequest::DockTargetNode</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a998dc53a18b6afe8ae7bb89da51857b4"/><section>
+    <title>DockTargetWindow</title>
+<indexterm><primary>DockTargetWindow</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>DockTargetWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiDockRequest::DockTargetWindow</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a95fedb54a69ce000ba04b4df2494f350"/><section>
+    <title>Type</title>
+<indexterm><primary>Type</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>Type</secondary></indexterm>
+<para><computeroutput><link linkend="_imgui_8cpp_1ac3906477a208e979c9527f439c498aae">ImGuiDockRequestType</link> ImGuiDockRequest::Type</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a4036b3dfaef9d30e21c218fb6d059ddf"/><section>
+    <title>UndockTargetNode</title>
+<indexterm><primary>UndockTargetNode</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>UndockTargetNode</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_dock_node">ImGuiDockNode</link>* ImGuiDockRequest::UndockTargetNode</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_dock_request_1a94cf3967c5383e8834f0e10f9de61d9e"/><section>
+    <title>UndockTargetWindow</title>
+<indexterm><primary>UndockTargetWindow</primary><secondary>ImGuiDockRequest</secondary></indexterm>
+<indexterm><primary>ImGuiDockRequest</primary><secondary>UndockTargetWindow</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_im_gui_window">ImGuiWindow</link>* ImGuiDockRequest::UndockTargetWindow</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui_8cpp">imgui.cpp</link></section>
+</section>

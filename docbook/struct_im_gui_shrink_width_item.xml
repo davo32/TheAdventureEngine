@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_im_gui_shrink_width_item" xml:lang="en-US">
+<title>ImGuiShrinkWidthItem Struct Reference</title>
+<indexterm><primary>ImGuiShrinkWidthItem</primary></indexterm>
+<para>
+<computeroutput>#include &lt;imgui_internal.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_im_gui_shrink_width_item_1a5cd3b72ecdf53f6cb6c85f9064a4e256">Index</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_shrink_width_item_1a29ba0dc283a3f57b0725b371f73fe1ed">Width</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_struct_im_gui_shrink_width_item_1ac9a3ca20449e58374963f32db20bbd87">InitialWidth</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_im_gui_shrink_width_item_1a5cd3b72ecdf53f6cb6c85f9064a4e256"/><section>
+    <title>Index</title>
+<indexterm><primary>Index</primary><secondary>ImGuiShrinkWidthItem</secondary></indexterm>
+<indexterm><primary>ImGuiShrinkWidthItem</primary><secondary>Index</secondary></indexterm>
+<para><computeroutput>int ImGuiShrinkWidthItem::Index</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_shrink_width_item_1ac9a3ca20449e58374963f32db20bbd87"/><section>
+    <title>InitialWidth</title>
+<indexterm><primary>InitialWidth</primary><secondary>ImGuiShrinkWidthItem</secondary></indexterm>
+<indexterm><primary>ImGuiShrinkWidthItem</primary><secondary>InitialWidth</secondary></indexterm>
+<para><computeroutput>float ImGuiShrinkWidthItem::InitialWidth</computeroutput></para></section>
+<anchor xml:id="_struct_im_gui_shrink_width_item_1a29ba0dc283a3f57b0725b371f73fe1ed"/><section>
+    <title>Width</title>
+<indexterm><primary>Width</primary><secondary>ImGuiShrinkWidthItem</secondary></indexterm>
+<indexterm><primary>ImGuiShrinkWidthItem</primary><secondary>Width</secondary></indexterm>
+<para><computeroutput>float ImGuiShrinkWidthItem::Width</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+<link linkend="_imgui__internal_8h">imgui_internal.h</link></section>
+</section>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__owner_8h" xml:lang="en-US">
+<title>Owner.h File Reference</title>
+<indexterm><primary>Owner.h</primary></indexterm>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_owner_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507">Owner</link> { <link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507ade5dc3e0dbd007d995ed3e37bde5ce7e">PLAYER</link>
+, <link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a5ce368bdfc444a87fef6c208b4101571">ENEMY</link>
+, <link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a357719dc7a3d164341f129a11aa9ff3b">WORLD</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507"/><section>
+    <title>Owner</title>
+<indexterm><primary>Owner</primary><secondary>Owner.h</secondary></indexterm>
+<indexterm><primary>Owner.h</primary><secondary>Owner</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507">Owner</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>PLAYER</primary><secondary>Owner.h</secondary></indexterm>
+<indexterm><primary>Owner.h</primary><secondary>PLAYER</secondary></indexterm>
+<anchor xml:id="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507ade5dc3e0dbd007d995ed3e37bde5ce7e"/>PLAYER</entry><entry></entry></row><row><entry><indexterm><primary>ENEMY</primary><secondary>Owner.h</secondary></indexterm>
+<indexterm><primary>Owner.h</primary><secondary>ENEMY</secondary></indexterm>
+<anchor xml:id="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a5ce368bdfc444a87fef6c208b4101571"/>ENEMY</entry><entry></entry></row><row><entry><indexterm><primary>WORLD</primary><secondary>Owner.h</secondary></indexterm>
+<indexterm><primary>Owner.h</primary><secondary>WORLD</secondary></indexterm>
+<anchor xml:id="__owner_8h_1a3b5e9e55eb7b08d5702a101e529e5507a357719dc7a3d164341f129a11aa9ff3b"/>WORLD</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>
