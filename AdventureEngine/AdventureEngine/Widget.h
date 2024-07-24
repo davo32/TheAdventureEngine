@@ -11,7 +11,9 @@ public:
 	void DrawWidget();
 	Event* GetStoredEvent() { return StoredEvent; }
 	void SetIsActive(bool check) { isActive = check; }
+	bool isClicked = false;
 private:
 	Event* StoredEvent;
 	bool isActive = false;
+	
 };

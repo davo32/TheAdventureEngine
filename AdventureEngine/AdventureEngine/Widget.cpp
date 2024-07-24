@@ -16,7 +16,7 @@ void Widget::DrawWidget()
 			+ std::to_string(StoredEvent->GetBranchCount())
 			+ "   "
 			+ "Rewards: " + std::to_string(StoredEvent->GetRewardItemCount());
-		ImGui::Button(buttonText.c_str(), ImVec2(300, 50));
+		ImGui::Button(buttonText.c_str(), ImVec2(270, 50));
 
 		if (isActive)
 		{
@@ -24,3 +24,5 @@ void Widget::DrawWidget()
 		}
 	}
 }
+
+

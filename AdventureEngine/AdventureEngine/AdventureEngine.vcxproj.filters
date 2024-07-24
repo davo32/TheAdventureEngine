@@ -59,6 +59,15 @@
     <Filter Include="FRONT END\UI Components\Events UI\Widgets\Base">
       <UniqueIdentifier>{9f1dc550-99bc-4a88-9875-425295297aef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FRONT END\UI Components\MenuBar\ButtonIdentifier">
+      <UniqueIdentifier>{0202954c-53f4-4a19-80a8-db105e95f671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\CurrentWindow">
+      <UniqueIdentifier>{c715ca64-1b77-4e07-ad20-e31d5d6c4301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\Node">
+      <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Font.cpp">
@@ -135,6 +144,9 @@
     </ClCompile>
     <ClCompile Include="Widget.cpp">
       <Filter>FRONT END\UI Components\Events UI\Widgets\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +230,15 @@
     </ClInclude>
     <ClInclude Include="Widget.h">
       <Filter>FRONT END\UI Components\Events UI\Widgets\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonID.h">
+      <Filter>FRONT END\UI Components\MenuBar\ButtonIdentifier</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentWindow.h">
+      <Filter>FRONT END\UI Components\Events UI\CurrentWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

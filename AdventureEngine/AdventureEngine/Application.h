@@ -16,11 +16,12 @@ public:
 	void TerminateWindow();
 	bool shutdownState() { return isShuttingdown; }
 	static void SetShutdownState(bool check) { isShuttingdown = check; }
-	
+	static std::string GetTitleText() { return AppTitleText; }
+	static void SetTitleText(std::string text) { AppTitleText = text; glfwSetWindowTitle(window, AppTitleText.c_str()); }
 	static int UICounter;
 
 private: //GLFW
-	GLFWwindow* window;
+	static GLFWwindow* window;
 	const GLFWvidmode* mode;
 	GLFWmonitor* primaryMonitor;
 
@@ -29,5 +30,6 @@ private: //GLFW
 private: //UI
 	MenuBar menuBar;
 	UIManager UImanager;
+	static std::string AppTitleText;
 };
 

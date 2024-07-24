@@ -7,15 +7,16 @@ void MenuBar::FileMenu()
 {
 	if (ImGui::BeginMenu("File"))
 	{
-		if (ImGui::MenuItem("New Project"))
+		if (ImGui::MenuItem("New    CRTL + N"))
 		{
 
 		}
-		if (ImGui::MenuItem("Open Project"))
+		if (ImGui::MenuItem("Open   CTRL + O"))
 		{
 
 		}
-		if (ImGui::MenuItem("Save"))
+		ImGui::Separator();
+		if (ImGui::MenuItem("Save   CRTL + S"))
 		{
 
 		}
@@ -23,26 +24,28 @@ void MenuBar::FileMenu()
 		{
 
 		}
-		if (ImGui::MenuItem("Quit"))
+		ImGui::Separator();
+		if (ImGui::MenuItem("Quit   CRTL + Q"))
 		{
-			ImGui::OpenPopup("Exit", ImGuiPopupFlags_None);
+			Application::SetShutdownState(true);
 			
 		}
+		ImGui::EndMenu();
+	}
+}
 
-		if (ImGui::BeginPopup("Exit"))
+void MenuBar::ProjectMenu()
+{
+	if (ImGui::BeginMenu("Project"))
+	{
+		if (ImGui::MenuItem("Export"))
 		{
-			ImGui::Text("Do You Want To Quit?");
-			if (ImGui::Button("No", ImVec2(40, 20)))
-			{
-				ImGui::CloseCurrentPopup();
-			}
-			if (ImGui::Button("Yes", ImVec2(40, 20)))
-			{
-				Application::SetShutdownState(true);
-			}
-			ImGui::EndPopup();
-		}
 
+		}
+		if (ImGui::MenuItem("Import"))
+		{
+
+		}
 		ImGui::EndMenu();
 	}
 }
@@ -51,46 +54,68 @@ void MenuBar::PlayerMenu()
 {
 	if (ImGui::Button("Player"))
 	{
-
-	}
-	
-}
-
-void MenuBar::InventoryMenu()
-{
-	if (ImGui::Button("Inventory"))
-	{
-
+		buttonID = ButtonID::PLAYER;
 	}
 }
+
 
 void MenuBar::EventsMenu()
 {
 	if (ImGui::Button("Events"))
 	{
-
+		buttonID = ButtonID::EVENTS;
 	}
 }
 
-void MenuBar::ItemMenu()
+void MenuBar::LootTableMenu()
 {
-	if (ImGui::Button("Items"))
+	if (ImGui::Button("Loot Table/Items"))
 	{
+		buttonID = ButtonID::LOOTTABLE;
+	}
+}
 
+void MenuBar::Shortcuts()
+{
+	// Handle shortcuts
+	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_N))
+	{
+		// Trigger New Project action
+		Application::SetTitleText("Adventure Engine - New Project(Unsaved)");
+	}
+
+	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_O))
+	{
+		// Trigger Open action
+	}
+
+	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_S))
+	{
+		// Trigger Save action
+	}
+
+	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_Q))
+	{
+		// Trigger Quit action
+		Application::SetShutdownState(true);
 	}
 }
 
 void MenuBar::DrawUI()
 {
-	ImGui::Spacing();
 	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
+	Shortcuts();
 	if (ImGui::BeginMenuBar())
 	{
 		FileMenu();
-		PlayerMenu();
-		InventoryMenu();
+		ProjectMenu();
+		ImGui::Spacing();
 		EventsMenu();
-		ItemMenu();
+		PlayerMenu();
+		LootTableMenu();
+		ImGui::Spacing();
+		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
+		ImGui::Text(temp.c_str());
 		ImGui::EndMenuBar();
 	}
 	ImGui::PopStyleColor();

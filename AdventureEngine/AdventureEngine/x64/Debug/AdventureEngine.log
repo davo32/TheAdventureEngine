@@ -1,21 +1,10 @@
-﻿  AdventureEngine.cpp
-  Application.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(90,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(90,42): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  Event.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(46,33): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(50,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(58,29): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(62,26): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  EventsUI.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(55,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  MenuBar.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(86,58): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(86,53): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(86,48): warning C4305: 'argument': truncation from 'double' to 'float'
-  UIManager.cpp
-  Widget.cpp
-  Generating Code...
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(62,1): warning C4715: 'Application::glfwSetup': not all control paths return a value
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  EventsUI.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(10,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(154,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(156,96): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(156,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(160,60): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(160,55): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(160,50): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(177,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.exe

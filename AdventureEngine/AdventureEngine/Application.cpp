@@ -5,7 +5,9 @@
 #include "ImGuiSetup.h"
 #include "MonitorInfo.h"
 
+std::string Application::AppTitleText = "Adventure Engine - No Project";
 bool Application::isShuttingdown = false;
+GLFWwindow* Application::window = nullptr;
 int Application::UICounter = 1;
 
 bool Application::glfwSetup()
@@ -16,15 +18,12 @@ bool Application::glfwSetup()
 	}
 
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-
-	
-	
 	glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
 	MonitorInfo::Init();
 
-	window = glfwCreateWindow(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height, "Adventure Engine", nullptr, nullptr);
+	window = glfwCreateWindow(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height, AppTitleText.c_str(), nullptr, nullptr);
 
 	if (window == nullptr)
 	{
@@ -85,31 +84,42 @@ void Application::draw()
 	glClearColor(0.25f, 0.25f, 0.25f, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
-	int winWidth, winHeight;
-	glfwGetWindowSize(window, &winWidth, &winHeight);
-	ImVec2 windowSize(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height - 24);
-	ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2 );
-
-	//Start the ImGui frame
-	ImGui_ImplOpenGL3_NewFrame();
-	ImGui_ImplGlfw_NewFrame();
-	ImGui::NewFrame();
-	
-	ImGui::SetNextWindowSize(windowSize);
-	ImGui::SetNextWindowPos(windowPos);
-	if (ImGui::Begin("Background Window", (bool*)1, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar))
+	if (!glfwGetWindowAttrib(window, GLFW_ICONIFIED))
 	{
-		//MenuBar
-		UImanager.DrawUIByIndex(0);
-		UImanager.DrawUIByIndex(UICounter);
+		int winWidth, winHeight;
+		glfwGetWindowSize(window, &winWidth, &winHeight);
+		ImVec2 windowSize(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height - 24);
+		ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2 );
+
+	
+		//Start the ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
+		ImGui::SetNextWindowSize(windowSize);
+		ImGui::SetNextWindowPos(windowPos);
+		if (ImGui::Begin("Background Window",
+			(bool*)1,
+			ImGuiWindowFlags_NoTitleBar
+			| ImGuiWindowFlags_MenuBar
+			| ImGuiWindowFlags_NoScrollWithMouse
+			| ImGuiWindowFlags_NoScrollbar
+			| ImGuiWindowFlags_NoResize
+			| ImGuiWindowFlags_NoMove))
+		{
+			//MenuBar
+			UImanager.DrawUIByIndex(0);
+			UImanager.DrawUIByIndex(UICounter);
+			//ImGui::EndChild();
+			ImGui::End();
+		}
+
+
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		glfwSwapBuffers(window);
 	}
-	ImGui::EndChild();
-	ImGui::End();
-
-
-	ImGui::Render();
-	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-	glfwSwapBuffers(window);
 }
 
 
