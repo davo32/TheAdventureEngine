@@ -2,6 +2,8 @@ C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\AdventureEngine.cpp;C
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Application.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Event.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventButtonUI.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventButtonUI.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventNode.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventNode.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventNode.h;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventNode.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventsUI.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Font.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Font.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Gizmos.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Gizmos.obj

@@ -11,7 +11,9 @@ class Application;
 class EventsUI : public UserInterface
 {
 public:
-	EventsUI() : ActiveWidget(nullptr) {}
+	EventsUI() : ActiveWidget(nullptr)
+	{
+	}
 	void DrawUI() override;
 
 	void TextCentered(std::string text);
@@ -24,12 +26,16 @@ public:
 	void DrawViewport();
 	void DrawContextMenu();
 	void DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos);
-	std::string EventWindowTitle = "Event Creation";
+	std::string EventWindowTitle = "Event Graph";
+	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
+
 private:
+	
+
 	//Events
 	std::vector<Widget*> Buttons;
 	Widget* ActiveWidget;
-	CurrentWindow currWindow = CurrentWindow::CREATE;
+	CurrentWindow currWindow = CurrentWindow::GRAPH;
 	int testcounter = 0;
 
 	//Viewport

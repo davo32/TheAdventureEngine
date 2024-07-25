@@ -158,15 +158,10 @@ void EventsUI::EventSheetElement()
 		if (ImGui::BeginMenuBar())
 		{
 			ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
-			if (ImGui::Button("Create"))
+			if (ImGui::Button("Event Graph"))
 			{
-				EventWindowTitle = "Event Creation";
-				currWindow = CurrentWindow::CREATE;
-			}
-			if (ImGui::Button("Event Order"))
-			{
-				EventWindowTitle = "Order Of Events";
-				currWindow = CurrentWindow::ORDER;
+				EventWindowTitle = "Event Graph";
+				currWindow = CurrentWindow::GRAPH;
 			}
 			TextCenteredInMenuBar(EventWindowTitle.c_str());
 			ImGui::EndMenuBar();
@@ -176,15 +171,9 @@ void EventsUI::EventSheetElement()
 		if (ImGui::BeginChild("Event Window",
 			ImVec2(MonitorInfo::GetMode()->width - 414.5, ImGui::GetContentRegionAvail().y), true, ImGuiChildFlags_Border))
 		{
-			//Event Editor
-			if (currWindow == CurrentWindow::CREATE && ActiveWidget != nullptr)
+			
+			if (currWindow == CurrentWindow::GRAPH)
 			{
-				DrawEventDetails(ActiveWidget->GetStoredEvent());
-			}
-			//Event Order Window
-			else if (currWindow == CurrentWindow::ORDER)
-			{
-				//ImGui::Text("ORDER OF EVENTS WINDOW");
 				DrawViewport();
 			}
 			ImGui::EndChild();
@@ -197,13 +186,14 @@ void EventsUI::DrawViewport()
 {
 	ImVec2 canvasPos = ImGui::GetCursorScreenPos();   // Top-left
 	ImVec2 canvasSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
+
 	ImGuiIO& io = ImGui::GetIO();
 
 	DrawBackground(canvasSize, canvasPos);
 	std::string ZoomLevelText = "x" + std::to_string(zoomLevel);
 	ImGui::Text(ZoomLevelText.c_str());
 
-	// Handle mouse interactions
+	// Handle panning
 	if (ImGui::IsMouseHoveringRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y)))
 	{
 		if (ImGui::IsMouseClicked(2))
@@ -226,9 +216,8 @@ void EventsUI::DrawViewport()
 
 		// Handle zoom
 		float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
-		zoomLevel = std::max(0.6f, std::min(2.0f,zoomLevel + zoomDelta)); // Prevent zooming too far out/in
-
-		// Handle right-click for contextual menu
+		zoomLevel = std::max(0.1f, std::min(2.0f,zoomLevel + zoomDelta)); // Prevent zooming too far out/in
+	
 		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
 		{
 			ImVec2 mousePos = ImGui::GetMousePos();
@@ -240,70 +229,104 @@ void EventsUI::DrawViewport()
 		DrawContextMenu();
 	}
 
+
 	// Handle node dragging
-	if (ImGui::IsMouseDragging(0)) { // Left mouse button for dragging
-		for (Node* node : Nodes) {
-			if (node->GetIsDragging()) {
-				// Calculate the mouse position in viewport space
-				ImVec2 mousePosInViewport = ImVec2(io.MousePos.x - viewportOffset.x, io.MousePos.y - viewportOffset.y);
+	if (ImGui::IsMouseDragging(ImGuiMouseButton_Left))
+	{
+		for (Node* node : Nodes)
+		{
+			if (node->GetIsDragging())
+			{
+				// Calculate the mouse position in world space
+				ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 
-				// Calculate the delta movement in viewport space
-				ImVec2 delta = ImVec2(mousePosInViewport.x - node->GetDragStartPos().x, mousePosInViewport.y - node->GetDragStartPos().y);
-
-				// Apply the zoom level to the delta
-				ImVec2 scaledDelta = ImVec2(delta.x / zoomLevel, delta.y / zoomLevel);
+				// Calculate the delta movement in world space
+				ImVec2 delta = ImVec2(mousePosInWorld.x - node->GetDragStartPos().x, mousePosInWorld.y - node->GetDragStartPos().y);
 
 				// Update the node's position
-				ImVec2 newPosition = ImVec2(node->GetPosition().x + scaledDelta.x, node->GetPosition().y + scaledDelta.y);
+				ImVec2 newPosition = ImVec2(node->GetPosition().x + delta.x, node->GetPosition().y + delta.y);
 				node->SetPosition(newPosition);
 
 				// Update the drag start position for the next frame
-				node->SetDragStartPos(mousePosInViewport);
+				node->SetDragStartPos(mousePosInWorld);
 
 				// Debug output
-				std::cout  << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << std::endl;
+				std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << std::endl;
 
-				// Update the last mouse position
-				lastMousePos = io.MousePos;
 				break; // Only handle one node per drag operation
 			}
 		}
 	}
 
 	// Update dragging state on mouse release
-	if (ImGui::IsMouseReleased(0)) {
-		bool anyNodeDragging = false;
+	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left)) {
 		for (Node* node : Nodes) {
 			if (node->IsMouseHovering(io.MousePos, zoomLevel, viewportOffset)) {
-				node->SetIsDragging(true);
-				node->SetDragStartPos(ImVec2(io.MousePos.x - viewportOffset.x, io.MousePos.y - viewportOffset.y));
-				node->SetInitialPosition(node->GetPosition());
-				anyNodeDragging = true;
+				if (!node->GetIsDragging()) {
+					// If a node is being hovered and is not already being dragged, start dragging
+					node->SetIsDragging(true);
+					ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
+					node->SetDragStartPos(mousePosInWorld);
+				}
 			}
 			else if (node->GetIsDragging()) {
+				// If the node was dragging and is no longer hovered, stop dragging
 				node->SetIsDragging(false);
 			}
-		}
-		// Optional: Reset lastMousePos if no node was dragging
-		if (!anyNodeDragging) {
-			lastMousePos = io.MousePos;
 		}
 	}
 
 	// Draw nodes after handling interaction and context menu
-	if (!Nodes.empty()) 
+	if (!Nodes.empty())
 	{
 		for (Node* node : Nodes) {
 			ImVec2 nodePosition = node->GetPosition();
 			ImVec2 nodeSize = node->GetSize();
 
-			// Apply zoom and viewport offset for drawing
-			ImVec2 scaledSize = ImVec2(std::max(node->minSize.x, nodeSize.x * zoomLevel), std::max(node->minSize.y, nodeSize.y * zoomLevel));
-			ImVec2 scaledPosition = ImVec2((nodePosition.x - viewportOffset.x) * zoomLevel, (nodePosition.y - viewportOffset.y) * zoomLevel);
+			// Apply zoom and viewport offset
+			//ImVec2 scaledPosition = ImVec2(canvasPos.x + (nodePosition.x * zoomLevel) + viewportOffset.x, canvasPos.y + (nodePosition.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledPosition = ImVec2((nodePosition.x * zoomLevel) + viewportOffset.x, (nodePosition.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
+			// Draw the node with adjusted position and size
+			node->DrawNode(scaledPosition, scaledSize,zoomLevel);
+		}
 
-			// Draw the node
-			node->DrawNode(scaledPosition, scaledSize);
+		// Pass canvas position to HandleNodeClicks
+		HandleNodeClicks(io.MousePos, canvasPos);
+	}
+}
+
+void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
+{
+	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+		bool nodeClicked = false;
+		for (Node* node : Nodes) {
+			ImVec2 nodePos = node->GetPosition();
+			ImVec2 nodeSize = node->GetSize();
+
+			// Apply zoom and viewport offset to the node's position and size
+			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
+
+			// Debug output
+			std::cout << "Node Pos: (" << scaledNodePos.x << ", " << scaledNodePos.y << ") Size: (" << scaledNodeSize.x << ", " << scaledNodeSize.y << ")" << std::endl;
+			std::cout << "Mouse Pos: (" << mousePos.x << ", " << mousePos.y << ")" << std::endl;
+
+			// Check if the mouse is over the node
+			if (mousePos.x >= scaledNodePos.x && mousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
+				mousePos.y >= scaledNodePos.y && mousePos.y <= scaledNodePos.y + scaledNodeSize.y) {
+				ActiveNode = node;
+				node->isActive = true;
+				nodeClicked = true;
+			}
+			else {
+				node->isActive = false;
+			}
+		}
+
+		if (!nodeClicked) {
+			ActiveNode = nullptr;
 		}
 	}
 }
@@ -325,54 +348,104 @@ void EventsUI::DrawBackground(ImVec2 canvasSize,ImVec2 canvasPos)
 	for (float y = canvasPos.y; y < canvasPos.y + canvasSize.y; y += gridSize)
 		drawList->AddLine(ImVec2(canvasPos.x, y), ImVec2(canvasPos.x + canvasSize.x, y), IM_COL32(200, 200, 200, 40));
 
-	// Draw other content with offset
-	drawList->AddCircleFilled(ImVec2(canvasPos.x + 100 * zoomLevel + viewportOffset.x, canvasPos.y + 100 * zoomLevel + viewportOffset.y), 30.0f * zoomLevel, IM_COL32(255, 0, 0, 255));
-
 }
 
 void EventsUI::DrawContextMenu()
 {
-	isContextualMenuOpen = ImGui::IsPopupOpen("Context Menu");
+	ImGuiIO& io = ImGui::GetIO();
 
-	if (ImGui::BeginPopup("Context Menu"))
+	if (ActiveNode == nullptr)
 	{
+		isContextualMenuOpen = ImGui::IsPopupOpen("Context Menu");
 
-		ImGui::SetKeyboardFocusHere(); // Focus the next item in the tab order (the input field here)
-		
-		// Buffer for input text
-		if (ImGui::InputTextWithHint("##input", "Search Events...", inputText, IM_ARRAYSIZE(inputText)))
+		if (ImGui::BeginPopup("Context Menu"))
 		{
-			searchQuery = inputText;
-		}
-		ImGui::Separator();
-		for (Widget* W : Buttons)
-		{
-			std::string eventName = W->GetStoredEvent()->GetEventName();
 
-			if (!searchQuery.empty())
+			ImGui::SetKeyboardFocusHere(); // Focus the next item in the tab order (the input field here)
+
+			// Buffer for input text
+			if (ImGui::InputTextWithHint("##input", "Search Events...", inputText, IM_ARRAYSIZE(inputText)))
 			{
-				if (eventName.find(searchQuery) != std::string::npos)
+				searchQuery = inputText;
+			}
+			ImGui::Separator();
+			if (ImGui::MenuItem("Create Event"))
+			{
+				//Create Event
+				Test();
+			}
+			if (ImGui::MenuItem("Create Character"))
+			{
+
+			}
+			if (ImGui::MenuItem("Create Loot Table"))
+			{
+
+			}
+			if (ImGui::MenuItem("Create Item"))
+			{
+
+			}
+			ImGui::Separator();
+			for (Widget* W : Buttons)
+			{
+				std::string eventName = W->GetStoredEvent()->GetEventName();
+
+				if (!searchQuery.empty())
 				{
-					if (ImGui::MenuItem(eventName.c_str()))
+					if (eventName.find(searchQuery) != std::string::npos)
 					{
-						// Action for Option
-						ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
-						Node* CreatedNode = new Node(nodePosition, ImVec2(150, 50), eventName);
-						Nodes.push_back(CreatedNode);
+						if (ImGui::MenuItem(eventName.c_str()))
+						{
+							// Action for Option
+							ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
+							Node* CreatedNode = new Node(nodePosition, ImVec2(200, 150), eventName);
+							Nodes.push_back(CreatedNode);
+						}
 					}
 				}
 			}
+			ImGui::EndPopup();
 		}
-		ImGui::EndPopup();
+
+
+
+		if (!isContextualMenuOpen && ImGui::IsPopupOpen("Context Menu") == false)
+		{
+			//Clear the Search
+			inputText[0] = '\0';
+			searchQuery.clear();
+		}
 	}
-
-	
-
-	if (!isContextualMenuOpen && ImGui::IsPopupOpen("Context Menu") == false)
+	else if (ActiveNode != nullptr && ActiveNode->IsMouseHovering(io.MousePos, zoomLevel, viewportOffset))
 	{
-		//Clear the Search
-		inputText[0] = '\0';
-		searchQuery.clear();
+		if (ImGui::BeginPopup("Context Menu"))
+		{
+			if (ImGui::MenuItem("Delete Node"))
+			{
+				Node* NodeToDelete;
+				for (Node* node : Nodes)
+				{
+					if (node == ActiveNode)
+					{
+						NodeToDelete = node;
+					}
+				}
+
+				auto it = std::remove(Nodes.begin(), Nodes.end(), NodeToDelete);
+				if (it != Nodes.end())
+				{
+					// Optionally delete the node if you own it
+					delete* it;
+
+					// Remove the node from the vector
+					Nodes.erase(it, Nodes.end());
+					ActiveNode = nullptr;
+				}
+			}
+
+			ImGui::EndPopup();
+		}
 	}
 	
 }

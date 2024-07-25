@@ -143,6 +143,8 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="EventButtonUI.cpp" />
+    <ClCompile Include="EventNode.cpp" />
+    <ClCompile Include="EventNode.h" />
     <ClCompile Include="EventsUI.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Gizmos.cpp" />

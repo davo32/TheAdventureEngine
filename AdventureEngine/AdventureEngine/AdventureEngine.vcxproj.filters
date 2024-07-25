@@ -68,6 +68,9 @@
     <Filter Include="FRONT END\UI Components\Events UI\Node">
       <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\Node\Event Node">
+      <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Font.cpp">
@@ -147,6 +150,12 @@
     </ClCompile>
     <ClCompile Include="Node.cpp">
       <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="EventNode.cpp">
+      <Filter>FRONT END\UI Components\Events UI\Node\Event Node</Filter>
+    </ClCompile>
+    <ClCompile Include="EventNode.h">
+      <Filter>FRONT END\UI Components\Events UI\Node\Event Node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

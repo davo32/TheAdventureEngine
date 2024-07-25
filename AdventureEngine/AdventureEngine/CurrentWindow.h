@@ -2,6 +2,5 @@
 enum CurrentWindow
 {
 	NA,
-	CREATE,
-	ORDER
+	GRAPH
 };
