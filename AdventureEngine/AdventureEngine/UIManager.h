@@ -11,6 +11,7 @@ public:
 	UIManager() 
 	{
 		UI.push_back(UIscenes.menuBar);
+		UI.push_back(UIscenes.startScreenUI);
 		UI.push_back(UIscenes.eventsUI);
 	}
 	void DrawUIByIndex(int index) { UI[index]->DrawUI(); }

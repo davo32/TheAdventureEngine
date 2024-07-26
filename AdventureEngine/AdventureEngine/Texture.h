@@ -51,3 +51,7 @@ protected:
 };
 
 } // namespace aie
+
+class Texture
+{
+};

@@ -17,6 +17,9 @@ public:
 	void AddRewardItems(const std::initializer_list<Item*>& items);
 	int GetBranchCount();
 	int GetRewardItemCount();
+
+	void SetEventName(std::string Name) { EventName = Name; }
+
 	//Branching Events is a MAP where the Keys are actions
 	std::unordered_map<std::string, Event*> BranchingEvents;
 	std::vector<Item*> RewardItems;

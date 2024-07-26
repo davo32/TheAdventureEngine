@@ -13,7 +13,7 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
     const float padding = 5.0f;
     const float dropdownHeight = 20.0f;
     const float headerRadius = 6.0f;  // Radius for rounded corners
-
+    float pinOffsetY = 0.0f;
     // Background
     ImVec2 shadowOffset(5, 5);
     ImColor shadowColor(0, 0, 0, 100);
@@ -59,25 +59,26 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
         ImVec2(drawPosition.x + drawSize.x, drawPosition.y + drawSize.y),
         borderColor, headerRadius, ImDrawFlags_None, 6.0f);
 
-    // Draw connection points
-    ImVec2 inputStartPos(drawPosition.x + padding, drawPosition.y + headerHeight + padding);
-    ImVec2 outputStartPos(drawPosition.x + drawSize.x - padding, drawPosition.y + headerHeight + padding);
-    float pinOffsetY = 0.0f;
+   DrawComponents(position, size, zoomLevel);
 
+    // Calculate input and output starting positions
+    ImVec2 inputStartPos = ImVec2(drawPosition.x + padding, drawPosition.y + headerHeight);
+    ImVec2 outputStartPos = ImVec2(drawPosition.x + drawSize.x - padding, drawPosition.y + headerHeight);
 
-    DrawComponents(position, size, zoomLevel);
-    
     // Draw input points
     for (const ImVec2& point : inputPoints) {
-        ImVec2 circlePos(inputStartPos.x + point.x, inputStartPos.y + point.y);
+        ImVec2 circlePos(inputStartPos.x, inputStartPos.y + pinOffsetY);
         drawList->AddCircleFilled(circlePos, pinRadius, ImColor(255, 255, 255)); // Outer circle
         drawList->AddCircleFilled(circlePos, pinInnerRadius, ImColor(0, 0, 0)); // Inner circle
         pinOffsetY += pinRadius * 2.0f + padding;
     }
 
+    // Reset pinOffsetY for output points
+    pinOffsetY = 0.0f;
+
     // Draw output points
     for (const ImVec2& point : outputPoints) {
-        ImVec2 circlePos(outputStartPos.x + point.x, outputStartPos.y + point.y);
+        ImVec2 circlePos(outputStartPos.x, outputStartPos.y + pinOffsetY);
         drawList->AddCircleFilled(circlePos, pinRadius, ImColor(255, 255, 255)); // Outer circle
         drawList->AddCircleFilled(circlePos, pinInnerRadius, ImColor(0, 0, 0)); // Inner circle
         pinOffsetY += pinRadius * 2.0f + padding;

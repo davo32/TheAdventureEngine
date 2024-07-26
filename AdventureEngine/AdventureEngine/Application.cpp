@@ -1,7 +1,6 @@
 #include "gl_core_4_4.h"
 #include "Application.h"
 #include <iostream>
-#include "Gizmos.h"
 #include "ImGuiSetup.h"
 #include "MonitorInfo.h"
 

@@ -71,23 +71,11 @@
     <Filter Include="FRONT END\UI Components\Events UI\Node\Event Node">
       <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FRONT END\UI Components\Start Screen">
+      <UniqueIdentifier>{ceb0d665-bfcc-40bc-ac9f-52dcb5cddb93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Font.cpp">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
-    <ClCompile Include="Gizmos.cpp">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
-    <ClCompile Include="gl_core_4_4.c">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer2D.cpp">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>BACK END\Application</Filter>
     </ClCompile>
@@ -157,23 +145,17 @@
     <ClCompile Include="EventNode.h">
       <Filter>FRONT END\UI Components\Events UI\Node\Event Node</Filter>
     </ClCompile>
+    <ClCompile Include="StartupScreen.cpp">
+      <Filter>FRONT END\UI Components\Start Screen</Filter>
+    </ClCompile>
+    <ClCompile Include="gl_core_4_4.c">
+      <Filter>FRONT END\Dependencies</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>FRONT END\Dependencies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Font.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="Gizmos.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="gl_core_4_4.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer2D.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>BACK END\Application</Filter>
     </ClInclude>
@@ -249,10 +231,24 @@
     <ClInclude Include="Node.h">
       <Filter>FRONT END\UI Components\Events UI\Node</Filter>
     </ClInclude>
+    <ClInclude Include="StartupScreen.h">
+      <Filter>FRONT END\UI Components\Start Screen</Filter>
+    </ClInclude>
+    <ClInclude Include="gl_core_4_4.h">
+      <Filter>FRONT END\Dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>FRONT END\Dependencies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">
       <Filter>FRONT END\Dependencies\Imgui</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Logo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

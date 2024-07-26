@@ -146,8 +146,6 @@
     <ClCompile Include="EventNode.cpp" />
     <ClCompile Include="EventNode.h" />
     <ClCompile Include="EventsUI.cpp" />
-    <ClCompile Include="Font.cpp" />
-    <ClCompile Include="Gizmos.cpp" />
     <ClCompile Include="gl_core_4_4.c" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_demo.cpp" />
@@ -163,7 +161,7 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerStats.h" />
-    <ClCompile Include="Renderer2D.cpp" />
+    <ClCompile Include="StartupScreen.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Widget.cpp" />
@@ -175,8 +173,6 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventButtonUI.h" />
     <ClInclude Include="EventsUI.h" />
-    <ClInclude Include="Font.h" />
-    <ClInclude Include="Gizmos.h" />
     <ClInclude Include="gl_core_4_4.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
@@ -192,7 +188,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Renderer2D.h" />
+    <ClInclude Include="StartupScreen.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UIScenes.h" />
@@ -202,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Logo.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,33 +3,8 @@
 #include "MonitorInfo.h"
 #include <iostream>
 
+
 char EventsUI::inputText[128] = "";
-
-void EventsUI::Test()
-{
-	testcounter = Buttons.size() + 1;
-	//TESTING
-	Event* testEvent = new Event("Unknown Event ("+ std::to_string(testcounter) + ")", "You Test This Program..");
-	Event* One = new Event("1", "1");
-	Event* Two = new Event("2", "2");
-	testEvent->AddBranchingEvents(
-		{
-			std::make_pair("One", One),
-			std::make_pair("Two", Two)
-		});
-	Widget* newWidget = new Widget(testEvent);
-	Buttons.push_back(newWidget);
-}
-
-Widget* EventsUI::GetWidgetByRef(Widget* ref)
-{
-	auto it = std::find(Buttons.begin(), Buttons.end(), ref);
-	if (it != Buttons.end())
-	{
-		return *it;
-	}
-	return nullptr; // Return nullptr if widget is not found
-}
 
 void EventsUI::DrawUI()
 {
@@ -38,21 +13,6 @@ void EventsUI::DrawUI()
 	EventSheetElement();
 }
 
-void EventsUI::TextCenteredInMenuBar(std::string text)
-{
-	// Calculate the size of the text
-	ImVec2 textSize = ImGui::CalcTextSize(text.c_str());
-
-	// Get the window width
-	float windowWidth = ImGui::GetWindowWidth();
-
-	// Calculate the position to center the text
-	float textPosX = (windowWidth - textSize.x) * 0.5f;
-
-	// Align text to center
-	ImGui::SetCursorPosX(textPosX);
-	ImGui::Text(text.c_str());
-}
 
 void EventsUI::TextCentered(std::string text)
 {
@@ -74,76 +34,138 @@ void EventsUI::TextCentered(std::string text)
 
 void EventsUI::HierachyElement()
 {
-	if (ImGui::BeginChild("Events", ImVec2(300, MonitorInfo::GetMode()->height - 70.5f),
+	if (ImGui::BeginChild("Inspector", ImVec2(300, MonitorInfo::GetMode()->height - 70.5f),
 		true, ImGuiWindowFlags_MenuBar))
 	{
 		if (ImGui::BeginMenuBar())
 		{
-			TextCenteredInMenuBar("Events");
+			TextCenteredInMenuBar("Inspector");
 			ImGui::EndMenuBar();
 		}
-		if (ImGui::BeginChild("Events", ImVec2(285, ImGui::GetContentRegionAvail().y), true, ImGuiChildFlags_Border))
-		{
-			/////////////////////////////////////////////////////////////////////
-			for (Widget* widget : Buttons)
-			{
-				widget->DrawWidget();
 
-				// Check if the mouse is hovering over the button
-				if (ImGui::IsItemHovered())
+		if (ImGui::BeginChild("Components", ImVec2(280, (MonitorInfo::GetMode()->height - 70.5f) - MonitorInfo::GetMode()->height / 2),
+			true, ImGuiWindowFlags_MenuBar))
+		{
+			if (ImGui::BeginMenuBar())
+			{
+				TextCenteredInMenuBar("Components");
+				ImGui::EndMenuBar();
+			}
+
+			// Root node with default open state
+			if (ImGui::TreeNode("Root"))
+			{
+				for (size_t i = 0; i < events.size(); ++i)
 				{
-					// Check for left mouse button click
-					if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
-					{
-						if (ActiveWidget != widget)
-						{
-							if (ActiveWidget != nullptr)
+					Event* E = events[i];
+
+					// Unique identifier for the selectable item
+					std::string selectableID = E->GetEventName() + " : " + std::to_string(i); // Unique ID based on event name
+
+					// Check if this event is selected
+					bool wasSelected = (ActiveEvent == E);
+
+					// Create the selectable item
+					if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
+						// If this item was selected, deselect it
+						if (wasSelected) {
+							ActiveEvent = nullptr;
+							if (ActiveNode)
 							{
-								//Remove the old Active Widget
-								ActiveWidget->SetIsActive(false);
-								ActiveWidget->isClicked = false;
+								// Reset previous node state
+								ActiveNode->isActive = false;
+								ActiveNode = nullptr;
+							}
+						}
+						else {
+							// Deselect the previously selected item
+							if (ActiveNode) {
+								ActiveNode->isActive = false; // Reset previous node state
 							}
 
-							//Setup the new Active Widget
-							ActiveWidget = widget;
-							ActiveWidget->SetIsActive(true);
-							ActiveWidget->isClicked = true;
-						}
-						else
-						{
-							// Toggle off if clicking the active widget again
-							ActiveWidget->isClicked = !ActiveWidget->isClicked;
-							if (!ActiveWidget->isClicked)
+							// Set the new active event and node
+							ActiveEvent = E;
+							ActiveNode = nullptr;
+
+							for (EventNode* N : Nodes)
 							{
-								ActiveWidget->SetIsActive(false);
-								ActiveWidget = nullptr;
+								if (N->GetEvent() == ActiveEvent)
+								{
+									ActiveNode = N;
+									ActiveNode->isActive = true;
+									break;
+								}
 							}
 						}
 					}
 
-					// Check for right mouse button click
-					if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
+					// Set the selection state for this item
+					eventSelectionState[E] = (ActiveEvent == E);
+				}
+
+				ImGui::TreePop(); // Close the tree node
+			}
+
+			ImGui::EndChild();
+		}
+		if (ActiveNode != nullptr || ActiveEvent != nullptr)
+		{
+			if (ImGui::BeginChild("Node Inspector", ImVec2(280, (MonitorInfo::GetMode()->height - 50.5f) - MonitorInfo::GetMode()->height / 2),
+				true, ImGuiWindowFlags_MenuBar))
+			{
+				if (ImGui::BeginMenuBar())
+				{
+					TextCenteredInMenuBar("Node");
+					ImGui::EndMenuBar();
+				}
+				
+				
+				if (ActiveEvent != nullptr)
+				{
+					std::string eventName = ActiveEvent->GetEventName();
+					char temp[256];
+					strcpy_s(temp, eventName.c_str());
+					ImGui::Text("Name: ");
+					ImGui::SameLine();
+					if (ImGui::InputText("##", temp, sizeof(temp)))
 					{
-						// Remove the widget from the Buttons vector
-						auto it = std::find(Buttons.begin(), Buttons.end(), widget);
-						if (it != Buttons.end())
+						ActiveEvent->SetEventName(temp);
+
+						for (EventNode* node : Nodes)
 						{
-							if (ActiveWidget == widget)
+							if (node->GetEvent() != nullptr && ActiveEvent == node->GetEvent())
 							{
-								ActiveWidget = nullptr;
+								node->SetText(temp);
 							}
-							Buttons.erase(it); // Erase the widget
-							delete widget;
 						}
 					}
 				}
-			}
+				else if (ActiveNode != nullptr)
+				{
+					if (ActiveNode->GetEvent() != nullptr)
+					{
+						std::string eventName = ActiveNode->GetText();
+						char temp[256];
+						strcpy_s(temp, eventName.c_str());
+						ImGui::Text("Name: ");
+						ImGui::SameLine();
+						if (ImGui::InputText("##", temp, sizeof(temp)))
+						{
+							ActiveNode->SetText(temp);
 
-			if (ImGui::Button("Create Event", ImVec2(270, 50)))
-			{
-				Test();
+							for (Event* event : events)
+							{
+								if (event != nullptr && ActiveNode->GetEvent() == event)
+								{
+									event->SetEventName(temp);
+								}
+							}
+						}
+					}
+				}
+				
+				ImGui::EndChild();
 			}
-			ImGui::EndChild();
 		}
 		ImGui::EndChild();
 	}
@@ -158,11 +180,6 @@ void EventsUI::EventSheetElement()
 		if (ImGui::BeginMenuBar())
 		{
 			ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
-			if (ImGui::Button("Event Graph"))
-			{
-				EventWindowTitle = "Event Graph";
-				currWindow = CurrentWindow::GRAPH;
-			}
 			TextCenteredInMenuBar(EventWindowTitle.c_str());
 			ImGui::EndMenuBar();
 			ImGui::PopStyleColor();
@@ -190,7 +207,7 @@ void EventsUI::DrawViewport()
 	ImGuiIO& io = ImGui::GetIO();
 
 	DrawBackground(canvasSize, canvasPos);
-	std::string ZoomLevelText = "x" + std::to_string(zoomLevel);
+	std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
 	ImGui::Text(ZoomLevelText.c_str());
 
 	// Handle panning
@@ -269,7 +286,8 @@ void EventsUI::DrawViewport()
 					node->SetDragStartPos(mousePosInWorld);
 				}
 			}
-			else if (node->GetIsDragging()) {
+			else if (node->GetIsDragging())
+			{
 				// If the node was dragging and is no longer hovered, stop dragging
 				node->SetIsDragging(false);
 			}
@@ -277,9 +295,11 @@ void EventsUI::DrawViewport()
 	}
 
 	// Draw nodes after handling interaction and context menu
+
 	if (!Nodes.empty())
 	{
-		for (Node* node : Nodes) {
+		for (Node* node : Nodes) 
+		{
 			ImVec2 nodePosition = node->GetPosition();
 			ImVec2 nodeSize = node->GetSize();
 
@@ -299,19 +319,21 @@ void EventsUI::DrawViewport()
 
 void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
 {
+	// Get the current position and size of the viewport
+	ImVec2 viewportMin = ImGui::GetCursorScreenPos();
+	ImVec2 viewportSize = ImGui::GetContentRegionAvail();
+	ImVec2 viewportMax = ImVec2(viewportMin.x + viewportSize.x, viewportMin.y + viewportSize.y);
+
 	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
 		bool nodeClicked = false;
-		for (Node* node : Nodes) {
+
+		for (EventNode* node : Nodes) {
 			ImVec2 nodePos = node->GetPosition();
 			ImVec2 nodeSize = node->GetSize();
 
 			// Apply zoom and viewport offset to the node's position and size
 			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
-
-			// Debug output
-			std::cout << "Node Pos: (" << scaledNodePos.x << ", " << scaledNodePos.y << ") Size: (" << scaledNodeSize.x << ", " << scaledNodeSize.y << ")" << std::endl;
-			std::cout << "Mouse Pos: (" << mousePos.x << ", " << mousePos.y << ")" << std::endl;
 
 			// Check if the mouse is over the node
 			if (mousePos.x >= scaledNodePos.x && mousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
@@ -320,13 +342,22 @@ void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
 				node->isActive = true;
 				nodeClicked = true;
 			}
-			else {
-				node->isActive = false;
-			}
 		}
 
-		if (!nodeClicked) {
-			ActiveNode = nullptr;
+		// Deselect only if clicked within the viewport
+		if (!nodeClicked && mousePos.x >= viewportMin.x && mousePos.x <= viewportMax.x &&
+			mousePos.y >= viewportMin.y && mousePos.y <= viewportMax.y)
+		{
+			if (ActiveNode != nullptr)
+			{
+				ActiveNode->isActive = false;
+				ActiveNode = nullptr;
+
+				if (ActiveEvent != nullptr)
+				{
+					ActiveEvent = nullptr;
+				}
+			}
 		}
 	}
 }
@@ -372,7 +403,11 @@ void EventsUI::DrawContextMenu()
 			if (ImGui::MenuItem("Create Event"))
 			{
 				//Create Event
-				Test();
+				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
+				Event* newEvent = new Event("Un-Named Event", "Test");
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent);
+				Nodes.push_back(CreatedNode);
+				events.push_back(newEvent);
 			}
 			if (ImGui::MenuItem("Create Character"))
 			{
@@ -387,9 +422,9 @@ void EventsUI::DrawContextMenu()
 
 			}
 			ImGui::Separator();
-			for (Widget* W : Buttons)
+			for (Event* E : events)
 			{
-				std::string eventName = W->GetStoredEvent()->GetEventName();
+				std::string eventName = E->GetEventName();
 
 				if (!searchQuery.empty())
 				{
@@ -398,9 +433,7 @@ void EventsUI::DrawContextMenu()
 						if (ImGui::MenuItem(eventName.c_str()))
 						{
 							// Action for Option
-							ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
-							Node* CreatedNode = new Node(nodePosition, ImVec2(200, 150), eventName);
-							Nodes.push_back(CreatedNode);
+							
 						}
 					}
 				}

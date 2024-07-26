@@ -6,6 +6,7 @@
 class Node
 {
 public:
+    Node() = default;
     Node(ImVec2 Pos, ImVec2 _size, std::string Name) 
         : position(Pos), size(_size), text(Name) 
     {
