@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__u_i_setup_8h_source" xml:lang="en-US">
-<title>UISetup.h</title>
-Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
-2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__menu_bar_8h">MenuBar.h</link>&quot;</emphasis>
-3 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__u_i_manager_8h">UIManager.h</link>&quot;</emphasis>
-</programlisting></section>

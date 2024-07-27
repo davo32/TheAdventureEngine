@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__im_gui_setup_8h_source" xml:lang="en-US">
-<title>ImGuiSetup.h</title>
-Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
-2 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui_8h">imgui.h</link>&quot;</emphasis>
-3 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui__impl__glfw_8h">imgui_impl_glfw.h</link>&quot;</emphasis>
-4 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui__impl__opengl3_8h">imgui_impl_opengl3.h</link>&quot;</emphasis>
-5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_imgui__internal_8h">imgui_internal.h</link>&quot;</emphasis>
-</programlisting></section>

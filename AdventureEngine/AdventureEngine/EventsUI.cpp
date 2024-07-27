@@ -49,19 +49,30 @@ void EventsUI::HierachyElement()
 			if (ImGui::BeginMenuBar())
 			{
 				TextCenteredInMenuBar("Components");
+				for (int i = 0;i <= 9; i++)
+				{
+					ImGui::Spacing();
+				}
+				ImGui::Button("?");
 				ImGui::EndMenuBar();
 			}
 
-			// Root node with default open state
-			if (ImGui::TreeNode("Root"))
+
+			ImGui::TreePush("##Root");
 			{
 				for (size_t i = 0; i < events.size(); ++i)
 				{
 					Event* E = events[i];
-
-					// Unique identifier for the selectable item
-					std::string selectableID = E->GetEventName() + " : " + std::to_string(i); // Unique ID based on event name
-
+					std::string selectableID;
+					if (E->GetEventName() == "Un-Named Event")
+					{
+						// Unique identifier for the selectable item
+						selectableID = "[Event]  " + E->GetEventName() + " : " + std::to_string(i); // Unique ID based on event name
+					}
+					else
+					{
+						selectableID = "[Event]  " + E->GetEventName();
+					}
 					// Check if this event is selected
 					bool wasSelected = (ActiveEvent == E);
 
@@ -102,7 +113,6 @@ void EventsUI::HierachyElement()
 					// Set the selection state for this item
 					eventSelectionState[E] = (ActiveEvent == E);
 				}
-
 				ImGui::TreePop(); // Close the tree node
 			}
 
@@ -118,8 +128,8 @@ void EventsUI::HierachyElement()
 					TextCenteredInMenuBar("Node");
 					ImGui::EndMenuBar();
 				}
-				
-				
+
+				// Event Renaming (InputField) Logic
 				if (ActiveEvent != nullptr)
 				{
 					std::string eventName = ActiveEvent->GetEventName();
@@ -127,7 +137,7 @@ void EventsUI::HierachyElement()
 					strcpy_s(temp, eventName.c_str());
 					ImGui::Text("Name: ");
 					ImGui::SameLine();
-					if (ImGui::InputText("##", temp, sizeof(temp)))
+					if (ImGui::InputText("##Name", temp, sizeof(temp)))
 					{
 						ActiveEvent->SetEventName(temp);
 
@@ -140,30 +150,71 @@ void EventsUI::HierachyElement()
 						}
 					}
 				}
-				else if (ActiveNode != nullptr)
+				else if (ActiveNode != nullptr && ActiveNode->GetEvent() != nullptr)
 				{
-					if (ActiveNode->GetEvent() != nullptr)
+					std::string eventName = ActiveNode->GetText();
+					char temp[256];
+					strcpy_s(temp, eventName.c_str());
+					ImGui::Text("Name: ");
+					ImGui::SameLine();
+					if (ImGui::InputText("##NodeName", temp, sizeof(temp)))
 					{
-						std::string eventName = ActiveNode->GetText();
-						char temp[256];
-						strcpy_s(temp, eventName.c_str());
-						ImGui::Text("Name: ");
-						ImGui::SameLine();
-						if (ImGui::InputText("##", temp, sizeof(temp)))
-						{
-							ActiveNode->SetText(temp);
+						ActiveNode->SetText(temp);
 
-							for (Event* event : events)
+						for (Event* event : events)
+						{
+							if (event != nullptr && ActiveNode->GetEvent() == event)
 							{
-								if (event != nullptr && ActiveNode->GetEvent() == event)
-								{
-									event->SetEventName(temp);
-								}
+								event->SetEventName(temp);
 							}
 						}
 					}
 				}
-				
+
+				std::string text = "Centered Text";
+				ImVec2 windowSize = ImGui::GetWindowSize();
+				ImVec2 textSize = ImGui::CalcTextSize(text.c_str());
+				ImVec2 textBoxSize = ImVec2(600, 100);
+
+				// Calculate position to center text on the x-axis
+				ImVec2 textPos(
+					(windowSize.x - textSize.x) / 2.0f,
+					ImGui::GetCursorPosY()
+				);
+
+				// Set the cursor position to center the text box on the x-axis
+				ImGui::SetCursorPosX(textPos.x);
+
+				// Event SubText Renaming (InputField) Logic
+				if (ActiveEvent != nullptr)
+				{
+					std::string eventText = ActiveEvent->GetEventText();
+					char temp0[256];
+					strcpy_s(temp0, eventText.c_str());
+					ImGui::Text("Event Text");
+					if (ImGui::InputTextMultiline("##EventText", temp0, sizeof(temp0), textBoxSize))
+					{
+						ActiveEvent->SetEventText(temp0);
+					}
+				}
+				else if (ActiveNode != nullptr && ActiveNode->GetEvent() != nullptr)
+				{
+					std::string eventText = ActiveNode->GetEvent()->GetEventText();
+					char temp0[256];
+					strcpy_s(temp0, eventText.c_str());
+					ImGui::Text("Event Text");
+					if (ImGui::InputTextMultiline("##NodeEventText", temp0, sizeof(temp0), textBoxSize))
+					{
+						for (Event* event : events)
+						{
+							if (event != nullptr && ActiveNode->GetEvent() == event)
+							{
+								event->SetEventText(temp0);
+							}
+						}
+					}
+				}
+				ImGui::Separator();
 				ImGui::EndChild();
 			}
 		}
@@ -233,7 +284,7 @@ void EventsUI::DrawViewport()
 
 		// Handle zoom
 		float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
-		zoomLevel = std::max(0.1f, std::min(2.0f,zoomLevel + zoomDelta)); // Prevent zooming too far out/in
+		zoomLevel = std::max(0.7f, std::min(2.0f,zoomLevel + zoomDelta)); // Prevent zooming too far out/in
 	
 		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
 		{

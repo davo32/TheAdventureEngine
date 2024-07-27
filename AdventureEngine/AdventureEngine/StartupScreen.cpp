@@ -1,6 +1,7 @@
 #include "StartupScreen.h"
 #include "MonitorInfo.h"
 #include "GLFW/glfw3.h"
+#include "Application.h"
 #include <iostream>
 
 void StartupScreen::DrawUI()
@@ -19,7 +20,7 @@ void StartupScreen::DrawUI()
         ImGui::BeginChild("Main Section", ImVec2(mainSectionWidth, 0), true);
         {
             int width, height, channels;
-            if (Logo.load("Logo.png"))
+            if (Logo.load("../Resources/Images/Logo.png"))
             {
                 Logo.bind(0);
             }
@@ -62,15 +63,25 @@ void StartupScreen::DrawUI()
             auto centerButton = [&](const char* label) {
                 float buttonPosX = (availableSpace.x - buttonWidth) * 0.5f;
                 ImGui::SetCursorPosX(buttonPosX);
-                if (ImGui::Button(label, buttonSize)) {
-                    // Handle button click
-                }
+                bool clicked = ImGui::Button(label, buttonSize);
                 ImGui::Spacing();
+                return clicked;
                 };
 
-            centerButton("Create New Project");
-            centerButton("Open Existing Project");
-            centerButton("Exit");
+            if (centerButton("Create New Project"))
+            {
+                Application::SetTitleText("Adventure Engine - New Project(Un-Saved)");
+                Application::UICounter = 2;
+            }
+
+            if (centerButton("Open Existing Project")) {
+                // Handle "Open Existing Project" click
+            }
+
+            if (centerButton("Exit"))
+            {
+                Application::SetShutdownState(true);
+            }
 
             ImGui::Spacing();
             ImVec2 textPos((availableSpace.x - textWidth) * 0.5f, ImGui::GetCursorPosY());
@@ -107,31 +118,6 @@ void StartupScreen::DrawUI()
                 }
                 ImGui::EndTabBar();
             }
-            // Example content for Documentation
-            /*ImGui::Text("Documentation:");
-            ImGui::Separator();
-            ImGui::BeginChild("Buttons", ImVec2(documentationWidth / 6, 0), true);
-            {
-                ImGui::Text("Main Nodes");
-                ImGui::Separator();
-                ImGui::Button("Start Node");
-                ImGui::Button("Event Node");
-                ImGui::Button("End Node");
-                ImGui::Separator();
-                ImGui::Text("Component Nodes");
-                ImGui::Separator();
-                ImGui::Button("Item Node");
-                ImGui::Button("Character Node");
-                ImGui::Button("Loot Table Node");
-                ImGui::Separator();
-                ImGui::Text("Inspector");
-                ImGui::Separator();
-                ImGui::Button("Component Hierachy");
-                ImGui::Button("Node Details");
-                ImGui::Separator();
-                ImGui::EndChild();
-            }*/
-            // Add more documentation content as needed
         }
         ImGui::EndChild();
 

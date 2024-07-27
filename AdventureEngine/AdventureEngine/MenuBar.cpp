@@ -67,13 +67,6 @@ void MenuBar::EventsMenu()
 	}
 }
 
-void MenuBar::LootTableMenu()
-{
-	if (ImGui::Button("Loot Table/Items"))
-	{
-		buttonID = ButtonID::LOOTTABLE;
-	}
-}
 
 void MenuBar::Shortcuts()
 {
@@ -112,7 +105,6 @@ void MenuBar::DrawUI()
 		ImGui::Spacing();
 		EventsMenu();
 		PlayerMenu();
-		LootTableMenu();
 		ImGui::Spacing();
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());

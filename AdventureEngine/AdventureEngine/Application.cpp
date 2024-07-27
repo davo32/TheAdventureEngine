@@ -3,11 +3,16 @@
 #include <iostream>
 #include "ImGuiSetup.h"
 #include "MonitorInfo.h"
+#include "stb_image.h"
 
 std::string Application::AppTitleText = "Adventure Engine - No Project";
 bool Application::isShuttingdown = false;
 GLFWwindow* Application::window = nullptr;
 int Application::UICounter = 1;
+
+// Initialize the static FontLoader instance
+ImGuiIO* Application::io = nullptr;
+FontLoader& Application::fontLoader = FontLoader::GetInstance();
 
 bool Application::glfwSetup()
 {
@@ -40,6 +45,13 @@ bool Application::glfwSetup()
 		return false;
 	}
 
+	//Generates the Project Icon
+	GLFWimage icons[1];
+	icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
+	glfwSetWindowIcon(window, 1, icons);
+	stbi_image_free(icons[0].pixels);
+
+
 	ImGui::CreateContext();
 
 	// Setup Dear ImGui style
@@ -49,12 +61,22 @@ bool Application::glfwSetup()
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 130");
 
-	// update IMGUI input flags
+	// Get the ImGuiIO object and pass it to FontLoader
 	ImGuiIO& io = ImGui::GetIO();
+	Application::io = &io;  // Ensure io is correctly assigned
+	Application::fontLoader.SetIO(io);
 
-	//TEST
-	//UImanager.GetEventUI()->Test();
-	////////////////////////////////
+	// Load fonts
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 12.0f, "Regular"))
+	{
+		std::cerr << "Failed to load Regular font\n";
+	}
+
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Bold.ttf", 12.0f, "Bold"))
+	{
+		std::cerr << "Failed to load Bold font\n";
+	}
+	return true;
 }
 
 bool Application::startup()

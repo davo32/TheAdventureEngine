@@ -10,8 +10,7 @@ public:
     Node(ImVec2 Pos, ImVec2 _size, std::string Name) 
         : position(Pos), size(_size), text(Name) 
     {
-      
-        
+       
     }
     ~Node() = default;
 
@@ -41,6 +40,8 @@ public:
     void SetIsDragging(bool check) { isDragging = check; }
     
     void DrawNode(const ImVec2& position, const ImVec2& size,const float& zoomLevel);
+    void CreateInputsAndOutputs(const ImVec2& drawPosition, const float padding, const float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float borderThickness, float& pinOffsetY);
+    void CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float headerHeight);
     virtual void DrawComponents(const ImVec2& position, const ImVec2& size, const float& zoomLevel) {}
     
     ImVec2 minSize = ImVec2(100, 25);
@@ -49,9 +50,14 @@ public:
     std::vector<ImVec2> inputPoints;
     std::vector<ImVec2> outputPoints;
 
+    //Node
+    ImColor colorTop = ImColor(128, 0, 128);
+    ImColor colorBottom = ImColor(60, 60, 60);
+
     bool isActive = false;
     
 private:
+    
     ImVec2 position;
     ImVec2 size;
     std::string text;

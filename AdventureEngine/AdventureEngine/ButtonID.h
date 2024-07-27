@@ -3,6 +3,5 @@ enum ButtonID
 {
 	NONE,
 	EVENTS,
-	PLAYER,
-	LOOTTABLE
+	PLAYER
 };

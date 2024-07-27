@@ -19,6 +19,7 @@ public:
 	int GetRewardItemCount();
 
 	void SetEventName(std::string Name) { EventName = Name; }
+	void SetEventText(std::string Text) { EventText = Text; }
 
 	//Branching Events is a MAP where the Keys are actions
 	std::unordered_map<std::string, Event*> BranchingEvents;

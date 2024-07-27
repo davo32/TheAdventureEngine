@@ -74,6 +74,12 @@
     <Filter Include="FRONT END\UI Components\Start Screen">
       <UniqueIdentifier>{ceb0d665-bfcc-40bc-ac9f-52dcb5cddb93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BACK END\Uitilities">
+      <UniqueIdentifier>{2599e79e-e72f-467f-9bad-360777efc635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BACK END\Uitilities\Font Loader">
+      <UniqueIdentifier>{7c599088-8a52-4e99-8557-08bf7dfeaed2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -240,6 +246,9 @@
     <ClInclude Include="Texture.h">
       <Filter>FRONT END\Dependencies</Filter>
     </ClInclude>
+    <ClInclude Include="FontLoader.h">
+      <Filter>BACK END\Uitilities\Font Loader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">
@@ -250,5 +259,10 @@
     <Image Include="Logo.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

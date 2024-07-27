@@ -31,8 +31,6 @@ public:
 	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
 
 private:
-	
-
 	//Events
 	std::vector<Event*> events;
 	Event* ActiveEvent;

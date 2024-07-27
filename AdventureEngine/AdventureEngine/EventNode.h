@@ -12,7 +12,7 @@ public:
 	~EventNode();
 	void DrawComponents(const ImVec2& position, const ImVec2& size, const float& zoomLevel) override;
 	Event* GetEvent();
-
+	
 private:
 	Event* StoredEvent;
 };

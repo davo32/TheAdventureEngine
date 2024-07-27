@@ -1,5 +1,6 @@
 #include "Node.h"
 #include "imgui.h"
+#include "Application.h"
 
 // Draw a rectangle node with text and a draggable cable point
 void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const float& zoomLevel)
@@ -7,13 +8,77 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
     ImDrawList* drawList = ImGui::GetWindowDrawList();
 
     // Constants
-    const float headerHeight = 30.0f;
-    const float pinRadius = 6.0f;
-    const float pinInnerRadius = 4.0f;
-    const float padding = 5.0f;
-    const float dropdownHeight = 20.0f;
     const float headerRadius = 6.0f;  // Radius for rounded corners
+    const float headerHeight = 30.0f;
+    const float pinSize = 10.0f;
+    const float borderThickness = 2.0f;
+    const float padding = 5.0f;
     float pinOffsetY = 0.0f;
+    bool dragging = false; // Flag to track dragging state
+
+   CreateNodeVisuals(drawPosition, drawSize, drawList, headerRadius, headerHeight);
+   CreateInputsAndOutputs(drawPosition, padding, headerHeight, drawSize, drawList, headerRadius, borderThickness, pinOffsetY);
+   DrawComponents(position, size, zoomLevel);
+}
+
+void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, const float padding, const float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float borderThickness, float& pinOffsetY)
+{
+    // Calculate input and output starting positions
+    ImVec2 inputStartPos = ImVec2(drawPosition.x + padding, drawPosition.y + headerHeight);
+    ImVec2 outputStartPos = ImVec2(drawPosition.x + drawSize.x - padding, drawPosition.y + headerHeight);
+
+    // Constants for rectangle size
+    const float rectWidth = 15.0f;
+    const float rectHeight = 20.0f;
+    const float rectOffsetY = headerHeight / 2; // Adjust this value as needed
+
+    // Draw input rectangles
+    for (const ImVec2& point : inputPoints) {
+        ImVec2 center((drawPosition.x + padding - rectWidth / 2) + 20.0f, (drawPosition.y + rectOffsetY) + 35.0f);
+
+        // Calculate rectangle corners
+        ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
+        ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
+
+        // Draw outer rectangle as an outlined rectangle
+        drawList->AddRect(rectMin, rectMax, ImColor(255, 255, 255), headerRadius);
+
+        // Draw inner rectangle with border
+        ImVec2 innerRectMin(rectMin.x + borderThickness, rectMin.y + borderThickness);
+        ImVec2 innerRectMax(rectMax.x - borderThickness, rectMax.y - borderThickness);
+
+        drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
+
+        pinOffsetY += rectHeight + padding;
+
+        drawList->AddText(ImVec2(center.x + rectWidth, center.y - 8.0), ImColor(255, 255, 255, 255), "Input");
+    }
+
+    // Draw output rectangles
+    for (const ImVec2& point : outputPoints) {
+        ImVec2 center((drawPosition.x + drawSize.x - padding + rectWidth / 2) - 20.0f, (drawPosition.y + rectOffsetY) + 35.0f);
+
+        // Calculate rectangle corners
+        ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
+        ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
+
+        // Draw outer rectangle as an outlined rectangle
+        drawList->AddRect(rectMin, rectMax, ImColor(255, 255, 255), headerRadius);
+
+        // Draw inner rectangle with border
+        ImVec2 innerRectMin(rectMin.x + borderThickness, rectMin.y + borderThickness);
+        ImVec2 innerRectMax(rectMax.x - borderThickness, rectMax.y - borderThickness);
+
+        drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
+
+        pinOffsetY += rectHeight + padding;
+
+        drawList->AddText(ImVec2(center.x - rectWidth - 32.0f, center.y - 8.0), ImColor(255, 255, 255, 255), "Output");
+    }
+}
+
+void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float headerHeight)
+{
     // Background
     ImVec2 shadowOffset(5, 5);
     ImColor shadowColor(0, 0, 0, 100);
@@ -24,14 +89,11 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
     drawList->AddRectFilled(shadowPos, shadowEnd, shadowColor, headerRadius);
 
     // Node background
-    ImColor nodeColor(60, 60, 60,128);
+    ImColor nodeColor(0, 0, 0, 128);
     drawList->AddRectFilled(drawPosition,
         ImVec2(drawPosition.x + drawSize.x, drawPosition.y + drawSize.y),
         nodeColor, headerRadius);
 
-    // Define colors for the gradient
-    ImU32 colorTop = ImColor(30, 30, 30); // Top color (black)
-    ImU32 colorBottom = ImColor(60, 60, 60); // Bottom color (dark gray)
 
     // Calculate header position and size
     ImVec2 headerPos(drawPosition.x, drawPosition.y);
@@ -50,7 +112,9 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
         drawPosition.x + (drawSize.x - textSize.x) * 0.5f,
         drawPosition.y + (headerHeight - textSize.y) * 0.5f
     );
-    drawList->AddText(textPos, ImColor(255, 255, 255), text.c_str());
+    Application::fontLoader.SetFont("Bold");
+    Application::fontLoader.DrawText(drawList, textPos, ImColor(255, 255, 255), text.c_str());
+    //drawList->AddText(textPos, ImColor(255, 255, 255), text.c_str());
 
 
     // Draw node border
@@ -58,35 +122,7 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
     drawList->AddRect(drawPosition,
         ImVec2(drawPosition.x + drawSize.x, drawPosition.y + drawSize.y),
         borderColor, headerRadius, ImDrawFlags_None, 6.0f);
-
-   DrawComponents(position, size, zoomLevel);
-
-    // Calculate input and output starting positions
-    ImVec2 inputStartPos = ImVec2(drawPosition.x + padding, drawPosition.y + headerHeight);
-    ImVec2 outputStartPos = ImVec2(drawPosition.x + drawSize.x - padding, drawPosition.y + headerHeight);
-
-    // Draw input points
-    for (const ImVec2& point : inputPoints) {
-        ImVec2 circlePos(inputStartPos.x, inputStartPos.y + pinOffsetY);
-        drawList->AddCircleFilled(circlePos, pinRadius, ImColor(255, 255, 255)); // Outer circle
-        drawList->AddCircleFilled(circlePos, pinInnerRadius, ImColor(0, 0, 0)); // Inner circle
-        pinOffsetY += pinRadius * 2.0f + padding;
-    }
-
-    // Reset pinOffsetY for output points
-    pinOffsetY = 0.0f;
-
-    // Draw output points
-    for (const ImVec2& point : outputPoints) {
-        ImVec2 circlePos(outputStartPos.x, outputStartPos.y + pinOffsetY);
-        drawList->AddCircleFilled(circlePos, pinRadius, ImColor(255, 255, 255)); // Outer circle
-        drawList->AddCircleFilled(circlePos, pinInnerRadius, ImColor(0, 0, 0)); // Inner circle
-        pinOffsetY += pinRadius * 2.0f + padding;
-    }
-
 }
-
-
 
 void Node::DrawConnection(ImDrawList* drawList, ImVec2 start, ImVec2 end) {
     ImColor connectionColor = ImColor(0, 0, 0); // Connection line color

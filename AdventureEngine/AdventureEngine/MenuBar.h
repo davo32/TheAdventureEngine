@@ -12,7 +12,6 @@ public:
 	void ProjectMenu();
 	void PlayerMenu();
 	void EventsMenu();
-	void LootTableMenu();
 	void Shortcuts();
 	void DrawUI() override;
 private:

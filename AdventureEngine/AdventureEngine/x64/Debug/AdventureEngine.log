@@ -1,5 +1,4 @@
 ﻿  Application.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(88,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(88,43): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(58,1): warning C4715: 'Application::glfwSetup': not all control paths return a value
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(109,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(109,43): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.exe
