@@ -130,7 +130,6 @@ void Application::draw()
 			//MenuBar
 			UImanager.DrawUIByIndex(0);
 			UImanager.DrawUIByIndex(UICounter);
-			//ImGui::EndChild();
 			ImGui::End();
 		}
 

@@ -171,7 +171,7 @@ void StartupScreen::OverviewTab()
     ImGui::Text("System Requirements:");
     ImGui::BulletText("Operating System: Windows 10 or later, macOS 10.14 or later, or Linux.");
     ImGui::BulletText("Processor: Intel Core i5 or equivalent.");
-    ImGui::BulletText("Memory: 8 GB RAM.");
+    ImGui::BulletText("Memory: 1 GB RAM.");
     ImGui::BulletText("Graphics: NVIDIA GTX 960 or equivalent.");
     ImGui::Spacing();
     ImGui::Spacing();

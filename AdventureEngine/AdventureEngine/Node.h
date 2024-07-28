@@ -1,6 +1,7 @@
 #pragma once
 #include "imgui.h"
 #include <string>
+//#include "Connection.h"
 #include <vector>
 
 class Node
@@ -13,6 +14,7 @@ public:
        
     }
     ~Node() = default;
+
 
     ImVec2 GetPosition() { return position; }
     ImVec2 GetSize() { return size; }
@@ -43,7 +45,8 @@ public:
     void CreateInputsAndOutputs(const ImVec2& drawPosition, const float padding, const float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float borderThickness, float& pinOffsetY);
     void CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float headerHeight);
     virtual void DrawComponents(const ImVec2& position, const ImVec2& size, const float& zoomLevel) {}
-    
+  
+
     ImVec2 minSize = ImVec2(100, 25);
     ImVec2 maxSize = ImVec2(250, 150);
 
@@ -52,12 +55,14 @@ public:
 
     //Node
     ImColor colorTop = ImColor(128, 0, 128);
-    ImColor colorBottom = ImColor(60, 60, 60);
+    ImColor colorBottom = ImColor(60, 60, 60,0);
 
     bool isActive = false;
     
 private:
     
+ 
+
     ImVec2 position;
     ImVec2 size;
     std::string text;

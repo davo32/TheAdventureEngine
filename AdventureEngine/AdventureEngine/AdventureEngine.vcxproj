@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AdventureEngine.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Connection.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="EventButtonUI.cpp" />
     <ClCompile Include="EventNode.cpp" />
@@ -169,6 +170,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="ButtonID.h" />
+    <ClInclude Include="Connection.h" />
     <ClInclude Include="CurrentWindow.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventButtonUI.h" />
@@ -187,6 +189,7 @@
     <ClInclude Include="MenuBar.h" />
     <ClInclude Include="MonitorInfo.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NodeType.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="StartupScreen.h" />

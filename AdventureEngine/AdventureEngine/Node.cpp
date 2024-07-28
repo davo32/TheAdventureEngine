@@ -19,6 +19,7 @@ void Node::DrawNode(const ImVec2& drawPosition, const ImVec2& drawSize,const flo
    CreateNodeVisuals(drawPosition, drawSize, drawList, headerRadius, headerHeight);
    CreateInputsAndOutputs(drawPosition, padding, headerHeight, drawSize, drawList, headerRadius, borderThickness, pinOffsetY);
    DrawComponents(position, size, zoomLevel);
+   //DrawConnections(drawList);
 }
 
 void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, const float padding, const float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, const float headerRadius, const float borderThickness, float& pinOffsetY)

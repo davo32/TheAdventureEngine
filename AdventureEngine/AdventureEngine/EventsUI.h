@@ -12,30 +12,36 @@ class Application;
 class EventsUI : public UserInterface
 {
 public:
-	EventsUI() //: ActiveWidget(nullptr)
+	EventsUI()
 	{
 	}
 	void DrawUI() override;
 
 	void TextCentered(std::string text);
 	
-	void HierachyElement();
-	void EventSheetElement();
-	//void Test();
-	//Widget* GetWidgetByRef(Widget* ref);
-	void DrawEventDetails(Event* event);
-	void DrawViewport();
+	void RenderEventWindow();
+	void RenderViewport();
 	void DrawContextMenu();
 	void DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos);
 	std::string EventWindowTitle = "Event Graph";
 	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
 
+	void RenderMenuBar(const char* title);
+	void RenderComponents();
+	void RenderEventsList();
+	void ToggleSelection(Event* E, bool wasSelected);
+	void DeselectCurrent();
+	void SelectEvent(Event* E);
+	void RenderNodeInspector();
+	void RenderEventRename();
+	void UpdateNodeNames(const std::string& newName);
+	void RenderEventText();
+	void RenderInspector();
+
 private:
 	//Events
 	std::vector<Event*> events;
 	Event* ActiveEvent;
-	//std::vector<Widget*> Buttons;
-	//Widget* ActiveWidget;
 	CurrentWindow currWindow = CurrentWindow::GRAPH;
 	int testcounter = 0;
 

@@ -3,16 +3,26 @@
 #include "MonitorInfo.h"
 #include <iostream>
 
+//Node Inspector
+//If Event:
+// - Allow Event to be editable (Input Fields for Name and Event Text)
+// Else if Character:
+// - Allow Character Name to be editable (InputField)
+// - List of character sayings (in a drop down list)
+// Else if LootTable:
+// - Display editable/add/remove list of Items with their drop chance (also editable)
+// Else if Item:
+// - Allow Item to be editable (Input Field for Item Name)
+// - (Sldier for quantity) - Dropdown for Item Type
 
 char EventsUI::inputText[128] = "";
 
 void EventsUI::DrawUI()
 {
 	//Draw UI Here
-	HierachyElement();
-	EventSheetElement();
+	RenderInspector();
+	RenderEventWindow();
 }
-
 
 void EventsUI::TextCentered(std::string text)
 {
@@ -32,197 +42,7 @@ void EventsUI::TextCentered(std::string text)
 	ImGui::Text(text.c_str());
 }
 
-void EventsUI::HierachyElement()
-{
-	if (ImGui::BeginChild("Inspector", ImVec2(300, MonitorInfo::GetMode()->height - 70.5f),
-		true, ImGuiWindowFlags_MenuBar))
-	{
-		if (ImGui::BeginMenuBar())
-		{
-			TextCenteredInMenuBar("Inspector");
-			ImGui::EndMenuBar();
-		}
-
-		if (ImGui::BeginChild("Components", ImVec2(280, (MonitorInfo::GetMode()->height - 70.5f) - MonitorInfo::GetMode()->height / 2),
-			true, ImGuiWindowFlags_MenuBar))
-		{
-			if (ImGui::BeginMenuBar())
-			{
-				TextCenteredInMenuBar("Components");
-				for (int i = 0;i <= 9; i++)
-				{
-					ImGui::Spacing();
-				}
-				ImGui::Button("?");
-				ImGui::EndMenuBar();
-			}
-
-
-			ImGui::TreePush("##Root");
-			{
-				for (size_t i = 0; i < events.size(); ++i)
-				{
-					Event* E = events[i];
-					std::string selectableID;
-					if (E->GetEventName() == "Un-Named Event")
-					{
-						// Unique identifier for the selectable item
-						selectableID = "[Event]  " + E->GetEventName() + " : " + std::to_string(i); // Unique ID based on event name
-					}
-					else
-					{
-						selectableID = "[Event]  " + E->GetEventName();
-					}
-					// Check if this event is selected
-					bool wasSelected = (ActiveEvent == E);
-
-					// Create the selectable item
-					if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
-						// If this item was selected, deselect it
-						if (wasSelected) {
-							ActiveEvent = nullptr;
-							if (ActiveNode)
-							{
-								// Reset previous node state
-								ActiveNode->isActive = false;
-								ActiveNode = nullptr;
-							}
-						}
-						else {
-							// Deselect the previously selected item
-							if (ActiveNode) {
-								ActiveNode->isActive = false; // Reset previous node state
-							}
-
-							// Set the new active event and node
-							ActiveEvent = E;
-							ActiveNode = nullptr;
-
-							for (EventNode* N : Nodes)
-							{
-								if (N->GetEvent() == ActiveEvent)
-								{
-									ActiveNode = N;
-									ActiveNode->isActive = true;
-									break;
-								}
-							}
-						}
-					}
-
-					// Set the selection state for this item
-					eventSelectionState[E] = (ActiveEvent == E);
-				}
-				ImGui::TreePop(); // Close the tree node
-			}
-
-			ImGui::EndChild();
-		}
-		if (ActiveNode != nullptr || ActiveEvent != nullptr)
-		{
-			if (ImGui::BeginChild("Node Inspector", ImVec2(280, (MonitorInfo::GetMode()->height - 50.5f) - MonitorInfo::GetMode()->height / 2),
-				true, ImGuiWindowFlags_MenuBar))
-			{
-				if (ImGui::BeginMenuBar())
-				{
-					TextCenteredInMenuBar("Node");
-					ImGui::EndMenuBar();
-				}
-
-				// Event Renaming (InputField) Logic
-				if (ActiveEvent != nullptr)
-				{
-					std::string eventName = ActiveEvent->GetEventName();
-					char temp[256];
-					strcpy_s(temp, eventName.c_str());
-					ImGui::Text("Name: ");
-					ImGui::SameLine();
-					if (ImGui::InputText("##Name", temp, sizeof(temp)))
-					{
-						ActiveEvent->SetEventName(temp);
-
-						for (EventNode* node : Nodes)
-						{
-							if (node->GetEvent() != nullptr && ActiveEvent == node->GetEvent())
-							{
-								node->SetText(temp);
-							}
-						}
-					}
-				}
-				else if (ActiveNode != nullptr && ActiveNode->GetEvent() != nullptr)
-				{
-					std::string eventName = ActiveNode->GetText();
-					char temp[256];
-					strcpy_s(temp, eventName.c_str());
-					ImGui::Text("Name: ");
-					ImGui::SameLine();
-					if (ImGui::InputText("##NodeName", temp, sizeof(temp)))
-					{
-						ActiveNode->SetText(temp);
-
-						for (Event* event : events)
-						{
-							if (event != nullptr && ActiveNode->GetEvent() == event)
-							{
-								event->SetEventName(temp);
-							}
-						}
-					}
-				}
-
-				std::string text = "Centered Text";
-				ImVec2 windowSize = ImGui::GetWindowSize();
-				ImVec2 textSize = ImGui::CalcTextSize(text.c_str());
-				ImVec2 textBoxSize = ImVec2(600, 100);
-
-				// Calculate position to center text on the x-axis
-				ImVec2 textPos(
-					(windowSize.x - textSize.x) / 2.0f,
-					ImGui::GetCursorPosY()
-				);
-
-				// Set the cursor position to center the text box on the x-axis
-				ImGui::SetCursorPosX(textPos.x);
-
-				// Event SubText Renaming (InputField) Logic
-				if (ActiveEvent != nullptr)
-				{
-					std::string eventText = ActiveEvent->GetEventText();
-					char temp0[256];
-					strcpy_s(temp0, eventText.c_str());
-					ImGui::Text("Event Text");
-					if (ImGui::InputTextMultiline("##EventText", temp0, sizeof(temp0), textBoxSize))
-					{
-						ActiveEvent->SetEventText(temp0);
-					}
-				}
-				else if (ActiveNode != nullptr && ActiveNode->GetEvent() != nullptr)
-				{
-					std::string eventText = ActiveNode->GetEvent()->GetEventText();
-					char temp0[256];
-					strcpy_s(temp0, eventText.c_str());
-					ImGui::Text("Event Text");
-					if (ImGui::InputTextMultiline("##NodeEventText", temp0, sizeof(temp0), textBoxSize))
-					{
-						for (Event* event : events)
-						{
-							if (event != nullptr && ActiveNode->GetEvent() == event)
-							{
-								event->SetEventText(temp0);
-							}
-						}
-					}
-				}
-				ImGui::Separator();
-				ImGui::EndChild();
-			}
-		}
-		ImGui::EndChild();
-	}
-}
-
-void EventsUI::EventSheetElement()
+void EventsUI::RenderEventWindow()
 {
 	ImGui::SetWindowPos(ImVec2(350, -MonitorInfo::GetMode()->height + 80));
 	if (ImGui::BeginChild
@@ -242,7 +62,7 @@ void EventsUI::EventSheetElement()
 			
 			if (currWindow == CurrentWindow::GRAPH)
 			{
-				DrawViewport();
+				RenderViewport();
 			}
 			ImGui::EndChild();
 		}
@@ -250,7 +70,7 @@ void EventsUI::EventSheetElement()
 	}
 }
 
-void EventsUI::DrawViewport()
+void EventsUI::RenderViewport()
 {
 	ImVec2 canvasPos = ImGui::GetCursorScreenPos();   // Top-left
 	ImVec2 canvasSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
@@ -370,6 +190,8 @@ void EventsUI::DrawViewport()
 
 void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
 {
+	
+
 	// Get the current position and size of the viewport
 	ImVec2 viewportMin = ImGui::GetCursorScreenPos();
 	ImVec2 viewportSize = ImGui::GetContentRegionAvail();
@@ -389,6 +211,10 @@ void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
 			// Check if the mouse is over the node
 			if (mousePos.x >= scaledNodePos.x && mousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
 				mousePos.y >= scaledNodePos.y && mousePos.y <= scaledNodePos.y + scaledNodeSize.y) {
+				if (ActiveNode != nullptr)
+				{
+					ActiveNode->isActive = false;
+				}
 				ActiveNode = node;
 				node->isActive = true;
 				nodeClicked = true;
@@ -411,6 +237,158 @@ void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
 			}
 		}
 	}
+}
+
+void EventsUI::RenderMenuBar(const char* title)
+{
+	if (ImGui::BeginMenuBar())
+	{
+		TextCenteredInMenuBar(title);
+		ImGui::EndMenuBar();
+	}
+}
+
+void EventsUI::RenderComponents()
+{
+	if (!ImGui::BeginChild("Components", ImVec2(280, MonitorInfo::GetMode()->height / 2), true, ImGuiWindowFlags_MenuBar))
+		return;
+
+	RenderMenuBar("Components");
+	RenderEventsList();
+
+	ImGui::EndChild();
+}
+
+void EventsUI::RenderEventsList()
+{
+	ImGui::TreePush("##Root");
+	for (auto& E : events) 
+	{
+		if (!E) continue;
+
+		std::string selectableID = "[Event]  " + E->GetEventName();
+		bool wasSelected = (ActiveEvent == E);
+
+		if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
+			ToggleSelection(E, wasSelected);
+		}
+	}
+	ImGui::TreePop();
+}
+
+void EventsUI::ToggleSelection(Event* E, bool wasSelected)
+{
+	if (wasSelected) 
+	{
+		DeselectCurrent();
+	}
+	else 
+	{
+		DeselectCurrent();
+		SelectEvent(E);
+	}
+}
+
+void EventsUI::DeselectCurrent()
+{
+	ActiveEvent = nullptr;
+	if (ActiveNode) {
+		ActiveNode->isActive = false;
+		ActiveNode = nullptr;
+	}
+}
+
+void EventsUI::SelectEvent(Event* E)
+{
+	ActiveEvent = E;
+	ActiveNode = nullptr;
+	for (EventNode* N : Nodes) {
+		if (N->GetEvent() == ActiveEvent) 
+		{
+			ActiveNode = N;
+			ActiveNode->isActive = true;
+			break;
+		}
+	}
+}
+
+void EventsUI::RenderNodeInspector()
+{
+	if (!ActiveNode && !ActiveEvent) return;
+
+	if (!ImGui::BeginChild("Node Inspector", ImVec2(280,( MonitorInfo::GetMode()->height / 2) - 120), true, ImGuiWindowFlags_MenuBar))
+		return;
+
+	RenderMenuBar("Node");
+	RenderEventRename();
+	RenderEventText();
+
+	ImGui::EndChild();
+}
+
+void EventsUI::RenderEventRename()
+{
+	if (!ActiveEvent && !ActiveNode) return;
+
+	// Get the current event name
+	std::string eventName = ActiveEvent ? ActiveEvent->GetEventName() : ActiveNode->GetText();
+	char temp[256];
+	strcpy_s(temp, sizeof(temp), eventName.c_str());
+
+	ImGui::Text("Name: ");
+	ImGui::SameLine();
+	if (ImGui::InputText("##Name", temp, sizeof(temp))) {
+		// Update the event or node name
+		if (ActiveEvent) {
+			ActiveEvent->SetEventName(temp);
+		}
+		else if (ActiveNode) {
+			ActiveNode->SetText(temp);
+		}
+		UpdateNodeNames(temp);
+	}
+}
+
+void EventsUI::UpdateNodeNames(const std::string& newName)
+{
+	for (EventNode* node : Nodes)
+	{
+		if (node->GetEvent() == ActiveEvent) {
+			node->SetText(newName);
+		}
+	}
+}
+
+void EventsUI::RenderEventText()
+{
+	std::string eventText = ActiveEvent ? ActiveEvent->GetEventText() : ActiveNode->GetEvent()->GetEventText();
+	char temp0[256];
+	strcpy_s(temp0, eventText.c_str());
+	ImGui::Text("Event Text");
+	if (ImGui::InputTextMultiline("##EventText", temp0, sizeof(temp0), ImVec2(ImGui::GetWindowSize().x - 15, 100))) {
+		if (ActiveEvent) {
+			ActiveEvent->SetEventText(temp0);
+		}
+		else {
+			for (Event* event : events) {
+				if (event == ActiveNode->GetEvent()) {
+					event->SetEventText(temp0);
+				}
+			}
+		}
+	}
+}
+
+void EventsUI::RenderInspector()
+{
+	if (!ImGui::BeginChild("Inspector", ImVec2(300, MonitorInfo::GetMode()->height - 70.5f), true, ImGuiWindowFlags_MenuBar))
+		return;
+
+	RenderMenuBar("Inspector");
+	RenderComponents();
+	RenderNodeInspector();
+
+	ImGui::EndChild();
 }
 
 void EventsUI::DrawBackground(ImVec2 canvasSize,ImVec2 canvasPos)
@@ -451,12 +429,22 @@ void EventsUI::DrawContextMenu()
 				searchQuery = inputText;
 			}
 			ImGui::Separator();
-			if (ImGui::MenuItem("Create Event"))
+			if (ImGui::MenuItem("Create Chapter Start"))
 			{
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
-				Event* newEvent = new Event("Un-Named Event", "Test");
-				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent);
+				Event* newEvent = new Event("Chapter Start", "Test");
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(100, 150), newEvent,NodeType::CHPTRSTART);
+				//CreatedNode->SetIsChapterStarter(true);
+				Nodes.push_back(CreatedNode);
+				events.push_back(newEvent);
+			}
+			if (ImGui::MenuItem("Create Plot Point"))
+			{
+				//Create Event
+				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
+				Event* newEvent = new Event("Un-Named Plot Point", "Test");
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent,NodeType::PLOT);
 				Nodes.push_back(CreatedNode);
 				events.push_back(newEvent);
 			}
@@ -534,21 +522,3 @@ void EventsUI::DrawContextMenu()
 	
 }
 
-void EventsUI::DrawEventDetails(Event* event)
-{
-	if (event == nullptr)
-	{
-		return;
-	}
-
-	ImGui::Text("Event Details");
-
-	ImGui::Text("Event Name: %s", event->GetEventName().c_str());
-	ImGui::Text("Event Text: %s", event->GetEventText().c_str());
-
-	// Display
-	ImGui::Text("Branches: %d", event->GetBranchCount());
-
-	// Display
-	ImGui::Text("Reward Items: %d", event->GetRewardItemCount());
-}
