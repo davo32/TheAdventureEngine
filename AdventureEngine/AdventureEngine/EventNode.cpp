@@ -22,7 +22,7 @@ EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent,NodeType _nod
 
 EventNode::~EventNode() 
 { 
-	delete StoredEvent;
+	//delete StoredEvent; //this bad
 }
 
 void EventNode::DrawComponents(const ImVec2& position, const ImVec2& size, const float& zoomLevel)

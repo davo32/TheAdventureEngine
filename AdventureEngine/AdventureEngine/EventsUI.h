@@ -19,25 +19,27 @@ public:
 
 	void TextCentered(std::string text);
 	
+	std::string EventWindowTitle = "Event Graph";
+	
+	//Rendering
 	void RenderEventWindow();
 	void RenderViewport();
-	void DrawContextMenu();
 	void DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos);
-	std::string EventWindowTitle = "Event Graph";
-	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
-
+	void DrawContextMenu();
 	void RenderMenuBar(const char* title);
 	void RenderComponents();
 	void RenderEventsList();
-	void ToggleSelection(Event* E, bool wasSelected);
-	void DeselectCurrent();
-	void SelectEvent(Event* E);
 	void RenderNodeInspector();
 	void RenderEventRename();
-	void UpdateNodeNames(const std::string& newName);
 	void RenderEventText();
 	void RenderInspector();
 
+	void DeleteActiveNode();
+	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
+	void ToggleSelection(Event* E, bool wasSelected);
+	void DeselectCurrent();
+	void SelectEvent(Event* E);
+	void UpdateNodeNames(const std::string& newName);
 private:
 	//Events
 	std::vector<Event*> events;

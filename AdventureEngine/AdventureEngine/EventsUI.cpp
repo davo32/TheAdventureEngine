@@ -59,7 +59,6 @@ void EventsUI::RenderEventWindow()
 		if (ImGui::BeginChild("Event Window",
 			ImVec2(MonitorInfo::GetMode()->width - 414.5, ImGui::GetContentRegionAvail().y), true, ImGuiChildFlags_Border))
 		{
-			
 			if (currWindow == CurrentWindow::GRAPH)
 			{
 				RenderViewport();
@@ -104,8 +103,8 @@ void EventsUI::RenderViewport()
 
 		// Handle zoom
 		float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
-		zoomLevel = std::max(0.7f, std::min(2.0f,zoomLevel + zoomDelta)); // Prevent zooming too far out/in
-	
+		zoomLevel = std::max(0.7f, std::min(2.0f, zoomLevel + zoomDelta)); // Prevent zooming too far out/in
+
 		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
 		{
 			ImVec2 mousePos = ImGui::GetMousePos();
@@ -116,7 +115,6 @@ void EventsUI::RenderViewport()
 		}
 		DrawContextMenu();
 	}
-
 
 	// Handle node dragging
 	if (ImGui::IsMouseDragging(ImGuiMouseButton_Left))
@@ -169,7 +167,7 @@ void EventsUI::RenderViewport()
 
 	if (!Nodes.empty())
 	{
-		for (Node* node : Nodes) 
+		for (Node* node : Nodes)
 		{
 			ImVec2 nodePosition = node->GetPosition();
 			ImVec2 nodeSize = node->GetSize();
@@ -180,7 +178,7 @@ void EventsUI::RenderViewport()
 			ImVec2 scaledSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
 			// Draw the node with adjusted position and size
-			node->DrawNode(scaledPosition, scaledSize,zoomLevel);
+			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
 		}
 
 		// Pass canvas position to HandleNodeClicks
@@ -188,10 +186,49 @@ void EventsUI::RenderViewport()
 	}
 }
 
-void EventsUI::HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos)
+void EventsUI::DeleteActiveNode()
 {
-	
+	if (ActiveNode != nullptr)
+	{
+		// Get the associated event before deleting the node
+		Event* associatedEvent = ActiveNode->GetEvent();
 
+		if (associatedEvent != nullptr)
+		{
+
+			// Find and delete the node
+			auto nodeIt = std::find(Nodes.begin(), Nodes.end(), ActiveNode);
+			if (nodeIt != Nodes.end())
+			{
+				// Erase node from vector
+				Nodes.erase(nodeIt);
+
+				// Delete the node
+				delete ActiveNode;
+				ActiveNode = nullptr;
+			}
+
+			// Find and delete the associated event
+			if (associatedEvent != nullptr)
+			{
+				auto eventIt = std::find(events.begin(), events.end(), associatedEvent);
+				if (eventIt != events.end())
+				{
+					events.erase(eventIt);
+					delete associatedEvent;
+				}
+			}
+		}
+		else
+		{
+			std::cerr << "Associated Event is null" << std::endl;
+		}
+
+	}
+}
+
+void EventsUI::HandleNodeClicks(ImVec2 mousePos, ImVec2 canvasPos)
+{
 	// Get the current position and size of the viewport
 	ImVec2 viewportMin = ImGui::GetCursorScreenPos();
 	ImVec2 viewportSize = ImGui::GetContentRegionAvail();
@@ -262,27 +299,31 @@ void EventsUI::RenderComponents()
 void EventsUI::RenderEventsList()
 {
 	ImGui::TreePush("##Root");
-	for (auto& E : events) 
+	for (auto& E : events)
 	{
 		if (!E) continue;
 
-		std::string selectableID = "[Event]  " + E->GetEventName();
-		bool wasSelected = (ActiveEvent == E);
+		std::string eventName = E->GetEventName();
+		std::cout << "Event Name: " << eventName << ", Length: " << eventName.length() << std::endl;
 
-		if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
-			ToggleSelection(E, wasSelected);
-		}
+		std::string selectableID = "[Event]  " + eventName;
+
+			bool wasSelected = (ActiveEvent == E);
+
+			if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
+				ToggleSelection(E, wasSelected);
+			}
 	}
 	ImGui::TreePop();
 }
 
 void EventsUI::ToggleSelection(Event* E, bool wasSelected)
 {
-	if (wasSelected) 
+	if (wasSelected)
 	{
 		DeselectCurrent();
 	}
-	else 
+	else
 	{
 		DeselectCurrent();
 		SelectEvent(E);
@@ -303,7 +344,7 @@ void EventsUI::SelectEvent(Event* E)
 	ActiveEvent = E;
 	ActiveNode = nullptr;
 	for (EventNode* N : Nodes) {
-		if (N->GetEvent() == ActiveEvent) 
+		if (N->GetEvent() == ActiveEvent)
 		{
 			ActiveNode = N;
 			ActiveNode->isActive = true;
@@ -316,7 +357,7 @@ void EventsUI::RenderNodeInspector()
 {
 	if (!ActiveNode && !ActiveEvent) return;
 
-	if (!ImGui::BeginChild("Node Inspector", ImVec2(280,( MonitorInfo::GetMode()->height / 2) - 120), true, ImGuiWindowFlags_MenuBar))
+	if (!ImGui::BeginChild("Node Inspector", ImVec2(280, (MonitorInfo::GetMode()->height / 2) - 120), true, ImGuiWindowFlags_MenuBar))
 		return;
 
 	RenderMenuBar("Node");
@@ -341,9 +382,23 @@ void EventsUI::RenderEventRename()
 		// Update the event or node name
 		if (ActiveEvent) {
 			ActiveEvent->SetEventName(temp);
+			for (EventNode* E : Nodes)
+			{
+				if (ActiveEvent == E->GetEvent())
+				{
+					ActiveNode = E;
+				}
+			}
 		}
 		else if (ActiveNode) {
 			ActiveNode->SetText(temp);
+			for (Event* E : events)
+			{
+				if (ActiveNode->GetEvent() == E)
+				{
+					ActiveEvent = E;
+				}
+			}
 		}
 		UpdateNodeNames(temp);
 	}
@@ -391,7 +446,7 @@ void EventsUI::RenderInspector()
 	ImGui::EndChild();
 }
 
-void EventsUI::DrawBackground(ImVec2 canvasSize,ImVec2 canvasPos)
+void EventsUI::DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 {
 	if (canvasSize.x < 50.0f) canvasSize.x = 50.0f;
 	if (canvasSize.y < 50.0f) canvasSize.y = 50.0f;
@@ -407,7 +462,6 @@ void EventsUI::DrawBackground(ImVec2 canvasSize,ImVec2 canvasPos)
 		drawList->AddLine(ImVec2(x, canvasPos.y), ImVec2(x, canvasPos.y + canvasSize.y), IM_COL32(200, 200, 200, 40));
 	for (float y = canvasPos.y; y < canvasPos.y + canvasSize.y; y += gridSize)
 		drawList->AddLine(ImVec2(canvasPos.x, y), ImVec2(canvasPos.x + canvasSize.x, y), IM_COL32(200, 200, 200, 40));
-
 }
 
 void EventsUI::DrawContextMenu()
@@ -420,7 +474,6 @@ void EventsUI::DrawContextMenu()
 
 		if (ImGui::BeginPopup("Context Menu"))
 		{
-
 			ImGui::SetKeyboardFocusHere(); // Focus the next item in the tab order (the input field here)
 
 			// Buffer for input text
@@ -434,7 +487,7 @@ void EventsUI::DrawContextMenu()
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
 				Event* newEvent = new Event("Chapter Start", "Test");
-				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(100, 150), newEvent,NodeType::CHPTRSTART);
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(100, 150), newEvent, NodeType::CHPTRSTART);
 				//CreatedNode->SetIsChapterStarter(true);
 				Nodes.push_back(CreatedNode);
 				events.push_back(newEvent);
@@ -444,43 +497,40 @@ void EventsUI::DrawContextMenu()
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
 				Event* newEvent = new Event("Un-Named Plot Point", "Test");
-				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent,NodeType::PLOT);
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent, NodeType::PLOT);
 				Nodes.push_back(CreatedNode);
 				events.push_back(newEvent);
 			}
 			if (ImGui::MenuItem("Create Character"))
 			{
-
 			}
 			if (ImGui::MenuItem("Create Loot Table"))
 			{
-
 			}
 			if (ImGui::MenuItem("Create Item"))
 			{
-
 			}
 			ImGui::Separator();
 			for (Event* E : events)
 			{
-				std::string eventName = E->GetEventName();
-
-				if (!searchQuery.empty())
+				if (!events.empty())
 				{
-					if (eventName.find(searchQuery) != std::string::npos)
+					std::string eventName = E->GetEventName();
+
+					if (!searchQuery.empty())
 					{
-						if (ImGui::MenuItem(eventName.c_str()))
+						if (eventName.find(searchQuery) != std::string::npos)
 						{
-							// Action for Option
-							
+							if (ImGui::MenuItem(eventName.c_str()))
+							{
+								// Action for Option
+							}
 						}
 					}
 				}
 			}
 			ImGui::EndPopup();
 		}
-
-
 
 		if (!isContextualMenuOpen && ImGui::IsPopupOpen("Context Menu") == false)
 		{
@@ -495,30 +545,10 @@ void EventsUI::DrawContextMenu()
 		{
 			if (ImGui::MenuItem("Delete Node"))
 			{
-				Node* NodeToDelete;
-				for (Node* node : Nodes)
-				{
-					if (node == ActiveNode)
-					{
-						NodeToDelete = node;
-					}
-				}
-
-				auto it = std::remove(Nodes.begin(), Nodes.end(), NodeToDelete);
-				if (it != Nodes.end())
-				{
-					// Optionally delete the node if you own it
-					delete* it;
-
-					// Remove the node from the vector
-					Nodes.erase(it, Nodes.end());
-					ActiveNode = nullptr;
-				}
+				DeleteActiveNode();
 			}
 
 			ImGui::EndPopup();
 		}
 	}
-	
 }
-
