@@ -1,7 +1,7 @@
 #include "EventNode.h"
 
 
-EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent,NodeType _nodeType)
+EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent, NodeType _nodeType)
 	: Node(Position, Size, newEvent->GetEventName()), StoredEvent(newEvent), nodeType(_nodeType)
 {
 
@@ -25,7 +25,7 @@ EventNode::~EventNode()
 	//delete StoredEvent; //this bad
 }
 
-void EventNode::DrawComponents(const ImVec2& position, const ImVec2& size, const float& zoomLevel)
+void EventNode::DrawComponents(const ImVec2& position, const ImVec2& size, float zoomLevel)
 {
 	// Example implementation; replace with your actual drawing code
 	ImGui::Text("EventNode Components");

@@ -72,10 +72,16 @@ bool Application::glfwSetup()
 		std::cerr << "Failed to load Regular font\n";
 	}
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Bold.ttf", 12.0f, "Bold"))
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Bold.ttf", 13.0f, "Bold"))
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
+
+	/*if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 16.0f, "Regular2"))
+	{
+		std::cerr << "Failed to load Regular font\n";
+	}*/
+
 	return true;
 }
 

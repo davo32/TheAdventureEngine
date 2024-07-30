@@ -17,7 +17,7 @@ public:
 	}
 	void DrawUI() override;
 
-	void TextCentered(std::string text);
+	void text_centered(const std::string& text);
 	
 	std::string EventWindowTitle = "Event Graph";
 	

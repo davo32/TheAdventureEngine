@@ -24,7 +24,7 @@ void EventsUI::DrawUI()
 	RenderEventWindow();
 }
 
-void EventsUI::TextCentered(std::string text)
+void EventsUI::text_centered(const std::string& text)
 {
 	// Get the size of the available content region
 	ImVec2 contentRegion = ImGui::GetContentRegionAvail();
@@ -46,12 +46,13 @@ void EventsUI::RenderEventWindow()
 {
 	ImGui::SetWindowPos(ImVec2(350, -MonitorInfo::GetMode()->height + 80));
 	if (ImGui::BeginChild
-	("EditableEvents", ImVec2(MonitorInfo::GetMode()->width - 400, MonitorInfo::GetMode()->height - 80), true, ImGuiWindowFlags_MenuBar))
+	("EditableEvents", ImVec2(static_cast<float>(MonitorInfo::GetMode()->width) - 400, static_cast<float>(MonitorInfo::GetMode()->height) - 80.0f), true,
+	 ImGuiWindowFlags_MenuBar))
 	{
 		if (ImGui::BeginMenuBar())
 		{
 			ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
-			TextCenteredInMenuBar(EventWindowTitle.c_str());
+			TextCenteredInMenuBar(EventWindowTitle);
 			ImGui::EndMenuBar();
 			ImGui::PopStyleColor();
 		}
@@ -77,25 +78,26 @@ void EventsUI::RenderViewport()
 	ImGuiIO& io = ImGui::GetIO();
 
 	DrawBackground(canvasSize, canvasPos);
-	std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
-	ImGui::Text(ZoomLevelText.c_str());
+	
+	/*std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
+	ImGui::Text(ZoomLevelText.c_str());*/
 
 	// Handle panning
 	if (ImGui::IsMouseHoveringRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y)))
 	{
-		if (ImGui::IsMouseClicked(2))
+		if (ImGui::IsMouseClicked(ImGuiMouseButton_Middle))
 		{
 			isPanning = true;
 			lastMousePos = io.MousePos;
 		}
-		if (ImGui::IsMouseReleased(2))
+		if (ImGui::IsMouseReleased(ImGuiMouseButton_Middle))
 		{
 			isPanning = false;
 		}
 
 		if (isPanning)
 		{
-			ImVec2 delta = ImVec2(io.MousePos.x - lastMousePos.x, io.MousePos.y - lastMousePos.y);
+			ImVec2 delta = ImVec2(io.MousePos.x - lastMousePos.x,io.MousePos.y - lastMousePos.y);
 			viewportOffset.x += delta.x;
 			viewportOffset.y += delta.y;
 			lastMousePos = io.MousePos;
@@ -121,7 +123,7 @@ void EventsUI::RenderViewport()
 	{
 		for (Node* node : Nodes)
 		{
-			if (node->GetIsDragging())
+			if (node->IsDragging())
 			{
 				// Calculate the mouse position in world space
 				ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
@@ -137,7 +139,7 @@ void EventsUI::RenderViewport()
 				node->SetDragStartPos(mousePosInWorld);
 
 				// Debug output
-				std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << std::endl;
+				std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
 
 				break; // Only handle one node per drag operation
 			}
@@ -145,17 +147,19 @@ void EventsUI::RenderViewport()
 	}
 
 	// Update dragging state on mouse release
-	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left)) {
+	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left)) 
+	{
 		for (Node* node : Nodes) {
-			if (node->IsMouseHovering(io.MousePos, zoomLevel, viewportOffset)) {
-				if (!node->GetIsDragging()) {
+			if (node->IsMouseHovering(io.MousePos, zoomLevel, viewportOffset))
+				{
+				if (!node->IsDragging()) {
 					// If a node is being hovered and is not already being dragged, start dragging
 					node->SetIsDragging(true);
 					ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 					node->SetDragStartPos(mousePosInWorld);
 				}
 			}
-			else if (node->GetIsDragging())
+			else if (node->IsDragging())
 			{
 				// If the node was dragging and is no longer hovered, stop dragging
 				node->SetIsDragging(false);
@@ -250,10 +254,10 @@ void EventsUI::HandleNodeClicks(ImVec2 mousePos, ImVec2 canvasPos)
 				mousePos.y >= scaledNodePos.y && mousePos.y <= scaledNodePos.y + scaledNodeSize.y) {
 				if (ActiveNode != nullptr)
 				{
-					ActiveNode->isActive = false;
+					ActiveNode->SetIsActive(false);
 				}
 				ActiveNode = node;
-				node->isActive = true;
+				node->SetIsActive(true);
 				nodeClicked = true;
 			}
 		}
@@ -264,7 +268,7 @@ void EventsUI::HandleNodeClicks(ImVec2 mousePos, ImVec2 canvasPos)
 		{
 			if (ActiveNode != nullptr)
 			{
-				ActiveNode->isActive = false;
+				ActiveNode->SetIsActive(false);
 				ActiveNode = nullptr;
 
 				if (ActiveEvent != nullptr)
@@ -310,7 +314,8 @@ void EventsUI::RenderEventsList()
 
 			bool wasSelected = (ActiveEvent == E);
 
-			if (ImGui::Selectable(selectableID.c_str(), wasSelected)) {
+			if (ImGui::Selectable(selectableID.c_str(), wasSelected)) 
+			{
 				ToggleSelection(E, wasSelected);
 			}
 	}
@@ -334,7 +339,7 @@ void EventsUI::DeselectCurrent()
 {
 	ActiveEvent = nullptr;
 	if (ActiveNode) {
-		ActiveNode->isActive = false;
+		ActiveNode->SetIsActive(false);
 		ActiveNode = nullptr;
 	}
 }
@@ -347,7 +352,7 @@ void EventsUI::SelectEvent(Event* E)
 		if (N->GetEvent() == ActiveEvent)
 		{
 			ActiveNode = N;
-			ActiveNode->isActive = true;
+			ActiveNode->SetIsActive(true);
 			break;
 		}
 	}
@@ -448,20 +453,42 @@ void EventsUI::RenderInspector()
 
 void EventsUI::DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 {
-	if (canvasSize.x < 50.0f) canvasSize.x = 50.0f;
-	if (canvasSize.y < 50.0f) canvasSize.y = 50.0f;
-
+	float GRID_STEP = 16.0f * zoomLevel;
+	float MAJOR_GRID_STEP = GRID_STEP * 5.0f; // Major grid lines every 5 minor steps
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
 	// Draw background
-	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(50, 50, 50, 255));
+	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(40, 40, 40, 100));
+	
+	// Adjust thickness dynamically based on zoom level
+	float majorLineThickness = 2.0f; // Adjust as needed
+	float minorLineThickness = 1.0f; // Minor lines should remain the same
 
-	// Draw a grid
-	float gridSize = 32.0f * zoomLevel;
-	for (float x = canvasPos.x; x < canvasPos.x + canvasSize.x; x += gridSize)
-		drawList->AddLine(ImVec2(x, canvasPos.y), ImVec2(x, canvasPos.y + canvasSize.y), IM_COL32(200, 200, 200, 40));
-	for (float y = canvasPos.y; y < canvasPos.y + canvasSize.y; y += gridSize)
-		drawList->AddLine(ImVec2(canvasPos.x, y), ImVec2(canvasPos.x + canvasSize.x, y), IM_COL32(200, 200, 200, 40));
+	// Draw major grid lines (black)
+	for (float x = fmodf(viewportOffset.x, MAJOR_GRID_STEP); x < canvasSize.x; x += MAJOR_GRID_STEP)
+	{
+		drawList->AddLine(ImVec2(canvasPos.x + x, canvasPos.y), ImVec2(canvasPos.x + x, canvasPos.y + canvasSize.y), IM_COL32(200, 200, 200, 80), majorLineThickness);
+	}
+	for (float y = fmodf(viewportOffset.y, MAJOR_GRID_STEP); y < canvasSize.y; y += MAJOR_GRID_STEP)
+	{
+		drawList->AddLine(ImVec2(canvasPos.x, canvasPos.y + y), ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + y), IM_COL32(200, 200, 200, 80), majorLineThickness);
+	}
+
+	// Draw minor grid lines (lighter)
+	for (float x = fmodf(viewportOffset.x, GRID_STEP); x < canvasSize.x; x += GRID_STEP)
+	{
+		if (fmodf(x, MAJOR_GRID_STEP) != 0.0f) // Skip major grid lines
+		{
+			drawList->AddLine(ImVec2(canvasPos.x + x, canvasPos.y), ImVec2(canvasPos.x + x, canvasPos.y + canvasSize.y), IM_COL32(200, 200, 200, 50), minorLineThickness);
+		}
+	}
+	for (float y = fmodf(viewportOffset.y, GRID_STEP); y < canvasSize.y; y += GRID_STEP)
+	{
+		if (fmodf(y, MAJOR_GRID_STEP) != 0.0f) // Skip major grid lines
+		{
+			drawList->AddLine(ImVec2(canvasPos.x, canvasPos.y + y), ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + y), IM_COL32(200, 200, 200, 50), minorLineThickness);
+		}
+	}
 }
 
 void EventsUI::DrawContextMenu()
@@ -485,7 +512,7 @@ void EventsUI::DrawContextMenu()
 			if (ImGui::MenuItem("Create Chapter Start"))
 			{
 				//Create Event
-				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
+				ImVec2 nodePosition = ImGui::GetMousePos();//ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
 				Event* newEvent = new Event("Chapter Start", "Test");
 				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(100, 150), newEvent, NodeType::CHPTRSTART);
 				//CreatedNode->SetIsChapterStarter(true);
