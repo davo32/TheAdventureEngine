@@ -72,103 +72,116 @@ void EventsUI::RenderEventWindow()
 
 void EventsUI::RenderViewport()
 {
-	ImVec2 canvasPos = ImGui::GetCursorScreenPos();   // Top-left
+	ImVec2 canvasPos = ImGui::GetCursorScreenPos(); // Top-left
 	ImVec2 canvasSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
 
 	ImGuiIO& io = ImGui::GetIO();
 
 	DrawBackground(canvasSize, canvasPos);
-	
-	/*std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
-	ImGui::Text(ZoomLevelText.c_str());*/
+
+	std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
+	ImGui::Text(ZoomLevelText.c_str());
 
 	// Handle panning
 	if (ImGui::IsMouseHoveringRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y)))
 	{
-		if (ImGui::IsMouseClicked(ImGuiMouseButton_Middle))
-		{
-			isPanning = true;
-			lastMousePos = io.MousePos;
-		}
-		if (ImGui::IsMouseReleased(ImGuiMouseButton_Middle))
-		{
-			isPanning = false;
-		}
-
-		if (isPanning)
-		{
-			ImVec2 delta = ImVec2(io.MousePos.x - lastMousePos.x,io.MousePos.y - lastMousePos.y);
-			viewportOffset.x += delta.x;
-			viewportOffset.y += delta.y;
-			lastMousePos = io.MousePos;
-		}
+		ViewportPanning(io);
 
 		// Handle zoom
 		float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
 		zoomLevel = std::max(0.7f, std::min(2.0f, zoomLevel + zoomDelta)); // Prevent zooming too far out/in
 
-		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
-		{
-			ImVec2 mousePos = ImGui::GetMousePos();
-			ImVec2 offset(10.0f, 10.0f); // Offset from the mouse position
-			contextMenuPos = mousePos; // Store the position for node creation
-			ImGui::SetNextWindowPos(ImVec2(mousePos.x + offset.x, mousePos.y + offset.y));
-			ImGui::OpenPopup("Context Menu");
-		}
+		ContextMenuOpen();
 		DrawContextMenu();
 	}
 
-	// Handle node dragging
-	if (ImGui::IsMouseDragging(ImGuiMouseButton_Left))
+	NodeClicked(io);
+	HandleNodeDragging(io.MousePos);
+	RenderNodes();
+}
+
+void EventsUI::ContextMenuOpen()
+{
+	if (ImGui::IsMouseClicked(ImGuiMouseButton_Right))
 	{
+		ImVec2 mousePos = ImGui::GetMousePos();
+		ImVec2 offset(10.0f, 10.0f); // Offset from the mouse position
+		contextMenuPos = mousePos; // Store the position for node creation
+		ImGui::SetNextWindowPos(ImVec2(mousePos.x + offset.x, mousePos.y + offset.y));
+		ImGui::OpenPopup("Context Menu");
+	}
+}
+
+void EventsUI::ViewportPanning(ImGuiIO& io)
+{
+	if (ImGui::IsMouseClicked(ImGuiMouseButton_Middle))
+	{
+		isPanning = true;
+		lastMousePos = io.MousePos;
+	}
+	if (ImGui::IsMouseReleased(ImGuiMouseButton_Middle))
+	{
+		isPanning = false;
+	}
+
+	if (isPanning)
+	{
+		ImVec2 delta = ImVec2(io.MousePos.x - lastMousePos.x, io.MousePos.y - lastMousePos.y);
+		viewportOffset.x += delta.x;
+		viewportOffset.y += delta.y;
+		lastMousePos = io.MousePos;
+	}
+}
+
+void EventsUI::NodeClicked(ImGuiIO& io)
+{
+	// Handle node dragging and selection on mouse down
+	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
+	{
+		bool nodeClicked = false;
+
 		for (Node* node : Nodes)
 		{
-			if (node->IsDragging())
+			ImVec2 nodePos = node->GetPosition();
+			ImVec2 nodeSize = node->GetSize();
+
+			// Apply zoom and viewport offset to the node's position and size
+			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
+
+			// Check if the mouse is over the node
+			if (io.MousePos.x >= scaledNodePos.x && io.MousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
+				io.MousePos.y >= scaledNodePos.y && io.MousePos.y <= scaledNodePos.y + scaledNodeSize.y)
 			{
-				// Calculate the mouse position in world space
-				ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
-
-				// Calculate the delta movement in world space
-				ImVec2 delta = ImVec2(mousePosInWorld.x - node->GetDragStartPos().x, mousePosInWorld.y - node->GetDragStartPos().y);
-
-				// Update the node's position
-				ImVec2 newPosition = ImVec2(node->GetPosition().x + delta.x, node->GetPosition().y + delta.y);
-				node->SetPosition(newPosition);
-
-				// Update the drag start position for the next frame
-				node->SetDragStartPos(mousePosInWorld);
-
-				// Debug output
-				std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
-
-				break; // Only handle one node per drag operation
-			}
-		}
-	}
-
-	// Update dragging state on mouse release
-	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left)) 
-	{
-		for (Node* node : Nodes) {
-			if (node->IsMouseHovering(io.MousePos, zoomLevel, viewportOffset))
+				if (ActiveNode != nullptr)
 				{
-				if (!node->IsDragging()) {
-					// If a node is being hovered and is not already being dragged, start dragging
-					node->SetIsDragging(true);
-					ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
-					node->SetDragStartPos(mousePosInWorld);
+					ActiveNode->SetIsActive(false);
 				}
+				ActiveNode = node;
+				node->SetIsActive(true);
+				node->SetIsDragging(true);
+				ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
+				node->SetDragStartPos(mousePosInWorld);
+				nodeClicked = true;
+				break;
 			}
-			else if (node->IsDragging())
+		}
+
+		// Deselect if clicked on empty space within the viewport
+		if (!nodeClicked)
+		{
+			if (ActiveNode != nullptr)
 			{
-				// If the node was dragging and is no longer hovered, stop dragging
-				node->SetIsDragging(false);
+				ActiveNode->SetIsActive(false);
+				ActiveNode = nullptr;
 			}
 		}
 	}
+}
 
+void EventsUI::RenderNodes()
+{
 	// Draw nodes after handling interaction and context menu
-
 	if (!Nodes.empty())
 	{
 		for (Node* node : Nodes)
@@ -177,16 +190,12 @@ void EventsUI::RenderViewport()
 			ImVec2 nodeSize = node->GetSize();
 
 			// Apply zoom and viewport offset
-			//ImVec2 scaledPosition = ImVec2(canvasPos.x + (nodePosition.x * zoomLevel) + viewportOffset.x, canvasPos.y + (nodePosition.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledPosition = ImVec2((nodePosition.x * zoomLevel) + viewportOffset.x, (nodePosition.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
 			// Draw the node with adjusted position and size
 			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
 		}
-
-		// Pass canvas position to HandleNodeClicks
-		HandleNodeClicks(io.MousePos, canvasPos);
 	}
 }
 
@@ -194,8 +203,9 @@ void EventsUI::DeleteActiveNode()
 {
 	if (ActiveNode != nullptr)
 	{
+		EventNode* ActiveEventNode = dynamic_cast<EventNode*>(ActiveNode);
 		// Get the associated event before deleting the node
-		Event* associatedEvent = ActiveNode->GetEvent();
+		Event* associatedEvent = ActiveEventNode->GetEvent();
 
 		if (associatedEvent != nullptr)
 		{
@@ -231,51 +241,37 @@ void EventsUI::DeleteActiveNode()
 	}
 }
 
-void EventsUI::HandleNodeClicks(ImVec2 mousePos, ImVec2 canvasPos)
+void EventsUI::HandleNodeDragging(ImVec2 mousePos)
 {
-	// Get the current position and size of the viewport
-	ImVec2 viewportMin = ImGui::GetCursorScreenPos();
-	ImVec2 viewportSize = ImGui::GetContentRegionAvail();
-	ImVec2 viewportMax = ImVec2(viewportMin.x + viewportSize.x, viewportMin.y + viewportSize.y);
-
-	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-		bool nodeClicked = false;
-
-		for (EventNode* node : Nodes) {
-			ImVec2 nodePos = node->GetPosition();
-			ImVec2 nodeSize = node->GetSize();
-
-			// Apply zoom and viewport offset to the node's position and size
-			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
-			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
-
-			// Check if the mouse is over the node
-			if (mousePos.x >= scaledNodePos.x && mousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
-				mousePos.y >= scaledNodePos.y && mousePos.y <= scaledNodePos.y + scaledNodeSize.y) {
-				if (ActiveNode != nullptr)
-				{
-					ActiveNode->SetIsActive(false);
-				}
-				ActiveNode = node;
-				node->SetIsActive(true);
-				nodeClicked = true;
-			}
-		}
-
-		// Deselect only if clicked within the viewport
-		if (!nodeClicked && mousePos.x >= viewportMin.x && mousePos.x <= viewportMax.x &&
-			mousePos.y >= viewportMin.y && mousePos.y <= viewportMax.y)
+	// Handle node dragging
+	if (ImGui::IsMouseDragging(ImGuiMouseButton_Left))
+	{
+		if (ActiveNode && ActiveNode->IsDragging())
 		{
-			if (ActiveNode != nullptr)
-			{
-				ActiveNode->SetIsActive(false);
-				ActiveNode = nullptr;
+			// Calculate the mouse position in world space
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - viewportOffset.x) / zoomLevel, (mousePos.y - viewportOffset.y) / zoomLevel);
 
-				if (ActiveEvent != nullptr)
-				{
-					ActiveEvent = nullptr;
-				}
-			}
+			// Calculate the delta movement in world space
+			ImVec2 delta = ImVec2(mousePosInWorld.x - ActiveNode->GetDragStartPos().x, mousePosInWorld.y - ActiveNode->GetDragStartPos().y);
+
+			// Update the node's position
+			ImVec2 newPosition = ImVec2(ActiveNode->GetPosition().x + delta.x, ActiveNode->GetPosition().y + delta.y);
+			ActiveNode->SetPosition(newPosition);
+
+			// Update the drag start position for the next frame
+			ActiveNode->SetDragStartPos(mousePosInWorld);
+
+			// Debug output
+			std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
+		}
+	}
+
+	// Update dragging state on mouse release
+	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left))
+	{
+		if (ActiveNode)
+		{
+			ActiveNode->SetIsDragging(false);
 		}
 	}
 }
@@ -348,10 +344,12 @@ void EventsUI::SelectEvent(Event* E)
 {
 	ActiveEvent = E;
 	ActiveNode = nullptr;
-	for (EventNode* N : Nodes) {
-		if (N->GetEvent() == ActiveEvent)
+	for (Node* N : Nodes)
+	{
+		EventNode* EN = dynamic_cast<EventNode*>(N);
+		if (EN->GetEvent() == ActiveEvent)
 		{
-			ActiveNode = N;
+			ActiveNode = EN;
 			ActiveNode->SetIsActive(true);
 			break;
 		}
@@ -387,9 +385,10 @@ void EventsUI::RenderEventRename()
 		// Update the event or node name
 		if (ActiveEvent) {
 			ActiveEvent->SetEventName(temp);
-			for (EventNode* E : Nodes)
+			for (Node* E : Nodes)
 			{
-				if (ActiveEvent == E->GetEvent())
+				EventNode* EN = dynamic_cast<EventNode*>(E);
+				if (ActiveEvent == EN->GetEvent())
 				{
 					ActiveNode = E;
 				}
@@ -399,7 +398,8 @@ void EventsUI::RenderEventRename()
 			ActiveNode->SetText(temp);
 			for (Event* E : events)
 			{
-				if (ActiveNode->GetEvent() == E)
+				EventNode* ActiveEventNode = dynamic_cast<EventNode*>(ActiveNode);
+				if (ActiveEventNode->GetEvent() == E)
 				{
 					ActiveEvent = E;
 				}
@@ -411,17 +411,19 @@ void EventsUI::RenderEventRename()
 
 void EventsUI::UpdateNodeNames(const std::string& newName)
 {
-	for (EventNode* node : Nodes)
+	for (Node* node : Nodes)
 	{
-		if (node->GetEvent() == ActiveEvent) {
-			node->SetText(newName);
+		EventNode* ActiveEventNode = dynamic_cast<EventNode*>(node);
+		if (ActiveEventNode->GetEvent() == ActiveEvent) {
+			ActiveEventNode->SetText(newName);
 		}
 	}
 }
 
 void EventsUI::RenderEventText()
 {
-	std::string eventText = ActiveEvent ? ActiveEvent->GetEventText() : ActiveNode->GetEvent()->GetEventText();
+	EventNode* ActiveEventNode = dynamic_cast<EventNode*>(ActiveNode);
+	std::string eventText = ActiveEvent ? ActiveEvent->GetEventText() : ActiveEventNode->GetEvent()->GetEventText();
 	char temp0[256];
 	strcpy_s(temp0, eventText.c_str());
 	ImGui::Text("Event Text");
@@ -430,8 +432,10 @@ void EventsUI::RenderEventText()
 			ActiveEvent->SetEventText(temp0);
 		}
 		else {
-			for (Event* event : events) {
-				if (event == ActiveNode->GetEvent()) {
+			for (Event* event : events) 
+			{
+				EventNode* ENActive = dynamic_cast<EventNode*>(ActiveNode);
+				if (event == ENActive->GetEvent()) {
 					event->SetEventText(temp0);
 				}
 			}

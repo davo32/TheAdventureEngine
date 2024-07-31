@@ -24,6 +24,10 @@ public:
 	//Rendering
 	void RenderEventWindow();
 	void RenderViewport();
+	void ContextMenuOpen();
+	void ViewportPanning(ImGuiIO& io);
+	void NodeClicked(ImGuiIO& io);
+	void RenderNodes();
 	void DrawBackground(ImVec2 canvasSize, ImVec2 canvasPos);
 	void DrawContextMenu();
 	void RenderMenuBar(const char* title);
@@ -35,7 +39,7 @@ public:
 	void RenderInspector();
 
 	void DeleteActiveNode();
-	void HandleNodeClicks(ImVec2 mousePos,ImVec2 canvasPos);
+	void HandleNodeDragging(ImVec2 mousePos);
 	void ToggleSelection(Event* E, bool wasSelected);
 	void DeselectCurrent();
 	void SelectEvent(Event* E);
@@ -56,8 +60,8 @@ private:
 	float zoomLevel = 1.0f;
 
 	//Nodes
-	std::vector<EventNode*> Nodes;
-	EventNode* ActiveNode;
+	std::vector<Node*> Nodes;
+	Node* ActiveNode;
 	ImVec2 contextMenuPos;
 
 	//Search

@@ -12,11 +12,11 @@ public:
 	Event* GetEvent();
 	void DrawComponents(const ImVec2& position, const ImVec2& size, float zoomLevel) override;
 	
-	bool GetIsChapterStarter() { return isChapterStarter; }
-	void SetIsChapterStarter(bool check) { isChapterStarter = check; }
+	//bool GetIsChapterStarter() { return isChapterStarter; }
+	//void SetIsChapterStarter(bool check) { isChapterStarter = check; }
 
 private:
 	Event* StoredEvent;
-	bool isChapterStarter = false;
+	//bool isChapterStarter = false;
 	NodeType nodeType = NodeType::PLOT;
 };
