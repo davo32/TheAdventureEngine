@@ -10,6 +10,8 @@ bool Application::isShuttingdown = false;
 GLFWwindow* Application::window = nullptr;
 int Application::UICounter = 1;
 
+ImGuiContext* Application::context = nullptr;
+
 // Initialize the static FontLoader instance
 ImGuiIO* Application::io = nullptr;
 FontLoader& Application::fontLoader = FontLoader::GetInstance();
@@ -52,8 +54,8 @@ bool Application::glfwSetup()
 	stbi_image_free(icons[0].pixels);
 
 
-	ImGui::CreateContext();
-
+	context = ImGui::CreateContext();
+	UImanager.StartupByIndex(2);
 	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
 	
@@ -76,11 +78,6 @@ bool Application::glfwSetup()
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
-
-	/*if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 16.0f, "Regular2"))
-	{
-		std::cerr << "Failed to load Regular font\n";
-	}*/
 
 	return true;
 }
@@ -136,6 +133,7 @@ void Application::draw()
 			//MenuBar
 			UImanager.DrawUIByIndex(0);
 			UImanager.DrawUIByIndex(UICounter);
+			
 			ImGui::End();
 		}
 

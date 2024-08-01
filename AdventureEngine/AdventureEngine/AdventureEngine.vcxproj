@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="AdventureEngine.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BeginNode.cpp" />
+    <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Connection.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="EventButtonUI.cpp" />
@@ -155,6 +157,7 @@
     <ClCompile Include="imgui_impl_opengl3.cpp" />
     <ClCompile Include="imgui_tables.cpp" />
     <ClCompile Include="imgui_widgets.cpp" />
+    <ClCompile Include="IncludeAllNodes.h" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="MenuBar.cpp" />
@@ -169,7 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="BeginNode.h" />
     <ClInclude Include="ButtonID.h" />
+    <ClInclude Include="Chapter.h" />
     <ClInclude Include="Connection.h" />
     <ClInclude Include="CurrentWindow.h" />
     <ClInclude Include="Event.h" />

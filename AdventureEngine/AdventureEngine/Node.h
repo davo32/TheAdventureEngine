@@ -51,7 +51,7 @@ protected:
     std::vector<ImVec2> outputPoints;
 
     ImColor colorTop = ImColor(128, 0, 128);
-    ImColor colorBottom = ImColor(60, 60, 60, 0);
+    ImColor colorBottom = ImColor(0, 0, 0, 0);
     bool isActive = false;
 
 private:

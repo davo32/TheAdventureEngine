@@ -14,6 +14,7 @@ public:
 		UI.push_back(UIscenes.startScreenUI);
 		UI.push_back(UIscenes.eventsUI);
 	}
+	void StartupByIndex(int index) { UI[index]->StartupUI(); }
 	void DrawUIByIndex(int index) { UI[index]->DrawUI(); }
 	EventsUI* GetEventUI() { return UIscenes.eventsUI; }
 

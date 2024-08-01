@@ -37,6 +37,7 @@ private: //UI
 	UIManager UImanager;
 	static std::string AppTitleText;
 	static ImGuiIO* io; // Pointer to ImGuiIO
+	static ImGuiContext* context;
 	
 };
 

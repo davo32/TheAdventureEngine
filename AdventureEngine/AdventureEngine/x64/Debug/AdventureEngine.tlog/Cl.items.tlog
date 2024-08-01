@@ -1,5 +1,7 @@
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\AdventureEngine.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Application.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\BeginNode.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\BeginNode.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Chapter.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Chapter.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Connection.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Connection.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Event.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventButtonUI.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventButtonUI.obj
@@ -14,6 +16,7 @@ C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_glfw.cpp;C
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_opengl3.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_impl_opengl3.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_tables.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_tables.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_widgets.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_widgets.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\IncludeAllNodes.h;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\IncludeAllNodes.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Inventory.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Inventory.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Item.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Item.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\MenuBar.obj

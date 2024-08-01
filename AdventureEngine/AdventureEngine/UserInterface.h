@@ -6,6 +6,7 @@
 class UserInterface
 {
 public:
+	virtual void StartupUI() {}
 	virtual void DrawUI() = 0;
 	virtual ~UserInterface() = default;
 	void TextCenteredInMenuBar(std::string text)

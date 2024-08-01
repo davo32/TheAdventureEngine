@@ -80,11 +80,14 @@
     <Filter Include="BACK END\Uitilities\Font Loader">
       <UniqueIdentifier>{7c599088-8a52-4e99-8557-08bf7dfeaed2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Node\ChapterStart Node">
-      <UniqueIdentifier>{97a64587-639a-43ec-819f-1a02c6c607dc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FRONT END\UI Components\Events UI\Node\Connection">
       <UniqueIdentifier>{833eee17-3794-4c36-88b4-1eafce73f1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\Node\BeginNode">
+      <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass">
+      <UniqueIdentifier>{332a73cd-1a13-4bea-b10f-9b66b3c48c83}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +171,15 @@
     </ClCompile>
     <ClCompile Include="Connection.cpp">
       <Filter>FRONT END\UI Components\Events UI\Node\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="IncludeAllNodes.h">
+      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="BeginNode.cpp">
+      <Filter>FRONT END\UI Components\Events UI\Node\BeginNode</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter.cpp">
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +275,12 @@
     </ClInclude>
     <ClInclude Include="Connection.h">
       <Filter>FRONT END\UI Components\Events UI\Node\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="BeginNode.h">
+      <Filter>FRONT END\UI Components\Events UI\Node\BeginNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter.h">
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

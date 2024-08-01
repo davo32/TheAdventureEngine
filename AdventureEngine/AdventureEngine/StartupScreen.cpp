@@ -118,8 +118,9 @@ void StartupScreen::DrawUI()
                 }
                 ImGui::EndTabBar();
             }
+            ImGui::EndChild();
         }
-        ImGui::EndChild();
+       
 
         // Hotfixes on the right
         ImGui::SameLine();
@@ -148,8 +149,9 @@ void StartupScreen::DrawUI()
             ImGui::Text("  - Fixed display issues with recent updates.");
             ImGui::Text("  - Improved error handling and logging.");
             ImGui::Spacing();
+            ImGui::EndChild();
         }
-        ImGui::EndChild();
+        
 
         ImGui::EndChild();
     }
