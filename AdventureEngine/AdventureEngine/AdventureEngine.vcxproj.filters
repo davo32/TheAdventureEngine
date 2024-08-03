@@ -89,6 +89,12 @@
     <Filter Include="FRONT END\UI Components\Events UI\ChapterClass">
       <UniqueIdentifier>{332a73cd-1a13-4bea-b10f-9b66b3c48c83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BACK END\Uitilities\DebugConsole">
+      <UniqueIdentifier>{2cb60eb7-2cfc-471e-ac73-4adfe0fde454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BACK END\Uitilities\DebugConsole\Command List">
+      <UniqueIdentifier>{87b1e489-d383-4a67-be85-e3089a4814cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -180,6 +186,12 @@
     </ClCompile>
     <ClCompile Include="Chapter.cpp">
       <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>BACK END\Uitilities\DebugConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdList.cpp">
+      <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +293,12 @@
     </ClInclude>
     <ClInclude Include="Chapter.h">
       <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>BACK END\Uitilities\DebugConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdList.h">
+      <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

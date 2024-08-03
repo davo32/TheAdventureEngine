@@ -43,9 +43,10 @@ void EventsUI::text_centered(const std::string& text)
 
 void EventsUI::RenderEventWindow()
 {
-	ImVec2 windowSize(MonitorInfo::GetMode()->width - 20, MonitorInfo::GetMode()->height - 70);
+	ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
+	ImVec2 ParentSize = ImGui::GetContentRegionAvail();
 
-	if (ImGui::BeginChild("EditableEvents", windowSize, true/*, ImGuiWindowFlags_MenuBar*/))
+	if (ImGui::BeginChild("EditableEvents", ParentSize, true/*, ImGuiWindowFlags_MenuBar*/))
 	{
 		if (ActiveChapter)
 		{
@@ -81,7 +82,7 @@ void EventsUI::RenderOverlayUI()
 		//Render Node Panel
 	}
 	
-	drawList->AddRectFilled(ImVec2(300, 0), ImVec2(ImGui::GetWindowWidth(), 70), IM_COL32(20, 20, 20, 255));
+	//drawList->AddRectFilled(ImVec2(300, 0), ImVec2(ImGui::GetWindowWidth(), 85), IM_COL32(20, 20, 20, 255));
 	RenderGraphTabBar();
 	
 }

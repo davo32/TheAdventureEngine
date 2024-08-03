@@ -6,39 +6,63 @@ char Chapter::inputText[128] = "";
 //////CONSTRUCTOR/////////////
 Chapter::Chapter(std::string newName,ImVec2 mousePos) : ChapterName(newName)
 {
-	NodeFamily.emplace_back(new BeginNode(mousePos, ImVec2(100, 150)));
+	
 }
 /////END CONSTRUCTOR//////////
 
 /////////////RENDERING/////////////////////
 void Chapter::RenderViewport()
 {
-	screenPos = ImGui::GetCursorScreenPos(); // Top-left
-    screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
+	ImVec2 ParentSize = ImGui::GetContentRegionAvail();
+	ImVec2 ChildSize = ImVec2(ParentSize.x,ParentSize.y - 40);
+	ImVec2 ParentPos = ImGui::GetWindowPos();
+	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 40);
 
-	ImGuiIO& io = ImGui::GetIO();
-
-	RenderBackground(screenSize, screenPos);
-
-	std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
-	ImGui::Text(ZoomLevelText.c_str());
-
-	// Handle panning
-	if (ImGui::IsMouseHoveringRect(screenPos, ImVec2(screenPos.x + screenSize.x, screenPos.y + screenSize.y)))
+	ImGui::SetNextWindowPos(ChildPos);
+	ImGui::SetCursorPos(ChildPos);
+	if (ImGui::BeginChild("##Viewport", ChildSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 	{
-		ViewportPanning(io);
+		screenPos = ImGui::GetCursorScreenPos(); // Top-left
+		screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
 
-		// Handle zoom
-		float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
-		zoomLevel = std::max(0.7f, std::min(2.0f, zoomLevel + zoomDelta)); // Prevent zooming too far out/in
+		ImGuiIO& io = ImGui::GetIO();
 
-		ContextMenuOpen();
-		RenderContextMenu();
+		RenderBackground(screenSize,ChildPos);
+
+		std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
+		ImGui::Text(ZoomLevelText.c_str());
+
+		// Handle panning
+		if (ImGui::IsMouseHoveringRect(screenPos, ImVec2(screenPos.x + screenSize.x, screenPos.y + screenSize.y)))
+		{
+			ViewportPanning(io);
+
+			// Handle zoom
+			float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
+			zoomLevel = std::max(0.7f, std::min(2.0f, zoomLevel + zoomDelta)); // Prevent zooming too far out/in
+
+			ContextMenuOpen();
+			RenderContextMenu();
+		}
+
+		if (!hasRun) 
+		{
+			ImVec2 NodePos = ImVec2(ChildPos.x * 2, ChildPos.y * 2);
+			NodeFamily.emplace_back(new BeginNode(NodePos, ImVec2(100, 150)));
+			std::cout << "This will run only once." << std::endl;
+			hasRun = true;
+		}
+		
+
+
+		NodeInteraction();
+		NodeDrag(io.MousePos);
+		RenderNodes();
+		ImGui::EndChild();
 	}
-	NodeInteraction();
-	NodeDrag(io.MousePos);
-	RenderNodes();
 }
+
+
 
 std::string Chapter::GetChapterName()
 {
@@ -369,7 +393,7 @@ void Chapter::NodeInteraction()
 		ImVec2 mousePos = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 		for (Node* node : NodeFamily)
 		{
-			ImVec2 nodeSizeDivided = ImVec2(node->GetSize().x, node->GetSize().y / 6);
+			ImVec2 nodeSizeDivided = ImVec2(node->GetSize().x, (node->GetSize().y / 6) + 5.0f);
 			ImVec2 nodePos = node->GetPosition();
 			ImVec2 nodeSize = nodeSizeDivided;//node->GetSize();
 
@@ -421,8 +445,6 @@ void Chapter::NodeInteraction()
 
 	}
 }
-
-
 
 void Chapter::NodeDrag(ImVec2 mousePos)
 {

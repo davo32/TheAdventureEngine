@@ -5,17 +5,42 @@
 #include "MonitorInfo.h"
 #include "stb_image.h"
 
+// Global variables to store window size
+int Application::g_WindowWidth = 800;
+int Application::g_WindowHeight = 600;
+
 std::string Application::AppTitleText = "Adventure Engine - No Project";
 bool Application::isShuttingdown = false;
 GLFWwindow* Application::window = nullptr;
 int Application::UICounter = 1;
+
+bool Application::isWindowFocused = true;
 
 ImGuiContext* Application::context = nullptr;
 
 // Initialize the static FontLoader instance
 ImGuiIO* Application::io = nullptr;
 FontLoader& Application::fontLoader = FontLoader::GetInstance();
+Console* Application::console = new Console();
 
+// Callback to handle framebuffer size changes
+void Application::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	// Adjust the viewport when the framebuffer size changes
+	glViewport(0, 0, width, height);
+}
+
+void Application::window_focus_callback(GLFWwindow* window, int focused)
+{
+	if (focused)
+	{
+		isWindowFocused = true;
+	}
+	else
+	{
+		isWindowFocused = false;
+	}
+}
 bool Application::glfwSetup()
 {
 	if (!glfwInit())
@@ -23,13 +48,16 @@ bool Application::glfwSetup()
 		return false;
 	}
 
-	glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-	glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
-	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+	glfwWindowHint(GLFW_DECORATED, NULL); // Remove the border and titlebar..
 
 	MonitorInfo::Init();
 
-	window = glfwCreateWindow(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height, AppTitleText.c_str(), nullptr, nullptr);
+	window = glfwCreateWindow
+	(MonitorInfo::GetMode()->width,
+		MonitorInfo::GetMode()->height,
+		"Mega Ultra Chicken",
+		MonitorInfo::GetPrimaryMonitor(),
+		nullptr); //AppTitleText.c_str(), nullptr, nullptr);
 
 	if (window == nullptr)
 	{
@@ -38,6 +66,13 @@ bool Application::glfwSetup()
 	}
 
 	glfwMakeContextCurrent(window);
+
+	//glfwSetWindowFocusCallback(window, window_focus_callback);
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+
+	g_WindowWidth = MonitorInfo::GetMode()->width;
+	g_WindowHeight = MonitorInfo::GetMode()->height;
 
 	if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
 	{
@@ -91,8 +126,6 @@ bool Application::startup()
 		glfwTerminate();
 		return false;
 	}
-
-
 	return true;
 }
 
@@ -108,39 +141,67 @@ void Application::draw()
 
 	if (!glfwGetWindowAttrib(window, GLFW_ICONIFIED))
 	{
-		int winWidth, winHeight;
-		glfwGetWindowSize(window, &winWidth, &winHeight);
-		ImVec2 windowSize(MonitorInfo::GetMode()->width, MonitorInfo::GetMode()->height - 24);
-		ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2 );
-
-	
-		//Start the ImGui frame
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-
-		ImGui::SetNextWindowSize(windowSize);
-		ImGui::SetNextWindowPos(windowPos);
-		if (ImGui::Begin("Background Window",
-			(bool*)1,
-			ImGuiWindowFlags_NoTitleBar
-			| ImGuiWindowFlags_MenuBar
-			| ImGuiWindowFlags_NoScrollWithMouse
-			| ImGuiWindowFlags_NoScrollbar
-			| ImGuiWindowFlags_NoResize
-			| ImGuiWindowFlags_NoMove))
-		{
-			//MenuBar
-			UImanager.DrawUIByIndex(0);
-			UImanager.DrawUIByIndex(UICounter);
-			
-			ImGui::End();
-		}
+			int winWidth, winHeight;
+			glfwGetWindowSize(window, &winWidth, &winHeight);
+			ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
+			ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
 
 
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-		glfwSwapBuffers(window);
+			//Start the ImGui frame
+			ImGui_ImplOpenGL3_NewFrame();
+			ImGui_ImplGlfw_NewFrame();
+			ImGui::NewFrame();
+
+
+			ImGui::SetNextWindowSize(windowSize);
+			ImGui::SetNextWindowPos(windowPos);
+			if (ImGui::Begin("Background Window",
+				(bool*)1,
+				ImGuiWindowFlags_NoTitleBar
+				| ImGuiWindowFlags_MenuBar
+				| ImGuiWindowFlags_NoScrollWithMouse
+				| ImGuiWindowFlags_NoScrollbar
+				| ImGuiWindowFlags_NoResize
+				| ImGuiWindowFlags_NoMove))
+			{
+				//MenuBar
+				UImanager.DrawUIByIndex(0);
+				UImanager.DrawUIByIndex(UICounter);
+				if (ImGui::IsKeyPressed(ImGuiKey_Tab) && UICounter == 2)
+				{
+					console->ShowConsole = !console->ShowConsole;
+					std::cout << "Console: " << console->ShowConsole << '\n';
+				}
+				
+				ImGui::End();
+			}
+
+			// Always render the console on top if it is shown
+			if (console->ShowConsole)
+			{
+				ImGui::SetNextWindowSize(ImVec2(MonitorInfo::GetMode()->width, 500));
+				ImGui::SetNextWindowPos(ImVec2(0, 0));
+				ImGui::Begin("Console Window", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize);
+				console->RenderConsole();
+				ImGui::End();
+			}
+			/*if (console->ShowConsole)
+			{
+				console->RenderConsole();
+				std::cout << "Showing Console!" << '\n';
+			}*/
+
+			ImGui::Render();
+
+			int display_w, display_h;
+			glfwGetFramebufferSize(window, &display_w, &display_h);
+			glViewport(0, 0, display_w, display_h);
+			/*glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
+			glClear(GL_COLOR_BUFFER_BIT);*/
+
+			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+			glfwSwapBuffers(window);
+		
 	}
 }
 

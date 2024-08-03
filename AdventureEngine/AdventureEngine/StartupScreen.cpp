@@ -6,7 +6,7 @@
 
 void StartupScreen::DrawUI()
 {
-    ImVec2 windowSize(MonitorInfo::GetMode()->width - 30, MonitorInfo::GetMode()->height - 80);
+    ImVec2 windowSize(Application::g_WindowWidth - 30, Application::g_WindowHeight - 80);
     ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
 
     if (ImGui::BeginChild("Startup Screen", windowSize, true, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar))

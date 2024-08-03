@@ -7,16 +7,16 @@ void MenuBar::FileMenu()
 {
 	if (ImGui::BeginMenu("File"))
 	{
-		if (ImGui::MenuItem("New    CRTL + N"))
+		if (ImGui::MenuItem("New","CRTL + N",false,true))
 		{
 
 		}
-		if (ImGui::MenuItem("Open   CTRL + O"))
+		if (ImGui::MenuItem("Open","CTRL + O",false,true))
 		{
 
 		}
 		ImGui::Separator();
-		if (ImGui::MenuItem("Save   CRTL + S"))
+		if (ImGui::MenuItem("Save","CRTL + S",false,true))
 		{
 
 		}
@@ -25,7 +25,7 @@ void MenuBar::FileMenu()
 
 		}
 		ImGui::Separator();
-		if (ImGui::MenuItem("Quit   CRTL + Q"))
+		if (ImGui::MenuItem("Quit","CRTL + Q",false,true))
 		{
 			Application::SetShutdownState(true);
 			
@@ -91,7 +91,9 @@ void MenuBar::DrawUI()
 	{
 		FileMenu();
 		ProjectMenu();
-		ImGui::Spacing();
+		ImGui::Dummy(ImVec2(510, ImGui::GetContentRegionAvail().y));
+		ImGui::TextColored(ImVec4(255, 255, 255, 1.0f), "Adventure Engine");
+		ImGui::Dummy(ImVec2(520, ImGui::GetContentRegionAvail().y));
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());
 		ImGui::EndMenuBar();

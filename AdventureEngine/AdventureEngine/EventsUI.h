@@ -7,6 +7,7 @@
 #include "Chapter.h"
 #include "UserInterface.h"
 
+
 class Application;
 class EventsUI : public UserInterface
 {

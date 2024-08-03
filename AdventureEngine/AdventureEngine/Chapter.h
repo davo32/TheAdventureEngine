@@ -77,6 +77,8 @@ private:
 	Node* sourceNode = nullptr;
 	ImVec2 connectionEndPos;
 	bool isConnecting = false;
+
+	bool hasRun = false;
 	
 };
 
