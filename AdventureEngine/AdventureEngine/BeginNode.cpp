@@ -1,7 +1,7 @@
 #include "BeginNode.h"
 
 BeginNode::BeginNode(ImVec2 _Position, ImVec2 _Size)
-	: Position(_Position), Size(_Size)
+	:Node(_Position,_Size,"Begin"), Position(_Position), Size(_Size)
 {
 	colorTop = ImColor(255, 0, 0, 128);
 

@@ -1,23 +1,61 @@
 #include "Node.h"
 #include "imgui.h"
 #include "Application.h"
+#include <iostream>
 
 Node::Node(ImVec2 pos, ImVec2 size, std::string name)
 	: position(pos), size(size), text(std::move(name)) {}
 
-void Node::SetDragStartPos(ImVec2 pos) {
+void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
+{
+	// Ensure the target node and indices are valid
+	if (!targetNode || outputIndex < 0 || inputIndex < 0) {
+		return;
+	}
+
+	// Add the connection to the current node's output connections
+	Connection newConnection;
+	newConnection.targetNode = targetNode;
+	newConnection.outputIndex = outputIndex;
+	newConnection.inputIndex = inputIndex;
+
+	connections.push_back(newConnection);
+}
+
+void Node::RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewportOffset) const
+{
+	for (const Connection& conn : connections) 
+	{
+		// Get the position of the output and input points
+		ImVec2 outputPointPos = GetOutputPoint(conn.outputIndex);
+		ImVec2 inputPointPos = conn.targetNode->GetInputPoint(conn.inputIndex);
+
+		// Convert the points to screen coordinates
+		outputPointPos = ImVec2((outputPointPos.x * zoomLevel) + viewportOffset.x, (outputPointPos.y * zoomLevel) + viewportOffset.y);
+		inputPointPos = ImVec2((inputPointPos.x * zoomLevel) + viewportOffset.x, (inputPointPos.y * zoomLevel) + viewportOffset.y);
+
+		// Draw the connection line
+		drawList->AddLine(outputPointPos, inputPointPos, ImColor(255, 255, 255), 2.0f);
+	}
+}
+
+void Node::SetDragStartPos(ImVec2 pos) 
+{
 	dragStartPos = pos;
 }
 
-ImVec2 Node::GetDragStartPos() const {
+ImVec2 Node::GetDragStartPos() const 
+{
 	return dragStartPos;
 }
 
-void Node::SetInitialPosition(ImVec2 pos) {
+void Node::SetInitialPosition(ImVec2 pos) 
+{
 	initialPosition = pos;
 }
 
-ImVec2 Node::GetInitialPosition() const {
+ImVec2 Node::GetInitialPosition() const 
+{
 	return initialPosition;
 }
 
@@ -33,6 +71,9 @@ bool Node::IsMouseHovering(ImVec2 mousePos, float zoomLevel, ImVec2 viewportOffs
 }
 
 void Node::DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel) {
+	
+	ImGui::BeginGroup();
+	ImGuiIO& io = ImGui::GetIO();
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
 	const float headerRadius = 6.0f;
 	const float headerHeight = 30.0f;
@@ -42,14 +83,44 @@ void Node::DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel)
 	CreateNodeVisuals(position, size, drawList, headerRadius, headerHeight);
 	CreateInputsAndOutputs(position, padding, headerHeight, size, drawList, headerRadius, 2.0f, pinOffsetY);
 	DrawComponents(position, size, zoomLevel);
+	
+	ImGui::EndGroup();
 }
 
-void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY) {
+void Node::StartConnecting(int outputIndex, ImVec2 startPos)
+{
+	isConnecting = true;
+	connectionStartPos = startPos;
+	//dragStartPos = startPos;
+	dragStartOutputIndex = outputIndex;
+}
+
+void Node::UpdateConnection(ImVec2 endPos)
+{
+	if (isConnecting)
+	{
+		ImDrawList* drawList = ImGui::GetWindowDrawList();
+		drawList->AddLine(connectionStartPos, endPos, ImColor(255, 255, 255), 2.0f);
+	}
+}
+
+void Node::EndConnection(Node* targetNode, int inputIndex)
+{
+	if (targetNode)
+	{
+		ConnectTo(targetNode, dragStartOutputIndex, inputIndex);
+	}
+	isConnecting = false;
+}
+
+void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY)
+{
 	const float rectWidth = 15.0f;
 	const float rectHeight = 20.0f;
 	const float rectOffsetY = headerHeight / 2;
 
-	for (const ImVec2& point : inputPoints) {
+	for (const ImVec2& point : inputPoints) 
+	{
 		ImVec2 center(drawPosition.x + padding + 20.0f, drawPosition.y + rectOffsetY + 35.0f);
 		ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
 		ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
@@ -60,10 +131,11 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
 
 		pinOffsetY += rectHeight + padding;
-		drawList->AddText(ImVec2(center.x + rectWidth, center.y - 8.0), ImColor(255, 255, 255, 255), "Input");
+		drawList->AddText(ImVec2(center.x + rectWidth, center.y - 8.0f), ImColor(255, 255, 255, 255), "Input");
 	}
 
-	for (const ImVec2& point : outputPoints) {
+	for (const ImVec2& point : outputPoints) 
+	{
 		ImVec2 center(drawPosition.x + drawSize.x - padding - 20.0f, drawPosition.y + rectOffsetY + 35.0f);
 		ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
 		ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
@@ -74,7 +146,7 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
 
 		pinOffsetY += rectHeight + padding;
-		drawList->AddText(ImVec2(center.x - rectWidth - 32.0f, center.y - 8.0), ImColor(255, 255, 255, 255), "Output");
+		drawList->AddText(ImVec2(center.x - rectWidth - 32.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), "Output");
 	}
 }
 
@@ -106,6 +178,11 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 		colorTop, colorTop, colorBottom, colorBottom
 	);
 
+	/*if (ImGui::InvisibleButton("##Collapse", ImVec2(20, headerSize.y)))
+	{
+
+	}*/
+
 	// Draw text on header
 	ImVec2 textSize = ImGui::CalcTextSize(text.c_str());
 	ImVec2 textPos(
@@ -122,7 +199,34 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 		borderColor, headerRadius, ImDrawFlags_None, 6.0f);
 }
 
-void Node::DrawConnection(ImDrawList* drawList, ImVec2 start, ImVec2 end,ImColor color) 
+int Node::GetHoveredInputPointIndex(ImVec2 MousePos)
 {
-	drawList->AddLine(start, end, color);
+	for (int i = 0; i < inputPoints.size(); ++i) 
+	{
+		if (Distance(MousePos, inputPoints[i]) < 10.0f) 
+		{ 
+			return i;
+		}
+	}
+	return -1;
 }
+
+int Node::GetHoveredOutputPointIndex(ImVec2 MousePos)
+{
+	for (int i = 0; i < outputPoints.size(); i++)
+	{
+		std::cout << "Mouse: " << MousePos.x << " : " << MousePos.y << '\n';
+		std::cout << " Point: " << outputPoints[i].x << " : " << outputPoints[i].y << '\n';
+		ImVec2 OutputPos = ImVec2(outputPoints[0].x /*+ position.x*/, outputPoints[i].y /*+ position.y*/);
+		if (Distance(MousePos, OutputPos) < 100.0f)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+
+
+
+

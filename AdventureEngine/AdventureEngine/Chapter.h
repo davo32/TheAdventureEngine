@@ -7,6 +7,12 @@ public:
 	Chapter(std::string newName, ImVec2 mousePos);
 	//Rendering
 	void RenderViewport();
+	std::string GetChapterName();
+	//Utilities
+	void NodeGraphShortcuts();
+	// Coordinate transformation functions
+	ImVec2 ScreenToViewport();
+	ImVec2 ViewportToScreen(ImVec2 viewportPos);
 private:
 	//Rendering
 	void RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos);
@@ -34,8 +40,15 @@ private:
 	std::string ChapterName;
 
 	//- Viewport Vars
-	ImVec2 viewportOffset = ImVec2(0, 0);
+	ImVec2 viewportOffset = ImVec2(300, 65);
 	ImVec2 lastMousePos = ImVec2(0, 0);
+	ImVec2 screenPos;
+	ImVec2 screenSize;
+
+
+	Node* dragStartNode = nullptr;
+	int dragStartOutputIndex = -1;
+	ImVec2 dragStartPos;
 
 	// - Zoom Vars
 	float zoomLevel = 1.0f;
@@ -59,6 +72,11 @@ private:
 	std::string searchQuery;
 	static char inputText[128];
 	bool isContextualMenuOpen = false;
+
+	//Connection Vars
+	Node* sourceNode = nullptr;
+	ImVec2 connectionEndPos;
+	bool isConnecting = false;
 	
 };
 

@@ -10,8 +10,6 @@ class MenuBar : public UserInterface
 public:
 	void FileMenu();
 	void ProjectMenu();
-	void PlayerMenu();
-	void EventsMenu();
 	void Shortcuts();
 	void DrawUI() override;
 private:

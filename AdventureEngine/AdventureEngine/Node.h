@@ -10,6 +10,15 @@ public:
     Node(ImVec2 pos, ImVec2 size, std::string name);
     virtual ~Node() = default;
 
+    struct Connection
+    {
+        Node* targetNode;
+        int outputIndex; // Which ouput point is connecting
+        int inputIndex; // Which input point is receiving the connection
+    };
+
+    void RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewportOffset) const;
+
     ImVec2 GetPosition() const { return position; }
     ImVec2 GetSize() const { return size; }
     ImVec2 GetCablePosition() const { return cableStartPos; }
@@ -39,10 +48,34 @@ public:
     void DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel);
     virtual void DrawComponents(const ImVec2& position, const ImVec2& size, float zoomLevel) {}
 
+    ImVec2 GetOutputPoint(int index) const { return outputPoints[index]; }
+    ImVec2 GetInputPoint(int index) const { return inputPoints[index]; }
+
+    int GetOutputCount() { return outputPoints.size(); }
+    int GetInputCount() { return inputPoints.size(); }
+
+    void StartConnecting(int outputIndex, ImVec2 startPos);
+    void UpdateConnection(ImVec2 endPos);
+    void EndConnection(Node* targetNode, int inputIndex);
+    void ConnectTo(Node* targetNode, int outputIndex, int inputIndex);
+    int GetHoveredInputPointIndex(ImVec2 MousePos);
+    int GetHoveredOutputPointIndex(ImVec2 MousePos);
+
 protected:
     void CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY);
     void CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float headerHeight);
-    void DrawConnection(ImDrawList* drawList, ImVec2 start, ImVec2 end,ImColor color);
+
+
+    float Distance(ImVec2 p1, ImVec2 p2)
+    {
+        float dx = p1.x - p2.x;
+        float dy = p1.y - p2.y;
+        return sqrt(dx * dx + dy * dy);
+    }
+
+    int dragStartOutputIndex = -1;
+    bool isConnecting = false;
+    ImVec2 connectionStartPos;
 
     ImVec2 minSize = ImVec2(100, 25);
     ImVec2 maxSize = ImVec2(250, 150);
@@ -50,8 +83,9 @@ protected:
     std::vector<ImVec2> inputPoints;
     std::vector<ImVec2> outputPoints;
 
+
     ImColor colorTop = ImColor(128, 0, 128);
-    ImColor colorBottom = ImColor(0, 0, 0, 0);
+    ImColor colorBottom = ImColor(128, 0, 0, 128);
     bool isActive = false;
 
 private:
@@ -63,4 +97,5 @@ private:
     bool isDragging = false;
     ImVec2 dragStartPos;
     ImVec2 initialPosition;
+    std::vector<Connection> connections; //Store connections for the node
 };

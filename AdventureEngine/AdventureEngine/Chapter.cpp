@@ -13,18 +13,18 @@ Chapter::Chapter(std::string newName,ImVec2 mousePos) : ChapterName(newName)
 /////////////RENDERING/////////////////////
 void Chapter::RenderViewport()
 {
-	ImVec2 canvasPos = ImGui::GetCursorScreenPos(); // Top-left
-	ImVec2 canvasSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
+	screenPos = ImGui::GetCursorScreenPos(); // Top-left
+    screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
 
 	ImGuiIO& io = ImGui::GetIO();
 
-	RenderBackground(canvasSize, canvasPos);
+	RenderBackground(screenSize, screenPos);
 
 	std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
 	ImGui::Text(ZoomLevelText.c_str());
 
 	// Handle panning
-	if (ImGui::IsMouseHoveringRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y)))
+	if (ImGui::IsMouseHoveringRect(screenPos, ImVec2(screenPos.x + screenSize.x, screenPos.y + screenSize.y)))
 	{
 		ViewportPanning(io);
 
@@ -35,8 +35,15 @@ void Chapter::RenderViewport()
 		ContextMenuOpen();
 		RenderContextMenu();
 	}
+	NodeInteraction();
+	NodeDrag(io.MousePos);
+	RenderNodes();
 }
 
+std::string Chapter::GetChapterName()
+{
+	return ChapterName;
+}
 
 void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 {
@@ -162,6 +169,7 @@ void Chapter::RenderNodes()
 	// Draw nodes after handling interaction and context menu
 	if (!NodeFamily.empty())
 	{
+		ImDrawList* drawList = ImGui::GetWindowDrawList();
 		for (Node* node : NodeFamily)
 		{
 			ImVec2 nodePosition = node->GetPosition();
@@ -173,6 +181,7 @@ void Chapter::RenderNodes()
 
 			// Draw the node with adjusted position and size
 			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
+			node->RenderConnections(drawList, zoomLevel, viewportOffset);
 		}
 	}
 }
@@ -258,6 +267,55 @@ void Chapter::ContextMenuOpen()
 	}
 }
 
+void Chapter::NodeGraphShortcuts()
+{
+	//Delete Shortcut
+	if (ImGui::IsKeyPressed(ImGuiKey_Delete))
+	{
+		DeleteActiveNode();
+	}
+
+	//Duplicate Node
+	if (ImGui::IsKeyDown(ImGuiKey_LeftCtrl) && ImGui::IsKeyPressed(ImGuiKey_D))
+	{
+		if (ActiveNode != nullptr)
+		{
+			// Ensure that ActiveNode is of type EventNode
+			EventNode* eventNode = dynamic_cast<EventNode*>(ActiveNode);
+			if (eventNode != nullptr)
+			{
+				Event* nodeEvent = eventNode->GetEvent();
+				ImVec2 nodePos = ActiveNode->GetPosition();
+				ImVec2 nodeSize = ActiveNode->GetSize();
+				ImVec2 newNodePos = ImVec2(nodePos.x + nodeSize.x + 10, nodePos.y); // Adding an offset to avoid overlap
+
+				// Create a new node and add it to the NodeFamily
+				NodeFamily.emplace_back(new EventNode(newNodePos, nodeSize, nodeEvent));
+			}
+		}
+	}
+}
+
+ImVec2 Chapter::ScreenToViewport()
+{
+	// Normalize screen position
+	ImVec2 normalizedScreenPos = ImVec2(screenPos.x / screenSize.x, screenPos.y / screenSize.y);
+
+	// Convert to viewport coordinates
+	return ImVec2(normalizedScreenPos.x * screenSize.x, normalizedScreenPos.y * screenSize.y);
+
+}
+
+ImVec2 Chapter::ViewportToScreen(ImVec2 viewportPos)
+{
+	// Normalize viewport position
+	ImVec2 normalizedViewportPos = ImVec2(viewportPos.x / screenSize.x, viewportPos.y / screenSize.y);
+
+	// Convert to screen coordinates
+	return ImVec2(normalizedViewportPos.x * screenSize.x, normalizedViewportPos.y * screenSize.y);
+
+}
+
 void Chapter::DeleteActiveNode()
 {
 	if (ActiveNode != nullptr)
@@ -308,11 +366,12 @@ void Chapter::NodeInteraction()
 	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
 	{
 		bool nodeClicked = false;
-
+		ImVec2 mousePos = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 		for (Node* node : NodeFamily)
 		{
+			ImVec2 nodeSizeDivided = ImVec2(node->GetSize().x, node->GetSize().y / 6);
 			ImVec2 nodePos = node->GetPosition();
-			ImVec2 nodeSize = node->GetSize();
+			ImVec2 nodeSize = nodeSizeDivided;//node->GetSize();
 
 			// Apply zoom and viewport offset to the node's position and size
 			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
@@ -334,6 +393,19 @@ void Chapter::NodeInteraction()
 				nodeClicked = true;
 				break;
 			}
+			std::cout << "Output Hovered: " << node->GetHoveredOutputPointIndex(mousePos) << '\n';
+			/*int outputIndex = node->GetHoveredOutputPointIndex(mousePos);
+			if (outputIndex != -1) 
+			{
+				dragStartNode = node;
+				dragStartOutputIndex = outputIndex;
+				ImVec2 Combine = ImVec2
+				(node->GetOutputPoint(outputIndex).x + node->GetPosition().x,
+					node->GetOutputPoint(outputIndex).y + node->GetPosition().y);
+				dragStartPos = Combine;
+				node->StartConnecting(outputIndex,dragStartPos);
+				return;
+			}*/
 		}
 
 		// Deselect if clicked on empty space within the viewport
@@ -345,8 +417,12 @@ void Chapter::NodeInteraction()
 				ActiveNode = nullptr;
 			}
 		}
+
+
 	}
 }
+
+
 
 void Chapter::NodeDrag(ImVec2 mousePos)
 {
@@ -371,6 +447,20 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 			// Debug output
 			std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
 		}
+
+		if (dragStartNode) {
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - viewportOffset.x) / zoomLevel, (mousePos.y - viewportOffset.y) / zoomLevel);
+			dragStartNode->UpdateConnection(mousePosInWorld);
+
+			for (Node* node : NodeFamily) {
+				if (node != dragStartNode) {
+					int inputIndex = node->GetHoveredInputPointIndex(mousePosInWorld);
+					if (inputIndex != -1) {
+						node->UpdateConnection(mousePosInWorld);
+					}
+				}
+			}
+		}
 	}
 
 	// Update dragging state on mouse release
@@ -379,6 +469,23 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 		if (ActiveNode)
 		{
 			ActiveNode->SetIsDragging(false);
+		}
+
+		if (dragStartNode) {
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - viewportOffset.x) / zoomLevel, (mousePos.y - viewportOffset.y) / zoomLevel);
+
+			for (Node* node : NodeFamily) {
+				if (node != dragStartNode) {
+					int inputIndex = node->GetHoveredInputPointIndex(mousePosInWorld);
+					if (inputIndex != -1) {
+						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
+						break;
+					}
+				}
+			}
+
+			dragStartNode = nullptr;
+			dragStartOutputIndex = -1;
 		}
 	}
 }

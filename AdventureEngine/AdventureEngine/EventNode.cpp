@@ -8,8 +8,9 @@ EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
 	// Initialize input points close to the left side
 	inputPoints.push_back(ImVec2(-20, Size.y / 2));
 	
+	ImVec2 Combine = ImVec2(Position.x, Position.y);
 	// Initialize output points close to the right side
-	outputPoints.push_back(ImVec2(0, Size.y / 2));
+	outputPoints.push_back(ImVec2(Combine));//0, Position + Size.y / 2));
 }
 
 EventNode::~EventNode() 

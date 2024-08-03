@@ -1,57 +1,7 @@
-﻿  AdventureEngine.cpp
-  Application.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(113,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp(113,43): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  BeginNode.cpp
-  Chapter.cpp
-  Connection.cpp
-  Event.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(46,33): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(50,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(58,29): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Event.cpp(62,26): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  EventButtonUI.cpp
-  EventNode.cpp
-  EventNode.h
-  EventsUI.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(55,87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(55,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_glfw.cpp
-  imgui_impl_opengl3.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  IncludeAllNodes.h
-  Inventory.cpp
-  Item.cpp
-  Generating Code...
-  Compiling...
-  MenuBar.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(99,58): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(99,53): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp(99,48): warning C4305: 'argument': truncation from 'double' to 'float'
-  MonitorInfo.cpp
-  Node.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.cpp(63,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.cpp(77,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Player.cpp
-  PlayerStats.h
-  StartupScreen.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(9,90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(9,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(33,37): warning C4312: 'type cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(34,61): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(34,43): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(22,24): warning C4101: 'height': unreferenced local variable
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(22,17): warning C4101: 'width': unreferenced local variable
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp(22,32): warning C4101: 'channels': unreferenced local variable
-  Texture.cpp
-  UIManager.cpp
-  Widget.cpp
-  Generating Code...
-  gl_core_4_4.c
+﻿  Node.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(54,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(55,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(73,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 x64\Debug\EventNode.obj : warning LNK4042: object specified more than once; extras ignored
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.exe

@@ -20,21 +20,27 @@ public:
 
 	void text_centered(const std::string& text);
 
-	std::string EventWindowTitle = "Event Graph";
 
 	//Rendering
 	void RenderEventWindow();
 	void RenderMenuBar(const char* title);
 	void RenderOverlayUI();
-	
-	
-	
-	//void RenderComponents();
-	//void RenderNodeInspector();
-	//void RenderInspector();
+	void RenderGraphTabBar();
+	void RenderInspectorTabBar();
+	void RenderChapterList();
+
+	//Utilities
+	bool contains(std::vector<Chapter*> C, Chapter* value);
+	void SetActiveChapter(Chapter* chapter);
 
 private:
 	std::vector<Chapter*> Chapters;
+	std::vector<Chapter*> OpenChapters;
 	Chapter* ActiveChapter;
+	int selectedItem = -1;
+	int activeTabIndex = -1; // Index of the currently active tab
+
+	enum InspectorType {CHAPTER,NODE};
+	InspectorType Itype = InspectorType::CHAPTER;
 
 };

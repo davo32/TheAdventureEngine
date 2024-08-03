@@ -46,26 +46,15 @@ void MenuBar::ProjectMenu()
 		{
 
 		}
+		ImGui::Separator();
+		if (ImGui::MenuItem("Settings"))
+		{
+
+		}
 		ImGui::EndMenu();
 	}
 }
 
-void MenuBar::PlayerMenu()
-{
-	if (ImGui::Button("Player"))
-	{
-		buttonID = ButtonID::PLAYER;
-	}
-}
-
-
-void MenuBar::EventsMenu()
-{
-	if (ImGui::Button("Events"))
-	{
-		buttonID = ButtonID::EVENTS;
-	}
-}
 
 
 void MenuBar::Shortcuts()
@@ -102,9 +91,6 @@ void MenuBar::DrawUI()
 	{
 		FileMenu();
 		ProjectMenu();
-		ImGui::Spacing();
-		EventsMenu();
-		PlayerMenu();
 		ImGui::Spacing();
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());
