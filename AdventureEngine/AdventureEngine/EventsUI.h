@@ -6,6 +6,7 @@
 #include "IncludeAllNodes.h"
 #include "Chapter.h"
 #include "UserInterface.h"
+#include "InspectorType.h"
 
 
 class Application;
@@ -34,6 +35,7 @@ public:
 	bool contains(std::vector<Chapter*> C, Chapter* value);
 	void SetActiveChapter(Chapter* chapter);
 
+	static InspectorType Itype;
 private:
 	std::vector<Chapter*> Chapters;
 	std::vector<Chapter*> OpenChapters;
@@ -41,7 +43,5 @@ private:
 	int selectedItem = -1;
 	int activeTabIndex = -1; // Index of the currently active tab
 
-	enum InspectorType {CHAPTER,NODE};
-	InspectorType Itype = InspectorType::CHAPTER;
 
 };

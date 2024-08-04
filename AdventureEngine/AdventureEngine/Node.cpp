@@ -192,20 +192,30 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 	Application::fontLoader.SetFont("Bold");
 	Application::fontLoader.DrawText(drawList, textPos, ImColor(255, 255, 255), text);
 
-			//// Draw the red rectangle at the bottom
-			//ImVec2 redRectPos(drawPosition.x, drawPosition.y + drawSize.y - 30); // 30 is the height of the red rect
-			//ImVec2 redRectSize(drawSize.x, 30);
-			//ImColor redRectColor(255, 0, 0, 128);
-			//drawList->AddRectFilled(redRectPos, ImVec2(redRectPos.x + redRectSize.x, redRectPos.y + redRectSize.y), redRectColor);
+	if (isEmpty)
+	{
+		if (sizeAdjusted == false)
+		{
+			SetSize(ImVec2(size.x, size.y * 1.2f));
+			sizeAdjusted = true;
+		}
 
-			//// Draw text on the red rectangle
-			//std::string bottomText = "Bottom Text";
-			//ImVec2 bottomTextSize = ImGui::CalcTextSize(bottomText.c_str());
-			//ImVec2 bottomTextPos(
-			//	redRectPos.x + (redRectSize.x - bottomTextSize.x) * 0.5f,
-			//	redRectPos.y + (redRectSize.y - bottomTextSize.y) * 0.5f
-			//);
-			//Application::fontLoader.DrawText(drawList, bottomTextPos, ImColor(255, 255, 255), bottomText);
+		// Draw the red rectangle at the bottom
+		ImVec2 redRectPos(drawPosition.x, drawPosition.y + drawSize.y - 30); // 30 is the height of the red rect
+		ImVec2 redRectSize(drawSize.x, 30);
+		ImColor redRectColorUpper(0, 0, 0, 0);
+		ImColor redRectColorLower(255, 0, 0, 128);
+		drawList->AddRectFilledMultiColor(redRectPos, ImVec2(redRectPos.x + redRectSize.x, redRectPos.y + redRectSize.y), redRectColorUpper, redRectColorUpper, redRectColorLower, redRectColorLower);
+
+		// Draw text on the red rectangle
+		std::string bottomText = "Empty Event!";
+		ImVec2 bottomTextSize = ImGui::CalcTextSize(bottomText.c_str());
+		ImVec2 bottomTextPos(
+			redRectPos.x + (redRectSize.x - bottomTextSize.x) * 0.5f,
+			redRectPos.y + (redRectSize.y - bottomTextSize.y) * 0.5f
+		);
+		Application::fontLoader.DrawText(drawList, bottomTextPos, ImColor(255, 255, 255), bottomText);
+	}
 		
 
 	// Draw node border

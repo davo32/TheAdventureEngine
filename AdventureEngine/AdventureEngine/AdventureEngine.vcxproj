@@ -193,6 +193,7 @@
     <ClInclude Include="imgui_impl_opengl3.h" />
     <ClInclude Include="imgui_impl_opengl3_loader.h" />
     <ClInclude Include="imgui_internal.h" />
+    <ClInclude Include="InspectorType.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="MenuBar.h" />

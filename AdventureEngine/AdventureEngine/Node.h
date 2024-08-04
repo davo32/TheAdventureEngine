@@ -51,6 +51,14 @@ public:
     ImVec2 GetOutputPoint(int index) const { return outputPoints[index]; }
     ImVec2 GetInputPoint(int index) const { return inputPoints[index]; }
 
+    void RemoveConnection(int index) 
+    {
+        if (index < connections.size()) {
+            connections.erase(connections.begin() + index);
+        }
+    }
+
+    int GetConnectionCount() { return connections.size(); }
     int GetOutputCount() { return outputPoints.size(); }
     int GetInputCount() { return inputPoints.size(); }
 
@@ -85,6 +93,9 @@ protected:
     ImColor colorTop = ImColor(128, 0, 128);
     ImColor colorBottom = ImColor(128, 0, 0, 128);
     bool isActive = false;
+
+    bool isEmpty = false;
+    bool sizeAdjusted = false;
 
 private:
     ImVec2 position;

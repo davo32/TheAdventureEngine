@@ -1,5 +1,6 @@
 #include "Chapter.h"
 #include <iostream>
+#include "EventsUI.h"
 
 char Chapter::inputText[128] = "";
 
@@ -128,6 +129,15 @@ void Chapter::RenderContextMenu()
 			}
 			ImGui::Separator();
 			if (ImGui::MenuItem("Create Plot Point"))
+			{
+				//Create Event
+				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
+				Event* newEvent = new Event("Un-Named Plot Point", "Test");
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 70), newEvent);
+				NodeFamily.push_back(CreatedNode);
+				events.push_back(newEvent);
+			}
+			if (ImGui::MenuItem("Create Empty Plot Point"))
 			{
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
@@ -417,6 +427,7 @@ void Chapter::NodeInteraction()
 				ImVec2 mousePosInWorld = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 				node->SetDragStartPos(mousePosInWorld);
 				nodeClicked = true;
+				EventsUI::Itype = InspectorType::NODE;
 				break;
 			}
 
@@ -516,6 +527,14 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 					if (inputIndex != -1)
 					{
 						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
+						for (Node* Dragnode : NodeFamily)
+						{
+							if (Dragnode == dragStartNode && Dragnode->GetConnectionCount() > 1)
+							{
+								Dragnode->RemoveConnection(0);
+								break;
+							}
+						}
 						break;
 					}
 				}

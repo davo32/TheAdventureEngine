@@ -3,6 +3,8 @@
 #include "MonitorInfo.h"
 #include <iostream>
 
+InspectorType EventsUI::Itype = InspectorType::CHAPTER;
+
 void EventsUI::StartupUI()
 {
 	if (Chapters.empty())

@@ -300,6 +300,9 @@
     <ClInclude Include="CmdList.h">
       <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
     </ClInclude>
+    <ClInclude Include="InspectorType.h">
+      <Filter>FRONT END\UI Components\Events UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">

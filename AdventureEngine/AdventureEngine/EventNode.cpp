@@ -21,6 +21,15 @@ void EventNode::DrawComponents(const ImVec2& position, const ImVec2& size, float
 {
 	// Example implementation; replace with your actual drawing code
 	ImGui::Text("EventNode Components");
+
+	if (GetEvent()->GetEventText().empty() || GetEvent()->GetEventText().empty())
+	{
+		isEmpty = true;
+	}
+	else
+	{
+		isEmpty = false;
+	}
 }
 
 Event* EventNode::GetEvent() 
