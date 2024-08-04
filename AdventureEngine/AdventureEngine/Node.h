@@ -58,19 +58,17 @@ public:
     void UpdateConnection(ImVec2 endPos);
     void EndConnection(Node* targetNode, int inputIndex);
     void ConnectTo(Node* targetNode, int outputIndex, int inputIndex);
-    int GetHoveredInputPointIndex(ImVec2 MousePos);
-    int GetHoveredOutputPointIndex(ImVec2 MousePos);
+    int GetHoveredInputPointIndex(ImVec2 mousePos);
+    int GetHoveredOutputPointIndex(ImVec2 mousePos);
 
 protected:
     void CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY);
     void CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float headerHeight);
 
 
-    float Distance(ImVec2 p1, ImVec2 p2)
+    float Distance(ImVec2 a, ImVec2 b)
     {
-        float dx = p1.x - p2.x;
-        float dy = p1.y - p2.y;
-        return sqrt(dx * dx + dy * dy);
+        return sqrt((a.x - b.x) * (a.y - b.y));
     }
 
     int dragStartOutputIndex = -1;

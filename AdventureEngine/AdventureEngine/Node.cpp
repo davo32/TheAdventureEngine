@@ -9,9 +9,9 @@ Node::Node(ImVec2 pos, ImVec2 size, std::string name)
 void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
 {
 	// Ensure the target node and indices are valid
-	if (!targetNode || outputIndex < 0 || inputIndex < 0) {
+	/*if (!targetNode || outputIndex < 0 || inputIndex < 0) {
 		return;
-	}
+	}*/
 
 	// Add the connection to the current node's output connections
 	Connection newConnection;
@@ -20,6 +20,7 @@ void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
 	newConnection.inputIndex = inputIndex;
 
 	connections.push_back(newConnection);
+	std::cout << "Connection Made!" << '\n';
 }
 
 void Node::RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewportOffset) const
@@ -30,9 +31,9 @@ void Node::RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewp
 		ImVec2 outputPointPos = GetOutputPoint(conn.outputIndex);
 		ImVec2 inputPointPos = conn.targetNode->GetInputPoint(conn.inputIndex);
 
-		// Convert the points to screen coordinates
-		outputPointPos = ImVec2((outputPointPos.x * zoomLevel) + viewportOffset.x, (outputPointPos.y * zoomLevel) + viewportOffset.y);
-		inputPointPos = ImVec2((inputPointPos.x * zoomLevel) + viewportOffset.x, (inputPointPos.y * zoomLevel) + viewportOffset.y);
+		//// Convert the points to screen coordinates
+		//outputPointPos = ImVec2((outputPointPos.x * zoomLevel) + viewportOffset.x, (outputPointPos.y * zoomLevel) + viewportOffset.y);
+		//inputPointPos = ImVec2((inputPointPos.x * zoomLevel) + viewportOffset.x, (inputPointPos.y * zoomLevel) + viewportOffset.y);
 
 		// Draw the connection line
 		drawList->AddLine(outputPointPos, inputPointPos, ImColor(255, 255, 255), 2.0f);
@@ -79,7 +80,7 @@ void Node::DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel)
 	const float headerHeight = 30.0f;
 	const float padding = 5.0f;
 	float pinOffsetY = 0.0f;
-
+	
 	CreateNodeVisuals(position, size, drawList, headerRadius, headerHeight);
 	CreateInputsAndOutputs(position, padding, headerHeight, size, drawList, headerRadius, 2.0f, pinOffsetY);
 	DrawComponents(position, size, zoomLevel);
@@ -115,38 +116,41 @@ void Node::EndConnection(Node* targetNode, int inputIndex)
 
 void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY)
 {
-	const float rectWidth = 15.0f;
-	const float rectHeight = 20.0f;
+	const float circleRadius = 8.0f; // Radius of the circle
 	const float rectOffsetY = headerHeight / 2;
+	ImGuiIO& io = ImGui::GetIO();
 
-	for (const ImVec2& point : inputPoints) 
+	for (int i = 0; i < inputPoints.size(); i++)
 	{
 		ImVec2 center(drawPosition.x + padding + 20.0f, drawPosition.y + rectOffsetY + 35.0f);
-		ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
-		ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
+		inputPoints[i] = center;
 
-		drawList->AddRect(rectMin, rectMax, ImColor(255, 255, 255), headerRadius);
-		ImVec2 innerRectMin(rectMin.x + borderThickness, rectMin.y + borderThickness);
-		ImVec2 innerRectMax(rectMax.x - borderThickness, rectMax.y - borderThickness);
-		drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
+		bool isHovered = GetHoveredInputPointIndex(io.MousePos) == i;
+		// Draw outer circle
+		drawList->AddCircle(center, circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 
-		pinOffsetY += rectHeight + padding;
-		drawList->AddText(ImVec2(center.x + rectWidth, center.y - 8.0f), ImColor(255, 255, 255, 255), "Input");
+		// Draw inner circle
+		drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
+
+		pinOffsetY += circleRadius * 2.0f + padding;
+		drawList->AddText(ImVec2(center.x + circleRadius + 5.0f, center.y - 8.0f), ImColor(255, 255, 255), "Input");
 	}
-
-	for (const ImVec2& point : outputPoints) 
+	
+	for (int i = 0; i < outputPoints.size(); i++)
 	{
 		ImVec2 center(drawPosition.x + drawSize.x - padding - 20.0f, drawPosition.y + rectOffsetY + 35.0f);
-		ImVec2 rectMin(center.x - rectWidth / 2, center.y - rectHeight / 2);
-		ImVec2 rectMax(center.x + rectWidth / 2, center.y + rectHeight / 2);
+		outputPoints[i] = center;
+		// Check if the mouse is hovering over this output point
+		bool isHovered = GetHoveredOutputPointIndex(io.MousePos) == i;
+		
+		// Draw outer circle
+		drawList->AddCircle(outputPoints[i], circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
+		
+		// Draw inner circle
+		drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
 
-		drawList->AddRect(rectMin, rectMax, ImColor(255, 255, 255), headerRadius);
-		ImVec2 innerRectMin(rectMin.x + borderThickness, rectMin.y + borderThickness);
-		ImVec2 innerRectMax(rectMax.x - borderThickness, rectMax.y - borderThickness);
-		drawList->AddRectFilled(innerRectMin, innerRectMax, ImColor(0, 0, 0, 128), headerRadius);
-
-		pinOffsetY += rectHeight + padding;
-		drawList->AddText(ImVec2(center.x - rectWidth - 32.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), "Output");
+		pinOffsetY += circleRadius * 2.0f + padding;
+		drawList->AddText(ImVec2(center.x - circleRadius - 45.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), "Output");
 	}
 }
 
@@ -178,10 +182,6 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 		colorTop, colorTop, colorBottom, colorBottom
 	);
 
-	/*if (ImGui::InvisibleButton("##Collapse", ImVec2(20, headerSize.y)))
-	{
-
-	}*/
 
 	// Draw text on header
 	ImVec2 textSize = ImGui::CalcTextSize(text.c_str());
@@ -192,6 +192,22 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 	Application::fontLoader.SetFont("Bold");
 	Application::fontLoader.DrawText(drawList, textPos, ImColor(255, 255, 255), text);
 
+			//// Draw the red rectangle at the bottom
+			//ImVec2 redRectPos(drawPosition.x, drawPosition.y + drawSize.y - 30); // 30 is the height of the red rect
+			//ImVec2 redRectSize(drawSize.x, 30);
+			//ImColor redRectColor(255, 0, 0, 128);
+			//drawList->AddRectFilled(redRectPos, ImVec2(redRectPos.x + redRectSize.x, redRectPos.y + redRectSize.y), redRectColor);
+
+			//// Draw text on the red rectangle
+			//std::string bottomText = "Bottom Text";
+			//ImVec2 bottomTextSize = ImGui::CalcTextSize(bottomText.c_str());
+			//ImVec2 bottomTextPos(
+			//	redRectPos.x + (redRectSize.x - bottomTextSize.x) * 0.5f,
+			//	redRectPos.y + (redRectSize.y - bottomTextSize.y) * 0.5f
+			//);
+			//Application::fontLoader.DrawText(drawList, bottomTextPos, ImColor(255, 255, 255), bottomText);
+		
+
 	// Draw node border
 	ImColor borderColor = isActive ? ImColor(255, 255, 0) : ImColor(100, 100, 100); // Yellow if active
 	drawList->AddRect(drawPosition,
@@ -201,9 +217,10 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 
 int Node::GetHoveredInputPointIndex(ImVec2 MousePos)
 {
+	float HoverRadius = 8.0f;
 	for (int i = 0; i < inputPoints.size(); ++i) 
 	{
-		if (Distance(MousePos, inputPoints[i]) < 10.0f) 
+		if (Distance(MousePos, inputPoints[i]) < HoverRadius) 
 		{ 
 			return i;
 		}
@@ -213,12 +230,10 @@ int Node::GetHoveredInputPointIndex(ImVec2 MousePos)
 
 int Node::GetHoveredOutputPointIndex(ImVec2 MousePos)
 {
+	float HoverRadius = 8.0f;
 	for (int i = 0; i < outputPoints.size(); i++)
 	{
-		std::cout << "Mouse: " << MousePos.x << " : " << MousePos.y << '\n';
-		std::cout << " Point: " << outputPoints[i].x << " : " << outputPoints[i].y << '\n';
-		ImVec2 OutputPos = ImVec2(outputPoints[0].x /*+ position.x*/, outputPoints[i].y /*+ position.y*/);
-		if (Distance(MousePos, OutputPos) < 100.0f)
+		if (Distance(MousePos, outputPoints[i]) < HoverRadius)
 		{
 			return i;
 		}

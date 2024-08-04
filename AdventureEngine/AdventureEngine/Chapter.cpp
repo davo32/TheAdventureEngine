@@ -48,16 +48,16 @@ void Chapter::RenderViewport()
 		if (!hasRun) 
 		{
 			ImVec2 NodePos = ImVec2(ChildPos.x * 2, ChildPos.y * 2);
-			NodeFamily.emplace_back(new BeginNode(NodePos, ImVec2(100, 150)));
+			NodeFamily.emplace_back(new BeginNode(NodePos, ImVec2(100, 70)));
 			std::cout << "This will run only once." << std::endl;
 			hasRun = true;
 		}
 		
 
 
+		RenderNodes();
 		NodeInteraction();
 		NodeDrag(io.MousePos);
-		RenderNodes();
 		ImGui::EndChild();
 	}
 }
@@ -72,7 +72,7 @@ std::string Chapter::GetChapterName()
 void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 {
 	float GRID_STEP = 16.0f * zoomLevel;
-	float MAJOR_GRID_STEP = GRID_STEP * 5.0f; // Major grid lines every 5 minor steps
+	float MAJOR_GRID_STEP = GRID_STEP * 8.0f; // Major grid lines every 5 minor steps
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
 	// Draw background
@@ -131,8 +131,8 @@ void Chapter::RenderContextMenu()
 			{
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
-				Event* newEvent = new Event("Un-Named Plot Point", "Test");
-				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 150), newEvent);
+				Event* newEvent = new Event("Un-Named Plot Point", "");
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 70), newEvent);
 				NodeFamily.push_back(CreatedNode);
 				events.push_back(newEvent);
 			}
@@ -401,6 +401,8 @@ void Chapter::NodeInteraction()
 			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
+			//std::cout << "Node Pos X: " << scaledNodePos.x << " Node Pos Y: " << scaledNodePos.y << '\n';
+
 			// Check if the mouse is over the node
 			if (io.MousePos.x >= scaledNodePos.x && io.MousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
 				io.MousePos.y >= scaledNodePos.y && io.MousePos.y <= scaledNodePos.y + scaledNodeSize.y)
@@ -417,19 +419,20 @@ void Chapter::NodeInteraction()
 				nodeClicked = true;
 				break;
 			}
-			std::cout << "Output Hovered: " << node->GetHoveredOutputPointIndex(mousePos) << '\n';
-			/*int outputIndex = node->GetHoveredOutputPointIndex(mousePos);
-			if (outputIndex != -1) 
+
+			if (!dragStartNode && dragStartNode == nullptr)
 			{
-				dragStartNode = node;
-				dragStartOutputIndex = outputIndex;
-				ImVec2 Combine = ImVec2
-				(node->GetOutputPoint(outputIndex).x + node->GetPosition().x,
-					node->GetOutputPoint(outputIndex).y + node->GetPosition().y);
-				dragStartPos = Combine;
-				node->StartConnecting(outputIndex,dragStartPos);
-				return;
-			}*/
+				int outputIndex = node->GetHoveredOutputPointIndex(io.MousePos);
+				if (outputIndex != -1)
+				{
+					dragStartNode = node;
+					dragStartOutputIndex = outputIndex;
+					dragStartPos = node->GetOutputPoint(outputIndex);
+					node->StartConnecting(outputIndex, dragStartPos);
+					return;
+				}
+			}
+
 		}
 
 		// Deselect if clicked on empty space within the viewport
@@ -448,6 +451,8 @@ void Chapter::NodeInteraction()
 
 void Chapter::NodeDrag(ImVec2 mousePos)
 {
+	ImGuiIO& io = ImGui::GetIO();
+
 	// Handle node dragging
 	if (ImGui::IsMouseDragging(ImGuiMouseButton_Left))
 	{
@@ -470,15 +475,21 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 			std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
 		}
 
-		if (dragStartNode) {
+		if (dragStartNode)
+		{
 			ImVec2 mousePosInWorld = ImVec2((mousePos.x - viewportOffset.x) / zoomLevel, (mousePos.y - viewportOffset.y) / zoomLevel);
-			dragStartNode->UpdateConnection(mousePosInWorld);
+			
+			dragStartNode->UpdateConnection(io.MousePos);
 
-			for (Node* node : NodeFamily) {
-				if (node != dragStartNode) {
-					int inputIndex = node->GetHoveredInputPointIndex(mousePosInWorld);
-					if (inputIndex != -1) {
-						node->UpdateConnection(mousePosInWorld);
+			for (Node* node : NodeFamily) 
+			{
+				if (node != dragStartNode)
+				{
+					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
+					if (inputIndex != -1) 
+					{
+						node->UpdateConnection(io.MousePos);
+						return;
 					}
 				}
 			}
@@ -493,13 +504,17 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 			ActiveNode->SetIsDragging(false);
 		}
 
-		if (dragStartNode) {
+		if (dragStartNode) 
+		{
 			ImVec2 mousePosInWorld = ImVec2((mousePos.x - viewportOffset.x) / zoomLevel, (mousePos.y - viewportOffset.y) / zoomLevel);
 
-			for (Node* node : NodeFamily) {
-				if (node != dragStartNode) {
-					int inputIndex = node->GetHoveredInputPointIndex(mousePosInWorld);
-					if (inputIndex != -1) {
+			for (Node* node : NodeFamily) 
+			{
+				if (node != dragStartNode)
+				{
+					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
+					if (inputIndex != -1)
+					{
 						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
 						break;
 					}

@@ -65,12 +65,6 @@
     <Filter Include="FRONT END\UI Components\Events UI\CurrentWindow">
       <UniqueIdentifier>{c715ca64-1b77-4e07-ad20-e31d5d6c4301}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Node">
-      <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Node\Event Node">
-      <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FRONT END\UI Components\Start Screen">
       <UniqueIdentifier>{ceb0d665-bfcc-40bc-ac9f-52dcb5cddb93}</UniqueIdentifier>
     </Filter>
@@ -80,12 +74,6 @@
     <Filter Include="BACK END\Uitilities\Font Loader">
       <UniqueIdentifier>{7c599088-8a52-4e99-8557-08bf7dfeaed2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Node\Connection">
-      <UniqueIdentifier>{833eee17-3794-4c36-88b4-1eafce73f1bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Node\BeginNode">
-      <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FRONT END\UI Components\Events UI\ChapterClass">
       <UniqueIdentifier>{332a73cd-1a13-4bea-b10f-9b66b3c48c83}</UniqueIdentifier>
     </Filter>
@@ -94,6 +82,18 @@
     </Filter>
     <Filter Include="BACK END\Uitilities\DebugConsole\Command List">
       <UniqueIdentifier>{87b1e489-d383-4a67-be85-e3089a4814cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node">
+      <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node">
+      <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\Connection">
+      <UniqueIdentifier>{833eee17-3794-4c36-88b4-1eafce73f1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode">
+      <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -158,13 +158,13 @@
       <Filter>FRONT END\UI Components\Events UI\Widgets\Base</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClCompile>
     <ClCompile Include="EventNode.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Node\Event Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
     </ClCompile>
     <ClCompile Include="EventNode.h">
-      <Filter>FRONT END\UI Components\Events UI\Node\Event Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
     </ClCompile>
     <ClCompile Include="StartupScreen.cpp">
       <Filter>FRONT END\UI Components\Start Screen</Filter>
@@ -176,13 +176,13 @@
       <Filter>FRONT END\Dependencies</Filter>
     </ClCompile>
     <ClCompile Include="Connection.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Node\Connection</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
     </ClCompile>
     <ClCompile Include="IncludeAllNodes.h">
-      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClCompile>
     <ClCompile Include="BeginNode.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Node\BeginNode</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
     </ClCompile>
     <ClCompile Include="Chapter.cpp">
       <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
@@ -268,7 +268,7 @@
       <Filter>FRONT END\UI Components\Events UI\CurrentWindow</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClInclude>
     <ClInclude Include="StartupScreen.h">
       <Filter>FRONT END\UI Components\Start Screen</Filter>
@@ -283,13 +283,13 @@
       <Filter>BACK END\Uitilities\Font Loader</Filter>
     </ClInclude>
     <ClInclude Include="NodeType.h">
-      <Filter>FRONT END\UI Components\Events UI\Node</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClInclude>
     <ClInclude Include="Connection.h">
-      <Filter>FRONT END\UI Components\Events UI\Node\Connection</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
     </ClInclude>
     <ClInclude Include="BeginNode.h">
-      <Filter>FRONT END\UI Components\Events UI\Node\BeginNode</Filter>
+      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
     </ClInclude>
     <ClInclude Include="Chapter.h">
       <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>

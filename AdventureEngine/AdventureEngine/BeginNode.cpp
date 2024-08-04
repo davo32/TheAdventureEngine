@@ -6,7 +6,7 @@ BeginNode::BeginNode(ImVec2 _Position, ImVec2 _Size)
 	colorTop = ImColor(255, 0, 0, 128);
 
 	// Initialize output points close to the right side
-	outputPoints.push_back(ImVec2(0, Size.y / 2));
+	outputPoints.push_back(ImVec2(Position.x + Size.x / 2,Position.y + Size.y / 2));
 }
 
 void BeginNode::DrawComponents(const ImVec2& position, const ImVec2& size, float zoomLevel)
