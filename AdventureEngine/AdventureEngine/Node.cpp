@@ -18,8 +18,10 @@ void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
 	newConnection.targetNode = targetNode;
 	newConnection.outputIndex = outputIndex;
 	newConnection.inputIndex = inputIndex;
-
+	newConnection.targetNode->LeftisConnected = true;
+	RightisConnected = true;
 	connections.push_back(newConnection);
+	
 	std::cout << "Connection Made!" << '\n';
 }
 
@@ -31,12 +33,28 @@ void Node::RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewp
 		ImVec2 outputPointPos = GetOutputPoint(conn.outputIndex);
 		ImVec2 inputPointPos = conn.targetNode->GetInputPoint(conn.inputIndex);
 
-		//// Convert the points to screen coordinates
-		//outputPointPos = ImVec2((outputPointPos.x * zoomLevel) + viewportOffset.x, (outputPointPos.y * zoomLevel) + viewportOffset.y);
-		//inputPointPos = ImVec2((inputPointPos.x * zoomLevel) + viewportOffset.x, (inputPointPos.y * zoomLevel) + viewportOffset.y);
+		// Define the vector to add
+		ImVec2 offset = ImVec2(0.0f, 0.0f);
 
-		// Draw the connection line
-		drawList->AddLine(outputPointPos, inputPointPos, ImColor(255, 255, 255), 2.0f);
+		// Calculate the result by adding x and y components separately
+		ImVec2 OutputResult = ImVec2(
+			outputPointPos.x + offset.x, // Sum of x components
+			outputPointPos.y + offset.y  // Sum of y components
+		);
+
+		// Calculate the result by adding x and y components separately
+		ImVec2 InputResult = ImVec2(
+			inputPointPos.x + offset.x, // Sum of x components
+			inputPointPos.y + offset.y  // Sum of y components
+		);
+
+		// Define control points for the Bézier curve
+		ImVec2 controlPoint1 = OutputResult; // Example control point, adjust as needed
+		ImVec2 controlPoint2 = InputResult; // Example control point, adjust as needed
+
+		// Draw the Bézier curve using AddBezierCubic
+		drawList->AddBezierCubic(outputPointPos, controlPoint1, controlPoint2, inputPointPos, ConColor, 2.0f,4.0f);
+
 	}
 }
 
@@ -129,8 +147,16 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		// Draw outer circle
 		drawList->AddCircle(center, circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 
-		// Draw inner circle
-		drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
+		if(!LeftisConnected)
+		{
+			// Draw inner circle
+			drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
+		}
+		else
+		{
+			// Draw inner circle
+			drawList->AddCircleFilled(center, circleRadius - borderThickness, ConColor, 16);
+		}
 
 		pinOffsetY += circleRadius * 2.0f + padding;
 		drawList->AddText(ImVec2(center.x + circleRadius + 5.0f, center.y - 8.0f), ImColor(255, 255, 255), "Input");
@@ -146,9 +172,15 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		// Draw outer circle
 		drawList->AddCircle(outputPoints[i], circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 		
-		// Draw inner circle
-		drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
-
+		if (!RightisConnected)
+		{
+			// Draw inner circle
+			drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
+		}
+		else
+		{
+			drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness,ConColor, 16);
+		}
 		pinOffsetY += circleRadius * 2.0f + padding;
 		drawList->AddText(ImVec2(center.x - circleRadius - 45.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), "Output");
 	}
@@ -215,6 +247,14 @@ void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize,
 			redRectPos.y + (redRectSize.y - bottomTextSize.y) * 0.5f
 		);
 		Application::fontLoader.DrawText(drawList, bottomTextPos, ImColor(255, 255, 255), bottomText);
+	}
+	else
+	{
+		if (sizeAdjusted)
+		{
+			SetSize(ImVec2(size.x, size.y / 1.2));
+			sizeAdjusted = false;
+		}
 	}
 		
 

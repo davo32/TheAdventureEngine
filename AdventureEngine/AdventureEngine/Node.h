@@ -53,9 +53,8 @@ public:
 
     void RemoveConnection(int index) 
     {
-        if (index < connections.size()) {
-            connections.erase(connections.begin() + index);
-        }
+       connections[0].targetNode->LeftisConnected = false;
+       connections.erase(connections.begin() + index);
     }
 
     int GetConnectionCount() { return connections.size(); }
@@ -92,6 +91,10 @@ protected:
 
     ImColor colorTop = ImColor(128, 0, 128);
     ImColor colorBottom = ImColor(128, 0, 0, 128);
+    ImColor ConColor = ImColor(255, 255, 255, 255);
+    bool LeftisConnected = false;
+    bool RightisConnected = false;
+
     bool isActive = false;
 
     bool isEmpty = false;

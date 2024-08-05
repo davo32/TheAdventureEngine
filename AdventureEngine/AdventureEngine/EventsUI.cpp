@@ -48,7 +48,7 @@ void EventsUI::RenderEventWindow()
 	ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
 	ImVec2 ParentSize = ImGui::GetContentRegionAvail();
 
-	if (ImGui::BeginChild("EditableEvents", ParentSize, true/*, ImGuiWindowFlags_MenuBar*/))
+	if (ImGui::BeginChild("EditableEvents", ParentSize, true))
 	{
 		if (ActiveChapter)
 		{
@@ -71,9 +71,9 @@ void EventsUI::RenderMenuBar(const char* title)
 
 void EventsUI::RenderOverlayUI()
 {
-	ImDrawList* drawList = ImGui::GetWindowDrawList();
+	//ImDrawList* drawList = ImGui::GetWindowDrawList();
 
-	drawList->AddRectFilled(ImVec2(-5, 0), ImVec2(300, ImGui::GetWindowHeight() + 30), IM_COL32(20, 20, 20, 255));
+	//drawList->AddRectFilled(ImVec2(-5, 0), ImVec2(300, ImGui::GetWindowHeight() + 30), IM_COL32(20, 20, 20, 255));
 	RenderInspectorTabBar();
 	if (Itype == InspectorType::CHAPTER)
 	{
@@ -169,26 +169,30 @@ void EventsUI::RenderInspectorTabBar()
 
 void EventsUI::RenderChapterList()
 {
-	ImVec2 ListPos = ImVec2(7, 40); // Set this to the current cursor position, which should be below the tab bar
+	ImVec2 ListPos = ImVec2(7, 70); // Set this to the current cursor position, which should be below the tab bar
 	ImGui::SetCursorPos(ListPos); // Relative to the window's position
 
-	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 70)))
+	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 120),ImGuiChildFlags_Border))
 	{
-
 		for (int i = 0; i < Chapters.size(); i++)
 		{
-			bool isSelected = (selectedItem == i);
-			if (ImGui::Selectable(Chapters[i]->GetChapterName().c_str(), isSelected))
+			ImVec4 buttonColor;
+			if (i % 2 == 0)
 			{
-				if (selectedItem == i)
-				{
-					selectedItem = -1;
-				}
-				else
-				{
-					selectedItem = i;
-				}
+				// Define the color slightly lighter than black
+				buttonColor = ImVec4(0.2f, 0.2f, 0.2f, 0.4f); // Light grey
+			}
+			else
+			{
+				buttonColor = ImVec4(0.0f, 0.0f, 0.0f, 0.0f); // Light grey
+			}
 
+			// Push custom style color for buttons
+			ImGui::PushStyleColor(ImGuiCol_Button, buttonColor);
+			ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.4f, 0.4f, 0.4f, 1.0f)); // Slightly lighter when hovered
+			ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Even lighter when active
+			if (ImGui::Button(Chapters[i]->GetChapterName().c_str(), ImVec2(ImGui::GetContentRegionAvail().x, 20.0f)))
+			{
 				if (contains(OpenChapters, Chapters[i]))
 				{
 					SetActiveChapter(Chapters[i]);
@@ -199,6 +203,8 @@ void EventsUI::RenderChapterList()
 					SetActiveChapter(Chapters[i]);
 				}
 			}
+			ImGui::PopStyleColor(3); // Restore original colors
+
 		}
 		ImGui::EndChild();
 	}

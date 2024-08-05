@@ -6,6 +6,9 @@
 #include "UISetup.h"
 #include "FontLoader.h"
 #include "Console.h"
+
+
+
 class Application
 {
 public:
@@ -33,6 +36,7 @@ private: //GLFW
 	GLFWmonitor* primaryMonitor;
 	static void window_focus_callback(GLFWwindow* window, int focused);
 	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+	
 
 	static bool isShuttingdown;
 	
@@ -44,6 +48,7 @@ private: //UI
 	static std::string AppTitleText;
 	static ImGuiIO* io; // Pointer to ImGuiIO
 	static ImGuiContext* context;
+
 	
 };
 

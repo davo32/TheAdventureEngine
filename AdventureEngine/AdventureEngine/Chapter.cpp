@@ -133,7 +133,7 @@ void Chapter::RenderContextMenu()
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
 				Event* newEvent = new Event("Un-Named Plot Point", "Test");
-				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 70), newEvent);
+				EventNode* CreatedNode = new EventNode(io.MousePos, ImVec2(200, 70), newEvent);
 				NodeFamily.push_back(CreatedNode);
 				events.push_back(newEvent);
 			}
@@ -214,8 +214,8 @@ void Chapter::RenderNodes()
 			ImVec2 scaledSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
 			// Draw the node with adjusted position and size
-			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
 			node->RenderConnections(drawList, zoomLevel, viewportOffset);
+			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
 		}
 	}
 }
@@ -526,7 +526,10 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
 					if (inputIndex != -1)
 					{
+						
+
 						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
+
 						for (Node* Dragnode : NodeFamily)
 						{
 							if (Dragnode == dragStartNode && Dragnode->GetConnectionCount() > 1)
@@ -535,7 +538,7 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 								break;
 							}
 						}
-						break;
+						
 					}
 				}
 			}

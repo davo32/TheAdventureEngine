@@ -5,6 +5,8 @@
 #include "MonitorInfo.h"
 #include "stb_image.h"
 
+
+
 // Global variables to store window size
 int Application::g_WindowWidth = 800;
 int Application::g_WindowHeight = 600;
@@ -32,14 +34,7 @@ void Application::framebuffer_size_callback(GLFWwindow* window, int width, int h
 
 void Application::window_focus_callback(GLFWwindow* window, int focused)
 {
-	if (focused)
-	{
-		isWindowFocused = true;
-	}
-	else
-	{
-		isWindowFocused = false;
-	}
+	isWindowFocused = focused;
 }
 bool Application::glfwSetup()
 {
@@ -52,10 +47,17 @@ bool Application::glfwSetup()
 
 	MonitorInfo::Init();
 
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+	glfwWindowHint(GLFW_DOUBLEBUFFER, GL_TRUE);
+
+
 	window = glfwCreateWindow
 	(MonitorInfo::GetMode()->width,
 		MonitorInfo::GetMode()->height,
-		"Mega Ultra Chicken",
+		"Adventure Engine",
 		MonitorInfo::GetPrimaryMonitor(),
 		nullptr); //AppTitleText.c_str(), nullptr, nullptr);
 
@@ -66,9 +68,9 @@ bool Application::glfwSetup()
 	}
 
 	glfwMakeContextCurrent(window);
-
-	//glfwSetWindowFocusCallback(window, window_focus_callback);
+	glfwSwapInterval(1); // Vsync
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+	//glfwSetWindowFocusCallback(window, window_focus_callback);
 
 
 	g_WindowWidth = MonitorInfo::GetMode()->width;
@@ -131,30 +133,34 @@ bool Application::startup()
 
 void Application::update()
 {
+	if (isWindowFocused)
+	{
 		glfwPollEvents();
+	}
 }
 
 void Application::draw()
 {
-	glClearColor(0.25f, 0.25f, 0.25f, 1);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
 	if (!glfwGetWindowAttrib(window, GLFW_ICONIFIED))
 	{
-			int winWidth, winHeight;
-			glfwGetWindowSize(window, &winWidth, &winHeight);
-			ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
-			ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
+		int winWidth, winHeight;
+		glfwGetWindowSize(window, &winWidth, &winHeight);
 
+		glClearColor(0.25f, 0.25f, 0.25f, 1);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 			//Start the ImGui frame
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
-
+			
+			ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
+			ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
 
 			ImGui::SetNextWindowSize(windowSize);
 			ImGui::SetNextWindowPos(windowPos);
+
+
 			if (ImGui::Begin("Background Window",
 				(bool*)1,
 				ImGuiWindowFlags_NoTitleBar
@@ -185,23 +191,19 @@ void Application::draw()
 				console->RenderConsole();
 				ImGui::End();
 			}
-			/*if (console->ShowConsole)
-			{
-				console->RenderConsole();
-				std::cout << "Showing Console!" << '\n';
-			}*/
 
 			ImGui::Render();
 
 			int display_w, display_h;
 			glfwGetFramebufferSize(window, &display_w, &display_h);
 			glViewport(0, 0, display_w, display_h);
-			/*glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
-			glClear(GL_COLOR_BUFFER_BIT);*/
+			///glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
+			
 
 			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 			glfwSwapBuffers(window);
-		
+
+			
 	}
 }
 
