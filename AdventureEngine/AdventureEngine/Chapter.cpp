@@ -133,7 +133,7 @@ void Chapter::RenderContextMenu()
 				//Create Event
 				ImVec2 nodePosition = ImVec2(contextMenuPos.x, contextMenuPos.y + 50); // Position the node below the context menu
 				Event* newEvent = new Event("Un-Named Plot Point", "Test");
-				EventNode* CreatedNode = new EventNode(io.MousePos, ImVec2(200, 70), newEvent);
+				EventNode* CreatedNode = new EventNode(nodePosition, ImVec2(200, 70), newEvent);
 				NodeFamily.push_back(CreatedNode);
 				events.push_back(newEvent);
 			}
@@ -215,7 +215,7 @@ void Chapter::RenderNodes()
 
 			// Draw the node with adjusted position and size
 			node->RenderConnections(drawList, zoomLevel, viewportOffset);
-			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
+			node->DrawNode(nodePosition/*scaledPosition*/, scaledSize, zoomLevel);
 		}
 	}
 }
@@ -403,15 +403,29 @@ void Chapter::NodeInteraction()
 		ImVec2 mousePos = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 		for (Node* node : NodeFamily)
 		{
-			ImVec2 nodeSizeDivided = ImVec2(node->GetSize().x, (node->GetSize().y / 6) + 5.0f);
+			ImVec2 nodeSizeDivided = ImVec2(node->GetSize().x, (node->GetSize().y /*/ 6*/) + 5.0f);
 			ImVec2 nodePos = node->GetPosition();
 			ImVec2 nodeSize = nodeSizeDivided;//node->GetSize();
 
 			// Apply zoom and viewport offset to the node's position and size
-			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledNodePos = nodePos;//ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
 			//std::cout << "Node Pos X: " << scaledNodePos.x << " Node Pos Y: " << scaledNodePos.y << '\n';
+
+
+			if (!dragStartNode && dragStartNode == nullptr)
+			{
+				int outputIndex = node->GetHoveredOutputPointIndex(io.MousePos);
+				if (outputIndex != -1)
+				{
+					dragStartNode = node;
+					dragStartOutputIndex = outputIndex;
+					dragStartPos = node->GetOutputPoint(outputIndex);
+					node->StartConnecting(outputIndex, dragStartPos);
+					return;
+				}
+			}
 
 			// Check if the mouse is over the node
 			if (io.MousePos.x >= scaledNodePos.x && io.MousePos.x <= scaledNodePos.x + scaledNodeSize.x &&
@@ -430,20 +444,6 @@ void Chapter::NodeInteraction()
 				EventsUI::Itype = InspectorType::NODE;
 				break;
 			}
-
-			if (!dragStartNode && dragStartNode == nullptr)
-			{
-				int outputIndex = node->GetHoveredOutputPointIndex(io.MousePos);
-				if (outputIndex != -1)
-				{
-					dragStartNode = node;
-					dragStartOutputIndex = outputIndex;
-					dragStartPos = node->GetOutputPoint(outputIndex);
-					node->StartConnecting(outputIndex, dragStartPos);
-					return;
-				}
-			}
-
 		}
 
 		// Deselect if clicked on empty space within the viewport
@@ -526,8 +526,6 @@ void Chapter::NodeDrag(ImVec2 mousePos)
 					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
 					if (inputIndex != -1)
 					{
-						
-
 						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
 
 						for (Node* Dragnode : NodeFamily)
