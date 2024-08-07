@@ -215,7 +215,7 @@ void Chapter::RenderNodes()
 
 			// Draw the node with adjusted position and size
 			node->RenderConnections(drawList, zoomLevel, viewportOffset);
-			node->DrawNode(nodePosition/*scaledPosition*/, scaledSize, zoomLevel);
+			node->DrawNode(scaledPosition, scaledSize, zoomLevel);
 		}
 	}
 }
@@ -408,7 +408,7 @@ void Chapter::NodeInteraction()
 			ImVec2 nodeSize = nodeSizeDivided;//node->GetSize();
 
 			// Apply zoom and viewport offset to the node's position and size
-			ImVec2 scaledNodePos = nodePos;//ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
+			ImVec2 scaledNodePos = ImVec2((nodePos.x * zoomLevel) + viewportOffset.x, (nodePos.y * zoomLevel) + viewportOffset.y);
 			ImVec2 scaledNodeSize = ImVec2(nodeSize.x * zoomLevel, nodeSize.y * zoomLevel);
 
 			//std::cout << "Node Pos X: " << scaledNodePos.x << " Node Pos Y: " << scaledNodePos.y << '\n';
