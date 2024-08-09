@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\AccessFileSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Node.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\MenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\AccessFileSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_common.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\nfd_common.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_win.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\nfd_win.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\MenuBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\EventsUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\EventsUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,16 +47,8 @@
       "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\EventsUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Node.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\NodeType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -37,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MonitorInfo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\MonitorInfo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\MenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\UserInterface.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -85,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|solutionrelative:AdventureEngine\\MenuBar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26D582A7-2A99-4AB5-88DD-E2F8654B8669}|AdventureEngine\\AdventureEngine.vcxproj|C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\imgui_draw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -137,8 +153,8 @@
       "VerticalTabListWidth": 121,
       "DocumentGroups": [
         {
-          "DockedWidth": 6,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 8,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -146,19 +162,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MenuBar.cpp",
-              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp",
-              "RelativeDocumentMoniker": "AdventureEngine\\MenuBar.cpp",
-              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp",
-              "RelativeToolTip": "AdventureEngine\\MenuBar.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
+              "DocumentIndex": 5,
+              "Title": "AccessFileSystem.cpp",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.cpp",
+              "RelativeDocumentMoniker": "AdventureEngine\\AccessFileSystem.cpp",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.cpp",
+              "RelativeToolTip": "AdventureEngine\\AccessFileSystem.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-02T10:07:35.654Z"
+              "WhenOpened": "2024-08-09T07:49:04.668Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 1,
+              "Title": "AccessFileSystem.h",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.h",
+              "RelativeDocumentMoniker": "AdventureEngine\\AccessFileSystem.h",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AccessFileSystem.h",
+              "RelativeToolTip": "AdventureEngine\\AccessFileSystem.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-09T07:46:35.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "AdventureEngine.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\AdventureEngine.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\AdventureEngine.cpp",
@@ -170,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "EventsUI.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\EventsUI.h",
               "RelativeDocumentMoniker": "AdventureEngine\\EventsUI.h",
@@ -183,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "imgui_draw.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\imgui_draw.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\imgui_draw.cpp",
@@ -195,19 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "MenuBar.h",
-              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h",
-              "RelativeDocumentMoniker": "AdventureEngine\\MenuBar.h",
-              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h",
-              "RelativeToolTip": "AdventureEngine\\MenuBar.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-03T19:20:43.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "CmdList.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\CmdList.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\CmdList.cpp",
@@ -219,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "CmdList.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\CmdList.h",
               "RelativeDocumentMoniker": "AdventureEngine\\CmdList.h",
@@ -231,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Console.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Console.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\Console.cpp",
@@ -243,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "MonitorInfo.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MonitorInfo.h",
               "RelativeDocumentMoniker": "AdventureEngine\\MonitorInfo.h",
@@ -255,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "MonitorInfo.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MonitorInfo.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\MonitorInfo.cpp",
@@ -267,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "EventNode.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\EventNode.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\EventNode.cpp",
@@ -279,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Node.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\Node.cpp",
@@ -287,11 +305,12 @@
               "RelativeToolTip": "AdventureEngine\\Node.cpp",
               "ViewState": "AQIAADAAAAAAAAAAAAAAADEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-27T10:04:18.31Z"
+              "WhenOpened": "2024-07-27T10:04:18.31Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "UserInterface.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\UserInterface.h",
               "RelativeDocumentMoniker": "AdventureEngine\\UserInterface.h",
@@ -303,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "UIManager.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\UIManager.h",
               "RelativeDocumentMoniker": "AdventureEngine\\UIManager.h",
@@ -315,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Chapter.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Chapter.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\Chapter.cpp",
@@ -327,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "BeginNode.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\BeginNode.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\BeginNode.cpp",
@@ -339,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "BeginNode.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\BeginNode.h",
               "RelativeDocumentMoniker": "AdventureEngine\\BeginNode.h",
@@ -351,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Connection.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Connection.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\Connection.cpp",
@@ -363,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "Connection.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Connection.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Connection.h",
@@ -375,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "StartupScreen.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\StartupScreen.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\StartupScreen.cpp",
@@ -387,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "NodeType.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\NodeType.h",
               "RelativeDocumentMoniker": "AdventureEngine\\NodeType.h",
@@ -399,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Event.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Event.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Event.h",
@@ -411,19 +430,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Application.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\Application.cpp",
               "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Application.cpp",
               "RelativeToolTip": "AdventureEngine\\Application.cpp",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAKIAAAAAAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAqwIYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-27T11:39:13.129Z"
+              "WhenOpened": "2024-07-27T11:39:13.129Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "FontLoader.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\FontLoader.h",
               "RelativeDocumentMoniker": "AdventureEngine\\FontLoader.h",
@@ -436,12 +456,64 @@
           ]
         },
         {
-          "DockedWidth": 12,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
+              "Title": "nfd_common.c",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_common.c",
+              "RelativeDocumentMoniker": "AdventureEngine\\nfd_common.c",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_common.c",
+              "RelativeToolTip": "AdventureEngine\\nfd_common.c",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAUwGsAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-08-09T10:02:57.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "nfd_win.cpp",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_win.cpp",
+              "RelativeDocumentMoniker": "AdventureEngine\\nfd_win.cpp",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\nfd_win.cpp",
+              "RelativeToolTip": "AdventureEngine\\nfd_win.cpp",
+              "ViewState": "AQIAAHkAAAAAAAAAAAASwJAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-09T10:01:00.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuBar.h",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h",
+              "RelativeDocumentMoniker": "AdventureEngine\\MenuBar.h",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.h",
+              "RelativeToolTip": "AdventureEngine\\MenuBar.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-03T19:20:43.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuBar.cpp",
+              "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp",
+              "RelativeDocumentMoniker": "AdventureEngine\\MenuBar.cpp",
+              "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\MenuBar.cpp",
+              "RelativeToolTip": "AdventureEngine\\MenuBar.cpp",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEUAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-02T10:07:35.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "InspectorType.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\InspectorType.h",
               "RelativeDocumentMoniker": "AdventureEngine\\InspectorType.h",
@@ -453,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "EventsUI.cpp",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\EventsUI.cpp",
               "RelativeDocumentMoniker": "AdventureEngine\\EventsUI.cpp",
@@ -466,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Console.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Console.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Console.h",
@@ -478,7 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "Application.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Application.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Application.h",
@@ -490,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "IncludeAllNodes.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\IncludeAllNodes.h",
               "RelativeDocumentMoniker": "AdventureEngine\\IncludeAllNodes.h",
@@ -502,19 +574,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Node.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Node.h",
               "ToolTip": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Node.h",
               "RelativeToolTip": "AdventureEngine\\Node.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAIwBYAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-27T11:33:23.409Z"
+              "WhenOpened": "2024-07-27T11:33:23.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "Chapter.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\Chapter.h",
               "RelativeDocumentMoniker": "AdventureEngine\\Chapter.h",
@@ -526,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "EventNode.h",
               "DocumentMoniker": "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AdventureEngine\\EventNode.h",
               "RelativeDocumentMoniker": "AdventureEngine\\EventNode.h",

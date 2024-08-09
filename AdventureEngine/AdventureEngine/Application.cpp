@@ -43,8 +43,10 @@ bool Application::glfwSetup()
 		return false;
 	}
 
-	glfwWindowHint(GLFW_DECORATED, NULL); // Remove the border and titlebar..
-
+	//glfwWindowHint(GLFW_DECORATED, NULL); // Remove the border and titlebar..
+	glfwWindowHint(GLFW_FLOATING, GL_TRUE);
+	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+	glfwWindowHint(GLFW_DECORATED, GLFW_TRUE);
 	MonitorInfo::Init();
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);

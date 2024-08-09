@@ -2,6 +2,7 @@
 #include "UserInterface.h"
 #include "MonitorInfo.h"
 #include "ButtonID.h"
+#include "AccessFileSystem.h"
 
 class Application;
 
@@ -14,5 +15,6 @@ public:
 	void DrawUI() override;
 private:
 	ButtonID buttonID;
+	AccessFileSystem fileSystem;
 };
 

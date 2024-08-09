@@ -13,12 +13,12 @@ void MenuBar::FileMenu()
 		}
 		if (ImGui::MenuItem("Open","CTRL + O",false,true))
 		{
-
+			fileSystem.OpenExplorer();
 		}
 		ImGui::Separator();
 		if (ImGui::MenuItem("Save","CRTL + S",false,true))
 		{
-
+			
 		}
 		if (ImGui::MenuItem("Save As"))
 		{
@@ -69,6 +69,7 @@ void MenuBar::Shortcuts()
 	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_O))
 	{
 		// Trigger Open action
+		fileSystem.OpenExplorer();
 	}
 
 	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_S))

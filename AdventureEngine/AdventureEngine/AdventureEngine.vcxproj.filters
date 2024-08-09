@@ -95,6 +95,9 @@
     <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode">
       <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BACK END\FIle System">
+      <UniqueIdentifier>{75152b53-8f23-4622-8b9d-3a4017c1445d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -192,6 +195,13 @@
     </ClCompile>
     <ClCompile Include="CmdList.cpp">
       <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
+    </ClCompile>
+    <ClCompile Include="AccessFileSystem.cpp" />
+    <ClCompile Include="nfd_win.cpp">
+      <Filter>BACK END\Uitilities</Filter>
+    </ClCompile>
+    <ClCompile Include="nfd_common.c">
+      <Filter>BACK END\Uitilities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +312,13 @@
     </ClInclude>
     <ClInclude Include="InspectorType.h">
       <Filter>FRONT END\UI Components\Events UI</Filter>
+    </ClInclude>
+    <ClInclude Include="AccessFileSystem.h" />
+    <ClInclude Include="nfd_common.h">
+      <Filter>BACK END\Uitilities</Filter>
+    </ClInclude>
+    <ClInclude Include="nfd.h">
+      <Filter>BACK END\Uitilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
