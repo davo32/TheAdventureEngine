@@ -15,14 +15,15 @@ public:
 	ImVec2 ViewportToScreen(ImVec2 viewportPos);
 private:
 	//Rendering
+	//Renders the Background of the Node Editor Viewport
 	void RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos);
-	void RenderContextMenu();
-	void RenderNodes();
-	void RenderNodeList();
-	void RenderEventText();
+	void RenderContextMenu(); //Renders the Context/Action Menu
+	void RenderNodes(); // Renders Nodes to Viewport 
+	void RenderNodeList(); //Renders the List of Nodes to its container
+	void RenderEventText(); //Renders the Header Text on the Nodes
 	//Utilities
-	void ViewportPanning(ImGuiIO& io);
-	void ContextMenuOpen();
+	void ViewportPanning(ImGuiIO& io); //Enables panning in viewport
+	void ContextMenuOpen(); //Opens and closes the Context Menu
 
 	//Node Functions
 	void DeleteActiveNode();

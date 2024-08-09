@@ -172,7 +172,7 @@ void EventsUI::RenderChapterList()
 	ImVec2 ListPos = ImVec2(7, 70); // Set this to the current cursor position, which should be below the tab bar
 	ImGui::SetCursorPos(ListPos); // Relative to the window's position
 
-	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 120),ImGuiChildFlags_Border))
+	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 320),ImGuiChildFlags_Border))
 	{
 		for (int i = 0; i < Chapters.size(); i++)
 		{

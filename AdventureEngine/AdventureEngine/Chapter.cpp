@@ -63,8 +63,6 @@ void Chapter::RenderViewport()
 	}
 }
 
-
-
 std::string Chapter::GetChapterName()
 {
 	return ChapterName;
