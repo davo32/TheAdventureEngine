@@ -15,20 +15,20 @@ Chapter::Chapter(std::string newName,ImVec2 mousePos) : ChapterName(newName)
 void Chapter::RenderViewport()
 {
 	ImVec2 ParentSize = ImGui::GetContentRegionAvail();
-	ImVec2 ChildSize = ImVec2(ParentSize.x,ParentSize.y - 40);
+	ImVec2 ChildSize = ImVec2(ParentSize.x - 600,ParentSize.y - 260);
 	ImVec2 ParentPos = ImGui::GetWindowPos();
-	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 40);
+	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 25);
 
 	ImGui::SetNextWindowPos(ChildPos);
 	ImGui::SetCursorPos(ChildPos);
-	if (ImGui::BeginChild("##Viewport", ChildSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
+	if (ImGui::BeginChild("##Viewport", ChildSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar))
 	{
 		screenPos = ImGui::GetCursorScreenPos(); // Top-left
 		screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
 
 		ImGuiIO& io = ImGui::GetIO();
 
-		RenderBackground(screenSize,ChildPos);
+		RenderBackground(ChildSize,ChildPos);
 
 		std::string ZoomLevelText = " x " + std::to_string(zoomLevel);
 		ImGui::Text(ZoomLevelText.c_str());
@@ -75,7 +75,7 @@ void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
 	// Draw background
-	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(40, 40, 40, 100));
+	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(40, 40, 40, 100),8.0f);
 
 	// Adjust thickness dynamically based on zoom level
 	float majorLineThickness = 2.0f; // Adjust as needed
@@ -106,6 +106,8 @@ void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 			drawList->AddLine(ImVec2(canvasPos.x, canvasPos.y + y), ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + y), IM_COL32(200, 200, 200, 50), minorLineThickness);
 		}
 	}
+
+	drawList->AddRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(0, 0, 0, 200),8.0f,0,8.0f);
 }
 
 void Chapter::RenderContextMenu()

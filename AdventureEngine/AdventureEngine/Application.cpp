@@ -25,12 +25,6 @@ ImGuiIO* Application::io = nullptr;
 FontLoader& Application::fontLoader = FontLoader::GetInstance();
 Console* Application::console = new Console();
 
-// Callback to handle framebuffer size changes
-void Application::framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	// Adjust the viewport when the framebuffer size changes
-	glViewport(0, 0, width, height);
-}
 
 void Application::window_focus_callback(GLFWwindow* window, int focused)
 {
@@ -40,74 +34,71 @@ bool Application::glfwSetup()
 {
 	if (!glfwInit())
 	{
+		std::cerr << "Failed to initialize GLFW\n";
 		return false;
 	}
 
-	//glfwWindowHint(GLFW_DECORATED, NULL); // Remove the border and titlebar..
-	glfwWindowHint(GLFW_FLOATING, GL_TRUE);
-	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	glfwWindowHint(GLFW_DECORATED, GLFW_TRUE);
-	MonitorInfo::Init();
+	MonitorInfo::Init();  // Initialize MonitorInfo before using it
 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	glfwWindowHint(GLFW_DOUBLEBUFFER, GL_TRUE);
-
-
-	window = glfwCreateWindow
-	(MonitorInfo::GetMode()->width,
-		MonitorInfo::GetMode()->height,
-		"Adventure Engine",
-		MonitorInfo::GetPrimaryMonitor(),
-		nullptr); //AppTitleText.c_str(), nullptr, nullptr);
-
-	if (window == nullptr)
+	const GLFWvidmode* mode = MonitorInfo::GetMode();
+	if (!mode)
 	{
+		std::cerr << "Failed to get video mode\n";
+		glfwTerminate();
+		return false;
+	}
+
+	window = glfwCreateWindow(
+		mode->width,
+		mode->height,
+		AppTitleText.c_str(),
+		nullptr, // Remove the monitor parameter to not use fullscreen mode
+		nullptr
+	);
+
+	if (!window)
+	{
+		std::cerr << "Failed to create GLFW window\n";
 		glfwTerminate();
 		return false;
 	}
 
 	glfwMakeContextCurrent(window);
 	glfwSwapInterval(1); // Vsync
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-	//glfwSetWindowFocusCallback(window, window_focus_callback);
+	/*glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);*/
+	glfwMaximizeWindow(window);
 
-
-	g_WindowWidth = MonitorInfo::GetMode()->width;
-	g_WindowHeight = MonitorInfo::GetMode()->height;
+	g_WindowWidth = mode->width;
+	g_WindowHeight = mode->height;
 
 	if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
 	{
-		std::cout << "Failed to load the openGL functions";
+		std::cerr << "Failed to load the OpenGL functions\n";
 		glfwDestroyWindow(window);
 		glfwTerminate();
 		return false;
 	}
 
-	//Generates the Project Icon
+	// Load the project icon
 	GLFWimage icons[1];
 	icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
-	glfwSetWindowIcon(window, 1, icons);
-	stbi_image_free(icons[0].pixels);
-
+	if (icons[0].pixels)
+	{
+		glfwSetWindowIcon(window, 1, icons);
+		stbi_image_free(icons[0].pixels);
+	}
 
 	context = ImGui::CreateContext();
 	UImanager.StartupByIndex(2);
-	// Setup Dear ImGui style
+
 	ImGui::StyleColorsDark();
-	
-	// Setup Platform/Renderer bindings
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 130");
 
-	// Get the ImGuiIO object and pass it to FontLoader
 	ImGuiIO& io = ImGui::GetIO();
-	Application::io = &io;  // Ensure io is correctly assigned
+	Application::io = &io;
 	Application::fontLoader.SetIO(io);
 
-	// Load fonts
 	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 12.0f, "Regular"))
 	{
 		std::cerr << "Failed to load Regular font\n";
@@ -157,7 +148,7 @@ void Application::draw()
 			ImGui::NewFrame();
 			
 			ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
-			ImVec2 windowPos((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
+			ImVec2 windowPos(0, 0);//((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
 
 			ImGui::SetNextWindowSize(windowSize);
 			ImGui::SetNextWindowPos(windowPos);

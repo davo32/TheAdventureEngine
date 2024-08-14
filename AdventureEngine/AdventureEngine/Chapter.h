@@ -13,6 +13,7 @@ public:
 	// Coordinate transformation functions
 	ImVec2 ScreenToViewport();
 	ImVec2 ViewportToScreen(ImVec2 viewportPos);
+	Node* GetActiveNode() { return ActiveNode; }
 private:
 	//Rendering
 	//Renders the Background of the Node Editor Viewport

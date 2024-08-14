@@ -7,7 +7,7 @@ std::string AccessFileSystem::OpenFileDialog()
     const char* projectFolderPath = "C:\\REPO\\TheAdventureEngine\\AdventureEngine\\AE Projects";
 
     // Open the file dialog
-    nfdresult_t result = NFD_OpenDialog("txt", projectFolderPath, &outPath);
+    nfdresult_t result = NFD_OpenDialog("Nova", projectFolderPath, &outPath);
     if (result == NFD_OKAY) {
         std::string filePath(outPath);
         free(outPath);

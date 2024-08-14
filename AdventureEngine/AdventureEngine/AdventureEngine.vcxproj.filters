@@ -1,339 +1,361 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
+    <Filter Include="App">
+      <UniqueIdentifier>{2e5fab0b-b7a0-486a-8548-7ac3e0be8dca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End">
+      <UniqueIdentifier>{8fdb8d7d-72dd-4846-8a98-7598ecc09f0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components">
+      <UniqueIdentifier>{b79670e6-3409-4d5e-8226-adfaf0889ac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI">
+      <UniqueIdentifier>{375e50c0-f61a-402c-9320-a59d3c5b24e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\Widgets">
+      <UniqueIdentifier>{7ad0f867-8b8b-4119-acf6-b8ffcba617dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\Widgets\EventButtonUI">
+      <UniqueIdentifier>{2a57ae23-7e65-4f54-bf8d-a33a148a2b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\Widgets\Base">
+      <UniqueIdentifier>{9f1dc550-99bc-4a88-9875-425295297aef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\CurrentWindow">
+      <UniqueIdentifier>{c715ca64-1b77-4e07-ad20-e31d5d6c4301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass">
+      <UniqueIdentifier>{332a73cd-1a13-4bea-b10f-9b66b3c48c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Node">
+      <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Node\Event Node">
+      <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Node\Connection">
+      <UniqueIdentifier>{833eee17-3794-4c36-88b4-1eafce73f1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Node\BeginNode">
+      <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\MenuBar">
+      <UniqueIdentifier>{4613d1df-6a34-4912-b442-627e14c31a47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\MenuBar\ButtonIdentifier">
+      <UniqueIdentifier>{0202954c-53f4-4a19-80a8-db105e95f671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\UI Manager">
+      <UniqueIdentifier>{b0689b43-5b8f-4231-8bfd-65f6facf5e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\UI Setup">
+      <UniqueIdentifier>{bf83b9e8-2b66-4784-a15a-99953c0e579c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Start Screen">
+      <UniqueIdentifier>{ceb0d665-bfcc-40bc-ac9f-52dcb5cddb93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End">
+      <UniqueIdentifier>{68242a7f-9a95-4549-91ec-be525bcda6aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Game Components">
+      <UniqueIdentifier>{029208de-0f43-4c7c-bdc2-21e2e1e8a0ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Game Components\Events">
+      <UniqueIdentifier>{a912a1cf-2a62-4367-aec1-9e03b2d497e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Game Components\Items">
+      <UniqueIdentifier>{d2d6120e-d145-4153-81dc-90876a99c5e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Game Components\Player">
+      <UniqueIdentifier>{399e04e1-a21b-4d03-8a3c-f626f07a673b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Game Components\Inventory">
+      <UniqueIdentifier>{870f16ad-ca78-4fff-a62d-8fd13a9da8a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities">
+      <UniqueIdentifier>{2599e79e-e72f-467f-9bad-360777efc635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities\Font Loader">
+      <UniqueIdentifier>{7c599088-8a52-4e99-8557-08bf7dfeaed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities\DebugConsole">
+      <UniqueIdentifier>{2cb60eb7-2cfc-471e-ac73-4adfe0fde454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities\DebugConsole\Command List">
+      <UniqueIdentifier>{87b1e489-d383-4a67-be85-e3089a4814cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Dependencies">
+      <UniqueIdentifier>{39a38aab-e120-482c-a584-e6d895905ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Dependencies\Imgui">
+      <UniqueIdentifier>{219a320f-7151-471e-a0b5-3f139f7aad34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\Application">
+      <UniqueIdentifier>{77a2c9a0-d362-4adb-93b8-2e1af60be1cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\Application\Main">
+      <UniqueIdentifier>{2182e0b3-148f-4b0e-9ce3-58b7a1b59899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\Application\Utilities">
+      <UniqueIdentifier>{45b606b3-edd5-42c0-8830-986ecbb5a5d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Dependencies\Open GL">
+      <UniqueIdentifier>{b8256e83-a7a1-4618-bea7-462aea0e5254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Dependencies\NFD File System">
+      <UniqueIdentifier>{20bd93b4-2dea-44dd-b239-b7eaa9b51bc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities\File System">
+      <UniqueIdentifier>{e40c437e-204a-4af7-99be-5e68addd83e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="FRONT END">
-      <UniqueIdentifier>{8fdb8d7d-72dd-4846-8a98-7598ecc09f0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END">
-      <UniqueIdentifier>{68242a7f-9a95-4549-91ec-be525bcda6aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\Dependencies">
-      <UniqueIdentifier>{39a38aab-e120-482c-a584-e6d895905ead}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\Dependencies\Imgui">
-      <UniqueIdentifier>{219a320f-7151-471e-a0b5-3f139f7aad34}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Game Components">
-      <UniqueIdentifier>{029208de-0f43-4c7c-bdc2-21e2e1e8a0ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Game Components\Events">
-      <UniqueIdentifier>{a912a1cf-2a62-4367-aec1-9e03b2d497e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Game Components\Items">
-      <UniqueIdentifier>{d2d6120e-d145-4153-81dc-90876a99c5e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Game Components\Player">
-      <UniqueIdentifier>{399e04e1-a21b-4d03-8a3c-f626f07a673b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Game Components\Inventory">
-      <UniqueIdentifier>{870f16ad-ca78-4fff-a62d-8fd13a9da8a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components">
-      <UniqueIdentifier>{b79670e6-3409-4d5e-8226-adfaf0889ac3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI">
-      <UniqueIdentifier>{375e50c0-f61a-402c-9320-a59d3c5b24e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\MenuBar">
-      <UniqueIdentifier>{4613d1df-6a34-4912-b442-627e14c31a47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\UI Manager">
-      <UniqueIdentifier>{b0689b43-5b8f-4231-8bfd-65f6facf5e65}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\UI Setup">
-      <UniqueIdentifier>{bf83b9e8-2b66-4784-a15a-99953c0e579c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Application">
-      <UniqueIdentifier>{bf509387-6766-49a8-a8dd-4500c8b1303a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Widgets">
-      <UniqueIdentifier>{7ad0f867-8b8b-4119-acf6-b8ffcba617dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Widgets\EventButtonUI">
-      <UniqueIdentifier>{2a57ae23-7e65-4f54-bf8d-a33a148a2b26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\Widgets\Base">
-      <UniqueIdentifier>{9f1dc550-99bc-4a88-9875-425295297aef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\MenuBar\ButtonIdentifier">
-      <UniqueIdentifier>{0202954c-53f4-4a19-80a8-db105e95f671}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\CurrentWindow">
-      <UniqueIdentifier>{c715ca64-1b77-4e07-ad20-e31d5d6c4301}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Start Screen">
-      <UniqueIdentifier>{ceb0d665-bfcc-40bc-ac9f-52dcb5cddb93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Uitilities">
-      <UniqueIdentifier>{2599e79e-e72f-467f-9bad-360777efc635}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Uitilities\Font Loader">
-      <UniqueIdentifier>{7c599088-8a52-4e99-8557-08bf7dfeaed2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass">
-      <UniqueIdentifier>{332a73cd-1a13-4bea-b10f-9b66b3c48c83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Uitilities\DebugConsole">
-      <UniqueIdentifier>{2cb60eb7-2cfc-471e-ac73-4adfe0fde454}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\Uitilities\DebugConsole\Command List">
-      <UniqueIdentifier>{87b1e489-d383-4a67-be85-e3089a4814cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node">
-      <UniqueIdentifier>{436d21d7-3126-48e9-b084-d70fb998f3da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node">
-      <UniqueIdentifier>{57b01fd6-b828-4c6a-95a6-0ea6d31de5c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\Connection">
-      <UniqueIdentifier>{833eee17-3794-4c36-88b4-1eafce73f1bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode">
-      <UniqueIdentifier>{5c05353a-9338-4017-958f-82154eb34d60}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="BACK END\FIle System">
-      <UniqueIdentifier>{75152b53-8f23-4622-8b9d-3a4017c1445d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
-      <Filter>BACK END\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="AdventureEngine.cpp">
-      <Filter>BACK END\Application</Filter>
-    </ClCompile>
     <ClCompile Include="imgui.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_demo.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_draw.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_impl_glfw.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_impl_opengl3.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_tables.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_widgets.cpp">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClCompile>
     <ClCompile Include="Event.cpp">
-      <Filter>BACK END\Game Components\Events</Filter>
+      <Filter>App\Back End\Game Components\Events</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>BACK END\Game Components\Items</Filter>
+      <Filter>App\Back End\Game Components\Items</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>BACK END\Game Components\Player</Filter>
+      <Filter>App\Back End\Game Components\Player</Filter>
     </ClCompile>
     <ClCompile Include="PlayerStats.h">
-      <Filter>BACK END\Game Components\Player</Filter>
+      <Filter>App\Back End\Game Components\Player</Filter>
     </ClCompile>
     <ClCompile Include="Inventory.cpp">
-      <Filter>BACK END\Game Components\Inventory</Filter>
+      <Filter>App\Back End\Game Components\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="EventsUI.cpp">
-      <Filter>FRONT END\UI Components\Events UI</Filter>
+      <Filter>App\Front End\UI Components\Events UI</Filter>
     </ClCompile>
     <ClCompile Include="MenuBar.cpp">
-      <Filter>FRONT END\UI Components\MenuBar</Filter>
+      <Filter>App\Front End\UI Components\MenuBar</Filter>
     </ClCompile>
     <ClCompile Include="UIManager.cpp">
-      <Filter>FRONT END\UI Components\UI Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="MonitorInfo.cpp">
-      <Filter>BACK END\Application</Filter>
+      <Filter>App\Front End\UI Components\UI Manager</Filter>
     </ClCompile>
     <ClCompile Include="EventButtonUI.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Widgets\EventButtonUI</Filter>
+      <Filter>App\Front End\UI Components\Events UI\Widgets\EventButtonUI</Filter>
     </ClCompile>
     <ClCompile Include="Widget.cpp">
-      <Filter>FRONT END\UI Components\Events UI\Widgets\Base</Filter>
+      <Filter>App\Front End\UI Components\Events UI\Widgets\Base</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClCompile>
     <ClCompile Include="EventNode.cpp">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
     </ClCompile>
     <ClCompile Include="EventNode.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\Event Node</Filter>
     </ClCompile>
     <ClCompile Include="StartupScreen.cpp">
-      <Filter>FRONT END\UI Components\Start Screen</Filter>
-    </ClCompile>
-    <ClCompile Include="gl_core_4_4.c">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>FRONT END\Dependencies</Filter>
+      <Filter>App\Front End\UI Components\Start Screen</Filter>
     </ClCompile>
     <ClCompile Include="Connection.cpp">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
     </ClCompile>
     <ClCompile Include="IncludeAllNodes.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClCompile>
     <ClCompile Include="BeginNode.cpp">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
     </ClCompile>
     <ClCompile Include="Chapter.cpp">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass</Filter>
     </ClCompile>
     <ClCompile Include="Console.cpp">
-      <Filter>BACK END\Uitilities\DebugConsole</Filter>
+      <Filter>App\Back End\Uitilities\DebugConsole</Filter>
     </ClCompile>
     <ClCompile Include="CmdList.cpp">
-      <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
+      <Filter>App\Back End\Uitilities\DebugConsole\Command List</Filter>
     </ClCompile>
-    <ClCompile Include="AccessFileSystem.cpp" />
+    <ClCompile Include="Application.cpp">
+      <Filter>App\Front End\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="AdventureEngine.cpp">
+      <Filter>App\Front End\Application\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitorInfo.cpp">
+      <Filter>App\Front End\Application\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="gl_core_4_4.c">
+      <Filter>App\Dependencies\Open GL</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>App\Dependencies\Open GL</Filter>
+    </ClCompile>
     <ClCompile Include="nfd_win.cpp">
-      <Filter>BACK END\Uitilities</Filter>
+      <Filter>App\Dependencies\NFD File System</Filter>
     </ClCompile>
     <ClCompile Include="nfd_common.c">
-      <Filter>BACK END\Uitilities</Filter>
+      <Filter>App\Dependencies\NFD File System</Filter>
+    </ClCompile>
+    <ClCompile Include="AccessFileSystem.cpp">
+      <Filter>App\Back End\Uitilities\File System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h">
-      <Filter>BACK END\Application</Filter>
-    </ClInclude>
     <ClInclude Include="imconfig.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="imgui.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="imgui_impl_glfw.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="imgui_impl_opengl3.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="imgui_impl_opengl3_loader.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="imgui_internal.h">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </ClInclude>
     <ClInclude Include="Event.h">
-      <Filter>BACK END\Game Components\Events</Filter>
+      <Filter>App\Back End\Game Components\Events</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>BACK END\Game Components\Items</Filter>
+      <Filter>App\Back End\Game Components\Items</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>BACK END\Game Components\Player</Filter>
+      <Filter>App\Back End\Game Components\Player</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
-      <Filter>BACK END\Game Components\Inventory</Filter>
+      <Filter>App\Back End\Game Components\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="Owner.h">
-      <Filter>BACK END\Game Components\Inventory</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGuiSetup.h">
-      <Filter>FRONT END\Dependencies</Filter>
+      <Filter>App\Back End\Game Components\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="EventsUI.h">
-      <Filter>FRONT END\UI Components\Events UI</Filter>
+      <Filter>App\Front End\UI Components\Events UI</Filter>
     </ClInclude>
     <ClInclude Include="MenuBar.h">
-      <Filter>FRONT END\UI Components\MenuBar</Filter>
+      <Filter>App\Front End\UI Components\MenuBar</Filter>
     </ClInclude>
     <ClInclude Include="UIManager.h">
-      <Filter>FRONT END\UI Components\UI Manager</Filter>
+      <Filter>App\Front End\UI Components\UI Manager</Filter>
     </ClInclude>
     <ClInclude Include="UIScenes.h">
-      <Filter>FRONT END\UI Components\UI Manager</Filter>
+      <Filter>App\Front End\UI Components\UI Manager</Filter>
     </ClInclude>
     <ClInclude Include="UISetup.h">
-      <Filter>FRONT END\UI Components\UI Setup</Filter>
+      <Filter>App\Front End\UI Components\UI Setup</Filter>
     </ClInclude>
     <ClInclude Include="UserInterface.h">
-      <Filter>FRONT END\UI Components\UI Setup</Filter>
-    </ClInclude>
-    <ClInclude Include="MonitorInfo.h">
-      <Filter>BACK END\Application</Filter>
+      <Filter>App\Front End\UI Components\UI Setup</Filter>
     </ClInclude>
     <ClInclude Include="EventButtonUI.h">
-      <Filter>FRONT END\UI Components\Events UI\Widgets\EventButtonUI</Filter>
+      <Filter>App\Front End\UI Components\Events UI\Widgets\EventButtonUI</Filter>
     </ClInclude>
     <ClInclude Include="Widget.h">
-      <Filter>FRONT END\UI Components\Events UI\Widgets\Base</Filter>
+      <Filter>App\Front End\UI Components\Events UI\Widgets\Base</Filter>
     </ClInclude>
     <ClInclude Include="ButtonID.h">
-      <Filter>FRONT END\UI Components\MenuBar\ButtonIdentifier</Filter>
+      <Filter>App\Front End\UI Components\MenuBar\ButtonIdentifier</Filter>
     </ClInclude>
     <ClInclude Include="CurrentWindow.h">
-      <Filter>FRONT END\UI Components\Events UI\CurrentWindow</Filter>
+      <Filter>App\Front End\UI Components\Events UI\CurrentWindow</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClInclude>
     <ClInclude Include="StartupScreen.h">
-      <Filter>FRONT END\UI Components\Start Screen</Filter>
-    </ClInclude>
-    <ClInclude Include="gl_core_4_4.h">
-      <Filter>FRONT END\Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>FRONT END\Dependencies</Filter>
+      <Filter>App\Front End\UI Components\Start Screen</Filter>
     </ClInclude>
     <ClInclude Include="FontLoader.h">
-      <Filter>BACK END\Uitilities\Font Loader</Filter>
+      <Filter>App\Back End\Uitilities\Font Loader</Filter>
     </ClInclude>
     <ClInclude Include="NodeType.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node</Filter>
     </ClInclude>
     <ClInclude Include="Connection.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\Connection</Filter>
     </ClInclude>
     <ClInclude Include="BeginNode.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Node\BeginNode</Filter>
     </ClInclude>
     <ClInclude Include="Chapter.h">
-      <Filter>FRONT END\UI Components\Events UI\ChapterClass</Filter>
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass</Filter>
     </ClInclude>
     <ClInclude Include="Console.h">
-      <Filter>BACK END\Uitilities\DebugConsole</Filter>
+      <Filter>App\Back End\Uitilities\DebugConsole</Filter>
     </ClInclude>
     <ClInclude Include="CmdList.h">
-      <Filter>BACK END\Uitilities\DebugConsole\Command List</Filter>
+      <Filter>App\Back End\Uitilities\DebugConsole\Command List</Filter>
     </ClInclude>
     <ClInclude Include="InspectorType.h">
-      <Filter>FRONT END\UI Components\Events UI</Filter>
+      <Filter>App\Front End\UI Components\Events UI</Filter>
     </ClInclude>
-    <ClInclude Include="AccessFileSystem.h" />
-    <ClInclude Include="nfd_common.h">
-      <Filter>BACK END\Uitilities</Filter>
+    <ClInclude Include="Application.h">
+      <Filter>App\Front End\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorInfo.h">
+      <Filter>App\Front End\Application\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="gl_core_4_4.h">
+      <Filter>App\Dependencies\Open GL</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiSetup.h">
+      <Filter>App\Dependencies\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>App\Dependencies\Open GL</Filter>
     </ClInclude>
     <ClInclude Include="nfd.h">
-      <Filter>BACK END\Uitilities</Filter>
+      <Filter>App\Dependencies\NFD File System</Filter>
+    </ClInclude>
+    <ClInclude Include="nfd_common.h">
+      <Filter>App\Dependencies\NFD File System</Filter>
+    </ClInclude>
+    <ClInclude Include="AccessFileSystem.h">
+      <Filter>App\Back End\Uitilities\File System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">
-      <Filter>FRONT END\Dependencies\Imgui</Filter>
+      <Filter>App\Dependencies\Imgui</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Logo.png">
-      <Filter>Resource Files</Filter>
+      <Filter>App\Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc">
-      <Filter>Resource Files</Filter>
+      <Filter>App\Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="README.txt" />
   </ItemGroup>
 </Project>

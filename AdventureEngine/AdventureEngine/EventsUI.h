@@ -28,8 +28,11 @@ public:
 	void RenderMenuBar(const char* title);
 	void RenderOverlayUI();
 	void RenderGraphTabBar();
-	void RenderInspectorTabBar();
+
 	void RenderChapterList();
+	void RenderChapterInspector();
+
+	void RenderNodeInspector();
 
 	//Utilities
 	bool contains(std::vector<Chapter*> C, Chapter* value);
