@@ -71,16 +71,14 @@ void EventsUI::RenderMenuBar(const char* title)
 
 void EventsUI::RenderOverlayUI()
 {
-	//ImDrawList* drawList = ImGui::GetWindowDrawList();
+	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
-	//drawList->AddRectFilled(ImVec2(-5, 0), ImVec2(300, ImGui::GetWindowHeight() + 30), IM_COL32(20, 20, 20, 255));
-	
+	drawList->AddRectFilled(ImVec2(-5, 0), ImVec2(ImGui::GetWindowWidth() + 5, ImGui::GetWindowHeight() + 5), IM_COL32(40, 40, 40, 128));
+	RenderNodeInspector();
 	RenderChapterList();
 	RenderChapterInspector();
-
-	RenderNodeInspector();
 	
-	//drawList->AddRectFilled(ImVec2(300, 0), ImVec2(ImGui::GetWindowWidth(), 85), IM_COL32(20, 20, 20, 255));
+	
 	RenderGraphTabBar();
 	
 }
@@ -88,18 +86,13 @@ void EventsUI::RenderOverlayUI()
 void EventsUI::RenderGraphTabBar()
 {
 	ImGui::BeginGroup();
-	//// Push style colors and other style settings for the tab bar
-	//ImGui::PushStyleColor(ImGuiCol_Tab, ImVec4(0.2f, 0.2f, 0.2f, 1.0f));
-	//ImGui::PushStyleColor(ImGuiCol_TabHovered, ImVec4(0.3f, 0.3f, 0.3f, 1.0f));
-	//ImGui::PushStyleColor(ImGuiCol_TabActive, ImVec4(0.4f, 0.4f, 0.4f, 1.0f));
-	//ImGui::PushStyleColor(ImGuiCol_TabUnfocused, ImVec4(0.2f, 0.2f, 0.2f, 1.0f));
-	//ImGui::PushStyleColor(ImGuiCol_TabUnfocusedActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f));
-	//ImGui::PushStyleVar(ImGuiStyleVar_TabRounding, 0.0f);
-
-	//// Push style variables to change tab size
-	//ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(10, 10)); // Increase padding inside tabs
-	//ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(10, 10)); // Increase spacing between tabs
-
+	// Push style colors and other style settings for the tab bar
+	ImGui::PushStyleColor(ImGuiCol_Tab, ImVec4(0.2f, 0.2f, 0.2f, 1.0f));
+	ImGui::PushStyleColor(ImGuiCol_TabHovered, ImVec4(0.3f, 0.3f, 0.3f, 1.0f));
+	ImGui::PushStyleColor(ImGuiCol_TabActive, ImVec4(0.4f, 0.4f, 0.4f, 1.0f));
+	ImGui::PushStyleColor(ImGuiCol_TabUnfocused, ImVec4(0.2f, 0.2f, 0.2f, 1.0f));
+	ImGui::PushStyleColor(ImGuiCol_TabUnfocusedActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f));
+	ImGui::PushStyleVar(ImGuiStyleVar_TabRounding, 5.0f);
 
 	// Set cursor position to the desired location for the TabBar
 	ImVec2 tabBarPos = ImVec2(300, 7); // Set this to the top-left corner of your rectangle
@@ -117,7 +110,16 @@ void EventsUI::RenderGraphTabBar()
 		{
 			if (ImGui::BeginTabItem(C->GetChapterName().c_str()))
 			{
-				ActiveChapter = C;
+				if (ActiveChapter != C)
+				{
+					//Make ActiveNode inactive and deselect it before changing to next Chapter!!!
+					if (ActiveChapter != nullptr && ActiveChapter->GetActiveNode() != nullptr)
+					{
+						ActiveChapter->GetActiveNode()->SetIsActive(false);
+						ActiveChapter->SetActiveNode(nullptr);
+					}
+					ActiveChapter = C;
+				}
 				ImGui::EndTabItem();
 			}
 		}
@@ -127,18 +129,18 @@ void EventsUI::RenderGraphTabBar()
 	ImGui::EndChild(); // End the child window
 
 	// Pop style colors and style variables to revert to the previous style
-	//ImGui::PopStyleColor(5); // Popping the 5 pushed style colors
-	//ImGui::PopStyleVar(3);    // Popping the pushed style variable
+	ImGui::PopStyleColor(5); // Popping the 5 pushed style colors
+	ImGui::PopStyleVar();    // Popping the pushed style variable
 	ImGui::EndGroup();
 }
 
 
 void EventsUI::RenderChapterList()
 {
-	ImVec2 ListPos = ImVec2(7, 20); // Set this to the current cursor position, which should be below the tab bar
+	ImVec2 ListPos = ImVec2(7, 10); // Set this to the current cursor position, which should be below the tab bar
 	ImGui::SetCursorPos(ListPos); // Relative to the window's position
-
-	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 450),ImGuiChildFlags_Border,ImGuiWindowFlags_MenuBar))
+	ImGui::PushStyleColor(ImGuiCol_ChildBg,ImVec4(0.1f,0.1f,0.1f,1.0f));
+	if (ImGui::BeginChild("##Data", ImVec2(280, ImGui::GetWindowHeight() - 650),ImGuiChildFlags_Border,ImGuiWindowFlags_MenuBar))
 	{
 		if (ImGui::BeginMenuBar())
 		{
@@ -180,40 +182,109 @@ void EventsUI::RenderChapterList()
 
 		}
 		ImGui::EndChild();
+		ImGui::PopStyleColor();
 	}
 }
 
 void EventsUI::RenderChapterInspector()
 {
-	ImVec2 ListPos = ImVec2(7, (ImGui::GetWindowHeight() - 450) + 30); // Set this to the current cursor position, which should be below the tab bar
+	ImVec2 ListPos = ImVec2(7, (ImGui::GetWindowHeight() - 650) + 20); // Set this to the current cursor position, which should be below the tab bar
 	ImGui::SetCursorPos(ListPos); // Relative to the window's position
 
 	if (ActiveChapter != nullptr)
 	{
+		ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
 		if (ImGui::BeginChild("##ChapterInspector", ImVec2(280, ImGui::GetWindowHeight() - 650), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
 		{
 			if (ImGui::BeginMenuBar())
 			{
-				std::string ChapterDetailsText = ActiveChapter->GetChapterName() + " " + "Details";
-				TextCenteredInMenuBar(ChapterDetailsText);
+				TextCenteredInMenuBar("Chapter Properties");
 				ImGui::EndMenuBar();
 			}
 
 			//ImGui::InputTextWithHint("", ActiveChapter->GetChapterName().c_str(), );
 
 			ImGui::EndChild();
+			ImGui::PopStyleColor();
 		}
 	}
 }
 
 void EventsUI::RenderNodeInspector()
 {
-	if (ImGui::BeginChild("Event Details"),ImVec2(ImGui::GetWindowWidth() - 300,ImGui::GetWindowHeight() - 650), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar)
+	if (ActiveChapter->GetActiveNode() != nullptr)
 	{
-		/*char inputText[256] = "";
-		EventNode* newNode = (EventNode*)ActiveChapter->GetActiveNode();
-		ImGui::InputText(newNode->GetEvent()->GetEventName().c_str(), inputText,IM_ARRAYSIZE(inputText));*/
-		ImGui::EndChild();
+		ImVec2 ListPos = ImVec2(ImGui::GetWindowWidth() - 290, 10); // Set this to the current cursor position, which should be below the tab bar
+		ImGui::SetCursorPos(ListPos); // Relative to the window's position
+		ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
+		if (ImGui::BeginChild("##NodePropInspector", ImVec2(270, ImGui::GetWindowHeight() - 350), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
+		{
+			if (ImGui::BeginMenuBar())
+			{
+				TextCenteredInMenuBar("Node Properties");
+				ImGui::EndMenuBar();
+			}
+
+			
+			if (ImGui::BeginChild("##NodeDetailsComponent", ImVec2(ImGui::GetContentRegionAvail().x, CurrentComponentY), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
+			{
+				ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.5f, 0.0f, 0.5f, 1.0f));
+				if (ImGui::BeginMenuBar())
+				{
+					if (ImGui::InvisibleButton("##Toggle", ImGui::GetContentRegionAvail()))
+					{
+						IsOpen = !IsOpen;
+
+						if (IsOpen)
+						{
+							CurrentComponentY = ClosedComponentY;
+						}
+						else
+						{
+							CurrentComponentY = DefaultComponentY;
+						}
+					}
+
+					TextCenteredInMenuBar("Node Details");
+					ImGui::EndMenuBar();
+					ImGui::PopStyleColor();
+				}
+				
+				char temp[256] = "";
+				// Get the text from the active node
+				std::string hint = ActiveChapter->GetActiveNode()->GetText();
+
+				// Display the input text field with hint
+				if (isEditable)
+				{
+					// Fill the temp buffer with the hint text when transitioning to editable
+					strncpy_s(temp, hint.c_str(), IM_ARRAYSIZE(temp));
+					temp[IM_ARRAYSIZE(temp) - 1] = '\0'; // Ensure null termination
+					if (ImGui::InputTextWithHint("##NodeName", hint.c_str(), temp, IM_ARRAYSIZE(temp)))
+					{
+						ActiveChapter->GetActiveNode()->SetText(temp);
+					}
+				}
+				else
+				{
+					ImGui::InputTextWithHint("##NodeName", hint.c_str(), temp, IM_ARRAYSIZE(temp), ImGuiInputTextFlags_ReadOnly);
+				}
+
+				// Add a button to toggle the editable state
+				ImGui::SameLine();
+				if (ImGui::Button("Edit", ImVec2(40, 20)))
+				{
+					isEditable = !isEditable;
+				}
+
+				ImGui::EndChild();
+			}
+
+			ImGui::Button("Add Component",ImVec2(ImGui::GetContentRegionAvail().x,25));
+
+			ImGui::EndChild();
+			ImGui::PopStyleColor();
+		}
 	}
 }
 

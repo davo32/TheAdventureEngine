@@ -92,8 +92,7 @@ void MenuBar::DrawUI()
 	{
 		FileMenu();
 		ProjectMenu();
-		TextCenteredInMenuBar("Adventure Engine");
-		ImGui::Dummy(ImVec2(400,ImGui::GetContentRegionAvail().y));
+		ImGui::Dummy(ImVec2(ImGui::GetContentRegionAvail().x - 150,ImGui::GetContentRegionAvail().y));
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());
 		ImGui::EndMenuBar();

@@ -14,6 +14,7 @@ public:
 	ImVec2 ScreenToViewport();
 	ImVec2 ViewportToScreen(ImVec2 viewportPos);
 	Node* GetActiveNode() { return ActiveNode; }
+	void SetActiveNode(Node* node) { ActiveNode = node; }
 private:
 	//Rendering
 	//Renders the Background of the Node Editor Viewport
@@ -81,6 +82,10 @@ private:
 	bool isConnecting = false;
 
 	bool hasRun = false;
+	bool nodeClicked = false;
+	
+
+	
 	
 };
 

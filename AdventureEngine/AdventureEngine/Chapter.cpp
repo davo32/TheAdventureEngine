@@ -18,6 +18,7 @@ void Chapter::RenderViewport()
 	ImVec2 ChildSize = ImVec2(ParentSize.x - 600,ParentSize.y - 260);
 	ImVec2 ParentPos = ImGui::GetWindowPos();
 	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 25);
+	ImGuiIO& io = ImGui::GetIO();
 
 	ImGui::SetNextWindowPos(ChildPos);
 	ImGui::SetCursorPos(ChildPos);
@@ -26,7 +27,7 @@ void Chapter::RenderViewport()
 		screenPos = ImGui::GetCursorScreenPos(); // Top-left
 		screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
 
-		ImGuiIO& io = ImGui::GetIO();
+		
 
 		RenderBackground(ChildSize,ChildPos);
 
@@ -399,7 +400,10 @@ void Chapter::NodeInteraction()
 	// Handle node dragging and selection on mouse down
 	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
 	{
-		bool nodeClicked = false;
+		nodeClicked = false;
+
+		
+
 		ImVec2 mousePos = ImVec2((io.MousePos.x - viewportOffset.x) / zoomLevel, (io.MousePos.y - viewportOffset.y) / zoomLevel);
 		for (Node* node : NodeFamily)
 		{
@@ -449,10 +453,19 @@ void Chapter::NodeInteraction()
 		// Deselect if clicked on empty space within the viewport
 		if (!nodeClicked)
 		{
-			if (ActiveNode != nullptr)
+			// Get mouse position
+			ImVec2 mousePos = io.MousePos;
+
+			// Check if mouse cursor is within viewport bounds
+			if (mousePos.x >= screenPos.x && mousePos.x <= (screenPos.x + screenSize.x) &&
+				mousePos.y >= screenPos.y && mousePos.y <= (screenPos.y + screenSize.y))
 			{
-				ActiveNode->SetIsActive(false);
-				ActiveNode = nullptr;
+				if (ActiveNode != nullptr)
+				{
+					ActiveNode->SetIsActive(false);
+					ActiveNode = nullptr;
+					
+				}
 			}
 		}
 
