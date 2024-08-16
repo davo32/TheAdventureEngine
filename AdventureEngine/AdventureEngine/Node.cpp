@@ -101,9 +101,26 @@ void Node::DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel)
 	
 	CreateNodeVisuals(position, size, drawList, headerRadius, headerHeight);
 	CreateInputsAndOutputs(position, padding, headerHeight, size, drawList, headerRadius, 2.0f, pinOffsetY);
-	DrawComponents(position, size, zoomLevel);
 	
 	ImGui::EndGroup();
+}
+
+void Node::DrawComponents()
+{
+	if (!Components.empty())
+	{
+		for (NodeComponent* NC : Components)
+		{
+			if (NC != nullptr)
+			{
+				NC->RenderComponent();
+			}
+			else
+			{
+				std::cerr << "Null NodeComponent found in Components vector!" << std::endl;
+			}
+		}
+	}
 }
 
 void Node::StartConnecting(int outputIndex, ImVec2 startPos)

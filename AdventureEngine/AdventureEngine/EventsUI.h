@@ -46,10 +46,5 @@ private:
 	int selectedItem = -1;
 	int activeTabIndex = -1; // Index of the currently active tab
 
-	//Debug Component UI stuff
-	float DefaultComponentY = 70;
-	float ClosedComponentY = 10;
-	float CurrentComponentY = 70;
-	bool IsOpen = true;
-	bool isEditable = false;
+	
 };

@@ -1,8 +1,7 @@
 ﻿  EventsUI.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(60,55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(61,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(62,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(78,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(63,55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(64,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.h(65,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(48,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(48,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.exe

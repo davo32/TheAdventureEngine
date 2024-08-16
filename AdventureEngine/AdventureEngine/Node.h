@@ -3,6 +3,9 @@
 #include "imgui.h"
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include "NodeComponent.h"
+
 
 class Node {
 public:
@@ -46,7 +49,7 @@ public:
     void SetIsDragging(bool dragging) { isDragging = dragging; }
 
     void DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel);
-    virtual void DrawComponents(const ImVec2& position, const ImVec2& size, float zoomLevel) {}
+    void DrawComponents();
 
     ImVec2 GetOutputPoint(int index) const { return outputPoints[index]; }
     ImVec2 GetInputPoint(int index) const { return inputPoints[index]; }
@@ -72,6 +75,7 @@ protected:
     void CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY);
     void CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float headerHeight);
 
+    //std::string GetKey()
 
     float Distance(ImVec2 a, ImVec2 b)
     {
@@ -87,6 +91,8 @@ protected:
 
     std::vector<ImVec2> inputPoints;
     std::vector<ImVec2> outputPoints;
+
+    std::vector<NodeComponent*> Components;
 
 
     ImColor colorTop = ImColor(128, 0, 128);

@@ -168,6 +168,7 @@
     <ClCompile Include="nfd_common.c" />
     <ClCompile Include="nfd_win.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="NodeDetailsComponent.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerStats.h" />
     <ClCompile Include="StartupScreen.cpp" />
@@ -205,6 +206,8 @@
     <ClInclude Include="nfd.h" />
     <ClInclude Include="nfd_common.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="NodeComponent.h" />
+    <ClInclude Include="NodeDetailsComponent.h" />
     <ClInclude Include="NodeType.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Player.h" />

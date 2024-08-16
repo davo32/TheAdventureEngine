@@ -113,6 +113,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Components">
+      <UniqueIdentifier>{8c49c1e1-6b5e-4e8e-bac3-68ce1b688826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Components\NodeDetails Component">
+      <UniqueIdentifier>{51bcce6e-0af7-41b7-aa8a-1d6e4f563e3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -220,6 +226,7 @@
     <ClCompile Include="AccessFileSystem.cpp">
       <Filter>App\Back End\Uitilities\File System</Filter>
     </ClCompile>
+    <ClCompile Include="NodeDetailsComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imconfig.h">
@@ -339,6 +346,10 @@
     <ClInclude Include="AccessFileSystem.h">
       <Filter>App\Back End\Uitilities\File System</Filter>
     </ClInclude>
+    <ClInclude Include="NodeComponent.h">
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeDetailsComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">

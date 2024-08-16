@@ -225,59 +225,14 @@ void EventsUI::RenderNodeInspector()
 				ImGui::EndMenuBar();
 			}
 
-			
-			if (ImGui::BeginChild("##NodeDetailsComponent", ImVec2(ImGui::GetContentRegionAvail().x, CurrentComponentY), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
+			Node* activeNode = ActiveChapter->GetActiveNode();
+			if (activeNode != nullptr)
 			{
-				ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.5f, 0.0f, 0.5f, 1.0f));
-				if (ImGui::BeginMenuBar())
-				{
-					if (ImGui::InvisibleButton("##Toggle", ImGui::GetContentRegionAvail()))
-					{
-						IsOpen = !IsOpen;
-
-						if (IsOpen)
-						{
-							CurrentComponentY = ClosedComponentY;
-						}
-						else
-						{
-							CurrentComponentY = DefaultComponentY;
-						}
-					}
-
-					TextCenteredInMenuBar("Node Details");
-					ImGui::EndMenuBar();
-					ImGui::PopStyleColor();
-				}
-				
-				char temp[256] = "";
-				// Get the text from the active node
-				std::string hint = ActiveChapter->GetActiveNode()->GetText();
-
-				// Display the input text field with hint
-				if (isEditable)
-				{
-					// Fill the temp buffer with the hint text when transitioning to editable
-					strncpy_s(temp, hint.c_str(), IM_ARRAYSIZE(temp));
-					temp[IM_ARRAYSIZE(temp) - 1] = '\0'; // Ensure null termination
-					if (ImGui::InputTextWithHint("##NodeName", hint.c_str(), temp, IM_ARRAYSIZE(temp)))
-					{
-						ActiveChapter->GetActiveNode()->SetText(temp);
-					}
-				}
-				else
-				{
-					ImGui::InputTextWithHint("##NodeName", hint.c_str(), temp, IM_ARRAYSIZE(temp), ImGuiInputTextFlags_ReadOnly);
-				}
-
-				// Add a button to toggle the editable state
-				ImGui::SameLine();
-				if (ImGui::Button("Edit", ImVec2(40, 20)))
-				{
-					isEditable = !isEditable;
-				}
-
-				ImGui::EndChild();
+				activeNode->DrawComponents();
+			}
+			else
+			{
+				std::cerr << "ActiveNode is null!" << std::endl;
 			}
 
 			ImGui::Button("Add Component",ImVec2(ImGui::GetContentRegionAvail().x,25));

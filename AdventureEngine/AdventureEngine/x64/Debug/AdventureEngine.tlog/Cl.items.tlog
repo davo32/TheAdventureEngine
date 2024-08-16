@@ -27,6 +27,7 @@ C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MonitorInfo.cpp;C:\RE
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\nfd_common.c;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\nfd_common.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\nfd_win.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\nfd_win.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Node.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Node.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\NodeDetailsComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\NodeDetailsComponent.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Player.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Player.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\PlayerStats.h;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\PlayerStats.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\StartupScreen.obj
