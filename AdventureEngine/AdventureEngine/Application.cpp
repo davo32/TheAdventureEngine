@@ -109,6 +109,21 @@ bool Application::glfwSetup()
 		std::cerr << "Failed to load Bold font\n";
 	}
 
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-SemiBold.ttf", 30.0f, "NSBold"))
+	{
+		std::cerr << "Failed to load Bold font\n";
+	}
+
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 26.0f, "NSReg"))
+	{
+		std::cerr << "Failed to load Bold font\n";
+	}
+
+	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 18.0f, "NSRegSmall"))
+	{
+		std::cerr << "Failed to load Bold font\n";
+	}
+
 	return true;
 }
 
@@ -153,7 +168,8 @@ void Application::draw()
 			ImGui::SetNextWindowSize(windowSize);
 			ImGui::SetNextWindowPos(windowPos);
 
-
+			// Push a new background color
+			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.05f, 0.05f, 0.05f, 1.0f));
 			if (ImGui::Begin("Background Window",
 				(bool*)1,
 				ImGuiWindowFlags_NoTitleBar
@@ -173,6 +189,7 @@ void Application::draw()
 				}
 				
 				ImGui::End();
+				ImGui::PopStyleColor();
 			}
 
 			// Always render the console on top if it is shown

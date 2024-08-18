@@ -144,6 +144,16 @@ void EventsUI::RenderChapterList()
 	{
 		if (ImGui::BeginMenuBar())
 		{
+			ImGui::SetCursorPosX(-1);
+			ImGui::Button("?");
+
+			if (ImGui::IsItemHovered())
+			{
+				ImGui::SetNextWindowPos(ImGui::GetItemRectMin());
+				ImGui::BeginTooltip();
+				ImGui::Text("[?] : A List Of All Created Chapters.");
+				ImGui::EndTooltip();
+			}
 			TextCenteredInMenuBar("Chapters");
 			ImGui::EndMenuBar();
 		}
@@ -198,6 +208,16 @@ void EventsUI::RenderChapterInspector()
 		{
 			if (ImGui::BeginMenuBar())
 			{
+				ImGui::SetCursorPosX(-1);
+				ImGui::Button("?");
+
+				if (ImGui::IsItemHovered())
+				{
+					ImGui::SetNextWindowPos(ImGui::GetItemRectMin());
+					ImGui::BeginTooltip();
+					ImGui::Text("[?] : Contains The Properties of The Active Chapter.");
+					ImGui::EndTooltip();
+				}
 				TextCenteredInMenuBar("Chapter Properties");
 				ImGui::EndMenuBar();
 			}
@@ -221,6 +241,17 @@ void EventsUI::RenderNodeInspector()
 		{
 			if (ImGui::BeginMenuBar())
 			{
+				ImGui::SetCursorPosX(-1);
+				ImGui::Button("?");
+
+				if (ImGui::IsItemHovered())
+				{
+					ImGui::SetNextWindowPos(ImGui::GetItemRectMin());
+					ImGui::BeginTooltip();
+					ImGui::Text("[?] : Contains The Active Node Components.");
+					ImGui::EndTooltip();
+				}
+
 				TextCenteredInMenuBar("Node Properties");
 				ImGui::EndMenuBar();
 			}

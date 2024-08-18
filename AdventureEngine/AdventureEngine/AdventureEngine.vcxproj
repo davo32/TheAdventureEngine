@@ -77,6 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -94,6 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,6 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,6 +175,7 @@
     <ClCompile Include="NodeDetailsComponent.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerStats.h" />
+    <ClCompile Include="ProjectBrowser.cpp" />
     <ClCompile Include="StartupScreen.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UIManager.cpp" />
@@ -211,6 +216,7 @@
     <ClInclude Include="NodeType.h" />
     <ClInclude Include="Owner.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ProjectBrowser.h" />
     <ClInclude Include="StartupScreen.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="UIManager.h" />

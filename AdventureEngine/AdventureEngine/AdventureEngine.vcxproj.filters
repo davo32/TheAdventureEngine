@@ -119,6 +119,9 @@
     <Filter Include="App\Front End\UI Components\Events UI\ChapterClass\Components\NodeDetails Component">
       <UniqueIdentifier>{51bcce6e-0af7-41b7-aa8a-1d6e4f563e3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Front End\UI Components\Start Screen\Project Browser">
+      <UniqueIdentifier>{16442528-f70a-44db-b4e2-7507f5d537c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -226,7 +229,12 @@
     <ClCompile Include="AccessFileSystem.cpp">
       <Filter>App\Back End\Uitilities\File System</Filter>
     </ClCompile>
-    <ClCompile Include="NodeDetailsComponent.cpp" />
+    <ClCompile Include="NodeDetailsComponent.cpp">
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components\NodeDetails Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectBrowser.cpp">
+      <Filter>App\Front End\UI Components\Start Screen\Project Browser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imconfig.h">
@@ -349,7 +357,12 @@
     <ClInclude Include="NodeComponent.h">
       <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components</Filter>
     </ClInclude>
-    <ClInclude Include="NodeDetailsComponent.h" />
+    <ClInclude Include="NodeDetailsComponent.h">
+      <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components\NodeDetails Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectBrowser.h">
+      <Filter>App\Front End\UI Components\Start Screen\Project Browser</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">

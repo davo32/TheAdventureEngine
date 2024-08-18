@@ -13,7 +13,8 @@ void MenuBar::FileMenu()
 		}
 		if (ImGui::MenuItem("Open","CTRL + O",false,true))
 		{
-			fileSystem.OpenExplorer();
+			Application::SetTitleText("Adventure Engine - No Project");
+			Application::UICounter = 1;
 		}
 		ImGui::Separator();
 		if (ImGui::MenuItem("Save","CRTL + S",false,true))
@@ -69,7 +70,8 @@ void MenuBar::Shortcuts()
 	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_O))
 	{
 		// Trigger Open action
-		fileSystem.OpenExplorer();
+		Application::SetTitleText("Adventure Engine - No Project");
+		Application::UICounter = 1;
 	}
 
 	if (ImGui::IsKeyDown(ImGuiMod_Ctrl) && ImGui::IsKeyPressed(ImGuiKey_S))

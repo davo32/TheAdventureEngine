@@ -35,6 +35,19 @@ public:
         }
     }
 
+    ImFont* GetFont(const std::string& name)
+    {
+        auto it = fonts.find(name);
+        if (it != fonts.end())
+        {
+            return it->second;
+        }
+        else
+        {
+            return nullptr;
+        }
+    }
+
     // Draw text with the current font
     void DrawText(ImDrawList* drawList, const ImVec2& position, const ImColor& color, const std::string& text) {
         if (currentFont) {
