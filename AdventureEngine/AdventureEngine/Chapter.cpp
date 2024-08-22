@@ -76,7 +76,7 @@ void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
 	// Draw background
-	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(40, 40, 40, 100),8.0f);
+	drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(40, 40, 40, 100),10.0f);
 
 	// Adjust thickness dynamically based on zoom level
 	float majorLineThickness = 2.0f; // Adjust as needed
@@ -108,7 +108,7 @@ void Chapter::RenderBackground(ImVec2 canvasSize, ImVec2 canvasPos)
 		}
 	}
 
-	drawList->AddRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(0, 0, 0, 200),8.0f,0,8.0f);
+	drawList->AddRect(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(0, 0, 0, 200),10.0f,0,8.0f);
 }
 
 void Chapter::RenderContextMenu()

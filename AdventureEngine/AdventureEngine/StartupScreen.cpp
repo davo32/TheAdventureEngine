@@ -4,6 +4,8 @@
 #include "Application.h"
 #include <iostream>
 
+#include "JSONHandler.h"
+
 void StartupScreen::DrawUI()
 {
 	ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
@@ -19,28 +21,10 @@ void StartupScreen::DrawUI()
 
 		drawList->AddRectFilled(WindowPos, windowSize, ImColor(0.1f, 0.1f, 0.1f, 1.0f), 10.0f);
 		{
+			
 			ImVec2 startOfArea = ImVec2(((windowSize.x / 3) - 300) + 10, WindowPos.y + 10);
 
-			ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 6.0f); // Set rounding radius
-			ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.3, 0.3, 0.3, 1.0f)); // Invisible background
-			ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.4f, 0.4f, 0.4f, 0.4f)); // Background color on hover
-			ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.4f, 0.4f, 0.4f, 1.0f)); // Background color when clicked
 			
-			ImGui::SetCursorPos(ImVec2(startOfArea.x,startOfArea.y - 35));
-
-			if (ImGui::Button("D",ImVec2(40,40)))
-			{
-				//Delete Project Button
-			}
-			ImGui::SameLine();
-			if (ImGui::Button("S", ImVec2(40, 40)))
-			{
-				//Settings Button
-			}
-
-			ImGui::PopStyleColor(3); // Pop the 3 style colors we pushed
-			ImGui::PopStyleVar();
-
 			drawList->AddLine(ImVec2(WindowPos.x, WindowPos.y + 50), ImVec2(ImGui::GetContentRegionAvail().x, WindowPos.y + 50), ImColor(0.08f, 0.08f, 0.08f, 1.0f), 0.05f);
 			
 			projectBrowser->LoadDefaultIcon();
@@ -160,6 +144,18 @@ void StartupScreen::DrawUI()
 							ImVec4 bgColor = ImVec4(0.2f, 0.2f, 0.2f, 1.0f); // Background color when hovered
 							drawList->AddRectFilled(min, max, ImColor(bgColor));
 						}
+
+						//JSON DATA HANDLING
+						{
+							json Data =
+							{
+								{"Project Name",projectBrowser->GetActiveProject()->name},
+								{"Project Summary",projectBrowser->GetActiveProject()->Summary}
+							};
+
+							JSONHandler::saveToFile(projectBrowser->GetActiveProject()->path, Data);
+						}
+
 						ImGui::PopStyleColor(2); // Restore style colors
 					}
 

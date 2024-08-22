@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "Texture.h"
+#include "JSONHandler.h"
 
 // Namespace for file system operations
 namespace fs = std::filesystem;
@@ -20,7 +21,7 @@ public:
 		std::string LastEdited;
 	};
 
-	ProjectBrowser(const std::string& directoryPath) : directoryPath(directoryPath) 
+	ProjectBrowser(std::string directoryPath) : directoryPath(std::move(directoryPath))
 	{
 		LoadProjects();
 	}
@@ -28,7 +29,8 @@ public:
 	~ProjectBrowser()
 	{
 		// Clean up dynamically allocated memory
-		for (Project* project : projects) {
+		for (Project* project : projects)
+		{
 			delete project;
 		}
 	}
@@ -36,9 +38,9 @@ public:
 	void Render() 
 	{
 		// Define grid parameters
-		const int columns = 4; // Number of columns in the grid
+		const int columns = 11; // Number of columns in the grid
 		const float buttonSize = 100.0f; // Size of each button
-		const float spacing = 10.0f; // Spacing between buttons
+		const float spacing = 30.0f; // Spacing between buttons
 
 		// Calculate window size and start position
 		ImVec2 windowPos = ImGui::GetCursorPos();
@@ -77,6 +79,18 @@ public:
 		{
 			outFile << "";  // Create an empty file
 			outFile.close();
+
+			//JSON DATA HANDLING
+			{
+				json Data =
+				{
+					{"Project Name","Untitled Project"},
+					{"Project Summary","This is an Example Summary..."}
+				};
+
+				JSONHandler::saveToFile(filePath, Data);
+			}
+
 			std::cout << "File created: " << filePath << std::endl;
 		}
 		else
@@ -155,6 +169,8 @@ private:
 				// Get the full file path
 				std::string fullPath = entry.path().string();
 
+				//JSONHandler::loadFromFile(fullPath);
+
 				// Create a new Project object and add it to the vector
 				Project* project = new Project{ fileNameWithoutExtension, fullPath ,"This is an Example Summary..."};
 				projects.push_back(project);
@@ -169,10 +185,9 @@ private:
 		ActiveProject = project;
 	}
 
-	
-
 	// Function to render a button with an image and text
-	bool ImageButtonWithText(ImTextureID texture, const char* label, const ImVec2& imageSize, const ImVec2& buttonSize) {
+	bool ImageButtonWithText(ImTextureID texture, const char* label, const ImVec2& imageSize, const ImVec2& buttonSize) 
+	{
 		ImGui::BeginGroup(); // Start a new group for the button
 		ImDrawList* drawList = ImGui::GetWindowDrawList();
 		// Calculate positions
@@ -185,17 +200,40 @@ private:
 		bool isHovered = ImGui::IsItemHovered();
 		bool isClicked = ImGui::IsItemClicked();
 
+		// Draw the rounded rectangle background behind the image
+		ImVec2 min = cursorPos;
+		ImVec2 max = ImVec2(cursorPos.x + buttonSize.x, cursorPos.y + buttonSize.y);
+		float rounding = 8.0f; // Rounding radius for the rectangle
+
+		ImColor mainColor = IM_COL32(20, 20, 20, 110);
+		ImColor offColor = IM_COL32(80, 80, 80, 110);
+
+		drawList->AddRectFilledMultiColor(min, max, mainColor, offColor, mainColor, mainColor); // Gray background
+
+		ImColor DefhighColor = IM_COL32(20, 20, 20, 250);
+		ImColor NewhighColor = IM_COL32(120, 0, 210, 250);
+		ImColor highColor = DefhighColor;
+
+		if (ActiveProject != nullptr)
+		{
+			if (ActiveProject->name == label)
+			{
+				highColor = NewhighColor;
+			}
+			else
+			{
+				highColor = DefhighColor;
+			}
+		}
+
+		drawList->AddRect(min, max, highColor, rounding, 0, 8.0f);
 		// Draw the image
 		ImGui::SetCursorScreenPos(imagePos);
 		ImGui::Image(texture, imageSize);
 
-		
-
 		// Optional: Draw a border around the button when hovered
-		if (isHovered) {
-			
-			ImVec2 min = ImGui::GetItemRectMin();
-			ImVec2 max = ImGui::GetItemRectMax();
+		if (isHovered)
+		{	
 			drawList->AddRect(min, max, IM_COL32(255, 255, 255, 255),8.0f); // White border
 		}
 

@@ -106,9 +106,6 @@
     <Filter Include="App\Dependencies\NFD File System">
       <UniqueIdentifier>{20bd93b4-2dea-44dd-b239-b7eaa9b51bc1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\Back End\Uitilities\File System">
-      <UniqueIdentifier>{e40c437e-204a-4af7-99be-5e68addd83e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -121,6 +118,9 @@
     </Filter>
     <Filter Include="App\Front End\UI Components\Start Screen\Project Browser">
       <UniqueIdentifier>{16442528-f70a-44db-b4e2-7507f5d537c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Back End\Uitilities\JSON Handler">
+      <UniqueIdentifier>{789e72c9-d889-44de-9c7c-df9e2289f776}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -225,9 +225,6 @@
     </ClCompile>
     <ClCompile Include="nfd_common.c">
       <Filter>App\Dependencies\NFD File System</Filter>
-    </ClCompile>
-    <ClCompile Include="AccessFileSystem.cpp">
-      <Filter>App\Back End\Uitilities\File System</Filter>
     </ClCompile>
     <ClCompile Include="NodeDetailsComponent.cpp">
       <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components\NodeDetails Component</Filter>
@@ -351,9 +348,6 @@
     <ClInclude Include="nfd_common.h">
       <Filter>App\Dependencies\NFD File System</Filter>
     </ClInclude>
-    <ClInclude Include="AccessFileSystem.h">
-      <Filter>App\Back End\Uitilities\File System</Filter>
-    </ClInclude>
     <ClInclude Include="NodeComponent.h">
       <Filter>App\Front End\UI Components\Events UI\ChapterClass\Components</Filter>
     </ClInclude>
@@ -362,6 +356,12 @@
     </ClInclude>
     <ClInclude Include="ProjectBrowser.h">
       <Filter>App\Front End\UI Components\Start Screen\Project Browser</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONHandler.h">
+      <Filter>App\Back End\Uitilities\JSON Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>App\Back End\Uitilities\JSON Handler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

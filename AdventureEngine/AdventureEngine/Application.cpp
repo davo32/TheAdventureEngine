@@ -26,10 +26,6 @@ FontLoader& Application::fontLoader = FontLoader::GetInstance();
 Console* Application::console = new Console();
 
 
-void Application::window_focus_callback(GLFWwindow* window, int focused)
-{
-	isWindowFocused = focused;
-}
 bool Application::glfwSetup()
 {
 	if (!glfwInit())
@@ -37,6 +33,8 @@ bool Application::glfwSetup()
 		std::cerr << "Failed to initialize GLFW\n";
 		return false;
 	}
+
+	
 
 	MonitorInfo::Init();  // Initialize MonitorInfo before using it
 
@@ -47,6 +45,9 @@ bool Application::glfwSetup()
 		glfwTerminate();
 		return false;
 	}
+
+	glfwWindowHint(GLFW_FLOATING, GL_FALSE);
+	glfwWindowHint(GLFW_DECORATED,GL_TRUE);
 
 	window = glfwCreateWindow(
 		mode->width,
@@ -63,13 +64,15 @@ bool Application::glfwSetup()
 		return false;
 	}
 
-	glfwMakeContextCurrent(window);
-	glfwSwapInterval(1); // Vsync
-	/*glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);*/
-	glfwMaximizeWindow(window);
-
 	g_WindowWidth = mode->width;
 	g_WindowHeight = mode->height;
+
+
+	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1); // Vsync
+	glfwMaximizeWindow(window);
+
+	
 
 	if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
 	{
@@ -79,14 +82,14 @@ bool Application::glfwSetup()
 		return false;
 	}
 
-	// Load the project icon
-	GLFWimage icons[1];
-	icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
-	if (icons[0].pixels)
-	{
-		glfwSetWindowIcon(window, 1, icons);
-		stbi_image_free(icons[0].pixels);
-	}
+	//// Load the project icon
+	//GLFWimage icons[1];
+	//icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
+	//if (icons[0].pixels)
+	//{
+	//	glfwSetWindowIcon(window, 1, icons);
+	//	stbi_image_free(icons[0].pixels);
+	//}
 
 	context = ImGui::CreateContext();
 	UImanager.StartupByIndex(2);
@@ -94,6 +97,7 @@ bool Application::glfwSetup()
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 130");
+
 
 	ImGuiIO& io = ImGui::GetIO();
 	Application::io = &io;
@@ -162,12 +166,14 @@ void Application::draw()
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
 			
+
 			ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
 			ImVec2 windowPos(0, 0);//((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
 
 			ImGui::SetNextWindowSize(windowSize);
 			ImGui::SetNextWindowPos(windowPos);
 
+			ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f)); // Transparent menu bar background
 			// Push a new background color
 			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.05f, 0.05f, 0.05f, 1.0f));
 			if (ImGui::Begin("Background Window",
@@ -181,6 +187,7 @@ void Application::draw()
 			{
 				//MenuBar
 				UImanager.DrawUIByIndex(0);
+				ImGui::PopStyleColor();
 				UImanager.DrawUIByIndex(UICounter);
 				if (ImGui::IsKeyPressed(ImGuiKey_Tab) && UICounter == 2)
 				{

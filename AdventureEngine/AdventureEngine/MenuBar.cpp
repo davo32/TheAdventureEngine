@@ -92,6 +92,10 @@ void MenuBar::DrawUI()
 	Shortcuts();
 	if (ImGui::BeginMenuBar())
 	{
+		//ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
+		ImGui::Text("Adventure Engine");
+		//ImGui::PopFont();
+		ImGui::Dummy(ImVec2(100,ImGui::GetContentRegionAvail().y));
 		FileMenu();
 		ProjectMenu();
 		ImGui::Dummy(ImVec2(ImGui::GetContentRegionAvail().x - 150,ImGui::GetContentRegionAvail().y));

@@ -34,9 +34,7 @@ private: //GLFW
 	static GLFWwindow* window;
 	const GLFWvidmode* mode;
 	GLFWmonitor* primaryMonitor;
-	static void window_focus_callback(GLFWwindow* window, int focused);
 	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-	
 
 	static bool isShuttingdown;
 	
