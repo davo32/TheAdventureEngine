@@ -192,6 +192,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventButtonUI.h" />
     <ClInclude Include="EventsUI.h" />
+    <ClInclude Include="FileExtensions.h" />
     <ClInclude Include="FontLoader.h" />
     <ClInclude Include="gl_core_4_4.h" />
     <ClInclude Include="imconfig.h" />

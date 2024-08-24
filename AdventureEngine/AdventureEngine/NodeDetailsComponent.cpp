@@ -2,8 +2,8 @@
 
 void NodeDetailsComponent::RenderComponent()
 {
-	ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.5f, 0.5f, 0.5f, 0.5f));
-	if (ImGui::BeginChild("##NodeDetailsComponent", ImVec2(ImGui::GetContentRegionAvail().x, CurrentComponentY), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
+	ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.3f, 0.3f, 0.3f, 0.5f));
+	if (ImGui::BeginChild("##NodeDetailsComponent", ImVec2(ImGui::GetContentRegionAvail().x, CurrentComponentY), false, ImGuiWindowFlags_MenuBar))
 	{
 		if (ImGui::BeginMenuBar())
 		{

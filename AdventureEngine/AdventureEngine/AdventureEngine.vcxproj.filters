@@ -122,6 +122,9 @@
     <Filter Include="App\Back End\Uitilities\JSON Handler">
       <UniqueIdentifier>{789e72c9-d889-44de-9c7c-df9e2289f776}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Back End\Uitilities\FileExtensions">
+      <UniqueIdentifier>{4162784e-f993-4e75-9bd2-682c7eea1242}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -362,6 +365,9 @@
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>App\Back End\Uitilities\JSON Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="FileExtensions.h">
+      <Filter>App\Back End\Uitilities\FileExtensions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

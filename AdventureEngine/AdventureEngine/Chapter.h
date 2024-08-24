@@ -8,6 +8,7 @@ public:
 	//Rendering
 	void RenderViewport();
 	std::string GetChapterName();
+	void SetChapterName(std::string name) { ChapterName = name; }
 	//Utilities
 	void NodeGraphShortcuts();
 	// Coordinate transformation functions

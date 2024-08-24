@@ -71,21 +71,49 @@ public:
 
 	}
 
-	void CreateNewFile(const std::string& fileName) 
+	void CreateNewProject(const std::string& directoryName, const std::string& fileName)
 	{
-		std::string filePath = directoryPath + "/" + fileName;
+		std::string FolderPath = directoryPath + "/" + directoryName;
+
+		// Create the directory with the specified name
+		if (std::filesystem::create_directory(FolderPath))
+		{
+			std::cout << "Project folder created: " << directoryName << std::endl;
+			std::string ChapterFolderPath = FolderPath + "/" + "Chapters";
+			std::filesystem::create_directory(ChapterFolderPath);
+
+			std::string ChapterPath = ChapterFolderPath + "/" + "New Chapter.Chapter";
+			std::ofstream outFile(ChapterPath);
+			if (outFile.is_open())
+			{
+				outFile << "";  // Create an empty file
+				outFile.close();
+			}
+		}
+		else
+		{
+			std::cerr << "Failed to create project folder or it already exists: " << directoryName << std::endl;
+		}
+
+		// Construct the full file path within the newly created directory
+		std::string filePath = FolderPath + "/" + fileName;
+
 		std::ofstream outFile(filePath);
 		if (outFile.is_open())
 		{
 			outFile << "";  // Create an empty file
 			outFile.close();
 
-			//JSON DATA HANDLING
+			// JSON DATA HANDLING
 			{
 				json Data =
 				{
-					{"Project Name","Untitled Project"},
-					{"Project Summary","This is an Example Summary..."}
+					{"Prelim Data",
+					{
+						{"Project Name", "Untitled Project"},
+						{"Project Summary", "This is an Example Summary..."},
+						{"Chapter Count", "1" }
+					}}
 				};
 
 				JSONHandler::saveToFile(filePath, Data);
@@ -99,22 +127,56 @@ public:
 		}
 	}
 
-	void RenameFileInSameFolder(const std::string& folderPath, const std::string& oldFileName, const std::string& newFileName)
+	void RenameProject(const std::string& oldProjectFolderName, const std::string& oldFileName, const std::string& newFileName, const std::string& newProjectFolderName = "")
 	{
 		try
 		{
-			// Construct the full paths
-			fs::path oldPath = fs::path(folderPath) / oldFileName;
-			fs::path newPath = fs::path(folderPath) / newFileName;
+			// Construct the full paths for the file
+			fs::path oldFolderPath = fs::path(directoryPath) / oldProjectFolderName;
+			fs::path oldFilePath = oldFolderPath / oldFileName;
+			fs::path newFilePath = oldFolderPath / newFileName;
 
 			// Rename the file
-			fs::rename(oldPath, newPath);
-			std::cout << "File renamed successfully from " << oldPath << " to " << newPath << std::endl;
+			fs::rename(oldFilePath, newFilePath);
+			std::cout << "File renamed successfully from " << oldFilePath << " to " << newFilePath << std::endl;
+
+			// Rename the folder if a new folder name is provided
+			if (!newProjectFolderName.empty() && oldProjectFolderName != newProjectFolderName)
+			{
+				fs::path newFolderPath = fs::path(directoryPath) / newProjectFolderName;
+
+				fs::rename(oldFolderPath, newFolderPath);
+				std::cout << "Folder renamed successfully from " << oldFolderPath << " to " << newFolderPath << std::endl;
+			}
 		}
 		catch (const fs::filesystem_error& e)
 		{
-			std::cerr << "Error renaming file: " << e.what() << std::endl;
+			std::cerr << "Error renaming file or folder: " << e.what() << std::endl;
 		}
+	}
+
+	int CountChapterFiles(const std::string& directoryPath)
+	{
+		int count = 0;
+
+		try
+		{
+			// Iterate through the directory
+			for (const auto& entry : fs::directory_iterator(directoryPath))
+			{
+				// Check if the entry is a regular file and has a .Chapter extension
+				if (entry.is_regular_file() && entry.path().extension() == ".Chapter")
+				{
+					++count;
+				}
+			}
+		}
+		catch (const fs::filesystem_error& e)
+		{
+			std::cerr << "Error accessing directory: " << e.what() << std::endl;
+		}
+
+		return count;
 	}
 
 	void LoadDefaultIcon()
@@ -130,6 +192,16 @@ public:
 
 		// Get the texture ID and size
 		ProjIcon = (ImTextureID)texture.getHandle();
+	}
+
+	std::string RemoveExtension(const std::string& path, const std::string& ext)
+	{
+		// Check if the path ends with the extension
+		if (path.size() >= ext.size() && path.compare(path.size() - ext.size(), ext.size(), ext) == 0)
+		{
+			return path.substr(0, path.size() - ext.size());
+		}
+		return path;
 	}
 
 	void ReloadProjects()
@@ -149,6 +221,11 @@ public:
 		return directoryPath;
 	}
 
+	void DeSelectProject()
+	{
+		ActiveProject = nullptr;
+	}
+
 private:
 	std::string directoryPath;
 	std::vector<Project*> projects;
@@ -162,18 +239,28 @@ private:
 		projects.clear();
 		for (const auto& entry : fs::directory_iterator(directoryPath))
 		{
-			if (entry.is_regular_file())
+			if (entry.is_directory())
 			{
-				// Get the filename without extension
-				std::string fileNameWithoutExtension = entry.path().stem().string();
-				// Get the full file path
-				std::string fullPath = entry.path().string();
+				std::string folderName = entry.path().filename().string();
+				std::string projectFilePath;
 
-				//JSONHandler::loadFromFile(fullPath);
+				// Iterate through files inside the directory
+				for (const auto& fileEntry : fs::directory_iterator(entry.path()))
+				{
+					if (fileEntry.is_regular_file())
+					{
+						// Get the full path of the file inside the folder
+						projectFilePath = fileEntry.path().string();
+						break;  // Assuming you only need the first file found
+					}
+				}
 
-				// Create a new Project object and add it to the vector
-				Project* project = new Project{ fileNameWithoutExtension, fullPath ,"This is an Example Summary..."};
-				projects.push_back(project);
+				if (!projectFilePath.empty())
+				{
+					// Create a new Project object and add it to the vector
+					Project* project = new Project{ folderName, projectFilePath, "This is an Example Summary..." };
+					projects.push_back(project);
+				}
 			}
 		}
 	}
@@ -245,4 +332,6 @@ private:
 
 		return isClicked;
 	}
+
+	
 };

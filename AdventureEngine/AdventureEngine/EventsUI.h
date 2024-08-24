@@ -8,6 +8,7 @@
 #include "UserInterface.h"
 #include "InspectorType.h"
 
+enum GMode { EDIT, PLAY };
 
 class Application;
 class EventsUI : public UserInterface
@@ -34,9 +35,14 @@ public:
 
 	void RenderNodeInspector();
 
+	void RenderPlayModeToolBar();
+
 	//Utilities
 	bool contains(std::vector<Chapter*> C, Chapter* value);
 	void SetActiveChapter(Chapter* chapter);
+
+	void SetMode(GMode mode) { GameMode = mode; }
+	GMode GetGMode() { return GameMode; }
 
 	static InspectorType Itype;
 private:
@@ -45,6 +51,7 @@ private:
 	Chapter* ActiveChapter;
 	int selectedItem = -1;
 	int activeTabIndex = -1; // Index of the currently active tab
-
+	
+	GMode GameMode = GMode::EDIT;
 	
 };

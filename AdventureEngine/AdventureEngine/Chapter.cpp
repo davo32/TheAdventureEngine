@@ -15,9 +15,9 @@ Chapter::Chapter(std::string newName,ImVec2 mousePos) : ChapterName(newName)
 void Chapter::RenderViewport()
 {
 	ImVec2 ParentSize = ImGui::GetContentRegionAvail();
-	ImVec2 ChildSize = ImVec2(ParentSize.x - 600,ParentSize.y - 260);
+	ImVec2 ChildSize = ImVec2(ParentSize.x - 600,ParentSize.y - 290);
 	ImVec2 ParentPos = ImGui::GetWindowPos();
-	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 25);
+	ImVec2 ChildPos = ImVec2(ParentPos.x + 300, ParentPos.y + 50);
 	ImGuiIO& io = ImGui::GetIO();
 
 	ImGui::SetNextWindowPos(ChildPos);

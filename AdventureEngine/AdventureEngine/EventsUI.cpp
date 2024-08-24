@@ -84,6 +84,7 @@ void EventsUI::RenderOverlayUI()
 	RenderChapterInspector();
 
 	RenderGraphTabBar();
+	RenderPlayModeToolBar();
 }
 
 void EventsUI::RenderGraphTabBar()
@@ -98,7 +99,7 @@ void EventsUI::RenderGraphTabBar()
 	ImGui::PushStyleVar(ImGuiStyleVar_TabRounding, 5.0f);
 
 // Set cursor position to the desired location for the TabBar
-ImVec2 tabBarPos = ImVec2(300, 7); // Set this to the top-left corner of your rectangle
+ImVec2 tabBarPos = ImVec2(300, 32); // Set this to the top-left corner of your rectangle
 ImGui::SetCursorPos(tabBarPos); // Relative to the window's position
 
 // Define the size of the child window to control the width of the tab bar
@@ -223,92 +224,230 @@ void EventsUI::RenderChapterList()
 
 void EventsUI::RenderChapterInspector()
 {
-
-	ImDrawList* drawList = ImGui::GetWindowDrawList();
-
-	// Set the size and position for the window and the rectangle inside it
-	ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
-	ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
-	ImVec2 WindowPos(7, (Application::g_WindowHeight - 450) + 20);  // Positive Y value for positioning inside the window
-
-	// Set the position for the rectangle relative to the window
-	ImGui::SetCursorPos(WindowPos);
-
-	// Calculate the size of the rectangle
-	ImVec2 rectSize = ImVec2(315, Application::g_WindowHeight - 650);
-
-	// Ensure the rectangle stays within the window's bounds
-	rectSize.y = std::max(10.0f, rectSize.y);  // Ensure the height isn't negative or too small
-	if (ImGui::BeginChild("##Data2", ImVec2((rectSize.x + WindowPos.x) - 25, (rectSize.y + WindowPos.y)),
-		false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
+	if (ActiveChapter != nullptr)
 	{
-		// Draw the rectangle at the calculated position with rounded corners
-		drawList->AddRectFilled(WindowPos, ImVec2(WindowPos.x + rectSize.x, (WindowPos.y + rectSize.y) - 40),
-			ImColor(0.08f, 0.08f, 0.08f, 1.0f), 10.0f, ImDrawFlags_RoundCornersAll);
+		ImDrawList* drawList = ImGui::GetWindowDrawList();
+
+		// Set the size and position for the window and the rectangle inside it
+		ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
+		ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
+		ImVec2 WindowPos(7, (Application::g_WindowHeight - 450) + 20);  // Positive Y value for positioning inside the window
+
+		// Set the position for the rectangle relative to the window
+		ImGui::SetCursorPos(WindowPos);
+
+		// Calculate the size of the rectangle
+		ImVec2 rectSize = ImVec2(315, Application::g_WindowHeight - 650);
+
+		// Ensure the rectangle stays within the window's bounds
+		rectSize.y = std::max(10.0f, rectSize.y);  // Ensure the height isn't negative or too small
+		if (ImGui::BeginChild("##Data2", ImVec2((rectSize.x + WindowPos.x) - 25, (rectSize.y + WindowPos.y)),
+			false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 		{
-			ImGui::SetCursorPos(ImVec2(WindowPos.x + 50,ImGui::GetCursorPosY() - 5));
-			ImGui::PushFont(Application::fontLoader.GetFont("NSBold"));
-			ImGui::Text("Chapter Properties");
-			ImGui::PopFont();
+			// Draw the rectangle at the calculated position with rounded corners
+			drawList->AddRectFilled(WindowPos, ImVec2(WindowPos.x + rectSize.x, (WindowPos.y + rectSize.y) - 40),
+				ImColor(0.08f, 0.08f, 0.08f, 1.0f), 10.0f, ImDrawFlags_RoundCornersAll);
+			{
+				ImGui::SetCursorPos(ImVec2(WindowPos.x + 50, ImGui::GetCursorPosY() - 5));
+				ImGui::PushFont(Application::fontLoader.GetFont("NSBold"));
+				ImGui::Text("Chapter Properties");
+				ImGui::PopFont();
 
-			char temp[256];
-			strncpy_s(temp, ActiveChapter->GetChapterName().c_str(), sizeof(temp));
-			ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
-			ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 5);
-			ImGui::Text("Name ");
-			ImGui::SameLine();
-			ImGui::InputTextWithHint("##Empty", temp,temp,IM_ARRAYSIZE(temp));
-			ImGui::PopFont();
+				//Buffer Var for Input Text
+				char temp[256];
+				//Copy Chapter Name string into Buffer Var
+				strncpy_s(temp, ActiveChapter->GetChapterName().c_str(), sizeof(temp));
+				ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
+				ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 5);
+				ImGui::Text("Name ");
+				ImGui::SameLine();
+				ImGui::InputTextWithHint("##Empty", temp, temp, IM_ARRAYSIZE(temp));
+				ImGui::PopFont();
 
+				if (ImGui::IsItemFocused())
+				{
+					if (ImGui::IsKeyPressed(ImGuiKey_Enter))
+					{
+						ActiveChapter->SetChapterName(temp);
+					}
+				}
+
+				if (Chapters.size() > 1)
+				{
+					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + 40);
+					ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
+					if (ImGui::Button("Delete Chapter", ImVec2(200, 25)))
+					{
+						// Find the active chapter in the list of chapters
+						auto it = std::find(Chapters.begin(), Chapters.end(), ActiveChapter);
+						if (it != Chapters.end() && *it == ActiveChapter)
+						{
+							// Remove the chapter from the Chapters list
+							Chapters.erase(it);
+
+							// Find the active chapter in the OpenChapters list
+							auto it2 = std::find(OpenChapters.begin(), OpenChapters.end(), ActiveChapter);
+
+							// Remove the chapter from the OpenChapters list
+							if (it2 != OpenChapters.end() && *it2 == ActiveChapter)
+							{
+								OpenChapters.erase(it2);
+							}
+
+							// Optionally, reset or select another active chapter
+							if (!OpenChapters.empty())
+							{
+								SetActiveChapter(OpenChapters.front()); // Set to the first open chapter or any other logic
+							}
+							else
+							{
+								ActiveChapter = nullptr; // No chapters left, reset the active chapter
+							}
+						}
+					}
+					ImGui::PopFont();
+				}
+
+			}
+
+			ImGui::EndChild();
 		}
-
-		ImGui::EndChild();
 	}
 }
 
 void EventsUI::RenderNodeInspector()
 {
-	if (ActiveChapter->GetActiveNode() != nullptr)
+	if (ActiveChapter != nullptr)
 	{
-		ImVec2 ListPos = ImVec2(ImGui::GetWindowWidth() - 290, 10); // Set this to the current cursor position, which should be below the tab bar
-		ImGui::SetCursorPos(ListPos); // Relative to the window's position
-		ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
-		if (ImGui::BeginChild("##NodePropInspector", ImVec2(270, ImGui::GetWindowHeight() - 350), ImGuiChildFlags_Border, ImGuiWindowFlags_MenuBar))
+		if (ActiveChapter->GetActiveNode() != nullptr)
 		{
-			if (ImGui::BeginMenuBar())
+			ImDrawList* drawList = ImGui::GetWindowDrawList();
+			ImVec2 ListPos = ImVec2(ImGui::GetWindowWidth() - 290, 10); // Set this to the current cursor position, which should be below the tab bar
+			ImGui::SetCursorPos(ListPos); // Relative to the window's position
+			ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
+			if (ImGui::BeginChild("##NodePropInspector", ImVec2(290, ImGui::GetWindowHeight() - 10),
+				false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 			{
-				ImGui::SetCursorPosX(-1);
-				ImGui::Button("?");
 
-				if (ImGui::IsItemHovered())
+				// Calculate the size of the rectangle
+				ImVec2 rectSize = ImVec2(290, Application::g_WindowHeight - 10);
+
+				// Ensure the rectangle stays within the window's bounds
+				rectSize.y = std::max(10.0f, rectSize.y);  // Ensure the height isn't negative or too small
+
+				// Draw the rectangle at the calculated position with rounded corners
+				drawList->AddRectFilled(ListPos, ImVec2(ListPos.x + rectSize.x, (ListPos.y + rectSize.y) - 40),
+					ImColor(0.08f, 0.08f, 0.08f, 1.0f), 10.0f, ImDrawFlags_RoundCornersAll);
 				{
-					ImGui::SetNextWindowPos(ImGui::GetItemRectMin());
-					ImGui::BeginTooltip();
-					ImGui::Text("[?] : Contains The Active Node Components.");
-					ImGui::EndTooltip();
+					//Get half the Rect Size then use a mod float to fine tune X Axis placement of Text
+					// Y Axis Seems alright where it is!!
+					ImGui::SetCursorPosX(rectSize.x - (rectSize.x / 2) - 100);
+					ImGui::PushFont(Application::fontLoader.GetFont("NSBold"));
+					ImGui::Text("Node Components");
+					ImGui::PopFont();
+
+					ImGui::SetCursorPosX(ImGui::GetCursorPosX() + 30);
+					if (ImGui::BeginChild("##Components",
+						ImVec2(ImGui::GetContentRegionAvail().x - 50, ImGui::GetContentRegionAvail().y - 80)
+						, false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
+					{
+						Node* activeNode = ActiveChapter->GetActiveNode();
+						if (activeNode != nullptr)
+						{
+							activeNode->DrawComponents();
+						}
+						else
+						{
+							std::cerr << "ActiveNode is null!" << std::endl;
+						}
+
+						ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25));
+						ImGui::EndChild();
+					}
+
 				}
 
-				TextCenteredInMenuBar("Node Properties");
-				ImGui::EndMenuBar();
-			}
+				/*if (ImGui::BeginMenuBar())
+				{
+					ImGui::SetCursorPosX(-1);
+					ImGui::Button("?");
 
-			Node* activeNode = ActiveChapter->GetActiveNode();
-			if (activeNode != nullptr)
-			{
-				activeNode->DrawComponents();
-			}
-			else
-			{
-				std::cerr << "ActiveNode is null!" << std::endl;
-			}
+					if (ImGui::IsItemHovered())
+					{
+						ImGui::SetNextWindowPos(ImGui::GetItemRectMin());
+						ImGui::BeginTooltip();
+						ImGui::Text("[?] : Contains The Active Node Components.");
+						ImGui::EndTooltip();
+					}
 
-			ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25));
+					TextCenteredInMenuBar("Node Properties");
+					ImGui::EndMenuBar();
+				}
 
-			ImGui::EndChild();
-			ImGui::PopStyleColor();
+				Node* activeNode = ActiveChapter->GetActiveNode();
+				if (activeNode != nullptr)
+				{
+					activeNode->DrawComponents();
+				}
+				else
+				{
+					std::cerr << "ActiveNode is null!" << std::endl;
+				}
+
+				ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25));*/
+
+				ImGui::EndChild();
+				ImGui::PopStyleColor();
+			}
 		}
 	}
 }
+
+void EventsUI::RenderPlayModeToolBar() // NEEDS WORK!!!! NOT DONE YET!!!
+{
+	ImDrawList* drawList = ImGui::GetWindowDrawList();  // Use the existing drawList pointer
+	ImVec2 TBarSize(400, 25);
+	ImVec2 TBarPos(ImGui::GetContentRegionAvail().x / 2, ImGui::GetWindowPos().y);
+	ImGui::SetCursorPos(TBarPos);
+
+	// Position the rectangle for the toolbar
+	ImVec2 RectPos(TBarPos.x - 130, TBarPos.y);
+
+	ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.05f, 0.05f, 0.05f, 1.0f));
+	if (ImGui::BeginChild("##Toolbar", RectPos, false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
+	{
+		// Draw the toolbar background
+		drawList->AddRectFilled(RectPos, ImVec2((RectPos.x + TBarSize.x) - 90, (RectPos.y + TBarSize.y)),
+			ImColor(0.05f, 0.05f, 0.05f, 1.0f));
+
+		// Define the size and position of the button
+		ImVec2 buttonPos = ImVec2(RectPos.x + 5, RectPos.y);
+		ImVec2 buttonSize = ImVec2(35, 20); // Size derived from (40 - 5) and 20
+		ImColor buttonColor = ImColor(0.3f, 0.3f, 0.3f, 1.0f);
+
+
+		// Custom drawing code
+
+		// Draw the filled rectangle (button background)
+		drawList->AddRectFilled(buttonPos, ImVec2(buttonPos.x + buttonSize.x, buttonPos.y + buttonSize.y), buttonColor);
+
+		// Draw the text on top of the rectangle
+		Application::fontLoader.DrawText(drawList, ImVec2(buttonPos.x + 5, buttonPos.y + 2), ImVec4(1, 1, 1, 1.0f), "Play");
+
+		// Create an invisible button over the same area
+		if (ImGui::InvisibleButton("PlayButton", buttonSize))
+		{
+			// Button clicked, perform the button action here
+			// For example, start playing something
+			buttonColor = ImColor(0.3f, 0.0f, 0.3f, 1.0f);
+		}
+
+
+		ImGui::EndChild();
+		ImGui::PopStyleColor();
+	}
+}
+
 
 bool EventsUI::contains(std::vector<Chapter*> C, Chapter* value)
 {
