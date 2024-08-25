@@ -3,7 +3,6 @@
 #include "Texture.h"
 #include "ProjectBrowser.h"
 
-
 class StartupScreen : public UserInterface
 {
 public:
@@ -12,14 +11,13 @@ public:
 		projectBrowser = new ProjectBrowser("../UserProjects");
 	}
 	void DrawUI() override;
-	
-
-
 
 private:
 	aie::Texture Logo;
 	ProjectBrowser* projectBrowser;
-	
+
+	bool DeletionConfirmation = false;
+
 	void SetupMainWindow(const ImVec2& windowSize, const ImVec2& WindowPos);
 
 	void DrawBackground(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize);
@@ -28,13 +26,15 @@ private:
 	void DrawLeftPanel(ImDrawList* drawList, const ImVec2& startOfArea, const ImVec2& WindowPos, const ImVec2& windowSize);
 	void DrawLeftPanelButtons(const ImVec2& startOfArea, const ImVec2& WindowPos, const ImVec2& LeftPanelSize);
 	void DrawCreateProjectButton(ImVec2 WindowPos, ImVec2 LeftPanelSize);
-	
+
 	void DrawCentreContent(ImDrawList* drawList, ImVec2 WindowPos, ImVec2 startOfArea);
 
 	void DrawRightPanel(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize);
 	void DrawRightPanelContent(ImDrawList* drawList, const ImVec2& RightPanelPos, const ImVec2& RightPanelSize);
-	void DrawRightPanelButtons(const ImVec2& RightPanelPos, const ImVec2& RightPanelSize);
+	void DrawRightPanelButtons(ImDrawList* drawList, const ImVec2& RightPanelPos, const ImVec2& RightPanelSize);
 	void DrawRightPanelHeader(ImDrawList* drawList, const ImVec2& RightPanelPos);
+	void DrawDeletionConfirmation(ImDrawList* drawList, const ImVec2& Pos, const ImVec2& size);
 
+	bool SavePrelimDataInBulk();
+	void QueueProjectForSaving(Project* project);
 };
-

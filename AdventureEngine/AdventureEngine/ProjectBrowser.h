@@ -6,6 +6,16 @@
 #include <fstream>
 #include "Texture.h"
 #include "JSONHandler.h"
+#include "FileExtensions.h"
+
+
+struct Project
+{
+	std::string name;
+	std::string path;
+	char Summary[256];
+	std::string LastEdited;
+};
 
 // Namespace for file system operations
 namespace fs = std::filesystem;
@@ -13,13 +23,7 @@ namespace fs = std::filesystem;
 class ProjectBrowser
 {
 public:
-	struct Project 
-	{
-		std::string name;
-		std::string path;
-		char Summary[256];
-		std::string LastEdited;
-	};
+	
 
 	ProjectBrowser(std::string directoryPath) : directoryPath(std::move(directoryPath))
 	{
@@ -71,6 +75,21 @@ public:
 
 	}
 
+	bool DeleteProject()
+	{
+		std::string TruePath = RemoveExtension(ActiveProject->path, "\\" + ActiveProject->name + FileExtensions::MasterExt);
+
+		// Remove_all deletes the directory and all its contents
+		std::uintmax_t numDeleted = std::filesystem::remove_all(TruePath);
+		if (numDeleted > 0)
+		{
+			ActiveProject = nullptr;
+			ReloadProjects();
+			return true;
+		}
+		return false;
+	}
+
 	void CreateNewProject(const std::string& directoryName, const std::string& fileName)
 	{
 		std::string FolderPath = directoryPath + "/" + directoryName;
@@ -82,7 +101,8 @@ public:
 			std::string ChapterFolderPath = FolderPath + "/" + "Chapters";
 			std::filesystem::create_directory(ChapterFolderPath);
 
-			std::string ChapterPath = ChapterFolderPath + "/" + "New Chapter.Chapter";
+			std::string newFileName = "New Chapter" + FileExtensions::ChapterExt;
+			std::string ChapterPath = ChapterFolderPath + "/" + newFileName;
 			std::ofstream outFile(ChapterPath);
 			if (outFile.is_open())
 			{
@@ -111,8 +131,8 @@ public:
 					{"Prelim Data",
 					{
 						{"Project Name", "Untitled Project"},
-						{"Project Summary", "This is an Example Summary..."},
-						{"Chapter Count", "1" }
+						{"Project Summary", "This is an Example Summary..."}/*,
+						{"Chapter Count", "1" }*/
 					}}
 				};
 
@@ -135,9 +155,25 @@ public:
 			fs::path oldFolderPath = fs::path(directoryPath) / oldProjectFolderName;
 			fs::path oldFilePath = oldFolderPath / oldFileName;
 			fs::path newFilePath = oldFolderPath / newFileName;
+			
+
+			if (!std::filesystem::exists(oldFolderPath))
+			{
+				std::cerr << "Directory does not exist: " << oldFolderPath << std::endl;
+				return;
+			}
 
 			// Rename the file
 			fs::rename(oldFilePath, newFilePath);
+			
+			std::string JSONFolderPath = directoryPath;
+			std::string JSONPath = JSONFolderPath + "\\" 
+				+ RemoveExtension(newFileName, FileExtensions::MasterExt)
+				+ "\\" + newFileName;
+
+			GetActiveProject()->path = JSONPath;
+			GetActiveProject()->name = RemoveExtension(newFileName, FileExtensions::MasterExt);
+
 			std::cout << "File renamed successfully from " << oldFilePath << " to " << newFilePath << std::endl;
 
 			// Rename the folder if a new folder name is provided
@@ -225,6 +261,8 @@ public:
 	{
 		ActiveProject = nullptr;
 	}
+	
+	std::vector<Project*> projectsToSave;
 
 private:
 	std::string directoryPath;
@@ -233,6 +271,7 @@ private:
 	aie::Texture texture;
 
 	ImTextureID ProjIcon;
+
 
 	void LoadProjects()
 	{
