@@ -1,5 +1,5 @@
 #pragma once
-#include "EventNode.h"
+#include "Nodes/CustomNodes/EventNode.h"
 
 class Connection
 {

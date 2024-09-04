@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  CommonLibrary.cpp
+  FontLoader.cpp
+  FileExtensions.cpp
+  ProjectBrowser.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\CommonLibrary\ProjectBrowser\ProjectBrowser.cpp(206,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
+  (compiling source file '/ProjectBrowser/ProjectBrowser.cpp')
+  
+  Generating Code...
+  CommonLibrary.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\CommonLibrary.lib

@@ -3,6 +3,7 @@
 #include "MonitorInfo.h"
 #include "ButtonID.h"
 #include "AccessFileSystem.h"
+#include "Globals.h"
 
 class Application;
 

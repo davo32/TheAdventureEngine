@@ -1,4 +1,4 @@
-#include "gl_core_4_4.h"
+#include "OpenGL/gl_core_4_4.h"
 #include "Application.h"
 #include <iostream>
 #include "ImGuiSetup.h"
@@ -22,7 +22,6 @@ ImGuiContext* Application::context = nullptr;
 
 // Initialize the static FontLoader instance
 ImGuiIO* Application::io = nullptr;
-FontLoader& Application::fontLoader = FontLoader::GetInstance();
 Console* Application::console = new Console();
 
 
@@ -101,29 +100,29 @@ bool Application::glfwSetup()
 
 	ImGuiIO& io = ImGui::GetIO();
 	Application::io = &io;
-	Application::fontLoader.SetIO(io);
+	Globals::fontLoader->SetIO(io); //Application::fontLoader.SetIO(io);
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 12.0f, "Regular"))
+	if (!Globals::fontLoader->LoadFont("../Resources/Fonts/roboto/Roboto-Regular.ttf", 12.0f, "Regular"))
 	{
 		std::cerr << "Failed to load Regular font\n";
 	}
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/roboto/Roboto-Bold.ttf", 13.0f, "Bold"))
+	if (!Globals::fontLoader->LoadFont("../Resources/Fonts/roboto/Roboto-Bold.ttf", 13.0f, "Bold"))
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-SemiBold.ttf", 30.0f, "NSBold"))
+	if (!Globals::fontLoader->LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-SemiBold.ttf", 30.0f, "NSBold"))
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 26.0f, "NSReg"))
+	if (!Globals::fontLoader->LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 26.0f, "NSReg"))
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
 
-	if (!Application::fontLoader.LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 18.0f, "NSRegSmall"))
+	if (!Globals::fontLoader->LoadFont("../Resources/Fonts/NotoSans/NotoSans_Condensed-Regular.ttf", 18.0f, "NSRegSmall"))
 	{
 		std::cerr << "Failed to load Bold font\n";
 	}
@@ -188,13 +187,17 @@ void Application::draw()
 				//MenuBar
 				UImanager.DrawUIByIndex(0);
 				ImGui::PopStyleColor();
+				
 				UImanager.DrawUIByIndex(UICounter);
-				if (ImGui::IsKeyPressed(ImGuiKey_Tab) && UICounter == 2)
+
+
+				/*if (ImGui::IsKeyPressed(ImGuiKey_Tab) && UICounter == 2)
 				{
 					console->ShowConsole = !console->ShowConsole;
 					std::cout << "Console: " << console->ShowConsole << '\n';
-				}
-				
+				}*/
+
+
 				ImGui::End();
 				ImGui::PopStyleColor();
 			}

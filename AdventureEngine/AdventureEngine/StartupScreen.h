@@ -1,20 +1,21 @@
 #pragma once
 #include "UserInterface.h"
-#include "Texture.h"
-#include "ProjectBrowser.h"
+#include "OpenGL/Texture.h"
+#include "Globals.h"
 
 class StartupScreen : public UserInterface
 {
 public:
 	StartupScreen()
 	{
-		projectBrowser = new ProjectBrowser("../UserProjects");
 	}
 	void DrawUI() override;
 
+	bool openProjectFlag = false;
+
 private:
 	aie::Texture Logo;
-	ProjectBrowser* projectBrowser;
+	ProjectBrowser* projectBrowser = ProjectBrowser::GetInstance();
 
 	bool DeletionConfirmation = false;
 

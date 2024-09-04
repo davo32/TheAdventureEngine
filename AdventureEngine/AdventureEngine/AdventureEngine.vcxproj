@@ -24,6 +24,7 @@
     <ProjectGuid>{26d582a7-2a99-4ab5-88dd-e2f8654b8669}</ProjectGuid>
     <RootNamespace>AdventureEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Editor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,14 +77,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Engine\;$(SolutionDir)CommonLibrary\;$(SolutionDIr)OpenGL\;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022;$(SolutionDIr)x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;Engine.lib;CommonLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Engine\;$(SolutionDir)CommonLibrary\;$(SolutionDIr)OpenGL\;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -102,8 +103,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022;$(SolutionDIr)x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;Engine.lib;CommonLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,14 +113,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Engine\;$(SolutionDir)CommonLibrary\;$(SolutionDIr)OpenGL\;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022;$(SolutionDIr)x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;Engine.lib;CommonLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,7 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dep\glm;$(SolutionDir)Dependencies\;$(SolutionDir)Dep\stb\;$(SolutionDir)Dep\glfw\include;$(SolutionDir)Engine\;$(SolutionDir)CommonLibrary\;$(SolutionDIr)OpenGL\;$(SolutionDir)Dep\Imgui\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -138,24 +139,17 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dep\glfw\lib-vc2022;$(SolutionDIr)x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;comdlg32.lib;ole32.lib;Engine.lib;CommonLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdventureEngine.cpp" />
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="BeginNode.cpp" />
-    <ClCompile Include="Chapter.cpp" />
+    <ClCompile Include="ChapterEditor.cpp" />
     <ClCompile Include="CmdList.cpp" />
-    <ClCompile Include="Connection.cpp" />
     <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Event.cpp" />
-    <ClCompile Include="EventButtonUI.cpp" />
-    <ClCompile Include="EventNode.cpp" />
-    <ClCompile Include="EventNode.h" />
     <ClCompile Include="EventsUI.cpp" />
-    <ClCompile Include="gl_core_4_4.c" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_demo.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
@@ -163,38 +157,18 @@
     <ClCompile Include="imgui_impl_opengl3.cpp" />
     <ClCompile Include="imgui_tables.cpp" />
     <ClCompile Include="imgui_widgets.cpp" />
-    <ClCompile Include="IncludeAllNodes.h" />
-    <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="Item.cpp" />
     <ClCompile Include="MenuBar.cpp" />
     <ClCompile Include="MonitorInfo.cpp" />
-    <ClCompile Include="nfd_common.c" />
-    <ClCompile Include="nfd_win.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="NodeDetailsComponent.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerStats.h" />
-    <ClCompile Include="ProjectBrowser.cpp" />
     <ClCompile Include="StartupScreen.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UIManager.cpp" />
-    <ClCompile Include="Widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="BeginNode.h" />
     <ClInclude Include="ButtonID.h" />
-    <ClInclude Include="Chapter.h" />
+    <ClInclude Include="ChapterEditor.h" />
     <ClInclude Include="CmdList.h" />
-    <ClInclude Include="Connection.h" />
     <ClInclude Include="Console.h" />
-    <ClInclude Include="CurrentWindow.h" />
-    <ClInclude Include="Event.h" />
-    <ClInclude Include="EventButtonUI.h" />
     <ClInclude Include="EventsUI.h" />
-    <ClInclude Include="FileExtensions.h" />
-    <ClInclude Include="FontLoader.h" />
-    <ClInclude Include="gl_core_4_4.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="ImGuiSetup.h" />
@@ -202,29 +176,13 @@
     <ClInclude Include="imgui_impl_opengl3.h" />
     <ClInclude Include="imgui_impl_opengl3_loader.h" />
     <ClInclude Include="imgui_internal.h" />
-    <ClInclude Include="InspectorType.h" />
-    <ClInclude Include="Inventory.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="json.hpp" />
-    <ClInclude Include="JSONHandler.h" />
     <ClInclude Include="MenuBar.h" />
     <ClInclude Include="MonitorInfo.h" />
-    <ClInclude Include="nfd.h" />
-    <ClInclude Include="nfd_common.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="NodeComponent.h" />
-    <ClInclude Include="NodeDetailsComponent.h" />
-    <ClInclude Include="NodeType.h" />
-    <ClInclude Include="Owner.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="ProjectBrowser.h" />
     <ClInclude Include="StartupScreen.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UIScenes.h" />
     <ClInclude Include="UISetup.h" />
     <ClInclude Include="UserInterface.h" />
-    <ClInclude Include="Widget.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini" />
@@ -237,6 +195,14 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{a4e96eaa-1f67-4a11-b173-ef4015990298}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenGL\OpenGL.vcxproj">
+      <Project>{e50e14b0-f19a-4567-8843-ea0f649d6b69}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

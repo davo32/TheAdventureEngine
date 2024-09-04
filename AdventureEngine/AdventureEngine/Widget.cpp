@@ -2,7 +2,7 @@
 
 void Widget::DrawWidget()
 {
-	if (StoredEvent != nullptr)
+	/*if (StoredEvent != nullptr)
 	{
 		if (isActive)
 		{
@@ -22,7 +22,7 @@ void Widget::DrawWidget()
 		{
 			ImGui::PopStyleColor(2);
 		}
-	}
+	}*/
 }
 
 

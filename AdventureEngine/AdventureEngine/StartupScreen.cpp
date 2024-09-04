@@ -1,9 +1,9 @@
 #include "StartupScreen.h"
-#include "FileExtensions.h"
 #include "MonitorInfo.h"
 #include "GLFW/glfw3.h"
 #include "Application.h"
-#include "JSONHandler.h"
+#include "Globals.h"
+//#include "JSONHandler.h"
 #include <iostream>
 
 void StartupScreen::DrawUI()
@@ -38,7 +38,7 @@ void StartupScreen::SetupMainWindow(const ImVec2& windowSize, const ImVec2& Wind
 {
 	ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
 	ImGui::SetCursorPos(WindowPos);
-	Application::fontLoader.SetFont("NSBold");
+	Globals::fontLoader->SetFont("NSBold");
 }
 
 void StartupScreen::DrawBackground(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize)
@@ -48,7 +48,7 @@ void StartupScreen::DrawBackground(ImDrawList* drawList, const ImVec2& WindowPos
 
 void StartupScreen::DrawHeader(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize)
 {
-	Application::fontLoader.DrawText(drawList, ImVec2(WindowPos.x + 80, WindowPos.y + 10), IM_COL32(255, 255, 255, 255), "Adventure Engine");
+	Globals::fontLoader->DrawText(drawList, ImVec2(WindowPos.x + 80, WindowPos.y + 10), IM_COL32(255, 255, 255, 255), "Adventure Engine");
 	drawList->AddLine(ImVec2(WindowPos.x, WindowPos.y + 50), ImVec2((windowSize.x / 3) - 300, WindowPos.y + 50), ImColor(0.2f, 0.2f, 0.2f, 0.5f), 0.08f);
 }
 
@@ -69,7 +69,7 @@ void StartupScreen::DrawLeftPanelButtons(const ImVec2& startOfArea, const ImVec2
 	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
 
 	ImGui::SetCursorPos(ImVec2(WindowPos.x - 15, WindowPos.y + 30));
-	ImGui::PushFont(Application::fontLoader.GetFont("NSReg"));
+	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
 	if (ImGui::Button("Documentation", ImVec2(LeftPanelSize.x - 15, 50)))
 	{
@@ -98,12 +98,12 @@ void StartupScreen::DrawCreateProjectButton(ImVec2 WindowPos, ImVec2 LeftPanelSi
 	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.1, 0.1, 0.1, 0.8f)); // Invisible background
 	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.3f, 0.3f, 0.3f, 0.4f)); // Background color on hover
 	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Background color when clicked
-	ImGui::PushFont(Application::fontLoader.GetFont("NSReg"));
+	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
 	ImGui::SetCursorPos(ImVec2(WindowPos.x, LeftPanelSize.y - 150));
 	if (ImGui::Button("+ Create Project", ImVec2(LeftPanelSize.x - 45, 50)))
 	{
-		std::string newFileName = "Untitled Project" + FileExtensions::MasterExt;
+		std::string newFileName = "Untitled Project";
 		std::string newProjectFolder = "Untitled Project";
 		projectBrowser->CreateNewProject(newProjectFolder, newFileName);
 		projectBrowser->ReloadProjects();
@@ -116,16 +116,16 @@ void StartupScreen::DrawCreateProjectButton(ImVec2 WindowPos, ImVec2 LeftPanelSi
 
 void StartupScreen::DrawCentreContent(ImDrawList* drawList, ImVec2 WindowPos, ImVec2 startOfArea)
 {
-	Application::fontLoader.SetFont("NSBold");
+	Globals::fontLoader->SetFont("NSBold");
 
 	drawList->AddLine(ImVec2(WindowPos.x, WindowPos.y + 50), ImVec2(ImGui::GetContentRegionAvail().x, WindowPos.y + 50), ImColor(0.08f, 0.08f, 0.08f, 1.0f), 0.05f);
-
 	projectBrowser->LoadDefaultIcon();
 
 	ImGui::SetCursorPos(ImVec2(startOfArea.x + 20, WindowPos.y + 80));
-	ImGui::PushFont(Application::fontLoader.GetFont("NSReg"));
+	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 	projectBrowser->Render();
 	ImGui::PopFont();
+
 }
 
 void StartupScreen::DrawRightPanel(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize)
@@ -141,7 +141,7 @@ void StartupScreen::DrawRightPanel(ImDrawList* drawList, const ImVec2& WindowPos
 
 void StartupScreen::DrawRightPanelHeader(ImDrawList* drawList, const ImVec2& RightPanelPos)
 {
-	Application::fontLoader.DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 70), IM_COL32(255, 255, 255, 255), "Project Summary");
+	Globals::fontLoader->DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 70), IM_COL32(255, 255, 255, 255), "Project Summary");
 }
 
 void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& RightPanelPos, const ImVec2& RightPanelSize)
@@ -154,7 +154,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 			ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f)); // Invisible background
 			ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));  // Invisible border
 
-			ImGui::PushFont(Application::fontLoader.GetFont("NSBold"));
+			ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
 
 			std::string removedExtensionPath;
 			std::string text;
@@ -172,13 +172,13 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 				// Check if the InputText widget lost focus or Enter key is pressed
 				if (!ImGui::IsItemActive() || ImGui::IsKeyPressed(ImGuiKey_Enter))
 				{
-					std::string oldName = projectBrowser->GetActiveProject()->name + FileExtensions::MasterExt;
-					std::string newName = temp + FileExtensions::MasterExt;
+					std::string oldName = projectBrowser->GetActiveProject()->name + Globals::FileExts->MasterExt;
+					std::string newName = temp + Globals::FileExts->MasterExt;
 
 					if (oldName != newName) // Ensure the name has actually changed
 					{
 						// Update the active project's name before saving data
-						std::string baseName = projectBrowser->RemoveExtension(projectBrowser->GetActiveProject()->name, FileExtensions::MasterExt);
+						std::string baseName = projectBrowser->RemoveExtension(projectBrowser->GetActiveProject()->name, Globals::FileExts->MasterExt);
 						projectBrowser->GetActiveProject()->name = baseName; //+ FileExtensions::MasterExt;
 
 						projectBrowser->RenameProject(baseName, oldName, newName, temp);
@@ -206,9 +206,9 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 			ImVec2 rectSize = ImVec2(280, 220);
 			drawList->AddRectFilled(rectPos, ImVec2(rectPos.x + rectSize.x, rectPos.y + rectSize.y), rectColor, 6.0f);
 
-			Application::fontLoader.SetFont("NSReg");
-			Application::fontLoader.DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 70), IM_COL32(255, 255, 255, 255), "Project Summary");
-			Application::fontLoader.DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 270), IM_COL32(255, 255, 255, 255), text.c_str());
+			Globals::fontLoader->SetFont("NSReg");
+			Globals::fontLoader->DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 70), IM_COL32(255, 255, 255, 255), "Project Summary");
+			Globals::fontLoader->DrawText(drawList, ImVec2(RightPanelPos.x + 80, RightPanelPos.y + 270), IM_COL32(255, 255, 255, 255), text.c_str());
 
 			// Draw chapter count
 			if (projectBrowser->GetActiveProject() != nullptr)
@@ -217,14 +217,8 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 				ImVec2 ChpterRectSize = ImVec2(140, 40);
 				drawList->AddRectFilled(ChpterRectPos, ImVec2(ChpterRectPos.x + ChpterRectSize.x, ChpterRectPos.y + ChpterRectSize.y), rectColor, 6.0f);
 
-				// Grabs the File + Extension then removes the File + extension from Path
-				std::string file = projectBrowser->GetActiveProject()->name + FileExtensions::MasterExt;
-
-				// Get the path with .Master removed
-				removedExtensionPath = projectBrowser->RemoveExtension(projectBrowser->GetActiveProject()->path, file);
-
 				// Count chapter files
-				int chapterCount = projectBrowser->CountChapterFiles(removedExtensionPath + "\\" + FileExtensions::ChapterFolder);
+				int chapterCount = projectBrowser->CountChapterFiles();
 
 				// Convert chapter count to string
 				std::string chapterCountStr = std::to_string(chapterCount);
@@ -233,7 +227,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 				text = "Chapters: " + chapterCountStr;
 
 				ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 10, RightPanelPos.y + 265));
-				ImGui::PushFont(Application::fontLoader.GetFont("NSReg"));
+				ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 				ImGui::Text(text.c_str());
 				ImGui::PopFont();
 			}
@@ -249,7 +243,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 			{
 				ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f)); // Invisible background
 				ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));  // Invisible border
-				ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
+				ImGui::PushFont(Globals::fontLoader->GetFont("NSRegSmall"));
 				ImGui::InputTextMultiline("##Summary", projectBrowser->GetActiveProject()->Summary, IM_ARRAYSIZE(projectBrowser->GetActiveProject()->Summary), ImVec2(250, 120));
 				ImGui::PopFont();
 
@@ -277,7 +271,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 void StartupScreen::DrawRightPanelButtons(ImDrawList* drawList, const ImVec2& RightPanelPos, const ImVec2& RightPanelSize)
 {
 	ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 6.0f);
-	ImGui::PushFont(Application::fontLoader.GetFont("NSReg"));
+	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
 	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0.5, 0, 0.5f));
 	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0, 0.8, 0, 0.3f));
@@ -285,8 +279,11 @@ void StartupScreen::DrawRightPanelButtons(ImDrawList* drawList, const ImVec2& Ri
 	ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 20, RightPanelSize.y - 245));
 	if (ImGui::Button("Open Project", ImVec2(250, 50)))
 	{
-		Application::SetTitleText("Adventure Engine - " + projectBrowser->GetActiveProject()->name);
-		Application::UICounter = 2;
+		if (projectBrowser->GetActiveProject() != nullptr)
+		{
+			Application::SetTitleText("Adventure Engine - " + projectBrowser->GetActiveProject()->name);
+			openProjectFlag = true; // Set the flag instead of changing UICounter here
+		}
 	}
 	ImGui::PopStyleColor(3);
 
@@ -322,6 +319,11 @@ void StartupScreen::DrawRightPanelButtons(ImDrawList* drawList, const ImVec2& Ri
 	ImGui::PopFont();
 	ImGui::PopStyleColor(3);
 	ImGui::PopStyleVar();
+
+	if (openProjectFlag)
+	{
+		Application::UICounter = 2; // Safely change the state after ImGui processing is complete
+	}
 }
 
 void StartupScreen::DrawDeletionConfirmation(ImDrawList* drawList, const ImVec2& Pos, const ImVec2& size)

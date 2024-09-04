@@ -1,0 +1,17 @@
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\AdventureEngine.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\AdventureEngine.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Application.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Application.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\ChapterEditor.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\ChapterEditor.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\CmdList.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\CmdList.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\Console.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\Console.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\EventsUI.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_demo.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_demo.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_draw.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_draw.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_glfw.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_impl_glfw.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_opengl3.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_impl_opengl3.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_tables.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_tables.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_widgets.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_widgets.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\MenuBar.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MonitorInfo.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\MonitorInfo.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\StartupScreen.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\UIManager.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\UIManager.obj

@@ -4,8 +4,8 @@
 #include <vector>
 #include <string>
 #include "UISetup.h"
-#include "FontLoader.h"
 #include "Console.h"
+#include "Globals.h"
 
 
 
@@ -27,7 +27,6 @@ public:
 	static std::string GetTitleText() { return AppTitleText; }
 	static void SetTitleText(std::string text) { AppTitleText = text; glfwSetWindowTitle(window, AppTitleText.c_str()); }
 	static int UICounter;
-	static FontLoader& fontLoader; // Static instance of FontLoader
 	static Console* console;
 
 private: //GLFW

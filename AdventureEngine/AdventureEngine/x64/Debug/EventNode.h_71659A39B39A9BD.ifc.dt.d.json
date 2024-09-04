@@ -4,7 +4,7 @@
         "Source": "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\eventnode.h",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\node.h",
+            "c:\\repo\\theadventureengine\\adventureengine\\engine\\node.h",
             "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\imgui.h",
             "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\imconfig.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\float.h",
@@ -96,7 +96,7 @@
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.41.34120\\include\\xbit_ops.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.41.34120\\include\\xnode_handle.h",
             "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\nodecomponent.h",
-            "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\event.h",
+            "c:\\repo\\theadventureengine\\adventureengine\\engine\\event.h",
             "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\item.h",
             "c:\\repo\\theadventureengine\\adventureengine\\adventureengine\\nodetype.h"
         ],

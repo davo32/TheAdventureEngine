@@ -53,7 +53,6 @@ void Console::RenderConsole()
         ImGui::EndGroup();
 
        
-
         ImGui::EndChild();
     }
 }

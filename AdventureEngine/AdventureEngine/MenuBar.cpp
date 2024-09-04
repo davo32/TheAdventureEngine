@@ -15,19 +15,22 @@ void MenuBar::FileMenu()
 		{
 			Application::SetTitleText("Adventure Engine - No Project");
 			Application::UICounter = 1;
+			Globals::projectBrowser->DeSelectProject();
 		}
 		ImGui::Separator();
 		if (ImGui::MenuItem("Save","CRTL + S",false,true))
 		{
-			
-		}
-		if (ImGui::MenuItem("Save As"))
-		{
-
+			//Save to database!!!
+			Project* Active = Globals::projectBrowser->GetActiveProject();
+			Globals::projectBrowser->SaveUpdatesToDatabase(Active);
 		}
 		ImGui::Separator();
 		if (ImGui::MenuItem("Quit","CRTL + Q",false,true))
 		{
+			//Save before quitting!!
+			Project* Active = Globals::projectBrowser->GetActiveProject();
+			Globals::projectBrowser->SaveUpdatesToDatabase(Active);
+
 			Application::SetShutdownState(true);
 			
 		}
@@ -90,18 +93,15 @@ void MenuBar::DrawUI()
 {
 	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
 	Shortcuts();
+
 	if (ImGui::BeginMenuBar())
 	{
-		//ImGui::PushFont(Application::fontLoader.GetFont("NSRegSmall"));
-		ImGui::Text("Adventure Engine");
-		//ImGui::PopFont();
-		ImGui::Dummy(ImVec2(100,ImGui::GetContentRegionAvail().y));
 		FileMenu();
 		ProjectMenu();
-		ImGui::Dummy(ImVec2(ImGui::GetContentRegionAvail().x - 150,ImGui::GetContentRegionAvail().y));
+		ImGui::Dummy(ImVec2(20,ImGui::GetContentRegionAvail().y));
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());
+		ImGui::PopStyleColor();
 		ImGui::EndMenuBar();
 	}
-	ImGui::PopStyleColor();
 }

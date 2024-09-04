@@ -2,11 +2,11 @@
 #include <string>
 #include <GLFW/glfw3.h>
 #include <vector>
-#include "CurrentWindow.h"
-#include "IncludeAllNodes.h"
-#include "Chapter.h"
+#include "Core/Chapter/Chapter.h"
 #include "UserInterface.h"
 #include "InspectorType.h"
+#include "ChapterEditor.h"
+#include "Globals.h"
 
 enum GMode { EDIT, PLAY };
 
@@ -16,10 +16,12 @@ class EventsUI : public UserInterface
 public:
 	EventsUI() : ActiveChapter(nullptr)
 	{
-		
+		chapterEditor = new ChapterEditor();
 	}
 	void DrawUI() override;
 	void StartupUI() override;
+
+	void SetupInitialChapter();
 
 	void text_centered(const std::string& text);
 
@@ -37,6 +39,8 @@ public:
 
 	void RenderPlayModeToolBar();
 
+	void RenderConsoleLog();
+
 	//Utilities
 	bool contains(std::vector<Chapter*> C, Chapter* value);
 	void SetActiveChapter(Chapter* chapter);
@@ -46,12 +50,16 @@ public:
 
 	static InspectorType Itype;
 private:
+	ChapterEditor* chapterEditor;
+
 	std::vector<Chapter*> Chapters;
 	std::vector<Chapter*> OpenChapters;
 	Chapter* ActiveChapter;
 	int selectedItem = -1;
 	int activeTabIndex = -1; // Index of the currently active tab
 	
+	aie::Texture PlayTexture;
+
 	GMode GameMode = GMode::EDIT;
 	
 };
