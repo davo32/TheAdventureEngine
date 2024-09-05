@@ -19,5 +19,8 @@ C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(264,48):
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(266,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(272,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(370,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(441,25): warning C4312: 'reinterpret_cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,68): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,62): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,56): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(464,25): warning C4312: 'reinterpret_cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\Editor.exe

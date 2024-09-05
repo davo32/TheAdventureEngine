@@ -404,8 +404,31 @@ void EventsUI::RenderNodeInspector()
 					ImGui::Separator();
 					// Set the rounding radius for the button corners
 					ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 5.0f); // Adjust the value for more or less rounding
-					ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25));
+					if (ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25)))
+					{
+						openComponentsList = !openComponentsList;
+					}
 					ImGui::PopStyleVar();
+					if (openComponentsList)
+					{
+						ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.04, 0.04, 0.04, 1.0f));
+						if (ImGui::BeginChild("##ComponentsList",
+							ImVec2(ImGui::GetContentRegionAvail().x - 5, 300)
+							,ImGuiChildFlags_Border, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar))
+						{
+
+							char temp[256] = "";
+
+							if (ImGui::BeginMenuBar())
+							{
+								ImGui::SetCursorPosX(50);
+								ImGui::InputTextWithHint("##Temp", "Search Components...", temp, sizeof(temp));
+								ImGui::EndMenuBar();
+							}
+							ImGui::PopStyleColor();
+							ImGui::EndChild();
+						}
+					}
 
 					ImGui::EndChild();
 				}

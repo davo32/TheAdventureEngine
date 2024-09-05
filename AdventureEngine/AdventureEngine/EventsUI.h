@@ -51,6 +51,7 @@ public:
 	static InspectorType Itype;
 private:
 	ChapterEditor* chapterEditor;
+	bool openComponentsList = false;
 
 	std::vector<Chapter*> Chapters;
 	std::vector<Chapter*> OpenChapters;
