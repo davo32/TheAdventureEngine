@@ -250,7 +250,7 @@ void ChapterEditor::NodeInteraction(Chapter* chapter)
 				{
 					dragStartNode = node;
 					dragStartOutputIndex = outputIndex;
-					dragStartPos = node->GetOutputPoint(outputIndex);
+					dragStartPos = node->GetOutputPoint(outputIndex).position;
 					node->StartConnecting(outputIndex, dragStartPos);
 					return;
 				}

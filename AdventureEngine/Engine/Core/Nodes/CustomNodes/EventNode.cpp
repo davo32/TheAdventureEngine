@@ -1,25 +1,27 @@
 #include "pch.h"
 #include "Core/Nodes/CustomNodes/EventNode.h"
-#include "Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent.h"
+#include "Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent/NodeDetailsComponent.h"
 EventNode::EventNode()
 {
 	nodeType = NodeType::EventType;
 
-
+    //Node Details Component - Default For Re-namable Nodes
+    Components.push_back(new NodeDetailsComponent(this));
 
 }
 EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
 	: Node(Position, Size, newEvent->GetEventName()), StoredEvent(newEvent)
 {
 	nodeType = NodeType::EventType;
-
-	// Initialize input points close to the left side
-	inputPoints.push_back(ImVec2(Position.x + Size.x, Position.y + Size.y / 2));
 	
-	ImVec2 Combine = ImVec2(Position.x, Position.y);
+    // Initialize input points close to the left side
+    ImVec2 InputPos = ImVec2(Position.x - Size.x, Position.y - Size.y / 2);
+    Pin newInput = Pin(InputPos,"Input");
+    inputPoints.push_back(newInput);
 
 	// Initialize output points close to the right side
-	outputPoints.push_back(ImVec2(Combine));
+    Pin newOutput = Pin(Position, "Action");
+	outputPoints.push_back(newOutput);
 
 	//Node Details Component - Default For Re-namable Nodes
 	Components.push_back(new NodeDetailsComponent(this));
@@ -74,9 +76,16 @@ std::vector<uint8_t> EventNode::serialize() const
 
 	for (const auto& point : inputPoints)
 	{
-		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.x), reinterpret_cast<const uint8_t*>(&point.x) + sizeof(float));
-		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.y), reinterpret_cast<const uint8_t*>(&point.y) + sizeof(float));
-	}
+		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
+		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
+	    
+        // Serialize the length of the label string (uint32_t for consistency)
+        uint32_t labelLength = static_cast<uint32_t>(point.label.size());
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&labelLength), reinterpret_cast<const uint8_t*>(&labelLength) + sizeof(uint32_t));
+
+        // Serialize the actual label string
+        data.insert(data.end(), point.label.begin(), point.label.end());
+    }
 
 	// Serialize outputPoints
 	size_t outputPointsSize = outputPoints.size();
@@ -84,9 +93,16 @@ std::vector<uint8_t> EventNode::serialize() const
 
 	for (const auto& point : outputPoints)
 	{
-		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.x), reinterpret_cast<const uint8_t*>(&point.x) + sizeof(float));
-		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.y), reinterpret_cast<const uint8_t*>(&point.y) + sizeof(float));
-	}
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
+        
+        // Serialize the length of the label string (uint32_t for consistency)
+        uint32_t labelLength = static_cast<uint32_t>(point.label.size());
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&labelLength), reinterpret_cast<const uint8_t*>(&labelLength) + sizeof(uint32_t));
+
+        // Serialize the actual label string
+        data.insert(data.end(), point.label.begin(), point.label.end());
+    }
 
 	//// Serialize text
 	size_t textSize = text.size();
@@ -167,10 +183,18 @@ void EventNode::deserialize(const std::vector<uint8_t> &data)
     // Deserialize each ImVec2 point
     for (auto& point : inputPoints)
     {
-        point.x = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
-        point.y = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.y = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
+
+        // Deserialize the length of the label string
+        uint32_t labelLength = *reinterpret_cast<const uint32_t*>(&data[offset]);
+        offset += sizeof(uint32_t);
+
+        // Deserialize the actual label string
+        point.label.assign(reinterpret_cast<const char*>(&data[offset]), labelLength);
+        offset += labelLength;
     }
 
     // Deserialize outputPoints size
@@ -194,10 +218,18 @@ void EventNode::deserialize(const std::vector<uint8_t> &data)
     // Deserialize each ImVec2 point
     for (auto& point : outputPoints)
     {
-        point.x = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
-        point.y = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.y = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
+
+        // Deserialize the length of the label string
+        uint32_t labelLength = *reinterpret_cast<const uint32_t*>(&data[offset]);
+        offset += sizeof(uint32_t);
+
+        // Deserialize the actual label string
+        point.label.assign(reinterpret_cast<const char*>(&data[offset]), labelLength);
+        offset += labelLength;
     }
 
     // Define a maximum reasonable text size

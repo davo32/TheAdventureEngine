@@ -11,6 +11,18 @@ enum NodeType
     EventType
 };
 
+struct Pin
+{
+    ImVec2 position;
+    std::string label;
+
+    Pin() : position(0,0),label("") {}
+
+    Pin(const ImVec2& pos,const std::string& text)
+        : position(pos),label(text) {}
+};
+
+
 class Node 
 {
 public:
@@ -60,8 +72,8 @@ public:
     void DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel);
     void DrawComponents();
 
-    ImVec2 GetOutputPoint(int index) const { return outputPoints[index]; }
-    ImVec2 GetInputPoint(int index) const { return inputPoints[index]; }
+    Pin GetOutputPoint(int index) const { return outputPoints[index]; }
+    Pin GetInputPoint(int index) const { return inputPoints[index]; }
 
     void RemoveConnection(int index) 
     {
@@ -90,6 +102,8 @@ public:
     int id; // Unique ID for each Node
     
     std::vector<Connection> connections; //Store connections for the node
+    std::vector<Pin> inputPoints;
+    std::vector<Pin> outputPoints;
 
 protected:
 
@@ -108,8 +122,6 @@ protected:
     ImVec2 minSize = ImVec2(100, 25);
     ImVec2 maxSize = ImVec2(250, 150);
 
-    std::vector<ImVec2> inputPoints;
-    std::vector<ImVec2> outputPoints;
 
     std::vector<NodeComponent*> Components;
 

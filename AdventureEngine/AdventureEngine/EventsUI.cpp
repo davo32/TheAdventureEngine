@@ -387,9 +387,9 @@ void EventsUI::RenderNodeInspector()
 				ImGui::Text("Node Components");
 				ImGui::PopFont();
 
-				ImGui::SetCursorPosX(ImGui::GetCursorPosX() + 30);
+				ImGui::SetCursorPosX(ImGui::GetCursorPosX());
 				if (ImGui::BeginChild("##Components",
-					ImVec2(ImGui::GetContentRegionAvail().x - 50, ImGui::GetContentRegionAvail().y - 80)
+					ImVec2(ImGui::GetContentRegionAvail().x - 25, ImGui::GetContentRegionAvail().y - 80)
 					, false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 				{
 					Node* activeNode = ActiveChapter->GetActiveNode();
@@ -401,6 +401,7 @@ void EventsUI::RenderNodeInspector()
 					{
 						std::cerr << "ActiveNode is null!" << std::endl;
 					}
+					ImGui::Separator();
 					// Set the rounding radius for the button corners
 					ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 5.0f); // Adjust the value for more or less rounding
 					ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25));
@@ -418,7 +419,7 @@ void EventsUI::RenderNodeInspector()
 	}
 }
 
-void EventsUI::RenderPlayModeToolBar() // NEEDS WORK!!!! NOT DONE YET!!!
+void EventsUI::RenderPlayModeToolBar() 
 {
 
 	ImGui::SetCursorPos(ImVec2(0, 0));

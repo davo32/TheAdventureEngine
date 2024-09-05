@@ -2,10 +2,11 @@ C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Chapter\Chapter.cpp;C:\RE
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Database\sqlite3.c;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\sqlite3.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Engine.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Engine.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Events\Event.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Event.obj
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\NodeDetailsComponent.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\NodeDetailsComponent.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\CustomNodes\BeginNode.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\BeginNode.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\CustomNodes\EventNode.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\EventNode.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Node.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\FileExts\FileExtensions.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\FileExtensions.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\ProjectBrowser.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\pch.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\pch.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\PlayerChoiceComponent.obj

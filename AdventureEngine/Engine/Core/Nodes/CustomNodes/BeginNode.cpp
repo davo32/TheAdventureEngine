@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Core/Nodes/CustomNodes/BeginNode.h"
-#include "Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent.h"
+#include "Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent/NodeDetailsComponent.h"
+
 BeginNode::BeginNode() 
     :Node(position,size, "Begin")
 {
@@ -27,7 +28,9 @@ BeginNode::BeginNode(ImVec2 _Position, ImVec2 _Size)
     size = ImVec2(100, 70);
 
 	// Initialize output points close to the right side
-	outputPoints.push_back(ImVec2(position.x + size.x / 2,position.y + size.y / 2));
+    ImVec2 newOutputPos(ImVec2(position.x + size.x / 2, position.y + size.y / 2));
+    Pin newOutput = Pin(newOutputPos, "Start");
+	outputPoints.push_back(newOutput);
 	
 }
 
@@ -57,8 +60,16 @@ std::vector<uint8_t> BeginNode::serialize() const
     data.insert(data.end(), reinterpret_cast<const uint8_t*>(&inputPointsSize), reinterpret_cast<const uint8_t*>(&inputPointsSize) + sizeof(size_t));
     for (const auto& point : inputPoints)
     {
-        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.x), reinterpret_cast<const uint8_t*>(&point.x) + sizeof(float));
-        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.y), reinterpret_cast<const uint8_t*>(&point.y) + sizeof(float));
+        // Serialize the ImVec2 position (x and y)
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
+
+        // Serialize the length of the label string (uint32_t for consistency)
+        uint32_t labelLength = static_cast<uint32_t>(point.label.size());
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&labelLength), reinterpret_cast<const uint8_t*>(&labelLength) + sizeof(uint32_t));
+
+        // Serialize the actual label string
+        data.insert(data.end(), point.label.begin(), point.label.end());
     }
 
     // Serialize outputPoints
@@ -66,8 +77,16 @@ std::vector<uint8_t> BeginNode::serialize() const
     data.insert(data.end(), reinterpret_cast<const uint8_t*>(&outputPointsSize), reinterpret_cast<const uint8_t*>(&outputPointsSize) + sizeof(size_t));
     for (const auto& point : outputPoints)
     {
-        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.x), reinterpret_cast<const uint8_t*>(&point.x) + sizeof(float));
-        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.y), reinterpret_cast<const uint8_t*>(&point.y) + sizeof(float));
+        // Serialize the ImVec2 position (x and y)
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
+
+        // Serialize the length of the label string (uint32_t for consistency)
+        uint32_t labelLength = static_cast<uint32_t>(point.label.size());
+        data.insert(data.end(), reinterpret_cast<const uint8_t*>(&labelLength), reinterpret_cast<const uint8_t*>(&labelLength) + sizeof(uint32_t));
+
+        // Serialize the actual label string
+        data.insert(data.end(), point.label.begin(), point.label.end());
     }
 
     // Serialize text
@@ -154,10 +173,18 @@ void BeginNode::deserialize(const std::vector<uint8_t>& data)
     }
     for (auto& point : inputPoints)
     {
-        point.x = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
-        point.y = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.y = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
+
+        // Deserialize the length of the label string
+        uint32_t labelLength = *reinterpret_cast<const uint32_t*>(&data[offset]);
+        offset += sizeof(uint32_t);
+
+        // Deserialize the actual label string
+        point.label.assign(reinterpret_cast<const char*>(&data[offset]), labelLength);
+        offset += labelLength;
     }
 
     std::cout << "After IP data size: " << data.size() - offset << std::endl;
@@ -183,10 +210,18 @@ void BeginNode::deserialize(const std::vector<uint8_t>& data)
     }
     for (auto& point : outputPoints)
     {
-        point.x = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
-        point.y = *reinterpret_cast<const float*>(&data[offset]);
+        point.position.y = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
+
+        // Deserialize the length of the label string
+        uint32_t labelLength = *reinterpret_cast<const uint32_t*>(&data[offset]);
+        offset += sizeof(uint32_t);
+
+        // Deserialize the actual label string
+        point.label.assign(reinterpret_cast<const char*>(&data[offset]), labelLength);
+        offset += labelLength;
     }
 
     std::cout << "After OP data size: " << data.size() - offset << std::endl;

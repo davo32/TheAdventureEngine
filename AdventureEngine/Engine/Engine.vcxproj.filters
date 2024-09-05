@@ -30,7 +30,7 @@
     <ClInclude Include="Core\Events\Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent.h">
+    <ClInclude Include="Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\NodeComponents\NodeComponent.h">
@@ -60,6 +60,9 @@
     <ClInclude Include="Database\sqlite3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -77,7 +80,7 @@
     <ClCompile Include="Core\Events\Event.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent.cpp">
+    <ClCompile Include="Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Nodes\CustomNodes\BeginNode.cpp">
@@ -93,6 +96,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Database\sqlite3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

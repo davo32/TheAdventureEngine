@@ -38,8 +38,8 @@ void Node::RenderConnections(ImDrawList* drawList, float zoomLevel, ImVec2 viewp
 		if (conn.targetNode != nullptr)
 		{
 			// Get the position of the output and input points
-			ImVec2 outputPointPos = GetOutputPoint(conn.outputIndex);
-			ImVec2 inputPointPos = conn.targetNode->GetInputPoint(conn.inputIndex);
+			ImVec2 outputPointPos = GetOutputPoint(conn.outputIndex).position;
+			ImVec2 inputPointPos = conn.targetNode->GetInputPoint(conn.inputIndex).position;
 
 			// Define the vector to add
 			ImVec2 offset = ImVec2(0.0f, 0.0f);
@@ -164,13 +164,16 @@ void Node::EndConnection(Node* targetNode, int inputIndex)
 void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, float headerHeight, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float borderThickness, float& pinOffsetY)
 {
 	const float circleRadius = 8.0f; // Radius of the circle
-	const float rectOffsetY = headerHeight / 2;
+	const float blackSectionOffsetY = headerHeight + padding; // Start pin placement below header
 	ImGuiIO& io = ImGui::GetIO();
+
+	// Initialize pin offset Y for inputs
+	float inputPinOffsetY = drawPosition.y + blackSectionOffsetY;
 
 	for (int i = 0; i < inputPoints.size(); i++)
 	{
-		ImVec2 center(drawPosition.x + padding + 20.0f, drawPosition.y + rectOffsetY + 35.0f);
-		inputPoints[i] = center;
+		ImVec2 center = ImVec2(drawPosition.x + padding + 20.0f, inputPinOffsetY + circleRadius);
+		inputPoints[i].position = center;
 
 		bool isHovered = GetHoveredInputPointIndex(io.MousePos) == i;
 		// Draw outer circle
@@ -187,33 +190,44 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 			drawList->AddCircleFilled(center, circleRadius - borderThickness, ConColor, 16);
 		}
 
-		pinOffsetY += circleRadius * 2.0f + padding;
-		drawList->AddText(ImVec2(center.x + circleRadius + 5.0f, center.y - 8.0f), ImColor(255, 255, 255), "Input");
+		// Draw label
+		drawList->AddText(ImVec2(center.x + circleRadius + 5.0f, center.y - 8.0f), ImColor(255, 255, 255), inputPoints[i].label.c_str());
+
+		// Update pin offset for the next input
+		inputPinOffsetY += circleRadius * 2.0f + padding;
 	}
+
+	// Initialize pin offset Y for outputs
+	float outputPinOffsetY = drawPosition.y + blackSectionOffsetY;
 
 	for (int i = 0; i < outputPoints.size(); i++)
 	{
-		ImVec2 center(drawPosition.x + drawSize.x - padding - 20.0f, drawPosition.y + rectOffsetY + 35.0f);
-		outputPoints[i] = center;
-		// Check if the mouse is hovering over this output point
-		bool isHovered = GetHoveredOutputPointIndex(io.MousePos) == i;
+		ImVec2 center = ImVec2(drawPosition.x + drawSize.x - padding - 20.0f, outputPinOffsetY + circleRadius);
+		outputPoints[i].position = center;
 
+		bool isHovered = GetHoveredOutputPointIndex(io.MousePos) == i;
 		// Draw outer circle
-		drawList->AddCircle(outputPoints[i], circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
+		drawList->AddCircle(center, circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 
 		if (!RightisConnected)
 		{
 			// Draw inner circle
-			drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
+			drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
 		}
 		else
 		{
-			drawList->AddCircleFilled(outputPoints[i], circleRadius - borderThickness, ConColor, 16);
+			drawList->AddCircleFilled(center, circleRadius - borderThickness, ConColor, 16);
 		}
-		pinOffsetY += circleRadius * 2.0f + padding;
-		drawList->AddText(ImVec2(center.x - circleRadius - 45.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), "Output");
+
+		// Draw label
+		drawList->AddText(ImVec2(center.x - circleRadius - 45.0f, center.y - 8.0f), ImColor(255, 255, 255, 255), outputPoints[i].label.c_str());
+
+		// Update pin offset for the next output
+		outputPinOffsetY += circleRadius * 2.0f + padding;
 	}
 }
+
+
 
 void Node::CreateNodeVisuals(const ImVec2& drawPosition, const ImVec2& drawSize, ImDrawList* drawList, float headerRadius, float headerHeight)
 {
@@ -298,7 +312,7 @@ int Node::GetHoveredInputPointIndex(ImVec2 MousePos)
 	float HoverRadius = 8.0f;
 	for (int i = 0; i < inputPoints.size(); ++i)
 	{
-		if (Distance(MousePos, inputPoints[i]) < HoverRadius)
+		if (Distance(MousePos, inputPoints[i].position) < HoverRadius)
 		{
 			return i;
 		}
@@ -311,7 +325,7 @@ int Node::GetHoveredOutputPointIndex(ImVec2 MousePos)
 	float HoverRadius = 8.0f;
 	for (int i = 0; i < outputPoints.size(); i++)
 	{
-		if (Distance(MousePos, outputPoints[i]) < HoverRadius)
+		if (Distance(MousePos, outputPoints[i].position) < HoverRadius)
 		{
 			return i;
 		}

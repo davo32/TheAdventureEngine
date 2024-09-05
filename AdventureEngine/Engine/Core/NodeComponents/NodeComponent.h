@@ -28,4 +28,5 @@ public:
 
 protected:
 	Node* ParentNode;
+	std::string ComponentName;
 };
