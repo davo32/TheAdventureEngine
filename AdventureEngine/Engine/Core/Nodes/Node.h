@@ -15,11 +15,18 @@ struct Pin
 {
     ImVec2 position;
     std::string label;
+    bool isConnected;
 
-    Pin() : position(0,0),label("") {}
+    Pin() : position(0,0),label("") 
+    {
+        isConnected = false;
+    }
 
     Pin(const ImVec2& pos,const std::string& text)
-        : position(pos),label(text) {}
+        : position(pos),label(text) 
+    {
+        isConnected = false;
+    }
 };
 
 
@@ -77,10 +84,15 @@ public:
 
     void RemoveConnection(int index) 
     {
-        if (connections[0].targetNode != nullptr)
+        if (index >= 0 && index < connections.size())
         {
-            connections[0].targetNode->LeftisConnected = false;
+            if (connections[index].targetNode != nullptr)
+            {
+                connections[index].targetNode->inputPoints[connections[index].inputIndex].isConnected = false;
+                std::cout << "Connection Broken!!" << '\n';
+            }
             connections.erase(connections.begin() + index);
+            std::cout << "Connection Removed!!" << '\n';
         }
     }
 
@@ -130,8 +142,8 @@ protected:
     ImColor colorBottom = ImColor(128, 0, 0, 128);
     ImColor ConColor = ImColor(255, 255, 255, 255);
     
-    bool LeftisConnected = false;
-    bool RightisConnected = false;
+   // bool LeftisConnected = false;
+   // bool RightisConnected = false;
 
     bool isActive = false;
 

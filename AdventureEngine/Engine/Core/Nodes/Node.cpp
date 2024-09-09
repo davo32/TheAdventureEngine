@@ -13,10 +13,22 @@ Node::Node(ImVec2 pos, ImVec2 size, std::string name)
 
 void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
 {
-	// Ensure the target node and indices are valid
-	/*if (!targetNode || outputIndex < 0 || inputIndex < 0) {
-		return;
-	}*/
+	// Check if the output pin is already connected
+	if (outputPoints[outputIndex].isConnected)
+	{
+		std::cout << "Output is Connected" << '\n';
+
+		// If it is, break the existing connection
+		for (auto& connection : connections)
+		{
+			if (connection.outputIndex == outputIndex)
+			{
+				std::cout << "Index is Correct" << '\n';
+				RemoveConnection(connection.inputIndex);
+				break;
+			}
+		}
+	}
 
 	// Add the connection to the current node's output connections
 	Connection newConnection;
@@ -24,9 +36,11 @@ void Node::ConnectTo(Node* targetNode, int outputIndex, int inputIndex)
 	newConnection.targetNode = targetNode;
 	newConnection.outputIndex = outputIndex;
 	newConnection.inputIndex = inputIndex;
-	newConnection.targetNode->LeftisConnected = true;
-	RightisConnected = true;
+	//newConnection.targetNode->inputPoints[inputIndex].isConnected = true;
 	connections.push_back(newConnection);
+
+	targetNode->inputPoints[inputIndex].isConnected = true;
+	outputPoints[outputIndex].isConnected = true;
 
 	std::cout << "Connection Made!" << '\n';
 }
@@ -179,7 +193,7 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		// Draw outer circle
 		drawList->AddCircle(center, circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 
-		if (!LeftisConnected)
+		if (inputPoints[i].isConnected == false)
 		{
 			// Draw inner circle
 			drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);
@@ -209,7 +223,7 @@ void Node::CreateInputsAndOutputs(const ImVec2& drawPosition, float padding, flo
 		// Draw outer circle
 		drawList->AddCircle(center, circleRadius, isHovered ? ImColor(255, 0, 0) : ImColor(255, 255, 255, 128), 16, borderThickness);
 
-		if (!RightisConnected)
+		if (!outputPoints[i].isConnected)
 		{
 			// Draw inner circle
 			drawList->AddCircleFilled(center, circleRadius - borderThickness, ImColor(0, 0, 0, 128), 16);

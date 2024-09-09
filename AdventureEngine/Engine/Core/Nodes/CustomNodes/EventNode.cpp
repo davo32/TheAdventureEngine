@@ -1,12 +1,14 @@
 #include "pch.h"
 #include "Core/Nodes/CustomNodes/EventNode.h"
 #include "Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent/NodeDetailsComponent.h"
+#include "Core/NodeComponents/CustomNodeComponents/DialogueComponent/DialogueComponent.h"
 EventNode::EventNode()
 {
 	nodeType = NodeType::EventType;
 
     //Node Details Component - Default For Re-namable Nodes
     Components.push_back(new NodeDetailsComponent(this));
+    Components.push_back(new DialogueComponent(this));
 
 }
 EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
@@ -25,6 +27,7 @@ EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
 
 	//Node Details Component - Default For Re-namable Nodes
 	Components.push_back(new NodeDetailsComponent(this));
+    Components.push_back(new DialogueComponent(this));
 }
 
 EventNode::~EventNode() 
@@ -76,6 +79,9 @@ std::vector<uint8_t> EventNode::serialize() const
 
 	for (const auto& point : inputPoints)
 	{
+
+        data.push_back(static_cast<uint8_t>(point.isConnected ? 1 : 0));
+
 		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
 		data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
 	    
@@ -93,6 +99,9 @@ std::vector<uint8_t> EventNode::serialize() const
 
 	for (const auto& point : outputPoints)
 	{
+
+        data.push_back(static_cast<uint8_t>(point.isConnected ? 1 : 0));
+
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
         
@@ -109,9 +118,6 @@ std::vector<uint8_t> EventNode::serialize() const
 	data.insert(data.end(), reinterpret_cast<const uint8_t*>(&textSize), reinterpret_cast<const uint8_t*>(&textSize) + sizeof(size_t));
 	data.insert(data.end(), text.begin(), text.end());
 
-	// Serialize booleans
-	data.push_back(static_cast<uint8_t>(LeftisConnected ? 1 : 0));
-	data.push_back(static_cast<uint8_t>(RightisConnected ? 1 : 0));
 
 	// Serialize connections
 	size_t connectionsSize = connections.size();
@@ -183,6 +189,9 @@ void EventNode::deserialize(const std::vector<uint8_t> &data)
     // Deserialize each ImVec2 point
     for (auto& point : inputPoints)
     {
+        point.isConnected = data[offset] != 0;
+        offset += 1;
+
         point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
         point.position.y = *reinterpret_cast<const float*>(&data[offset]);
@@ -218,6 +227,9 @@ void EventNode::deserialize(const std::vector<uint8_t> &data)
     // Deserialize each ImVec2 point
     for (auto& point : outputPoints)
     {
+        point.isConnected = data[offset] != 0;
+        offset += 1;
+
         point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
         point.position.y = *reinterpret_cast<const float*>(&data[offset]);
@@ -257,10 +269,7 @@ void EventNode::deserialize(const std::vector<uint8_t> &data)
     {
         throw std::runtime_error("Data size too small for booleans");
     }
-    LeftisConnected = data[offset] != 0;
-    offset += 1;
-    RightisConnected = data[offset] != 0;
-    offset += 1;
+   
 
     // Deserialize connections
     if (offset + sizeof(size_t) > data.size()) {

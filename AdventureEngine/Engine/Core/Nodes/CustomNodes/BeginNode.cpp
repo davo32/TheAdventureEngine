@@ -60,6 +60,9 @@ std::vector<uint8_t> BeginNode::serialize() const
     data.insert(data.end(), reinterpret_cast<const uint8_t*>(&inputPointsSize), reinterpret_cast<const uint8_t*>(&inputPointsSize) + sizeof(size_t));
     for (const auto& point : inputPoints)
     {
+
+        data.push_back(static_cast<uint8_t>(point.isConnected ? 1 : 0));
+
         // Serialize the ImVec2 position (x and y)
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
@@ -77,6 +80,8 @@ std::vector<uint8_t> BeginNode::serialize() const
     data.insert(data.end(), reinterpret_cast<const uint8_t*>(&outputPointsSize), reinterpret_cast<const uint8_t*>(&outputPointsSize) + sizeof(size_t));
     for (const auto& point : outputPoints)
     {
+        data.push_back(static_cast<uint8_t>(point.isConnected ? 1 : 0));
+
         // Serialize the ImVec2 position (x and y)
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.x), reinterpret_cast<const uint8_t*>(&point.position.x) + sizeof(float));
         data.insert(data.end(), reinterpret_cast<const uint8_t*>(&point.position.y), reinterpret_cast<const uint8_t*>(&point.position.y) + sizeof(float));
@@ -98,8 +103,7 @@ std::vector<uint8_t> BeginNode::serialize() const
     }
 
     // Serialize booleans
-    data.push_back(static_cast<uint8_t>(LeftisConnected ? 1 : 0));
-    data.push_back(static_cast<uint8_t>(RightisConnected ? 1 : 0));
+   
 
     // Serialize connections
     size_t connectionsSize = connections.size();
@@ -173,6 +177,9 @@ void BeginNode::deserialize(const std::vector<uint8_t>& data)
     }
     for (auto& point : inputPoints)
     {
+        point.isConnected = data[offset] != 0;
+        offset += 1;
+
         point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
         point.position.y = *reinterpret_cast<const float*>(&data[offset]);
@@ -210,6 +217,9 @@ void BeginNode::deserialize(const std::vector<uint8_t>& data)
     }
     for (auto& point : outputPoints)
     {
+        point.isConnected = data[offset] != 0;
+        offset += 1;
+
         point.position.x = *reinterpret_cast<const float*>(&data[offset]);
         offset += sizeof(float);
         point.position.y = *reinterpret_cast<const float*>(&data[offset]);
@@ -258,10 +268,6 @@ void BeginNode::deserialize(const std::vector<uint8_t>& data)
     if (offset + 2 > data.size()) {
         throw std::runtime_error("Data size too small for booleans");
     }
-    LeftisConnected = data[offset] != 0;
-    offset += 1;
-    RightisConnected = data[offset] != 0;
-    offset += 1;
 
     // Deserialize connections size
     if (offset + sizeof(size_t) > data.size()) {

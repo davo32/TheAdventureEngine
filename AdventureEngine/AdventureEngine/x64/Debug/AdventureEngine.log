@@ -1,26 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (AdventureEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  EventsUI.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(87,55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'EventsUI.cpp')
+  ChapterEditor.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(99,55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ChapterEditor.cpp')
   
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(88,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'EventsUI.cpp')
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(100,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ChapterEditor.cpp')
   
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(89,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'EventsUI.cpp')
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(101,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ChapterEditor.cpp')
   
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(80,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(80,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(171,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(171,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(179,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(264,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(264,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(266,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(272,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(370,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,68): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,62): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(414,56): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\EventsUI.cpp(464,25): warning C4312: 'reinterpret_cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\ChapterEditor.cpp(46,63): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\ChapterEditor.cpp(46,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\ChapterEditor.cpp(46,51): warning C4305: 'argument': truncation from 'double' to 'float'
   AdventureEngine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\Editor.exe

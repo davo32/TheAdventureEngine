@@ -12,17 +12,21 @@ void ChapterEditor::RenderViewport(Chapter* chapter)
 	ImVec2 ParentPos = ImGui::GetWindowPos();
 	ImVec2 ChildPos = ImVec2(ParentPos.x + 310, ParentPos.y + 80);
 	ImGuiIO& io = ImGui::GetIO();
+	ImDrawList* drawList = ImGui::GetWindowDrawList();
 
-	ImGui::SetNextWindowPos(ChildPos);
-	ImGui::SetCursorPos(ChildPos);
-	if (ImGui::BeginChild("##Viewport", ChildSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar))
+	//ImGui::SetNextWindowPos(ChildPos);
+	//ImGui::SetCursorPos(ChildPos);
+
+	ImVec2 newViewportSize(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y - 20);
+	if (ImGui::BeginChild("##Viewport", newViewportSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
 	{
-		RenderBackground(ChildSize, ChildPos, chapter);
+		RenderBackground(newViewportSize, ImGui::GetWindowPos(), chapter);
 
+	
 		if (chapter != nullptr)
 		{
-			chapter->screenPos = ImGui::GetCursorScreenPos(); // Top-left
-			chapter->screenSize = ImGui::GetContentRegionAvail(); // Size of the drawing area
+			chapter->screenPos = ImGui::GetWindowPos(); // Top-left
+			chapter->screenSize = newViewportSize; // Size of the drawing area
 
 			// Handle panning
 			if (ImGui::IsMouseHoveringRect(chapter->screenPos,
@@ -39,6 +43,29 @@ void ChapterEditor::RenderViewport(Chapter* chapter)
 			RenderNodes(chapter);
 			NodeInteraction(chapter);
 			NodeDrag(io.MousePos, chapter);
+			ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.20, 0.20, 0.20, 1.0f));
+			ImGui::SetCursorPosY(ImGui::GetWindowPos().y - 70);
+			if (ImGui::BeginChild("##ViewportHeaderBar", ImVec2(newViewportSize.x, 30)))
+			{
+
+				ImGui::EndChild();
+			}
+			ImGui::PopStyleColor();
+
+			ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
+			// Draw large semi-transparent text on the bottom-right corner
+			const char* text = chapter->ChapterName.c_str();
+			ImVec2 textSize = ImGui::CalcTextSize(text);
+
+			// Calculate the position for bottom-right placement
+			ImVec2 textPos = ImVec2(
+				chapter->screenPos.x + chapter->screenSize.x - textSize.x - 10,  // 10px padding from the right
+				chapter->screenPos.y + chapter->screenSize.y - textSize.y - 10   // 10px padding from the bottom
+			);
+			// Draw the text using the draw list
+			ImU32 textColor = IM_COL32(255, 255, 255, 128); // White with 50% transparency (128 alpha)
+			drawList->AddText(textPos, textColor, text);
+			ImGui::PopFont();
 		}
 		ImGui::EndChild();
 	}
@@ -150,8 +177,8 @@ void ChapterEditor::HandleZooming(const ImGuiIO& io, Chapter* chapter)
 	float zoomDelta = io.MouseWheel * 0.1f; // Adjust the zoom speed here
 	chapter->zoomLevel = std::max(0.7f, std::min(2.0f, chapter->zoomLevel + zoomDelta)); // Prevent zooming too far out/in
 
-	std::string ZoomLevelText = " x " + std::to_string(chapter->zoomLevel);
-	ImGui::Text(ZoomLevelText.c_str());
+	/*std::string ZoomLevelText = " x " + std::to_string(chapter->zoomLevel);
+	ImGui::Text(ZoomLevelText.c_str());*/
 }
 
 void ChapterEditor::RenderBackground(const ImVec2& childSize, const ImVec2& childPos, Chapter* chapter)
@@ -305,13 +332,16 @@ void ChapterEditor::NodeDrag(const ImVec2& mousePos, Chapter* chapter)
 		if (chapter->ActiveNode && chapter->ActiveNode->IsDragging())
 		{
 			// Calculate the mouse position in world space
-			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel, (mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel,
+				(mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
 
-			// Calculate the delta movement in world space
-			ImVec2 delta = ImVec2(mousePosInWorld.x - chapter->ActiveNode->GetDragStartPos().x, mousePosInWorld.y - chapter->ActiveNode->GetDragStartPos().y);
+			// Calculate the delta movement relative to the drag start position
+			ImVec2 dragStartPos = chapter->ActiveNode->GetDragStartPos();
+			ImVec2 delta = ImVec2(mousePosInWorld.x - dragStartPos.x, mousePosInWorld.y - dragStartPos.y);
 
-			// Update the node's position
-			ImVec2 newPosition = ImVec2(chapter->ActiveNode->GetPosition().x + delta.x, chapter->ActiveNode->GetPosition().y + delta.y);
+			// Update the node's position by adding the delta
+			ImVec2 newPosition = ImVec2(chapter->ActiveNode->GetPosition().x + delta.x,
+				chapter->ActiveNode->GetPosition().y + delta.y);
 			chapter->ActiveNode->SetPosition(newPosition);
 
 			// Update the drag start position for the next frame
@@ -321,12 +351,17 @@ void ChapterEditor::NodeDrag(const ImVec2& mousePos, Chapter* chapter)
 			std::cout << " New Position: (" << newPosition.x << ", " << newPosition.y << ")" << '\n';
 		}
 
+		// If a node is starting a connection drag
 		if (dragStartNode)
 		{
-			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel, (mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
+			// Get mouse position in world space
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel,
+				(mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
 
+			// Update the connection line from the dragStartNode
 			dragStartNode->UpdateConnection(io.MousePos);
 
+			// Check for a valid connection to another node
 			for (Node* node : chapter->NodeFamily)
 			{
 				if (node != dragStartNode)
@@ -334,6 +369,7 @@ void ChapterEditor::NodeDrag(const ImVec2& mousePos, Chapter* chapter)
 					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
 					if (inputIndex != -1)
 					{
+						// Potential connection target found
 						node->UpdateConnection(io.MousePos);
 						return;
 					}
@@ -345,15 +381,19 @@ void ChapterEditor::NodeDrag(const ImVec2& mousePos, Chapter* chapter)
 	// Update dragging state on mouse release
 	if (ImGui::IsMouseReleased(ImGuiMouseButton_Left))
 	{
+		// Stop dragging the active node
 		if (chapter->ActiveNode)
 		{
 			chapter->ActiveNode->SetIsDragging(false);
 		}
 
+		// Handle releasing a connection drag
 		if (dragStartNode)
 		{
-			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel, (mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
+			ImVec2 mousePosInWorld = ImVec2((mousePos.x - chapter->viewportOffset.x) / chapter->zoomLevel,
+				(mousePos.y - chapter->viewportOffset.y) / chapter->zoomLevel);
 
+			// Check for a valid connection target
 			for (Node* node : chapter->NodeFamily)
 			{
 				if (node != dragStartNode)
@@ -361,25 +401,25 @@ void ChapterEditor::NodeDrag(const ImVec2& mousePos, Chapter* chapter)
 					int inputIndex = node->GetHoveredInputPointIndex(io.MousePos);
 					if (inputIndex != -1)
 					{
+						// Remove any existing connections at the input point, if needed
+						/*if (node->GetInputPoint(inputIndex).isConnected)
+						{
+							node->RemoveConnection(inputIndex);
+						}*/
+						// Establish connection
 						dragStartNode->ConnectTo(node, dragStartOutputIndex, inputIndex);
 
-						for (Node* Dragnode : chapter->NodeFamily)
-						{
-							if (Dragnode == dragStartNode && Dragnode->GetConnectionCount() > 1)
-							{
-								Dragnode->RemoveConnection(0);
-								break;
-							}
-						}
 					}
 				}
 			}
 
+			// Reset the drag state
 			dragStartNode = nullptr;
 			dragStartOutputIndex = -1;
 		}
 	}
 }
+
 
 void ChapterEditor::ContextMenuOpen()
 {

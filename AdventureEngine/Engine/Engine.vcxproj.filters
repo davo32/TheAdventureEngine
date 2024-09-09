@@ -63,6 +63,9 @@
     <ClInclude Include="Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\NodeComponents\CustomNodeComponents\DialogueComponent\DialogueComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -99,6 +102,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\NodeComponents\CustomNodeComponents\DialogueComponent\DialogueComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

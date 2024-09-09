@@ -7,7 +7,13 @@
 #include "Console.h"
 #include "Globals.h"
 
+#include "EventsUI.h"
 
+enum CurrentScreen
+{
+	STARTUP,
+	EDITOR
+};
 
 class Application
 {
@@ -27,7 +33,7 @@ public:
 	static std::string GetTitleText() { return AppTitleText; }
 	static void SetTitleText(std::string text) { AppTitleText = text; glfwSetWindowTitle(window, AppTitleText.c_str()); }
 	static int UICounter;
-	static Console* console;
+	static CurrentScreen cScreen;
 
 private: //GLFW
 	static GLFWwindow* window;
@@ -36,7 +42,10 @@ private: //GLFW
 	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 	static bool isShuttingdown;
-	
+	void CreateMainDockSpace();
+	void CreateStyleLayout();
+	void SetupDockingLayout();
+	void SetImGuiUnityStyle();
 
 private: //UI
 	MenuBar menuBar;
@@ -45,6 +54,7 @@ private: //UI
 	static std::string AppTitleText;
 	static ImGuiIO* io; // Pointer to ImGuiIO
 	static ImGuiContext* context;
+	EventsUI* eventUI = new EventsUI();
 
 	
 };

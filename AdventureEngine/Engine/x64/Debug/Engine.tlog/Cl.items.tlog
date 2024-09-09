@@ -1,5 +1,6 @@
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Chapter\Chapter.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Chapter.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Database\sqlite3.c;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\sqlite3.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\DialogueComponent\DialogueComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\DialogueComponent.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Engine.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Engine.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Events\Event.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Event.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\NodeDetailsComponent.obj

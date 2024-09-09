@@ -141,7 +141,7 @@ ProjectBrowser* ProjectBrowser::GetInstance()
 void ProjectBrowser::Render()
 {
 	// Define grid parameters
-	const int columns = 11; // Number of columns in the grid
+	const int columns = 8; // Number of columns in the grid
 	const float buttonSize = 100.0f; // Size of each button
 	const float spacing = 30.0f; // Spacing between buttons
 
@@ -206,7 +206,8 @@ void ProjectBrowser::InitalSaveToDatabase(Project* newProject)
 	sqlite3_stmt* stmt;
 
 	int rc = sqlite3_open("UserProjects.db", &db);
-	if (rc) {
+	if (rc)
+	{
 		std::cerr << "Cannot open Database: " << sqlite3_errmsg(db) << '\n';
 		return;
 	}
@@ -214,7 +215,8 @@ void ProjectBrowser::InitalSaveToDatabase(Project* newProject)
 	// Prepare the SQL statement for inserting the project
 	const char* sqlInsert = "INSERT INTO UserProjects (name, summary, chapters) VALUES (?, ?, ?);";
 	rc = sqlite3_prepare_v2(db, sqlInsert, -1, &stmt, nullptr);
-	if (rc != SQLITE_OK) {
+	if (rc != SQLITE_OK) 
+	{
 		std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
 		sqlite3_close(db);
 		return;
@@ -226,7 +228,8 @@ void ProjectBrowser::InitalSaveToDatabase(Project* newProject)
 
 	// Serialize the vector of Chapter* into binary data
 	std::vector<uint8_t> serializedData;
-	for (Chapter* chapter : newProject->ProjectChapters) {
+	for (Chapter* chapter : newProject->ProjectChapters) 
+	{
 		// Serialize each Chapter object (this requires that Chapter has a proper serialization method)
 		std::vector<uint8_t> serializedChapter = chapter->serialize(); // Assuming Serialize returns a std::string with binary data
 		serializedData.insert(serializedData.end(), serializedChapter.begin(), serializedChapter.end());
@@ -235,13 +238,14 @@ void ProjectBrowser::InitalSaveToDatabase(Project* newProject)
 	// Bind the serialized data as a BLOB
 	sqlite3_bind_blob(stmt, 3, serializedData.data(), static_cast<int>(serializedData.size()), SQLITE_TRANSIENT);
 
-
 	// Execute the statement
 	rc = sqlite3_step(stmt);
-	if (rc != SQLITE_DONE) {
+	if (rc != SQLITE_DONE) 
+	{
 		std::cerr << "Failed to insert data: " << sqlite3_errmsg(db) << std::endl;
 	}
-	else {
+	else
+	{
 		std::cout << "Project inserted successfully!" << std::endl;
 	}
 
@@ -367,19 +371,53 @@ void ProjectBrowser::LoadProjectsFromDatabase()
 }
 
 
-bool ProjectBrowser::DeleteProject()
+bool ProjectBrowser::DeleteProject(std::string name)
 {
-	std::string TruePath = RemoveExtension(ActiveProject->path, "\\" + ActiveProject->name + Globals::FileExts->MasterExt);
+	sqlite3* db = database;
+	const char* sqlDelete = "DELETE FROM UserProjects WHERE name = ?;";
+	sqlite3_stmt* stmt;
 
-	// Remove_all deletes the directory and all its contents
-	std::uintmax_t numDeleted = std::filesystem::remove_all(TruePath);
-	if (numDeleted > 0)
-	{
-		ActiveProject = nullptr;
-		ReloadProjects();
-		return true;
+	int rc1 = sqlite3_open("UserProjects.db", &db);
+	if (rc1) {
+		std::cerr << "Cannot open Database: " << sqlite3_errmsg(db) << '\n';
+		return false;
 	}
-	return false;
+
+	// Prepare the SQL statement
+	if (sqlite3_prepare_v2(db, sqlDelete, -1, &stmt, nullptr) != SQLITE_OK) {
+		std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
+		return false;
+	}
+
+	// Bind the name value (which is a string) to the SQL statement
+	if (sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_STATIC) != SQLITE_OK) {
+		std::cerr << "Failed to bind name: " << sqlite3_errmsg(db) << std::endl;
+		sqlite3_finalize(stmt);
+		return false;
+	}
+
+	// Execute the DELETE statement
+	if (sqlite3_step(stmt) != SQLITE_DONE) {
+		std::cerr << "Failed to delete row: " << sqlite3_errmsg(db) << std::endl;
+		sqlite3_finalize(stmt);
+		return false;
+	}
+
+	// Finalize the statement
+	sqlite3_finalize(stmt);
+	sqlite3_close(db);
+
+	for (int i = 0; i < projects.size(); i++)
+	{
+		if (projects[i]->name == name)
+		{
+			projects.erase(projects.begin() + i);
+			break;
+		}
+	}
+
+	ActiveProject = nullptr;
+	return true;
 }
 
 void ProjectBrowser::RenameProject(const std::string& oldProjectFolderName, const std::string& oldFileName, const std::string& newFileName, const std::string& newProjectFolderName)

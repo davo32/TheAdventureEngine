@@ -45,7 +45,7 @@ public:
 	}
 
 	void Render();
-	bool DeleteProject();
+	bool DeleteProject(std::string name);
 	void CreateNewProject(const std::string& directoryName, const std::string& fileName);
 	void RenameProject(const std::string& oldProjectFolderName, const std::string& oldFileName, const std::string& newFileName, const std::string& newProjectFolderName = "");
 	int CountChapterFiles();
@@ -75,6 +75,7 @@ public:
 		ActiveProject = nullptr;
 	}
 
+	void LoadProjectsFromDatabase();
 	void SaveUpdatesToDatabase(Project* newProject);
 	std::vector<Project*> projectsToSave;
 	static ProjectBrowser* GetInstance();
@@ -84,7 +85,6 @@ public:
 
 private:
 	sqlite3* database;
-	void LoadProjectsFromDatabase();
 	void InitalSaveToDatabase(Project* newProject);
 
 	std::string directoryPath;

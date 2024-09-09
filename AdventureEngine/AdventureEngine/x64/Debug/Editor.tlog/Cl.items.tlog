@@ -11,6 +11,7 @@ C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_glfw.cpp;C
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_impl_opengl3.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_impl_opengl3.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_tables.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_tables.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\imgui_widgets.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\imgui_widgets.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\LauncherApp.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\LauncherApp.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MenuBar.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\MenuBar.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\MonitorInfo.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\MonitorInfo.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\StartupScreen.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\AdventureEngine\x64\Debug\StartupScreen.obj

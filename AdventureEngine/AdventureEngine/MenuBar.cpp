@@ -91,7 +91,8 @@ void MenuBar::Shortcuts()
 
 void MenuBar::DrawUI()
 {
-	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2, 0.2, 0.2, 0.0));
+	
+	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.08, 0.08, 0.08, 0.0f));
 	Shortcuts();
 
 	if (ImGui::BeginMenuBar())
@@ -101,7 +102,7 @@ void MenuBar::DrawUI()
 		ImGui::Dummy(ImVec2(20,ImGui::GetContentRegionAvail().y));
 		std::string temp = std::to_string(ImGui::GetMousePos().x) + " : " + std::to_string(ImGui::GetMousePos().y);
 		ImGui::Text(temp.c_str());
-		ImGui::PopStyleColor();
 		ImGui::EndMenuBar();
 	}
+		ImGui::PopStyleColor();
 }

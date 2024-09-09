@@ -53,6 +53,9 @@
     <Filter Include="Editor\Main">
       <UniqueIdentifier>{2182e0b3-148f-4b0e-9ce3-58b7a1b59899}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{88535315-cc08-411a-b6ae-ddda07364f1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -105,6 +108,9 @@
     </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>Editor\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LauncherApp.cpp">
+      <Filter>Launcher</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Editor\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="LauncherApp.h">
+      <Filter>Launcher</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

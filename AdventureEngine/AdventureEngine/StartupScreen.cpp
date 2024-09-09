@@ -11,11 +11,12 @@ void StartupScreen::DrawUI()
 	ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
 	ImVec2 WindowPos(15, 30);
 
-	SetupMainWindow(windowSize, WindowPos);
+	//SetupMainWindow(windowSize, WindowPos);
 
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
-
-	if (ImGui::BeginChild("##InvisibleChild", windowSize, false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
+	ImGui::SetNextWindowPos(ImVec2(0, 0));
+	ImGui::SetNextWindowSize(ImVec2(Application::g_WindowWidth, Application::g_WindowHeight));
+	if (ImGui::BeginChild("##InvisibleChild",windowSize, false, /*ImGuiWindowFlags_NoBackground |*/ ImGuiWindowFlags_NoTitleBar))
 	{
 		DrawBackground(drawList, WindowPos, windowSize);
 
@@ -68,23 +69,17 @@ void StartupScreen::DrawLeftPanelButtons(const ImVec2& startOfArea, const ImVec2
 	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.2f, 0.2f, 0.2f, 0.4f));
 	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
 
-	ImGui::SetCursorPos(ImVec2(WindowPos.x - 15, WindowPos.y + 30));
+	ImGui::SetCursorPos(ImVec2(WindowPos.x, WindowPos.y + 60));
 	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
 	if (ImGui::Button("Documentation", ImVec2(LeftPanelSize.x - 15, 50)))
 	{
 		// Button action goes here
 	}
+	ImGui::SetCursorPosX(WindowPos.x);
 	if (ImGui::Button("Exit", ImVec2(LeftPanelSize.x - 15, 50)))
 	{
-		if (SavePrelimDataInBulk())
-		{
-			std::exit(0);
-		}
-		else
-		{
-			std::cerr << "ERROR: Cannot Save Changes... " << '\n';
-		}
+		std::exit(0);
 	}
 
 	ImGui::PopFont();
@@ -100,7 +95,7 @@ void StartupScreen::DrawCreateProjectButton(ImVec2 WindowPos, ImVec2 LeftPanelSi
 	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Background color when clicked
 	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
-	ImGui::SetCursorPos(ImVec2(WindowPos.x, LeftPanelSize.y - 150));
+	ImGui::SetCursorPos(ImVec2(WindowPos.x + 15, LeftPanelSize.y - 150));
 	if (ImGui::Button("+ Create Project", ImVec2(LeftPanelSize.x - 45, 50)))
 	{
 		std::string newFileName = "Untitled Project";
@@ -165,7 +160,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 				std::string name = projectBrowser->GetActiveProject()->name;
 				strcpy_s(temp, name.c_str());
 				float InputSize = 250;
-				ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 10, RightPanelPos.y - 25));
+				ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 10, RightPanelPos.y + 5));
 				ImGui::SetNextItemWidth(InputSize);
 				ImGui::InputText("##Name", temp, IM_ARRAYSIZE(temp));
 
@@ -226,7 +221,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 				// Create the full text string
 				text = "Chapters: " + chapterCountStr;
 
-				ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 10, RightPanelPos.y + 265));
+				ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 20, RightPanelPos.y + 295));
 				ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 				ImGui::Text(text.c_str());
 				ImGui::PopFont();
@@ -238,7 +233,7 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 			}
 
 			// Draw project summary input
-			ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 10, RightPanelPos.y + 90));
+			ImGui::SetCursorPos(ImVec2(RightPanelPos.x + 20, RightPanelPos.y + 120));
 			if (projectBrowser->GetActiveProject() != nullptr)
 			{
 				ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f)); // Invisible background
@@ -281,6 +276,7 @@ void StartupScreen::DrawRightPanelButtons(ImDrawList* drawList, const ImVec2& Ri
 	{
 		if (projectBrowser->GetActiveProject() != nullptr)
 		{
+			Application::cScreen = CurrentScreen::EDITOR;
 			Application::SetTitleText("Adventure Engine - " + projectBrowser->GetActiveProject()->name);
 			openProjectFlag = true; // Set the flag instead of changing UICounter here
 		}
@@ -348,7 +344,7 @@ void StartupScreen::DrawDeletionConfirmation(ImDrawList* drawList, const ImVec2&
 	if (ImGui::Button("Delete", ImVec2(100, 40)))
 	{
 		// Logic for deleting the project
-		projectBrowser->DeleteProject();
+		projectBrowser->DeleteProject(projectBrowser->GetActiveProject()->name);
 		DeletionConfirmation = false;
 	}
 	ImGui::PopStyleColor(3);
