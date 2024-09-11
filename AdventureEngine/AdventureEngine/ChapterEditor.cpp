@@ -13,11 +13,11 @@ void ChapterEditor::RenderViewport(Chapter* chapter)
 	ImVec2 ChildPos = ImVec2(ParentPos.x + 310, ParentPos.y + 80);
 	ImGuiIO& io = ImGui::GetIO();
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
-
+	
 	//ImGui::SetNextWindowPos(ChildPos);
 	//ImGui::SetCursorPos(ChildPos);
-
-	ImVec2 newViewportSize(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y - 20);
+	ImVec2 newViewportSize(ImVec2(ImGui::GetContentRegionAvail().x,ImGui::GetContentRegionAvail().y - 20));
+	//ImVec2 newViewportSize(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y - 20);
 	if (ImGui::BeginChild("##Viewport", newViewportSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
 	{
 		RenderBackground(newViewportSize, ImGui::GetWindowPos(), chapter);
@@ -43,18 +43,37 @@ void ChapterEditor::RenderViewport(Chapter* chapter)
 			RenderNodes(chapter);
 			NodeInteraction(chapter);
 			NodeDrag(io.MousePos, chapter);
-			ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.20, 0.20, 0.20, 1.0f));
-			ImGui::SetCursorPosY(ImGui::GetWindowPos().y - 70);
-			if (ImGui::BeginChild("##ViewportHeaderBar", ImVec2(newViewportSize.x, 30)))
+			ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.08, 0.08, 0.08, 0.5f));
+			ImGui::SetCursorPos(ImVec2(0, 0)); // Set header position at the top of the child window
+			//ImGui::SetCursorPosY(ImGui::GetWindowPos().y - 70);
+			if (ImGui::BeginChild("##ViewportHeaderBar", ImVec2(newViewportSize.x, 60)))
 			{
+				ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
+				// Create a writable buffer with a size large enough to store the text
+				static char temp[128] = "";  // Adjust the size (128) as needed for your use case
+				ImGui::SetCursorPos(ImVec2(10.0f, 10.0f));
+				ImGui::SetNextItemWidth(500.0f); // Set the width to 150 pixels
+				ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.08, 0.08, 0.08, 0.1f));
+				// Use the writable buffer in InputTextWithHint
+				if (ImGui::InputTextWithHint("##ChapterName", chapter->ChapterName.c_str(), temp, IM_ARRAYSIZE(temp), ImGuiInputTextFlags_EnterReturnsTrue))
+				{
+					chapter->ChapterName = temp;
 
+					// Clear the temp buffer for future use
+					memset(temp, 0, sizeof(temp));
+				}
+				ImGui::PopStyleColor();
+				ImGui::PopFont();
 				ImGui::EndChild();
 			}
 			ImGui::PopStyleColor();
 
 			ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
 			// Draw large semi-transparent text on the bottom-right corner
-			const char* text = chapter->ChapterName.c_str();
+			char buffer[32];
+			snprintf(buffer, sizeof(buffer), "%.2f", chapter->zoomLevel);
+
+			const char* text = buffer;
 			ImVec2 textSize = ImGui::CalcTextSize(text);
 
 			// Calculate the position for bottom-right placement

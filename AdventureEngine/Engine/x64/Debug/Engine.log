@@ -1,8 +1,2 @@
-﻿  ProjectBrowser.cpp
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp(469,44): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file '/FileSystem/ProjectBrowser/ProjectBrowser.cpp')
-  
-C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp(484,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
-  (compiling source file '/FileSystem/ProjectBrowser/ProjectBrowser.cpp')
-  
+﻿  DialogueComponent.cpp
   Engine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\Engine.lib

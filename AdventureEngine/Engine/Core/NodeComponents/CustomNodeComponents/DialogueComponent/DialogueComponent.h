@@ -15,6 +15,9 @@ public:
 	void RenderComponent() override;
 
 private:
+	// In your class definition
+	char DialogueBuffer[128] = { 0 };
+
 	//Debug Component UI stuff
 	float DefaultComponentY = 160;
 	float ClosedComponentY = 10;

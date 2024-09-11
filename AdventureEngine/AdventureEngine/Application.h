@@ -42,7 +42,7 @@ private: //GLFW
 	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 	static bool isShuttingdown;
-	void CreateMainDockSpace();
+	void CreateMainDockSpace(ImVec2 size);
 	void CreateStyleLayout();
 	void SetupDockingLayout();
 	void SetImGuiUnityStyle();
@@ -55,6 +55,9 @@ private: //UI
 	static ImGuiIO* io; // Pointer to ImGuiIO
 	static ImGuiContext* context;
 	EventsUI* eventUI = new EventsUI();
+
+
+	//static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 	
 };

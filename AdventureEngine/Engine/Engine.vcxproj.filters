@@ -66,6 +66,9 @@
     <ClInclude Include="Core\NodeComponents\CustomNodeComponents\DialogueComponent\DialogueComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Loaders\FontLoader\FontLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -105,6 +108,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\NodeComponents\CustomNodeComponents\DialogueComponent\DialogueComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Loaders\FontLoader\FontLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

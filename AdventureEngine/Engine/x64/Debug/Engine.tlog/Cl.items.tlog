@@ -9,5 +9,7 @@ C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\CustomNodes\EventNo
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Node.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\FileExts\FileExtensions.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\FileExtensions.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\ProjectBrowser.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Globals.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\Globals.obj
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Loaders\FontLoader\FontLoader.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\FontLoader.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\pch.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\pch.obj
 C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\PlayerChoiceComponent\PlayerChoiceComponent.cpp;C:\REPO\TheAdventureEngine\AdventureEngine\Engine\x64\Debug\PlayerChoiceComponent.obj

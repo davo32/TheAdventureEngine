@@ -72,7 +72,7 @@ void NodeDetailsComponent::RenderComponent()
 		char temp[256] = "";
 		// Get the text from the active node
 		std::string hint = ParentNode->GetText();
-
+		ImGui::SetCursorPosY(35.0f);
 		// Display the input text field with hint
 		if (isEditable)
 		{

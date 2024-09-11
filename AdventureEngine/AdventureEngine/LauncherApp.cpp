@@ -176,7 +176,7 @@ void Launcher::draw()
 					| ImGuiWindowFlags_NoResize
 					| ImGuiWindowFlags_NoMove))
 			{
-				Globals::projectBrowser->Render();
+				/*Globals::projectBrowser->Render();*/
 
 
 				ImDrawList* drawList = ImGui::GetWindowDrawList();

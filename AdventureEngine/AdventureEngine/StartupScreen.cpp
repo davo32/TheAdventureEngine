@@ -11,27 +11,152 @@ void StartupScreen::DrawUI()
 	ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
 	ImVec2 WindowPos(15, 30);
 
-	//SetupMainWindow(windowSize, WindowPos);
+	////SetupMainWindow(windowSize, WindowPos);
 
 	ImDrawList* drawList = ImGui::GetWindowDrawList();
-	ImGui::SetNextWindowPos(ImVec2(0, 0));
-	ImGui::SetNextWindowSize(ImVec2(Application::g_WindowWidth, Application::g_WindowHeight));
-	if (ImGui::BeginChild("##InvisibleChild",windowSize, false, /*ImGuiWindowFlags_NoBackground |*/ ImGuiWindowFlags_NoTitleBar))
+	//ImGui::SetNextWindowPos(ImVec2(0, 0));
+	//ImGui::SetNextWindowSize(ImVec2(Application::g_WindowWidth, Application::g_WindowHeight));
+
+	ImGuiViewport* viewport = ImGui::GetMainViewport();
+	ImGui::SetNextWindowPos(viewport->Pos);
+	ImGui::SetNextWindowSize(viewport->Size);
+	ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.08, 0.08, 0.08, 1.0f));
+	if (ImGui::Begin("##InvisibleChild", nullptr, /*ImGuiWindowFlags_NoBackground |*/ ImGuiWindowFlags_NoTitleBar))
 	{
-		DrawBackground(drawList, WindowPos, windowSize);
-
-		ImVec2 startOfArea = ImVec2(((windowSize.x / 3) - 300) + 10, WindowPos.y + 10);
-		DrawCentreContent(drawList, WindowPos, startOfArea);
-
-		DrawLeftPanel(drawList, startOfArea, WindowPos, windowSize);
-		DrawHeader(drawList, WindowPos, windowSize);
-
-		if (projectBrowser->GetActiveProject() != nullptr)
+		ImGui::PopStyleColor();
+		ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.16f, 0.16f, 0.16f, 1.00f));
+		if (ImGui::BeginChild("##LeftPanel", ImVec2(200, ImGui::GetContentRegionAvail().y), false, ImGuiWindowFlags_NoTitleBar))
 		{
-			DrawRightPanel(drawList, WindowPos, windowSize);
+			ImGui::SetCursorPos(ImVec2(20, 20));
+			ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
+			ImGui::Text("Adventure Engine");
+			ImGui::PopFont();
+			DrawLeftPanelButtons(ImVec2(0, 60), WindowPos, ImVec2(200, ImGui::GetContentRegionAvail().y));
+			ImGui::PopStyleColor();
+			ImGui::EndChild();
 		}
 
-		ImGui::EndChild();
+		//DrawBackground(drawList, WindowPos, windowSize);
+		ImGui::SetCursorPos(ImVec2(200, 0));
+		if (ImGui::BeginChild("##ContentHeader", ImVec2(ImGui::GetContentRegionAvail().x, 80), false, ImGuiWindowFlags_NoTitleBar))
+		{
+			ImDrawList* drawList = ImGui::GetWindowDrawList();
+			ImGui::SetCursorPos(ImVec2(30, 30));
+			/*ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
+			ImGui::Text("Projects");
+			ImGui::PopFont();*/
+			ImGui::SetNextItemWidth(200.0f);
+			ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
+			if (ImGui::InputTextWithHint("##CreateProjectText", "Create Project...", newProjectName, IM_ARRAYSIZE(newProjectName), ImGuiInputTextFlags_EnterReturnsTrue))
+			{
+				if (newProjectName != "\0")
+				{
+					std::string newFileName = newProjectName;
+					std::string newProjectFolder = newProjectName;
+					projectBrowser->CreateNewProject(newProjectFolder, newFileName);
+					projectBrowser->ReloadProjects();
+
+					// Clear the input field properly
+					memset(newProjectName, 0, IM_ARRAYSIZE(newProjectName));
+				}
+			}
+
+			ImGui::SameLine();
+			if (ImGui::Button("+", ImVec2(30, 30)))
+			{
+				if (newProjectName != "\0")
+				{
+					std::string newFileName = newProjectName;
+					std::string newProjectFolder = newProjectName;
+					projectBrowser->CreateNewProject(newProjectFolder, newFileName);
+					projectBrowser->ReloadProjects();
+
+					// Clear the input field properly
+					memset(newProjectName, 0, IM_ARRAYSIZE(newProjectName));
+				}
+			}
+			ImGui::PopFont();
+			drawList->AddLine(ImVec2(0, 79), ImVec2(ImGui::GetContentRegionAvail().x + 200, 79), ImColor(0.16f, 0.16f, 0.16f, 1.0f), 1.0f);
+			ImGui::EndChild();
+		}
+		ImGui::SetCursorPos(ImVec2(200, 90));
+		if (ImGui::BeginChild("##CenterPanel", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), false, ImGuiWindowFlags_NoTitleBar))
+		{
+			ImVec2 startOfArea = ImVec2(((windowSize.x / 3) - 300) + 10, WindowPos.y + 10);
+			DrawCentreContent(drawList, WindowPos, startOfArea);
+			ImGui::EndChild();
+		}
+
+		ImGui::End();
+	}
+}
+
+void StartupScreen::Render()
+{
+	// Define parameters for the list-style buttons
+	const int columns = 1; // Single column for the list layout
+	const float buttonHeight = 50.0f; // Height of each button
+	const float spacing = 5.0f; // Spacing between buttons
+
+	// Calculate window size and start position
+	ImVec2 windowPos = ImGui::GetCursorPos();
+	float startX = windowPos.x + 10;
+	float startY = windowPos.y;
+
+	// Calculate button width based on window size (or set a fixed width)
+	float buttonWidth = ImGui::GetContentRegionAvail().x - ImGui::GetStyle().ItemSpacing.x * 2;
+
+	// Iterate over projects to create buttons
+	for (size_t i = 0; i < Globals::projectBrowser->projects.size(); ++i)
+	{
+		// Calculate button position based on index
+		int row = static_cast<int>(i / columns);
+		ImVec2 buttonPos = ImVec2(startX, startY + row * (buttonHeight + spacing));
+
+		// Set cursor position for the button
+		ImGui::SetCursorPos(buttonPos);
+
+		// Create an invisible button to hold the background and the text separately
+		if (ImGui::InvisibleButton("button_background", ImVec2(buttonWidth, buttonHeight)))
+		{
+			Globals::projectBrowser->ActiveProject = Globals::projectBrowser->projects[i];
+			Application::cScreen = CurrentScreen::EDITOR;
+			Application::SetTitleText("Adventure Engine - " + Globals::projectBrowser->GetActiveProject()->name);
+			Application::UICounter = 2; // Safely change the state after ImGui processing is complete
+		}
+
+		// Check if the button is hovered or active
+		bool isHovered = ImGui::IsItemHovered();
+		bool isActive = (Globals::projectBrowser->ActiveProject != nullptr && strcmp(Globals::projectBrowser->ActiveProject->name.c_str(), Globals::projectBrowser->projects[i]->name.c_str()) == 0);
+
+		// Draw a background for the button with different colors based on the hover state
+		ImDrawList* drawList = ImGui::GetWindowDrawList();
+		ImVec2 min = ImGui::GetItemRectMin();
+		ImVec2 max = ImGui::GetItemRectMax();
+
+		// Default background color
+		ImU32 bgColor = IM_COL32(0, 0, 0, 0); // Dark color
+
+		// Lighter background color on hover
+		if (isHovered)
+		{
+			bgColor = IM_COL32(50, 50, 50, 110); // Lighter color when hovered
+		}
+
+		// Even lighter color if active
+		if (isActive)
+		{
+			bgColor = IM_COL32(80, 80, 80, 110); // Highlight the active project
+		}
+
+		// Draw the background rectangle with rounded corners
+		drawList->AddRectFilled(min, max, bgColor, 8.0f); // 8.0f for rounded corners
+
+		// Manually set the text's cursor position relative to the button
+		ImGui::SetCursorScreenPos(ImVec2(min.x + ImGui::GetStyle().ItemSpacing.x, min.y + (buttonHeight - ImGui::CalcTextSize(Globals::projectBrowser->projects[i]->name.c_str()).y) / 2));
+
+		// Draw the project name inside the button
+		ImGui::TextUnformatted(Globals::projectBrowser->projects[i]->name.c_str());
 	}
 }
 
@@ -72,12 +197,13 @@ void StartupScreen::DrawLeftPanelButtons(const ImVec2& startOfArea, const ImVec2
 	ImGui::SetCursorPos(ImVec2(WindowPos.x, WindowPos.y + 60));
 	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
-	if (ImGui::Button("Documentation", ImVec2(LeftPanelSize.x - 15, 50)))
+	ImGui::SetCursorPosX(WindowPos.x);
+	if (ImGui::Button("Documentation", ImVec2(LeftPanelSize.x - 30, 50)))
 	{
 		// Button action goes here
 	}
 	ImGui::SetCursorPosX(WindowPos.x);
-	if (ImGui::Button("Exit", ImVec2(LeftPanelSize.x - 15, 50)))
+	if (ImGui::Button("Exit", ImVec2(LeftPanelSize.x - 30, 50)))
 	{
 		std::exit(0);
 	}
@@ -89,24 +215,17 @@ void StartupScreen::DrawLeftPanelButtons(const ImVec2& startOfArea, const ImVec2
 
 void StartupScreen::DrawCreateProjectButton(ImVec2 WindowPos, ImVec2 LeftPanelSize)
 {
-	ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 6.0f); // Set rounding radius
-	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.1, 0.1, 0.1, 0.8f)); // Invisible background
-	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.3f, 0.3f, 0.3f, 0.4f)); // Background color on hover
-	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Background color when clicked
-	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
+	//ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 6.0f); // Set rounding radius
+	//ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.1, 0.1, 0.1, 0.8f)); // Invisible background
+	//ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.3f, 0.3f, 0.3f, 0.4f)); // Background color on hover
+	//ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Background color when clicked
+	//ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
 
-	ImGui::SetCursorPos(ImVec2(WindowPos.x + 15, LeftPanelSize.y - 150));
-	if (ImGui::Button("+ Create Project", ImVec2(LeftPanelSize.x - 45, 50)))
-	{
-		std::string newFileName = "Untitled Project";
-		std::string newProjectFolder = "Untitled Project";
-		projectBrowser->CreateNewProject(newProjectFolder, newFileName);
-		projectBrowser->ReloadProjects();
-	}
+	//ImGui::SetCursorPos(ImVec2(WindowPos.x + 15, LeftPanelSize.y - 150));
 
-	ImGui::PopStyleColor(3); // Pop the 3 style colors we pushed
-	ImGui::PopStyleVar();
-	ImGui::PopFont();
+	//ImGui::PopStyleColor(3); // Pop the 3 style colors we pushed
+	//ImGui::PopStyleVar();
+	//ImGui::PopFont();
 }
 
 void StartupScreen::DrawCentreContent(ImDrawList* drawList, ImVec2 WindowPos, ImVec2 startOfArea)
@@ -116,11 +235,10 @@ void StartupScreen::DrawCentreContent(ImDrawList* drawList, ImVec2 WindowPos, Im
 	drawList->AddLine(ImVec2(WindowPos.x, WindowPos.y + 50), ImVec2(ImGui::GetContentRegionAvail().x, WindowPos.y + 50), ImColor(0.08f, 0.08f, 0.08f, 1.0f), 0.05f);
 	projectBrowser->LoadDefaultIcon();
 
-	ImGui::SetCursorPos(ImVec2(startOfArea.x + 20, WindowPos.y + 80));
+	//ImGui::SetCursorPos(ImVec2(startOfArea.x + 20, WindowPos.y + 80));
 	ImGui::PushFont(Globals::fontLoader->GetFont("NSReg"));
-	projectBrowser->Render();
+	Render();
 	ImGui::PopFont();
-
 }
 
 void StartupScreen::DrawRightPanel(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize)
@@ -185,8 +303,6 @@ void StartupScreen::DrawRightPanelContent(ImDrawList* drawList, const ImVec2& Ri
 					}
 				}
 			}
-			
-			
 
 			// Handle drawing styles and fonts
 			ImGui::PopFont();

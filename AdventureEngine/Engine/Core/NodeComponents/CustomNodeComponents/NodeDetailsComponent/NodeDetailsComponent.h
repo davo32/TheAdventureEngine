@@ -13,6 +13,8 @@ public:
 	void RenderComponent() override;
 
 private:
+	
+
 	//Debug Component UI stuff
 	float DefaultComponentY = 200;
 	float ClosedComponentY = 10;

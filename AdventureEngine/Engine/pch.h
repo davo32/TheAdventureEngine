@@ -9,6 +9,7 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
+#include "Globals.h"
 #include "Core/Chapter/Chapter.h"
 #include "Core/Nodes/Node.h"
 #include "Core/NodeComponents/NodeComponent.h"

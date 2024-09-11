@@ -69,18 +69,27 @@ void DialogueComponent::RenderComponent()
 			ImGui::PopStyleColor();
 		}
 
-		ImGui::SetCursorPosX((ImGui::GetContentRegionAvail().x / 2) - 20);
+		ImGui::SetCursorPos(ImVec2(10.0f,25.0f));
 		ImGui::Text("Dialogue");
 
-		EventNode* ENode = reinterpret_cast<EventNode*>(ParentNode);
-		char DialogueBuffer[128];
-		strncpy_s(DialogueBuffer, ENode->GetEvent()->GetEventText().c_str(), IM_ARRAYSIZE(DialogueBuffer));
+		EventNode* ENode = dynamic_cast<EventNode*>(ParentNode);
 
-		ImGui::SetCursorPosX(30);
-		// Input field to edit the name of the input pin
-		if (ImGui::InputTextMultiline("##DialogueText", DialogueBuffer, IM_ARRAYSIZE(DialogueBuffer),ImVec2(ImGui::GetContentRegionAvail().x - 30,100)))
+		if (ENode != nullptr && ENode->GetEvent() != nullptr /*&& DialogueBuffer[0] == '\0'*/) // Only copy if buffer is empty
 		{
-			ENode->GetEvent()->SetEventText(DialogueBuffer);
+			strncpy_s(DialogueBuffer, ENode->GetEvent()->GetEventText().c_str(), IM_ARRAYSIZE(DialogueBuffer) - 1);
+			DialogueBuffer[IM_ARRAYSIZE(DialogueBuffer) - 1] = '\0';  // Ensure null termination
+
+
+			ImGui::SetCursorPosX(30);
+			// Input field to edit the name of the input pin
+			if (ImGui::InputTextMultiline("##DialogueText", DialogueBuffer, IM_ARRAYSIZE(DialogueBuffer), ImVec2(ImGui::GetContentRegionAvail().x - 30, 100)/*,ImGuiInputTextFlags_EnterReturnsTrue*/))
+			{
+				// Update the event text only when Enter is pressed
+				if (ImGui::IsKeyPressed(ImGuiKey_Enter))
+				{
+					ENode->GetEvent()->SetEventText(DialogueBuffer);
+				}
+			}
 		}
 
 		ImGui::EndChild();

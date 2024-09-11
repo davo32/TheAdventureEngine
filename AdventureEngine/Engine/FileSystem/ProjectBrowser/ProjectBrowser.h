@@ -44,7 +44,7 @@ public:
 		}
 	}
 
-	void Render();
+	//void Render();
 	bool DeleteProject(std::string name);
 	void CreateNewProject(const std::string& directoryName, const std::string& fileName);
 	void RenameProject(const std::string& oldProjectFolderName, const std::string& oldFileName, const std::string& newFileName, const std::string& newProjectFolderName = "");
@@ -81,6 +81,8 @@ public:
 	static ProjectBrowser* GetInstance();
 	bool ActiveProjectChanged = false;
 	bool ProjectSelected = false;
+	std::vector<Project*> projects;
+	Project* ActiveProject;
 
 
 private:
@@ -88,8 +90,6 @@ private:
 	void InitalSaveToDatabase(Project* newProject);
 
 	std::string directoryPath;
-	std::vector<Project*> projects;
-	Project* ActiveProject;
 	Chapter* ActiveChapter;
 	aie::Texture texture;
 

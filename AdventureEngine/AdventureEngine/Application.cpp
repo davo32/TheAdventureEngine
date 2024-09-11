@@ -13,7 +13,7 @@ int Application::g_WindowHeight = 600;
 
 CurrentScreen Application::cScreen = CurrentScreen::STARTUP;
 
-std::string Application::AppTitleText = "Adventure Engine - No Project";
+std::string Application::AppTitleText = "Adventure Engine - Launcher";
 bool Application::isShuttingdown = false;
 GLFWwindow* Application::window = nullptr;
 int Application::UICounter = 1;
@@ -24,6 +24,29 @@ ImGuiContext* Application::context = nullptr;
 
 // Initialize the static FontLoader instance
 ImGuiIO* Application::io = nullptr;
+
+void Application::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	float aspect_ratio = 16.0f / 9.0f;
+	int viewport_width, viewport_height;
+
+	if (width / aspect_ratio > height) {
+		// Fit to height
+		viewport_height = height;
+		viewport_width = height * aspect_ratio;
+	}
+	else {
+		// Fit to width
+		viewport_width = width;
+		viewport_height = width / aspect_ratio;
+	}
+
+	// Center the viewport within the window
+	int viewport_x = (width - viewport_width) / 2;
+	int viewport_y = (height - viewport_height) / 2;
+
+	glViewport(viewport_x, viewport_y, viewport_width, viewport_height);
+}
 
 
 bool Application::glfwSetup()
@@ -50,8 +73,8 @@ bool Application::glfwSetup()
 	glfwWindowHint(GLFW_DECORATED,GL_TRUE);
 
 	window = glfwCreateWindow(
-		mode->width,
-		mode->height,
+		1020,
+		550,
 		AppTitleText.c_str(),
 		nullptr, // Remove the monitor parameter to not use fullscreen mode
 		nullptr
@@ -67,10 +90,10 @@ bool Application::glfwSetup()
 	g_WindowWidth = mode->width;
 	g_WindowHeight = mode->height;
 
-
 	glfwMakeContextCurrent(window);
-	glfwSwapInterval(1); // Vsync
-	glfwMaximizeWindow(window);
+
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
 
 	
 
@@ -82,6 +105,9 @@ bool Application::glfwSetup()
 		return false;
 	}
 
+
+	glfwSwapInterval(1); // Vsync
+	
 	//// Load the project icon
 	//GLFWimage icons[1];
 	//icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
@@ -159,87 +185,34 @@ void Application::draw()
 {
 	if (!glfwGetWindowAttrib(window, GLFW_ICONIFIED))
 	{
-		int winWidth, winHeight;
-		glfwGetWindowSize(window, &winWidth, &winHeight);
+	/*	int winWidth, winHeight;
+		glfwGetWindowSize(window, &winWidth, &winHeight);*/
+
+		// Get the initial window size and set the viewport
+		int width, height;
+		glfwGetFramebufferSize(window, &width, &height);
 
 		glClearColor(0.25f, 0.25f, 0.25f, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 
-		io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+			io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
 			//Start the ImGui frame
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
 			
-			// Create the DockSpace
-			//ImGui::DockSpaceOverViewport();
+			CreateMainDockSpace(ImVec2(width,height));
 			
-			CreateMainDockSpace();
-			
-
-			// Create some dockable windows
-			/*ImGui::Begin("Window 1");
-			ImGui::Text("This is window 1");
-			ImGui::End();
-
-			ImGui::Begin("Window 2");
-			ImGui::Text("This is window 2");
-			ImGui::End();*/
-			//UImanager.DrawUIByIndex(1);
-			//if (cScreen == CurrentScreen::STARTUP)
-			//{
-			//	UImanager.DrawUIByIndex(UICounter);
-			//}/*
-			/*else
-			{
-				io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-				CreateMainDockSpace();
-			}*/
-
-			//ImVec2 windowSize(Application::g_WindowWidth, Application::g_WindowHeight);
-			//ImVec2 windowPos(0, 0);//((winWidth - windowSize.x) / 2, (winHeight - windowSize.y) / 2);
-
-			//ImGui::SetNextWindowSize(windowSize);
-			//ImGui::SetNextWindowPos(windowPos);
-
-			//ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f)); // Transparent menu bar background
-			//// Push a new background color
-			//ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.05f, 0.05f, 0.05f, 1.0f));
-			//if (ImGui::Begin("Background Window",
-			//	(bool*)1,
-			//	ImGuiWindowFlags_NoTitleBar
-			//	| ImGuiWindowFlags_MenuBar
-			//	| ImGuiWindowFlags_NoScrollWithMouse
-			//	| ImGuiWindowFlags_NoScrollbar
-			//	| ImGuiWindowFlags_NoResize
-			//	| ImGuiWindowFlags_NoMove))
-			//{
-			//	//MenuBar
-			//	UImanager.DrawUIByIndex(0);
-			//	ImGui::PopStyleColor();
-			//	
-			//	UImanager.DrawUIByIndex(UICounter);
-
-
-
-			//	ImGui::End();
-			//	ImGui::PopStyleColor();
-			//}
-
 			ImGui::Render();
 
 			int display_w, display_h;
 			glfwGetFramebufferSize(window, &display_w, &display_h);
 			glViewport(0, 0, display_w, display_h);
-			///glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
 			
-
 			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 			glfwSwapBuffers(window);
-
-			
 	}
 }
 
@@ -260,7 +233,7 @@ void Application::TerminateWindow()
 	glfwTerminate();
 }
 
-void Application::CreateMainDockSpace()
+void Application::CreateMainDockSpace(ImVec2 size)
 {
 	ImGuiViewport* viewport = ImGui::GetMainViewport();
 	/*ImGui::SetNextWindowPos(viewport->Pos);
@@ -277,10 +250,13 @@ void Application::CreateMainDockSpace()
 	//ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 	ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
 	ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
+
+
+	ImGui::SetNextWindowPos(viewport->Pos);
+	ImGui::SetNextWindowSize(viewport->Size);
 	ImGui::Begin("MainDockSpace", nullptr, window_flags);
 	ImGui::PopStyleColor(2);
 
-	UImanager.DrawUIByIndex(0);
 
 	if (cScreen == CurrentScreen::STARTUP)
 	{
@@ -290,6 +266,8 @@ void Application::CreateMainDockSpace()
 
 	if (cScreen == CurrentScreen::EDITOR)
 	{
+		glfwMaximizeWindow(window);
+		UImanager.DrawUIByIndex(0);
 		//Dockign for the editor screen
 		ImGuiID dockspace_id = ImGui::GetID("MainDockSpace");
 		ImGui::DockSpace(dockspace_id);
@@ -308,12 +286,12 @@ void Application::CreateMainDockSpace()
 
 		if (ImGui::Begin("Inspector",nullptr, ImGuiWindowFlags_NoCollapse))
 		{
-			ImGui::Text("Test Window");
+			eventUI->RenderNodeInspector();
 		}
 			ImGui::End();
 
 			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
-		if (ImGui::Begin("Toolbar",nullptr/*, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoTitleBar *//*| ImGuiWindowFlags_NoDocking*/))
+		if (ImGui::Begin("Toolbar",nullptr))
 		{
 			ImGui::PopStyleColor();
 

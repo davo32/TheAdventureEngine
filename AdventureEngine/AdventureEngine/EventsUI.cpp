@@ -69,21 +69,9 @@ void EventsUI::text_centered(const std::string& text)
 
 void EventsUI::RenderEventWindow()
 {
-	/*ImVec2 ParentSize = ImGui::GetContentRegionAvail();
-	ImDrawList* drawList = ImGui::GetWindowDrawList();
-
-	ImVec2 windowSize(Application::g_WindowWidth - 15, Application::g_WindowHeight - 40);
-	ImGui::SetNextWindowSize(windowSize, ImGuiCond_Always);
-	ImVec2 WindowPos(15, 20);*/
-
-	//ImGui::SetCursorPos(WindowPos);
 	if (ImGui::BeginChild("EditableEvents", ImGui::GetWindowSize(), ImGuiChildFlags_None, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
 	{
-	//	//drawList->AddRectFilled(WindowPos, windowSize, ImColor(0.1f, 0.1f, 0.1f, 1.0f), 10.0f);
-
 		chapterEditor->RenderViewport(ActiveChapter);
-	//	RenderOverlayUI();
-
 		ImGui::EndChild();
 	}
 }
@@ -180,18 +168,36 @@ void EventsUI::RenderChapterList()
 			static char temp[128] = "";  // Adjust the size (128) as needed for your use case
 
 			// Use the writable buffer in InputTextWithHint
-			if (ImGui::InputTextWithHint("##ChapterName", "New Chapter...", temp, IM_ARRAYSIZE(temp)))
+			if (ImGui::InputTextWithHint("##ChapterName", "New Chapter...", temp, IM_ARRAYSIZE(temp), ImGuiInputTextFlags_EnterReturnsTrue))
 			{
+				ImGuiIO& io = ImGui::GetIO();
+				Chapters.push_back(new Chapter(temp));
+				Globals::projectBrowser->GetActiveProject()->ProjectChapters = Chapters;
 
+				// Clear the temp buffer for future use
+				memset(temp, 0, sizeof(temp));
 			}
 			ImGui::PopFont();
 
 			ImGui::SameLine();
 
-			ImGui::Dummy(ImVec2(15, ImGui::GetContentRegionAvail().y));
+			ImGui::PushFont(Globals::fontLoader->GetFont("NSRegSmall"));
+			if (ImGui::Button("D", ImVec2(15, 30)))
+			{
+				if (Chapters.size() > 1)
+				{
+					for (int i = 0; i < Chapters.size(); i++)
+					{
+						if (Chapters[i]->ChapterName == ActiveChapter->ChapterName)
+						{
+							Chapters.erase(Chapters.begin() + i);
+							break;
+						}
+					}
+				}
+			}
 			ImGui::SameLine();
-			ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
-			if (ImGui::Button(" + ", ImVec2(30, 30)))
+			if (ImGui::Button("+", ImVec2(15, 30)))
 			{
 				ImGuiIO& io = ImGui::GetIO();
 				Chapters.push_back(new Chapter(temp));
@@ -334,75 +340,73 @@ void EventsUI::RenderChapterInspector()
 
 void EventsUI::RenderNodeInspector()
 {
-	ImDrawList* drawList = ImGui::GetWindowDrawList();
-	ImVec2 ListPos = ImVec2(ImGui::GetWindowWidth() - 280, 10); // Set this to the current cursor position, which should be below the tab bar
-	ImGui::SetCursorPos(ListPos); // Relative to the window's position
-	ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
-	if (ImGui::BeginChild("##NodePropInspector", ImVec2(290, ImGui::GetWindowHeight() - 10),
+	//ImDrawList* drawList = ImGui::GetWindowDrawList();
+	//ImVec2 ListPos = ImVec2(ImGui::GetWindowWidth() - 280, 10); // Set this to the current cursor position, which should be below the tab bar
+	//ImGui::SetCursorPos(ListPos); // Relative to the window's position
+	//ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.1f, 0.1f, 0.1f, 1.0f));
+	if (ImGui::BeginChild("##NodePropInspector", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y),
 		false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 	{
-		// Calculate the size of the rectangle
-		ImVec2 rectSize = ImVec2(285, Application::g_WindowHeight - 10);
+		//// Calculate the size of the rectangle
+		//ImVec2 rectSize = ImVec2(285, Application::g_WindowHeight - 10);
 
-		// Ensure the rectangle stays within the window's bounds
-		rectSize.y = std::max(10.0f, rectSize.y);  // Ensure the height isn't negative or too small
+		//// Ensure the rectangle stays within the window's bounds
+		//rectSize.y = std::max(10.0f, rectSize.y);  // Ensure the height isn't negative or too small
 
 		// Draw the rectangle at the calculated position with rounded corners
-		drawList->AddRectFilled(ListPos, ImVec2(ListPos.x + rectSize.x, (ListPos.y + rectSize.y) - 40),
-			ImColor(0.08f, 0.08f, 0.08f, 1.0f), 10.0f, ImDrawFlags_RoundCornersBottomRight | ImDrawFlags_RoundCornersTopRight);
+		/*drawList->AddRectFilled(ListPos, ImVec2(ListPos.x + rectSize.x, (ListPos.y + rectSize.y) - 40),
+			ImColor(0.08f, 0.08f, 0.08f, 1.0f), 10.0f, ImDrawFlags_RoundCornersBottomRight | ImDrawFlags_RoundCornersTopRight);*/
 
 		if (ActiveChapter != nullptr)
 		{
 			if (ActiveChapter->GetActiveNode() != nullptr)
 			{
 				//Get half the Rect Size then use a mod float to fine tune X Axis placement of Text
-				// Y Axis Seems alright where it is!!
-				ImGui::SetCursorPosX(rectSize.x - (rectSize.x / 2) - 100);
-				ImGui::PushFont(Globals::fontLoader->GetFont("NSBold"));
-				ImGui::Text("Node Components");
-				ImGui::PopFont();
+				//// Y Axis Seems alright where it is!!
+				//ImGui::SetCursorPosX(rectSize.x - (rectSize.x / 2) - 100);
+				
 
-				ImGui::SetCursorPosX(ImGui::GetCursorPosX());
+				//ImGui::SetCursorPosX(ImGui::GetCursorPosX());
 				if (ImGui::BeginChild("##Components",
-					ImVec2(ImGui::GetContentRegionAvail().x - 25, ImGui::GetContentRegionAvail().y - 80)
+					ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y)
 					, false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar))
 				{
-					Node* activeNode = ActiveChapter->GetActiveNode();
-					if (activeNode != nullptr)
-					{
-						activeNode->DrawComponents();
-					}
-					else
-					{
-						std::cerr << "ActiveNode is null!" << std::endl;
-					}
-					ImGui::Separator();
-					// Set the rounding radius for the button corners
-					ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 5.0f); // Adjust the value for more or less rounding
-					if (ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25)))
-					{
-						openComponentsList = !openComponentsList;
-					}
-					ImGui::PopStyleVar();
-					if (openComponentsList)
-					{
-						ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.04, 0.04, 0.04, 1.0f));
-						if (ImGui::BeginChild("##ComponentsList",
-							ImVec2(ImGui::GetContentRegionAvail().x - 5, 300)
-							, ImGuiChildFlags_Border, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar))
+						Node* activeNode = ActiveChapter->GetActiveNode();
+						if (activeNode != nullptr)
 						{
-							char temp[256] = "";
-
-							if (ImGui::BeginMenuBar())
-							{
-								ImGui::SetCursorPosX(50);
-								ImGui::InputTextWithHint("##Temp", "Search Components...", temp, sizeof(temp));
-								ImGui::EndMenuBar();
-							}
-							ImGui::PopStyleColor();
-							ImGui::EndChild();
+							activeNode->DrawComponents();
 						}
-					}
+						else
+						{
+							std::cerr << "ActiveNode is null!" << std::endl;
+						}
+						ImGui::Separator();
+						// Set the rounding radius for the button corners
+						//ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 5.0f); // Adjust the value for more or less rounding
+						//if (ImGui::Button("Add Component", ImVec2(ImGui::GetContentRegionAvail().x, 25)))
+						//{
+						//	openComponentsList = !openComponentsList;
+						//}
+						//ImGui::PopStyleVar();
+						/*if (openComponentsList)
+						{
+							ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.04, 0.04, 0.04, 1.0f));
+							if (ImGui::BeginChild("##ComponentsList",
+								ImVec2(ImGui::GetContentRegionAvail().x - 5, 300)
+								, ImGuiChildFlags_Border, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar))
+							{
+								char temp[256] = "";
+
+								if (ImGui::BeginMenuBar())
+								{
+									ImGui::SetCursorPosX(50);
+									ImGui::InputTextWithHint("##Temp", "Search Components...", temp, sizeof(temp));
+									ImGui::EndMenuBar();
+								}
+								ImGui::PopStyleColor();
+								ImGui::EndChild();
+							}
+						}*/
 
 					ImGui::EndChild();
 				}
@@ -412,7 +416,7 @@ void EventsUI::RenderNodeInspector()
 			ImGui::PopStyleColor();*/
 		}
 		ImGui::EndChild();
-		ImGui::PopStyleColor();
+		//ImGui::PopStyleColor();
 	}
 }
 

@@ -5,7 +5,7 @@
 
 namespace Globals
 {
-	static ProjectBrowser* projectBrowser = ProjectBrowser::GetInstance();
-	static FontLoader* fontLoader = FontLoader::GetInstance();
-	static FileExtensions* FileExts = FileExtensions::GetInstance();
+	extern ProjectBrowser* projectBrowser;
+	extern FontLoader* fontLoader;
+	extern FileExtensions* FileExts;
 }

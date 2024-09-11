@@ -138,51 +138,78 @@ ProjectBrowser* ProjectBrowser::GetInstance()
 //}
 
 
-void ProjectBrowser::Render()
-{
-	// Define grid parameters
-	const int columns = 8; // Number of columns in the grid
-	const float buttonSize = 100.0f; // Size of each button
-	const float spacing = 30.0f; // Spacing between buttons
+//void ProjectBrowser::Render()
+//{
+//	// Define parameters for the list-style buttons
+//	const int columns = 1; // Single column for the list layout
+//	const float buttonHeight = 50.0f; // Height of each button
+//	const float spacing = 5.0f; // Spacing between buttons
+//
+//	// Calculate window size and start position
+//	ImVec2 windowPos = ImGui::GetCursorPos();
+//	float startX = windowPos.x + 10;
+//	float startY = windowPos.y;
+//
+//	// Calculate button width based on window size (or set a fixed width)
+//	float buttonWidth = ImGui::GetContentRegionAvail().x - ImGui::GetStyle().ItemSpacing.x * 2;
+//
+//	// Iterate over projects to create buttons
+//	for (size_t i = 0; i < projects.size(); ++i)
+//	{
+//		// Calculate button position based on index
+//		int row = static_cast<int>(i / columns);
+//		ImVec2 buttonPos = ImVec2(startX, startY + row * (buttonHeight + spacing));
+//
+//		// Set cursor position for the button
+//		ImGui::SetCursorPos(buttonPos);
+//
+//		// Create an invisible button to hold the background and the text separately
+//		if (ImGui::InvisibleButton("button_background", ImVec2(buttonWidth, buttonHeight)))
+//		{
+//			if (projectBrowser->GetActiveProject() != nullptr)
+//			{
+//				Application::cScreen = CurrentScreen::EDITOR;
+//				Application::SetTitleText("Adventure Engine - " + projectBrowser->GetActiveProject()->name);
+//				Application::UICounter = 2; // Safely change the state after ImGui processing is complete
+//			}
+//		}
+//
+//		// Check if the button is hovered or active
+//		bool isHovered = ImGui::IsItemHovered();
+//		bool isActive = (ActiveProject != nullptr && strcmp(ActiveProject->name.c_str(), projects[i]->name.c_str()) == 0);
+//
+//		// Draw a background for the button with different colors based on the hover state
+//		ImDrawList* drawList = ImGui::GetWindowDrawList();
+//		ImVec2 min = ImGui::GetItemRectMin();
+//		ImVec2 max = ImGui::GetItemRectMax();
+//
+//		// Default background color
+//		ImU32 bgColor = IM_COL32(0, 0, 0, 0); // Dark color
+//
+//		// Lighter background color on hover
+//		if (isHovered)
+//		{
+//			bgColor = IM_COL32(50, 50, 50, 110); // Lighter color when hovered
+//		}
+//
+//		// Even lighter color if active
+//		if (isActive)
+//		{
+//			bgColor = IM_COL32(80, 80, 80, 110); // Highlight the active project
+//		}
+//
+//		// Draw the background rectangle with rounded corners
+//		drawList->AddRectFilled(min, max, bgColor, 8.0f); // 8.0f for rounded corners
+//
+//		// Manually set the text's cursor position relative to the button
+//		ImGui::SetCursorScreenPos(ImVec2(min.x + ImGui::GetStyle().ItemSpacing.x, min.y + (buttonHeight - ImGui::CalcTextSize(projects[i]->name.c_str()).y) / 2));
+//
+//		// Draw the project name inside the button
+//		ImGui::TextUnformatted(projects[i]->name.c_str());
+//	}
+//}
 
-	// Calculate window size and start position
-	ImVec2 windowPos = ImGui::GetCursorPos();
-	float startX = windowPos.x;
-	float startY = windowPos.y;
 
-	// Iterate over projects to create buttons
-	for (size_t i = 0; i < projects.size(); ++i)
-	{
-		// Calculate button position based on index
-		int row = static_cast<int>(i / columns);
-		int column = static_cast<int>(i % columns);
-
-		ImVec2 buttonPos = ImVec2(
-			startX + column * (buttonSize + spacing),
-			startY + row * (buttonSize + spacing)
-		);
-
-		// Set cursor position for the button
-		ImGui::SetCursorPos(buttonPos);
-
-		// Create button with image and text
-		if (ImageButtonWithText(ProjIcon, projects[i]->name.c_str(), ImVec2(buttonSize, buttonSize), ImVec2(buttonSize, buttonSize)))
-		{
-			ProjectSelected = !ProjectSelected;
-
-			if (ProjectSelected)
-			{
-				OnProjectSelected(projects[i]);
-			}
-			else
-			{
-				DeSelectProject();
-			}
-
-		}
-	}
-
-}
 
 //updated for database
 void ProjectBrowser::CreateNewProject(const std::string& directoryName, const std::string& fileName)
@@ -562,62 +589,63 @@ void ProjectBrowser::LoadChapters()
 }
 
 // Function to render a button with an image and text
-bool ProjectBrowser::ImageButtonWithText(ImTextureID texture, const char* label, const ImVec2& imageSize, const ImVec2& buttonSize)
-{
-	ImGui::BeginGroup(); // Start a new group for the button
-	ImDrawList* drawList = ImGui::GetWindowDrawList();
-	// Calculate positions
-	ImVec2 cursorPos = ImGui::GetCursorPos();
-	ImVec2 imagePos = ImVec2(cursorPos.x + (buttonSize.x - imageSize.x) / 2, cursorPos.y);
-	ImVec2 textPos = ImVec2(cursorPos.x + (buttonSize.x - ImGui::CalcTextSize(label).x) / 2, cursorPos.y + imageSize.y + ImGui::GetStyle().ItemSpacing.y);
-
-	// Create the invisible button
-	ImGui::InvisibleButton("image_button", buttonSize);
-	bool isHovered = ImGui::IsItemHovered();
-	bool isClicked = ImGui::IsItemClicked();
-
-	// Draw the rounded rectangle background behind the image
-	ImVec2 min = cursorPos;
-	ImVec2 max = ImVec2(cursorPos.x + buttonSize.x, cursorPos.y + buttonSize.y);
-	float rounding = 8.0f; // Rounding radius for the rectangle
-
-	ImColor mainColor = IM_COL32(20, 20, 20, 110);
-	ImColor offColor = IM_COL32(80, 80, 80, 110);
-
-	drawList->AddRectFilledMultiColor(min, max, mainColor, offColor, mainColor, mainColor); // Gray background
-
-	ImColor DefhighColor = IM_COL32(20, 20, 20, 250);
-	ImColor NewhighColor = IM_COL32(120, 0, 210, 250);
-	ImColor highColor = DefhighColor;
-
-	if (ActiveProject != nullptr)
-	{
-		if (ActiveProject->name == label)
-		{
-			highColor = NewhighColor;
-		}
-		else
-		{
-			highColor = DefhighColor;
-		}
-	}
-
-	drawList->AddRect(min, max, highColor, rounding, 0, 8.0f);
-	// Draw the image
-	ImGui::SetCursorScreenPos(imagePos);
-	ImGui::Image(texture, imageSize);
-
-	// Optional: Draw a border around the button when hovered
-	if (isHovered)
-	{
-		drawList->AddRect(min, max, IM_COL32(255, 255, 255, 255), 8.0f); // White border
-	}
-
-	// Draw the text
-	ImGui::SetCursorScreenPos(textPos);
-	ImGui::Text("%s", label);
-
-	ImGui::EndGroup(); // End the button group
-
-	return isClicked;
-}
+//bool ProjectBrowser::ImageButtonWithText(ImTextureID texture, const char* label, const ImVec2& imageSize, const ImVec2& buttonSize)
+//{
+//	ImGui::BeginGroup(); // Start a new group for the button
+//	ImDrawList* drawList = ImGui::GetWindowDrawList();
+//
+//	// Calculate positions
+//	ImVec2 cursorPos = ImGui::GetCursorPos();  // Current cursor position in the window
+//
+//	// Define positions for the image and text
+//	ImVec2 imagePos = ImVec2(cursorPos.x + ImGui::GetStyle().ItemSpacing.x, cursorPos.y + (buttonSize.y - imageSize.y) / 2);  // Center the image vertically
+//	ImVec2 textPos = ImVec2(cursorPos.x + imageSize.x + ImGui::GetStyle().ItemSpacing.x * 2, cursorPos.y + (buttonSize.y - ImGui::CalcTextSize(label).y) / 2); // Center the text vertically, next to the image
+//
+//	// Create the invisible button
+//	ImGui::InvisibleButton("list_button", buttonSize);
+//	bool isHovered = ImGui::IsItemHovered();
+//	bool isClicked = ImGui::IsItemClicked();
+//
+//	// Define the button's min and max coordinates
+//	ImVec2 min = cursorPos;
+//	ImVec2 max = ImVec2(cursorPos.x + buttonSize.x, cursorPos.y + buttonSize.y);
+//	float rounding = 8.0f; // Rounding for the corners of the button
+//
+//	// Colors for the button background
+//	ImColor bgColor = IM_COL32(20, 20, 20, 110);  // Default background color
+//	ImColor hoveredColor = IM_COL32(50, 50, 50, 180); // Background color when hovered
+//	ImColor activeColor = IM_COL32(5, 5, 5, 110); // Highlight color for the active project
+//
+//	// Determine background color based on hover state
+//	if (isHovered)
+//	{
+//		bgColor = hoveredColor;
+//	}
+//
+//	// Highlight the active project
+//	if (ActiveProject != nullptr && strcmp(ActiveProject->name.c_str(), label) == 0)
+//	{
+//		bgColor = activeColor; // Set to highlight color if this is the active project
+//	}
+//
+//	// Draw the rounded rectangle background
+//	drawList->AddRectFilled(min, max, bgColor, rounding);
+//
+//	// Optional: Draw a border around the button if hovered
+//	if (isHovered)
+//	{
+//		drawList->AddRect(min, max, IM_COL32(255, 255, 255, 255), rounding); // White border when hovered
+//	}
+//
+//	// Draw the image on the left side
+//	ImGui::SetCursorScreenPos(imagePos);
+//	ImGui::Image(texture, imageSize);
+//
+//	// Draw the project name text on the right side of the image
+//	ImGui::SetCursorScreenPos(textPos);
+//	ImGui::TextUnformatted(label);  // Draw the label without formatting
+//
+//	ImGui::EndGroup(); // End the button group
+//
+//	return isClicked; // Return true if the button was clicked
+//}

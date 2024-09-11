@@ -15,10 +15,11 @@ public:
 
 private:
 	aie::Texture Logo;
+	char newProjectName[256] = "";
 	ProjectBrowser* projectBrowser = ProjectBrowser::GetInstance();
 
 	bool DeletionConfirmation = false;
-
+	void Render();
 	void SetupMainWindow(const ImVec2& windowSize, const ImVec2& WindowPos);
 
 	void DrawBackground(ImDrawList* drawList, const ImVec2& WindowPos, const ImVec2& windowSize);
