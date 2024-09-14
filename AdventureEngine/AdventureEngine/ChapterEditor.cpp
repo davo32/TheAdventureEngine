@@ -17,7 +17,6 @@ void ChapterEditor::RenderViewport(Chapter* chapter)
 	//ImGui::SetNextWindowPos(ChildPos);
 	//ImGui::SetCursorPos(ChildPos);
 	ImVec2 newViewportSize(ImVec2(ImGui::GetContentRegionAvail().x,ImGui::GetContentRegionAvail().y - 20));
-	//ImVec2 newViewportSize(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y - 20);
 	if (ImGui::BeginChild("##Viewport", newViewportSize, ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
 	{
 		RenderBackground(newViewportSize, ImGui::GetWindowPos(), chapter);

@@ -7,8 +7,8 @@ EventNode::EventNode()
 	nodeType = NodeType::EventType;
 
     //Node Details Component - Default For Re-namable Nodes
-    Components.push_back(new NodeDetailsComponent(this));
-    Components.push_back(new DialogueComponent(this));
+    AddComponent(new NodeDetailsComponent(this));
+    AddComponent(new DialogueComponent(this));
 
 }
 EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
@@ -25,9 +25,9 @@ EventNode::EventNode(ImVec2 Position, ImVec2 Size, Event* newEvent)
     Pin newOutput = Pin(Position, "Action");
 	outputPoints.push_back(newOutput);
 
-	//Node Details Component - Default For Re-namable Nodes
-	Components.push_back(new NodeDetailsComponent(this));
-    Components.push_back(new DialogueComponent(this));
+    //Node Details Component - Default For Re-namable Nodes
+    AddComponent(new NodeDetailsComponent(this));
+    AddComponent(new DialogueComponent(this));
 }
 
 EventNode::~EventNode() 

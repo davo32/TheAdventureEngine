@@ -1,2 +1,50 @@
-﻿  DialogueComponent.cpp
+﻿  pch.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(109,55): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'pch.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(110,52): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'pch.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.h(111,50): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'pch.cpp')
+  
+  Chapter.cpp
+  DialogueComponent.cpp
+  Engine.cpp
+  Event.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Events\Event.cpp(47,33): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Core/Events/Event.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Events\Event.cpp(51,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Core/Events/Event.cpp')
+  
+  NodeDetailsComponent.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.cpp(113,18): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent/NodeDetailsComponent.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\NodeComponents\CustomNodeComponents\NodeDetailsComponent\NodeDetailsComponent.cpp(144,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Core/NodeComponents/CustomNodeComponents/NodeDetailsComponent/NodeDetailsComponent.cpp')
+  
+  BeginNode.cpp
+  EventNode.cpp
+  Node.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.cpp(78,106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file '/Core/Nodes/Node.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\Core\Nodes\Node.cpp(312,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Core/Nodes/Node.cpp')
+  
+  FileExtensions.cpp
+  ProjectBrowser.cpp
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp(496,44): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/FileSystem/ProjectBrowser/ProjectBrowser.cpp')
+  
+C:\REPO\TheAdventureEngine\AdventureEngine\Engine\FileSystem\ProjectBrowser\ProjectBrowser.cpp(511,13): warning C4312: 'type cast': conversion from 'unsigned int' to 'ImTextureID' of greater size
+  (compiling source file '/FileSystem/ProjectBrowser/ProjectBrowser.cpp')
+  
+  Globals.cpp
+  FontLoader.cpp
+  PlayerChoiceComponent.cpp
+  Generating Code...
+  sqlite3.c
   Engine.vcxproj -> C:\REPO\TheAdventureEngine\AdventureEngine\x64\Debug\Engine.lib

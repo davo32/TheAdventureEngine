@@ -8,6 +8,7 @@
 #include "Globals.h"
 
 #include "EventsUI.h"
+#include "PlayMode.h"
 
 enum CurrentScreen
 {
@@ -55,7 +56,7 @@ private: //UI
 	static ImGuiIO* io; // Pointer to ImGuiIO
 	static ImGuiContext* context;
 	EventsUI* eventUI = new EventsUI();
-
+	PlayMode* playMode = new PlayMode();
 
 	//static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 

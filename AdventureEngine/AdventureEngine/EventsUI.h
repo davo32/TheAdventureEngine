@@ -44,13 +44,14 @@ public:
 	//Utilities
 	bool contains(std::vector<Chapter*> C, Chapter* value);
 	void SetActiveChapter(Chapter* chapter);
+	Chapter* GetActiveChapter() { return ActiveChapter; }
 
 	void SetMode(GMode mode) { GameMode = mode; }
 	GMode GetGMode() { return GameMode; }
 
 	static InspectorType Itype;
-private:
 	ChapterEditor* chapterEditor;
+private:
 	bool openComponentsList = false;
 
 	std::vector<Chapter*> Chapters;

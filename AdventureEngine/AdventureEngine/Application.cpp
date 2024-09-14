@@ -1,11 +1,9 @@
-#include "OpenGL/gl_core_4_4.h"
+﻿#include "OpenGL/gl_core_4_4.h"
 #include "Application.h"
 #include <iostream>
 #include "ImGuiSetup.h"
 #include "MonitorInfo.h"
 #include "stb_image.h"
-
-
 
 // Global variables to store window size
 int Application::g_WindowWidth = 800;
@@ -48,7 +46,6 @@ void Application::framebuffer_size_callback(GLFWwindow* window, int width, int h
 	glViewport(viewport_x, viewport_y, viewport_width, viewport_height);
 }
 
-
 bool Application::glfwSetup()
 {
 	if (!glfwInit())
@@ -56,8 +53,6 @@ bool Application::glfwSetup()
 		std::cerr << "Failed to initialize GLFW\n";
 		return false;
 	}
-
-	
 
 	MonitorInfo::Init();  // Initialize MonitorInfo before using it
 
@@ -70,7 +65,7 @@ bool Application::glfwSetup()
 	}
 
 	glfwWindowHint(GLFW_FLOATING, GL_FALSE);
-	glfwWindowHint(GLFW_DECORATED,GL_TRUE);
+	glfwWindowHint(GLFW_DECORATED, GL_TRUE);
 
 	window = glfwCreateWindow(
 		1020,
@@ -94,9 +89,6 @@ bool Application::glfwSetup()
 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-
-	
-
 	if (ogl_LoadFunctions() == ogl_LOAD_FAILED)
 	{
 		std::cerr << "Failed to load the OpenGL functions\n";
@@ -105,9 +97,8 @@ bool Application::glfwSetup()
 		return false;
 	}
 
-
 	glfwSwapInterval(1); // Vsync
-	
+
 	//// Load the project icon
 	//GLFWimage icons[1];
 	//icons[0].pixels = stbi_load("../Resources/Images/file.png", &icons[0].width, &icons[0].height, 0, 4);
@@ -118,17 +109,15 @@ bool Application::glfwSetup()
 	//}
 
 	context = ImGui::CreateContext();
-	
+
 	ImGuiIO& io = ImGui::GetIO();
 	//Enable Docking
-	
-	
+
 	//UImanager.StartupByIndex(2);
 
 	SetImGuiUnityStyle();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 130");
-
 
 	Application::io = &io;
 	Globals::fontLoader->SetIO(io); //Application::fontLoader.SetIO(io);
@@ -185,38 +174,35 @@ void Application::draw()
 {
 	if (!glfwGetWindowAttrib(window, GLFW_ICONIFIED))
 	{
-	/*	int winWidth, winHeight;
-		glfwGetWindowSize(window, &winWidth, &winHeight);*/
+		/*	int winWidth, winHeight;
+			glfwGetWindowSize(window, &winWidth, &winHeight);*/
 
-		// Get the initial window size and set the viewport
+			// Get the initial window size and set the viewport
 		int width, height;
 		glfwGetFramebufferSize(window, &width, &height);
 
 		glClearColor(0.25f, 0.25f, 0.25f, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
+		io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-			io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+		//Start the ImGui frame
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
 
-			//Start the ImGui frame
-			ImGui_ImplOpenGL3_NewFrame();
-			ImGui_ImplGlfw_NewFrame();
-			ImGui::NewFrame();
-			
-			CreateMainDockSpace(ImVec2(width,height));
-			
-			ImGui::Render();
+		CreateMainDockSpace(ImVec2(width, height));
 
-			int display_w, display_h;
-			glfwGetFramebufferSize(window, &display_w, &display_h);
-			glViewport(0, 0, display_w, display_h);
-			
-			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-			glfwSwapBuffers(window);
+		ImGui::Render();
+
+		int display_w, display_h;
+		glfwGetFramebufferSize(window, &display_w, &display_h);
+		glViewport(0, 0, display_w, display_h);
+
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		glfwSwapBuffers(window);
 	}
 }
-
-
 
 void Application::shutdown()
 {
@@ -251,12 +237,10 @@ void Application::CreateMainDockSpace(ImVec2 size)
 	ImGui::PushStyleColor(ImGuiCol_MenuBarBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
 	ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
 
-
 	ImGui::SetNextWindowPos(viewport->Pos);
 	ImGui::SetNextWindowSize(viewport->Size);
 	ImGui::Begin("MainDockSpace", nullptr, window_flags);
 	ImGui::PopStyleColor(2);
-
 
 	if (cScreen == CurrentScreen::STARTUP)
 	{
@@ -268,6 +252,7 @@ void Application::CreateMainDockSpace(ImVec2 size)
 	{
 		glfwMaximizeWindow(window);
 		UImanager.DrawUIByIndex(0);
+		eventUI->chapterEditor->NodeGraphShortcuts(eventUI->GetActiveChapter());
 		//Dockign for the editor screen
 		ImGuiID dockspace_id = ImGui::GetID("MainDockSpace");
 		ImGui::DockSpace(dockspace_id);
@@ -276,41 +261,59 @@ void Application::CreateMainDockSpace(ImVec2 size)
 		{
 			eventUI->RenderChapterList();
 		}
-			ImGui::End();
+		ImGui::End();
 
 		if (ImGui::Begin("Console", nullptr, ImGuiWindowFlags_NoCollapse))
 		{
 			ImGui::Text("Test Window");
 		}
-			ImGui::End();
+		ImGui::End();
 
-		if (ImGui::Begin("Inspector",nullptr, ImGuiWindowFlags_NoCollapse))
+		if (ImGui::Begin("Inspector", nullptr, ImGuiWindowFlags_NoCollapse))
 		{
 			eventUI->RenderNodeInspector();
 		}
-			ImGui::End();
+		ImGui::End();
 
-			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
-		if (ImGui::Begin("Toolbar",nullptr))
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10, 0.10, 0.10, 1.0f));
+		if (ImGui::Begin("Toolbar", nullptr))
 		{
 			ImGui::PopStyleColor();
 
-			//ImGuiDockNode* node = ImGui::GetWindowDockNode();
-
-			/*if (node != nullptr)
+			ImGui::SetCursorPos(ImVec2((ImGui::GetContentRegionAvail().x / 2) - 30, (ImGui::GetContentRegionAvail().y / 2) - 15));
+			ImGui::BeginGroup();
+			if (ImGui::Button("P", ImVec2(25, 25)))
 			{
-				node->LocalFlags |= ImGuiDockNodeFlags_NoTabBar;
-				node->LocalFlags |= ImGuiDockNodeFlags_NoResize;
-			}*/
+				ImGui::SetTabItemClosed("Viewport");
+			}
+			ImGui::SameLine();
+			ImGui::Button("Pa", ImVec2(25, 25));
+			ImGui::SameLine();
+			ImGui::Button("S", ImVec2(25, 25));
+			ImGui::EndGroup();
 		}
-			ImGui::End();
+		ImGui::End();
 
 		if (ImGui::Begin("Viewport", nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
 		{
 			eventUI->RenderEventWindow();
 		}
-			ImGui::End();
+		ImGui::End();
 
+		if (ImGui::Begin("Game", nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse))
+		{
+			if (eventUI->GetActiveChapter() != nullptr)
+			{
+				playMode->RenderPlayViewport(eventUI->GetActiveChapter()->NodeFamily[0]);
+			}
+			else
+			{
+				ImGui::SetCursorPos(ImVec2(0, 0));
+				ImGui::SetCursorPos(ImVec2(ImGui::GetContentRegionAvail().x / 2, ImGui::GetContentRegionAvail().y / 2));
+				ImGui::Text("Currently Not In Play Mode.");
+			}
+		}
+		ImGui::End();
 	}
 
 	ImGui::End();
@@ -318,7 +321,6 @@ void Application::CreateMainDockSpace(ImVec2 size)
 
 void Application::CreateStyleLayout()
 {
-	
 }
 
 void Application::SetupDockingLayout()
@@ -401,6 +403,3 @@ void Application::SetImGuiUnityStyle()
 	style.FramePadding = ImVec2(4.0f, 3.0f);
 	style.ItemSpacing = ImVec2(8.0f, 4.0f);
 }
-
-
-

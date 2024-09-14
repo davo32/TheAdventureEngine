@@ -56,6 +56,9 @@
     <Filter Include="Launcher">
       <UniqueIdentifier>{88535315-cc08-411a-b6ae-ddda07364f1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Editor\Screens\PlayMode">
+      <UniqueIdentifier>{e100a6d1-819f-4fe5-b181-2aaab1b77d4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui.cpp">
@@ -112,6 +115,7 @@
     <ClCompile Include="LauncherApp.cpp">
       <Filter>Launcher</Filter>
     </ClCompile>
+    <ClCompile Include="PlayMode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imconfig.h">
@@ -177,6 +181,7 @@
     <ClInclude Include="LauncherApp.h">
       <Filter>Launcher</Filter>
     </ClInclude>
+    <ClInclude Include="PlayMode.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">

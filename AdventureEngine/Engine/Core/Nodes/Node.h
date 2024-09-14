@@ -52,7 +52,7 @@ public:
 
     ImVec2 GetPosition() const { return position; }
     ImVec2 GetSize() const { return size; }
-    ImVec2 GetCablePosition() const { return cableStartPos; }
+    //ImVec2 GetCablePosition() const { return cableStartPos; }
 
     void SetDragStartPos(ImVec2 pos);
     ImVec2 GetDragStartPos() const;
@@ -78,6 +78,16 @@ public:
 
     void DrawNode(const ImVec2& position, const ImVec2& size, float zoomLevel);
     void DrawComponents();
+
+    void AddComponent(NodeComponent* newComponent) { Components.push_back(newComponent); }
+    void RemoveComponent(NodeComponent* component) 
+    { 
+        for (int i = 0; i < Components.size(); i++)
+        {
+            Components.erase(Components.begin() + i);
+            break;
+        }
+    }
 
     Pin GetOutputPoint(int index) const { return outputPoints[index]; }
     Pin GetInputPoint(int index) const { return inputPoints[index]; }
